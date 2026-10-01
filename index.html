@@ -1,0 +1,1551 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Llaves BMW Motorrad | Keyless Ride y All Keys Lost | RE:MOTO LAB</title>
+<meta name="description" content="Programación, duplicado y recuperación de llaves BMW Motorrad. Keyless Ride, All Keys Lost, diagnóstico y TFT. Atención en Uruapan y cobertura nacional.">
+<meta property="og:title" content="RE:MOTO LAB | Llaves BMW Motorrad">
+<meta property="og:description" content="Keyless Ride, All Keys Lost y diagnóstico BMW Motorrad. Vuelve a rodar con tranquilidad.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0A0A0A">
+<meta property="og:locale" content="es_MX">
+<meta property="og:image" content="/assets/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Montserrat:wght@600;800&family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
+<!-- TODO PREPUBLICACIÓN: cuando exista dominio definitivo, añadir canonical, og:url y URLs absolutas de logo/imagen. -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"RE:MOTO LAB by DUPLIKEY MX","description":"Programación, duplicado y recuperación de llaves BMW Motorrad.","telephone":"+524521791230","email":"duplikeymx@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Uruapan","addressRegion":"Michoacán","addressCountry":"MX"},"areaServed":"MX","sameAs":["https://www.facebook.com/DuplikeyMX","https://www.instagram.com/DuplikeyMX/"]}</script>
+<style>
+:root{
+  --bg:#0A0A0A;
+  --bg-soft:#0F1214;
+  --surface:#121619;
+  --surface-2:#171C20;
+  --surface-3:#0E1113;
+  --blue:#00AEEF;
+  --blue-soft:#7FDBFF;
+  --deep:#003B5C;
+  --white:#FFFFFF;
+  --text:#EDEDED;
+  --steel:#B8BDC2;
+  --muted:#8A9096;
+  --wa:#25D366;
+  --line:rgba(255,255,255,.10);
+  --line-strong:rgba(255,255,255,.16);
+  --shadow:0 20px 60px rgba(0,0,0,.32);
+  --radius:18px;
+  --radius-sm:12px;
+  --max:1240px;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:
+    radial-gradient(circle at 84% 6%, rgba(0,174,239,.08), transparent 22%),
+    radial-gradient(circle at 14% 24%, rgba(0,59,92,.12), transparent 30%),
+    var(--bg);
+  color:var(--text);
+  font-family:Inter,Montserrat,Arial,sans-serif;
+  line-height:1.62;
+}
+body.modal-open, body.menu-open{overflow:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+button,input,select{font:inherit}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{
+  outline:3px solid var(--blue);
+  outline-offset:3px;
+}
+.container{width:min(calc(100% - 32px),var(--max));margin:auto}
+.section{padding:clamp(76px,8vw,118px) 0}
+.section-head{display:grid;gap:16px;margin-bottom:42px}
+.eyebrow{
+  font-size:.78rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--blue);
+  font-weight:900;
+}
+h1,h2,h3{
+  margin:0;
+  letter-spacing:-.03em;
+}
+h1{
+  font-size:clamp(2.8rem,7vw,5.4rem);
+  line-height:.96;
+  max-width:860px;
+}
+h2{
+  font-size:clamp(2rem,4.5vw,3.45rem);
+  line-height:1.03;
+  font-weight:750;
+}
+h3{font-size:1.26rem;line-height:1.15}
+p{margin:0;color:var(--steel)}
+.lead{font-size:clamp(1.05rem,1.8vw,1.24rem);max-width:760px;color:#d3d6da}
+.micro{display:block;font-size:.8rem;color:var(--muted);margin-top:8px}
+.mono{font:800 .75rem/1.2 ui-monospace, SFMono-Regular, Menlo, monospace;color:var(--blue);letter-spacing:.08em}
+
+/* Header */
+.header{
+  position:fixed;
+  inset:0 0 auto;
+  z-index:70;
+  background:rgba(10,10,10,.80);
+  border-bottom:1px solid transparent;
+  backdrop-filter:blur(16px);
+  transition:.25s ease;
+}
+.header.scrolled{
+  background:rgba(10,10,10,.94);
+  border-color:var(--line);
+}
+.nav{
+  height:78px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:22px;
+}
+.logo-wrap{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  background:#fff;
+  border-radius:10px;
+  padding:6px 10px;
+  border:1px solid rgba(255,255,255,.16);
+  box-shadow:0 10px 28px rgba(0,0,0,.18);
+}
+.logo-remoto{height:54px;width:auto;display:block}
+.navlinks{
+  display:flex;
+  align-items:center;
+  gap:22px;
+  color:#E0E0E0;
+  font-size:.94rem;
+}
+.navlinks a{
+  position:relative;
+  transition:.2s ease;
+}
+.navlinks a:hover{color:#fff}
+.navlinks a::after{
+  content:"";
+  position:absolute;
+  left:0;right:0;bottom:-8px;
+  height:2px;
+  background:var(--blue);
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:.2s ease;
+}
+.navlinks a:hover::after{transform:scaleX(1)}
+.menu-btn{
+  display:none;
+  width:44px;height:44px;
+  border-radius:10px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.03);
+  color:#fff;cursor:pointer
+}
+.mobile-menu{
+  position:fixed;
+  z-index:68;
+  inset:78px 0 auto;
+  padding:16px;
+  background:rgba(10,10,10,.98);
+  border-bottom:1px solid var(--line);
+  transform:translateY(-120%);
+  transition:.25s ease;
+}
+.mobile-menu.open{transform:translateY(0)}
+.mobile-menu a{
+  display:block;
+  padding:14px 8px;
+  border-bottom:1px solid var(--line);
+  font-weight:700;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:52px;
+  padding:0 22px;
+  border-radius:10px;
+  font-weight:800;
+  letter-spacing:.01em;
+  border:1px solid transparent;
+  cursor:pointer;
+  transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-wa{
+  background:var(--wa);
+  color:#071A0D;
+  box-shadow:0 10px 26px rgba(37,211,102,.18);
+  gap:9px;
+}
+.btn-wa::before{
+  content:"";
+  width:19px;height:19px;flex:0 0 19px;
+  background:center/contain no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%23071A0D' d='M16.04 3C8.86 3 3.02 8.83 3.02 16c0 2.29.6 4.52 1.73 6.49L3 29l6.68-1.75A13 13 0 0 0 16.03 29h.01C23.21 29 29 23.17 29 16S23.21 3 16.04 3Zm0 23.8a10.8 10.8 0 0 1-5.5-1.5l-.4-.24-3.96 1.04 1.06-3.86-.26-.4A10.77 10.77 0 0 1 5.24 16c0-5.96 4.85-10.8 10.81-10.8 5.95 0 10.79 4.84 10.79 10.8 0 5.95-4.84 10.8-10.8 10.8Zm5.92-8.1c-.32-.16-1.91-.94-2.2-1.05-.3-.11-.51-.16-.73.16-.21.32-.83 1.05-1.02 1.26-.19.22-.38.24-.7.08-.32-.16-1.36-.5-2.58-1.6-.95-.85-1.6-1.9-1.79-2.22-.19-.32-.02-.5.14-.66.15-.14.32-.38.49-.57.16-.19.21-.32.32-.54.11-.21.05-.4-.03-.57-.08-.16-.73-1.75-1-2.4-.26-.63-.53-.55-.73-.56h-.62c-.21 0-.57.08-.86.4-.3.33-1.13 1.1-1.13 2.7 0 1.59 1.16 3.13 1.32 3.34.16.22 2.28 3.48 5.52 4.88.77.33 1.37.53 1.84.68.77.24 1.47.21 2.03.13.62-.09 1.91-.78 2.18-1.54.27-.76.27-1.41.19-1.54-.08-.14-.3-.22-.62-.38Z'/%3E%3C/svg%3E");
+}
+.btn-wa:hover{box-shadow:0 16px 32px rgba(37,211,102,.26)}
+.btn[href^="https://wa.me/"]:not(.btn-wa){gap:9px}
+.btn[href^="https://wa.me/"]:not(.btn-wa)::before{
+  content:"";
+  width:18px;height:18px;flex:0 0 18px;
+  background:center/contain no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%2325D366' d='M16.04 3C8.86 3 3.02 8.83 3.02 16c0 2.29.6 4.52 1.73 6.49L3 29l6.68-1.75A13 13 0 0 0 16.03 29h.01C23.21 29 29 23.17 29 16S23.21 3 16.04 3Zm0 23.8a10.8 10.8 0 0 1-5.5-1.5l-.4-.24-3.96 1.04 1.06-3.86-.26-.4A10.77 10.77 0 0 1 5.24 16c0-5.96 4.85-10.8 10.81-10.8 5.95 0 10.79 4.84 10.79 10.8 0 5.95-4.84 10.8-10.8 10.8Zm5.92-8.1c-.32-.16-1.91-.94-2.2-1.05-.3-.11-.51-.16-.73.16-.21.32-.83 1.05-1.02 1.26-.19.22-.38.24-.7.08-.32-.16-1.36-.5-2.58-1.6-.95-.85-1.6-1.9-1.79-2.22-.19-.32-.02-.5.14-.66.15-.14.32-.38.49-.57.16-.19.21-.32.32-.54.11-.21.05-.4-.03-.57-.08-.16-.73-1.75-1-2.4-.26-.63-.53-.55-.73-.56h-.62c-.21 0-.57.08-.86.4-.3.33-1.13 1.1-1.13 2.7 0 1.59 1.16 3.13 1.32 3.34.16.22 2.28 3.48 5.52 4.88.77.33 1.37.53 1.84.68.77.24 1.47.21 2.03.13.62-.09 1.91-.78 2.18-1.54.27-.76.27-1.41.19-1.54-.08-.14-.3-.22-.62-.38Z'/%3E%3C/svg%3E");
+}
+.btn-outline{
+  background:rgba(255,255,255,.02);
+  color:#fff;
+  border-color:rgba(255,255,255,.30);
+}
+.btn-outline:hover{border-color:rgba(0,174,239,.46)}
+.btn-subtle{
+  background:rgba(0,174,239,.08);
+  color:#dff7ff;
+  border-color:rgba(0,174,239,.20);
+}
+
+/* Hero */
+.hero{
+  min-height:94vh;
+  padding:118px 0 64px;
+  position:relative;
+  overflow:hidden;
+  display:grid;
+  align-items:center;
+}
+.hero::before{
+  content:"";
+  position:absolute;inset:0;
+  background:
+    linear-gradient(90deg,rgba(8,10,12,.97) 0%,rgba(8,10,12,.89) 38%,rgba(8,10,12,.34) 68%,rgba(8,10,12,.16) 100%),
+    url('assets/hero-lab.webp') center/cover no-repeat;
+}
+.hero-inner{
+  position:relative;
+  z-index:2;
+  max-width:760px;
+}
+.hero h1 span{color:var(--blue)}
+.hero .lead{margin:24px 0 30px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.safety-line{
+  margin-top:28px;
+  padding-top:18px;
+  border-top:1px solid var(--line);
+  color:#d8dde0;
+  font-size:.92rem;
+}
+
+/* Brand bar */
+.brandbar{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:36px;
+  padding:22px 20px;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  background:#fff;
+}
+.brandbar img:first-child{height:76px;max-width:48%}
+.brandbar img:last-child{height:98px;max-width:40%}
+
+/* Trust */
+.trust{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  border:1px solid var(--line);
+  border-radius:16px;
+  overflow:hidden;
+  background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
+}
+.trust>div{
+  display:grid;
+  align-content:start;
+  gap:8px;
+  padding:26px 22px;
+  border-right:1px solid var(--line);
+}
+.trust>div:last-child{border-right:none}
+.trust strong{
+  display:block;
+  color:var(--blue);
+  font-size:.84rem;
+  text-transform:uppercase;
+  letter-spacing:.09em;
+}
+.trust-icon{
+  width:50px;height:50px;
+  border-radius:50%;
+  display:grid;place-items:center;
+  background:radial-gradient(circle at 30% 30%, rgba(0,174,239,.20), rgba(0,59,92,.14) 60%, rgba(255,255,255,.02));
+  border:1px solid rgba(0,174,239,.24);
+  box-shadow:inset 0 0 26px rgba(0,174,239,.08);
+  margin-bottom:6px;
+}
+.trust-icon svg{
+  width:25px;height:25px;
+  stroke:var(--blue-soft);
+  fill:none;
+  stroke-width:1.9;
+}
+
+/* Generic layouts */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:62px;align-items:center}
+.issue-list{display:grid;gap:12px}
+.issue{
+  padding:18px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.012));
+  color:#edf0f2;
+}
+.issue b{color:var(--blue);margin-right:10px}
+.issue-dot{color:rgba(0,174,239,.65);font-size:.62rem;margin-right:8px;vertical-align:middle}
+
+/* Services */
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.card{
+  padding:30px;
+  border:1px solid var(--line);
+  border-radius:20px;
+  background:linear-gradient(145deg, #13171a, #0d1012);
+  transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+  box-shadow:0 8px 26px rgba(0,0,0,.10);
+}
+.card:hover{
+  transform:translateY(-4px);
+  border-color:rgba(0,174,239,.34);
+  box-shadow:0 16px 34px rgba(0,0,0,.22);
+}
+.card.akl{
+  background:linear-gradient(145deg, rgba(0,174,239,.11), #0e1315 56%);
+}
+.card-top{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:18px;
+}
+.card-icon{
+  width:50px;height:50px;border-radius:14px;
+  display:grid;place-items:center;
+  background:rgba(0,174,239,.10);
+  border:1px solid rgba(0,174,239,.20);
+  flex:0 0 auto;
+}
+.card-icon svg{
+  width:24px;height:24px;
+  stroke:#8fdfff;fill:none;stroke-width:1.9;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.card p{margin:14px 0 18px}
+
+/* Features */
+.features{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.feature{
+  padding:4px 0 0;
+  border-top:1px solid rgba(0,174,239,.34);
+}
+.feature .n{
+  font:800 2.35rem/1 ui-monospace, monospace;
+  color:#2a3841;
+  margin-bottom:18px;
+}
+
+/* Ethics */
+.ethics{
+  background:linear-gradient(120deg,#0c1012,#0b151b);
+}
+.ethics-photo{
+  position:relative;
+  border-radius:20px;
+  overflow:hidden;
+  border:1px solid var(--line);
+  cursor:pointer;
+  transition:transform .18s ease, border-color .18s ease;
+}
+.ethics-photo:hover{transform:translateY(-3px);border-color:rgba(0,174,239,.3)}
+.ethics-photo img{width:100%;display:block}
+.ethics-overlay{
+  position:absolute;
+  inset:auto 18px 18px 18px;
+  display:flex;
+  justify-content:flex-end;
+}
+.ethics-tag{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  min-height:38px;
+  padding:0 12px;
+  border-radius:999px;
+  background:rgba(0,0,0,.56);
+  border:1px solid rgba(255,255,255,.12);
+  color:#fff;
+  font-size:.82rem;
+  font-weight:700;
+}
+.checks{display:grid;gap:14px;margin:26px 0}
+.check{
+  display:flex;gap:11px;
+  color:#d7dce0;
+}
+.check span:first-child{color:var(--blue);font-weight:900}
+
+/* Process */
+.process{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.step{
+  padding:4px 0 0;
+}
+.stepnum{
+  width:40px;height:40px;
+  border-radius:50%;
+  display:grid;place-items:center;
+  border:1px solid rgba(0,174,239,.45);
+  color:var(--blue);
+  font:800 .8rem ui-monospace, monospace;
+  margin-bottom:16px;
+  background:rgba(0,174,239,.06);
+}
+
+/* Cases */
+.cases{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.case{
+  overflow:hidden;
+  border-radius:20px;
+  border:1px solid var(--line);
+  background:#101315;
+  transition:transform .18s ease, border-color .18s ease;
+}
+.case:hover{transform:translateY(-4px);border-color:rgba(0,174,239,.28)}
+.case img{width:100%;height:230px;object-fit:cover}
+.case .content{padding:22px}
+
+/* Coverage */
+.cover-wrap{display:grid;gap:26px}
+.cover-hero{display:grid;grid-template-columns:.92fr 1.08fr;gap:26px;align-items:stretch}
+.cover-map{
+  overflow:hidden;
+  border-radius:20px;
+  border:1px solid var(--line);
+  background:#101315;
+  min-height:360px;
+}
+.cover-map img{width:100%;height:100%;object-fit:cover}
+.cover-copy{
+  padding:32px;
+  border:1px solid var(--line);
+  border-radius:20px;
+  background:linear-gradient(145deg,#111416,#0c0f11);
+}
+.coverage-box{padding:0}
+.coverage-box h3{margin-bottom:8px}
+.coverage-box div+div{
+  margin-top:22px;
+  padding-top:22px;
+  border-top:1px solid var(--line);
+}
+.modules-feature{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:26px;
+  align-items:center;
+  border:1px solid var(--line);
+  border-radius:20px;
+  overflow:hidden;
+  background:linear-gradient(145deg,#111416,#0b0e10);
+}
+.modules-feature img{
+  width:100%;height:100%;
+  object-fit:cover;
+  min-height:290px;
+}
+.modules-copy{padding:32px}
+.modules-copy h3{
+  font-size:clamp(1.42rem,2vw,2rem);
+  margin:10px 0 10px;
+}
+.modules-copy p{margin-bottom:14px}
+.modules-copy ul{margin:0;padding-left:18px;color:var(--steel)}
+.modules-copy li+li{margin-top:8px}
+
+/* FAQ */
+.faq{max-width:920px;display:grid;gap:10px}
+.faq-item{
+  border:1px solid var(--line);
+  border-radius:14px;
+  overflow:hidden;
+  background:#111416;
+}
+.faq-q{
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  padding:18px 22px;
+  background:#111416;
+  color:#fff;
+  border:0;
+  text-align:left;
+  font-weight:800;
+  cursor:pointer;
+}
+.faq-a{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height .28s ease;
+}
+.faq-a div{padding:0 22px 22px;color:var(--steel)}
+
+/* Form */
+.formwrap{
+  display:grid;
+  grid-template-columns:.82fr 1.18fr;
+  gap:50px;
+  padding:40px;
+  border:1px solid var(--line);
+  border-radius:22px;
+  background:linear-gradient(135deg, rgba(0,174,239,.08), #101214 52%);
+}
+.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field{display:grid;gap:7px}
+.field.full{grid-column:1/-1}
+label{font-size:.84rem;font-weight:800}
+input,select{
+  height:52px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,.14);
+  background:#0D1012;
+  color:#fff;
+  padding:0 14px;
+}
+input::placeholder{color:#667078}
+
+/* CTA */
+.cta{
+  padding:88px 0;
+  background:linear-gradient(110deg,#022c43,#003B5C);
+}
+.cta-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:32px;
+}
+
+/* Footer */
+footer{padding:46px 0 104px}
+.foot{display:grid;grid-template-columns:1.3fr .95fr .95fr;gap:34px}
+.footer-logo-card{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  background:#fff;
+  border-radius:12px;
+  padding:10px 14px;
+  max-width:320px;
+}
+.footer-logo-card img{display:block;max-width:275px;height:auto}
+.footlinks{
+  display:grid;
+  gap:8px;
+  color:var(--muted);
+  align-content:start;
+}
+.footlinks strong{color:#fff}
+.footlinks a{color:#aeb5bb;transition:.18s ease}
+.footlinks a:hover{color:#fff}
+.socials{display:flex;gap:12px;align-items:center;margin-top:14px;flex-wrap:wrap}
+.social-link{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  min-height:42px;
+  padding:0 12px;
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:9px;
+  color:#fff;
+  background:#111315;
+  transition:.18s ease;
+}
+.social-link:hover{border-color:rgba(0,174,239,.55);transform:translateY(-2px)}
+.social-link svg{width:20px;height:20px;flex:0 0 auto}
+.trademark-note{
+  margin-top:34px;
+  padding-top:22px;
+  border-top:1px solid var(--line);
+  font-size:.78rem;
+  line-height:1.55;
+  color:#747f86;
+  max-width:1080px;
+}
+.trademark-note strong{color:#9ca6ac}
+
+/* Floating help */
+
+/* Modal / legal */
+.modal{
+  position:fixed;z-index:100;inset:0;
+  background:rgba(0,0,0,.94);
+  display:none;
+  align-items:center;justify-content:center;
+  padding:20px;
+}
+.modal.open{display:flex}
+.modal-box{
+  position:relative;
+  width:min(1100px,96vw);
+  max-height:94vh;
+  overflow:auto;
+  background:#0f1113;
+  border:1px solid var(--line);
+  border-radius:18px;
+  box-shadow:0 28px 100px rgba(0,0,0,.6);
+}
+.modal-close{
+  position:sticky;float:right;top:12px;right:12px;
+  margin:12px;z-index:3;
+  width:42px;height:42px;border-radius:50%;
+  border:1px solid var(--line);
+  background:#15191c;color:#fff;cursor:pointer;font-size:1.2rem;
+}
+.modal-img{
+  padding:14px;
+  user-select:none;
+  -webkit-user-select:none;
+}
+.modal-img img{display:block;width:100%;pointer-events:none}
+.legal{padding:34px 36px 44px}
+.legal h3{font-size:1.8rem;margin-bottom:22px;color:#fff}
+.legal h4{color:var(--blue);margin:26px 0 8px;font-size:1.05rem}
+.legal p,.legal li{color:#d0d0d0}
+.legal ul{padding-left:22px}
+.legal-note{font-size:.86rem;color:#8d979d!important;margin-top:28px}
+
+
+
+
+.service-hero-grid{display:grid;grid-template-columns:minmax(280px,360px) 1fr;gap:26px;align-items:start;margin:24px 0 28px}
+.service-visual-card{padding:18px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(145deg,#12171a,#0d1013);display:grid;gap:14px}
+.service-visual-card img{width:100%;height:auto;object-fit:contain;border-radius:14px}
+.service-visual-card.wide img{max-height:320px;object-fit:contain;background:rgba(255,255,255,.02)}
+.service-visual-card h4{margin:0;color:#fff;font-size:1rem}
+.service-visual-card p{margin:0;color:var(--muted);font-size:.92rem;line-height:1.5}
+.service-gallery{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.service-gallery .service-visual-card{height:100%}
+.service-gallery .service-visual-card img{max-height:220px}
+@media(max-width:880px){.service-hero-grid{grid-template-columns:1fr}.service-gallery{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.service-gallery{grid-template-columns:1fr}}
+
+/* Microanimations */
+.reveal{
+  opacity:1;
+  transform:none;
+}
+.reveal.motion-prep{
+  opacity:0;
+  transform:translateY(18px);
+  transition:opacity .6s ease, transform .6s ease;
+}
+.reveal.motion-prep.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+.reveal.delay-1{transition-delay:.08s}
+.reveal.delay-2{transition-delay:.16s}
+.reveal.delay-3{transition-delay:.24s}
+
+
+.service-more{margin-top:14px;display:inline-flex;align-items:center;gap:8px;color:#aee8ff;background:none;border:0;padding:0;font-weight:800;cursor:pointer}
+.service-more:hover{color:#fff}
+.service-more svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:2}
+.service-detail{padding:34px 36px 42px}
+.service-detail .service-kicker{color:var(--blue);font-size:.76rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px}
+.service-detail h3{font-size:clamp(1.75rem,3vw,2.55rem);margin-bottom:14px}
+.service-detail .intro{font-size:1.05rem;color:#d5d9dc;margin-bottom:26px;max-width:760px}
+.service-steps{display:grid;gap:14px}
+.service-step{display:grid;grid-template-columns:42px 1fr;gap:14px;align-items:start;padding:16px 0;border-top:1px solid var(--line)}
+.service-step:first-child{border-top:0}
+.service-step-num{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:rgba(0,174,239,.08);border:1px solid rgba(0,174,239,.28);color:var(--blue);font:800 .74rem ui-monospace,monospace}
+.service-step h4{margin:0 0 5px;color:#fff;font-size:1rem}
+.service-step p{color:#b9c0c5}
+.service-detail .modal-cta{margin-top:24px}
+.chat-launch{position:fixed;right:20px;bottom:20px;z-index:62;width:62px;height:62px;border-radius:50%;border:0;display:grid;place-items:center;background:var(--wa);color:#071A0D;font-size:1.45rem;font-weight:900;box-shadow:0 16px 40px rgba(37,211,102,.24);cursor:pointer}.chat-launch svg{width:27px;height:27px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.chat-panel{position:fixed;right:20px;bottom:94px;z-index:64;width:min(360px,calc(100vw - 28px));background:#0f1315;border:1px solid var(--line-strong);border-radius:18px;box-shadow:0 26px 70px rgba(0,0,0,.48);overflow:hidden;opacity:0;transform:translateY(12px) scale(.98);pointer-events:none;transition:.2s ease}
+.chat-panel.open{opacity:1;transform:none;pointer-events:auto}
+.chat-head{padding:17px 18px;background:linear-gradient(120deg,#0b4c2b,#128c4a);display:flex;align-items:center;justify-content:space-between;gap:12px}
+.chat-head strong{font-size:1rem}.chat-head small{display:block;color:#d9f8e5;margin-top:2px}
+.chat-close{border:0;background:rgba(0,0,0,.12);color:#fff;width:32px;height:32px;border-radius:50%;cursor:pointer}
+.chat-body{padding:18px}.chat-bubble{background:#172027;border-radius:4px 14px 14px 14px;padding:12px 14px;color:#eef1f3;margin-bottom:14px;font-size:.93rem}
+.chat-fields{display:grid;gap:10px}.chat-fields input,.chat-fields select{height:46px}.chat-note{font-size:.74rem;color:#7f8b92;margin-top:9px}
+@media(max-width:680px){.chat-launch{display:grid;right:14px;bottom:14px;width:58px;height:58px}.chat-panel{right:10px;bottom:82px;width:calc(100vw - 20px)}}
+
+@media(max-width:980px){
+  .navlinks{display:none}
+  .menu-btn{display:inline-flex;align-items:center;justify-content:center}
+  .trust{grid-template-columns:1fr 1fr}
+  .trust>div:nth-child(2){border-right:none}
+  .trust>div:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .grid2,.cover-hero,.modules-feature,.formwrap,.cta-inner{grid-template-columns:1fr;display:grid}
+  .cards,.cases{grid-template-columns:1fr}
+  .features{grid-template-columns:1fr 1fr}
+  .process{grid-template-columns:1fr 1fr 1fr}
+  .foot{grid-template-columns:1fr 1fr}
+  .hero::before{
+    background:
+      linear-gradient(180deg,rgba(8,10,12,.92),rgba(8,10,12,.72)),
+      url('assets/hero-lab.webp') 72% center/cover no-repeat;
+  }
+}
+@media(max-width:680px){
+  .container{width:min(calc(100% - 22px), var(--max))}
+  .nav{height:74px}
+  .logo-wrap{padding:5px 8px;border-radius:8px}
+  .logo-remoto{height:42px}
+  .hero{min-height:auto;padding:106px 0 56px}
+  .section{padding:74px 0}
+  .actions{display:grid}
+  .actions .btn{width:100%}
+  .brandbar{gap:18px;padding:18px 12px}
+  .brandbar img:first-child{height:auto}
+  .brandbar img:last-child{height:auto}
+  .trust,.features,.process,.formgrid,.foot{grid-template-columns:1fr}
+  .trust>div{border-right:none;border-bottom:1px solid var(--line)}
+  .trust>div:last-child{border-bottom:none}
+  .cases .case img{height:210px}
+  .foot{gap:26px}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important}
+  .reveal{opacity:1;transform:none}
+}
+img{height:auto}
+h1,h2,h3{font-family:Montserrat,Inter,Arial,sans-serif}h1{font-weight:800}
+.mono{font-family:"Roboto Mono",ui-monospace,Menlo,monospace}
+.trustbar{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;width:min(calc(100% - 32px),var(--max));margin:-28px auto 0;position:relative;z-index:2}
+.trustbar div{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-sm);padding:16px 18px;font-weight:700;color:#fff;font-size:.92rem}
+.trustbar span{display:block;font-weight:400;color:var(--muted);font-size:.8rem;margin-top:2px}
+.price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.price-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px;display:grid;gap:10px;align-content:start}
+.price-card.hl{border-color:var(--blue);box-shadow:0 0 0 1px var(--blue) inset}
+.price-card .amount{font-size:1.55rem;font-weight:800;color:#fff;letter-spacing:-.02em;font-family:Montserrat,Inter,sans-serif}
+.price-card .amount small{font-size:.8rem;color:var(--muted);font-weight:500}
+.note{margin-top:22px;padding:16px 20px;border-left:3px solid var(--blue);background:var(--surface-3);border-radius:8px;font-size:.92rem}
+.compat-wrap{overflow-x:auto}table.compat{width:100%;border-collapse:collapse;min-width:620px}
+.compat th,.compat td{text-align:left;padding:14px 16px;border-bottom:1px solid var(--line);font-size:.93rem;vertical-align:top}
+.compat th{color:var(--blue);font-size:.76rem;letter-spacing:.12em;text-transform:uppercase}
+.tag{display:inline-block;padding:3px 10px;border-radius:99px;font-size:.78rem;font-weight:700}
+.tag.ok{background:rgba(37,211,102,.14);color:#6EE7A0}.tag.soon{background:rgba(0,174,239,.14);color:var(--blue-soft)}.tag.ask{background:rgba(255,255,255,.08);color:var(--steel)}
+.about{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;align-items:center}
+.ph{aspect-ratio:4/5;border:1px dashed var(--line-strong);border-radius:var(--radius);display:grid;place-items:center;color:var(--muted);text-align:center;padding:20px;font-size:.9rem}
+.where{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:40px}
+.where>div{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-sm);padding:20px}.where h3{font-size:1rem;margin-bottom:6px}
+details.carta{margin-top:18px;border:1px solid var(--line);border-radius:var(--radius-sm);padding:14px 18px;background:var(--surface-3)}
+details.carta summary{cursor:pointer;font-weight:700;color:#fff}
+details.carta ol{margin:12px 0 0;padding-left:20px;color:var(--steel);font-size:.92rem;display:grid;gap:8px}
+.sticky-wa{display:none}
+@media(max-width:820px){.trustbar{grid-template-columns:1fr 1fr}}
+@media(max-width:720px){.about{grid-template-columns:1fr}.sticky-wa{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:60;justify-content:center}.chat-launch{bottom:84px!important}body{padding-bottom:76px}}
+.logo-wrap{background:transparent;border:0;box-shadow:none;padding:0}.logo-remoto{height:62px}
+@media(max-width:720px){.logo-wrap{padding:0}.logo-remoto{height:42px}}
+.footer-logo-card{background:transparent;padding:0;border-radius:0}.footer-logo-card img{max-width:300px}
+.price-row{display:grid;gap:2px}.price-row+.price-row{padding-top:12px;border-top:1px solid var(--line)}
+.vf{display:grid;gap:20px;grid-template-columns:1fr;position:relative;padding:22px;border:1px solid var(--line-strong);border-radius:var(--radius);background:radial-gradient(120% 90% at 100% 0,rgba(0,174,239,.14),transparent 55%),linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px) 0 0/28px 28px,linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px) 0 0/28px 28px,var(--surface);box-shadow:0 0 0 1px rgba(0,174,239,.12),0 24px 60px rgba(0,0,0,.35)}
+@media(min-width:900px){.vf{grid-template-columns:minmax(300px,.8fr) 1.2fr;padding:32px;gap:32px}}
+.vf-steps{display:flex;gap:6px;list-style:none;margin:0 0 18px;padding:0}
+.vf-steps li{flex:1;display:flex;align-items:center;gap:6px;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding-bottom:10px;border-bottom:2px solid var(--line);transition:.3s}
+.vf-steps b{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;border:1px solid var(--line-strong);font-size:.75rem}
+.vf-steps li.on{color:#fff;border-color:var(--blue)}.vf-steps li.on b{background:var(--blue);border-color:var(--blue);color:#001a26;box-shadow:0 0 14px rgba(0,174,239,.6)}
+.vf-field{display:grid;gap:6px;margin-bottom:14px}.vf-field label,.vf-obs legend{font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--steel)}
+.vf select{width:100%;min-height:48px;padding:0 14px;border-radius:12px;border:1px solid var(--line-strong);background:#0d1215;color:#fff;font:inherit;font-weight:600}
+.vf select:focus-visible,.vf-obs input:focus-visible+span{outline:2px solid var(--blue);outline-offset:2px}
+.vf select:disabled{opacity:.45}.vf select:not(:disabled):hover{border-color:var(--blue)}
+
+.vf-obs{border:0;padding:0;margin:0 0 14px;display:grid;gap:8px}.vf-obs legend{margin-bottom:8px}.vf-obs small{display:block;font-weight:400;color:var(--muted);font-size:.8rem;margin-top:2px}.vf-obs label{position:relative}.vf-obs input{position:absolute;opacity:0}
+.vf-obs span{display:block;padding:11px 14px;border:1px solid var(--line-strong);border-radius:10px;font-size:.92rem;cursor:pointer;color:var(--steel)}
+.vf-obs input:checked+span{border-color:var(--blue);color:#fff;background:rgba(0,174,239,.14)}
+.vf-out{min-height:340px;display:grid;align-items:stretch}
+.vf-empty{display:grid;place-content:center;justify-items:center;text-align:center;gap:10px;padding:24px;border:1px dashed var(--line-strong);border-radius:var(--radius-sm)}
+.vf-empty h3{font-size:1.2rem}.vf-empty p{max-width:34ch;color:var(--steel)}
+.vf-radar{width:120px;height:120px;color:var(--blue)}.vf-radar .r{transform-origin:60px 60px;animation:vfp 2.6s ease-out infinite;opacity:0}.vf-radar .r2{animation-delay:1.3s}
+@keyframes vfp{0%{transform:scale(.4);opacity:.9}100%{transform:scale(1.15);opacity:0}}
+.vf-card{--c:var(--blue);display:grid;gap:14px;align-content:start;padding:24px;border-radius:var(--radius-sm);border:1px solid var(--c);background:linear-gradient(160deg,color-mix(in srgb,var(--c) 14%,transparent),rgba(10,10,10,.6));animation:vfin .45s ease both}
+.vf-card.s0{--c:#34D399}.vf-card.s1{--c:#F5B942}.vf-card.s2{--c:var(--blue)}
+@keyframes vfin{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.vf-badge{display:inline-flex;align-items:center;gap:8px;justify-self:start;padding:6px 14px;border-radius:99px;font-size:.78rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--c);background:color-mix(in srgb,var(--c) 16%,transparent)}
+.vf-badge i{width:9px;height:9px;border-radius:50%;background:var(--c);box-shadow:0 0 0 0 var(--c);animation:vfd 1.8s infinite}
+@keyframes vfd{70%{box-shadow:0 0 0 9px transparent}100%{box-shadow:0 0 0 0 transparent}}
+.vf-card h3{font-size:clamp(1.5rem,3.4vw,2rem);font-weight:800;letter-spacing:-.02em}
+.vf-title-row{display:flex;align-items:center;gap:14px;min-width:0}.vf-title-copy{display:grid;gap:8px;min-width:0}
+.vf-img{width:80px;height:80px;flex:0 0 80px;display:grid;place-items:center;border-radius:14px;border:1px solid var(--line-strong);background:rgba(255,255,255,.05);overflow:hidden}
+.vf-img img{width:80px;height:80px;object-fit:contain;padding:4px}
+.vf-nota-sistema{margin:0;color:var(--steel);font-size:.86rem;line-height:1.45}
+.vf-wait{display:grid;place-content:center;justify-items:center;text-align:center;gap:9px;padding:28px;border:1px dashed var(--line-strong);border-radius:var(--radius-sm);color:var(--steel)}
+.vf-obs[hidden]{display:none!important}
+@media(max-width:560px){.vf-title-row{align-items:flex-start;flex-direction:column}.vf-img{width:72px;height:72px;flex-basis:72px}.vf-img img{width:72px;height:72px}}
+.vf-meta{display:flex;flex-wrap:wrap;gap:8px}.vf-meta span{padding:4px 12px;border:1px solid var(--line-strong);border-radius:99px;font-size:.82rem;color:var(--steel)}
+.vf-svcs{list-style:none;margin:0;padding:0;display:grid;gap:10px}@media(min-width:620px){.vf-svcs{grid-template-columns:1fr 1fr}}
+.vf-svcs li{display:flex;align-items:center;gap:12px;font-size:.93rem;font-weight:600}
+.vf-svcs .ic{flex:none;display:grid;place-items:center;width:36px;height:36px;border-radius:50%;border:1px solid var(--blue);color:var(--blue);background:rgba(0,174,239,.1)}.vf-svcs svg,.vf-eth svg{width:18px;height:18px}
+.vf-note{margin:0;padding:12px 14px;border-left:3px solid var(--c);background:rgba(255,255,255,.04);border-radius:8px;font-size:.92rem}
+.vf-eth{display:flex;gap:10px;align-items:center;margin:0;font-size:.85rem;color:var(--steel)}.vf-eth svg{flex:none;color:var(--blue)}
+.vf-card .btn{justify-self:stretch;text-align:center}.vf-foot{margin-top:18px;color:var(--steel)}.vf-foot a{color:var(--blue);font-weight:700}
+@media(prefers-reduced-motion:reduce){.vf *,.vf-card{animation:none!important}}
+</style>
+</head>
+<body>
+
+<header class="header" id="siteHeader">
+  <div class="container nav">
+    <a href="#inicio" class="logo-wrap" aria-label="RE:MOTO LAB - inicio"><img width="640" height="210" class="logo-remoto" src="assets/logo-remoto.png" alt="RE:MOTO LAB"></a>
+
+    <nav class="navlinks" aria-label="Navegación principal">
+      <a href="#servicios">Servicios</a>
+      <a href="#precios">Precios</a>
+      <a href="#compatibilidad">Compatibilidad</a>
+      <a href="#seguridad">Seguridad</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#casos">Casos</a>
+      <a href="#cobertura">Cobertura</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+
+
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<nav class="mobile-menu" id="mobileMenu" aria-label="Navegación móvil">
+  <a href="#servicios">Servicios</a>
+      <a href="#precios">Precios</a>
+      <a href="#compatibilidad">Compatibilidad</a>
+  <a href="#seguridad">Seguridad</a>
+  <a href="#proceso">Proceso</a>
+  <a href="#casos">Casos</a>
+  <a href="#cobertura">Cobertura</a>
+  <a href="#faq">FAQ</a>
+  <a href="#contacto">Cotizar</a>
+</nav>
+
+<main>
+  <section class="hero" id="inicio">
+    <div class="container hero-inner reveal">
+      <div class="eyebrow">Programación de llaves para BMW Motorrad</div>
+      <h1>¿TU BMW NO RECONOCE LA LLAVE? <span>NOSOTROS SÍ.</span></h1>
+      <p class="lead">Programación, duplicado y recuperación de llaves BMW Motorrad. <strong style="color:#fff">Usualmente el mismo día. Sin alteraciones innecesarias. Sin guardar tus códigos de seguridad.</strong></p>
+      <div class="actions">
+        <div>
+          <a class="btn btn-wa" href="https://wa.me/524521791230?text=Hola%20RE%3AMOTO%20LAB.%20Quiero%20cotizar%20mi%20BMW%20Motorrad.%0A%0AModelo%3A%0AA%C3%B1o%3A%0ACiudad%3A" target="_blank" rel="noopener">Solicitar cotización</a>
+          <span class="micro">Toma menos de 2 minutos.</span>
+        </div>
+        <a class="btn btn-outline" href="#servicios">Ver servicios</a>
+      </div>
+      <div class="safety-line">✓ Carta de Ética y Seguridad Digital incluida.    ✓ Garantía por escrito.</div>
+    </div>
+  </section>
+
+  <div class="trustbar reveal"><div>Garantía por escrito<span>90 días naturales, con póliza</span></div><div>Comprobante con folio<span>De cada servicio</span></div><div>Carta de Ética y Seguridad<span>Firmada en cada servicio</span></div><div>Procedimiento explicado<span>Antes de tocar tu moto</span></div></div>
+
+  <section class="section">
+    <div class="container">
+      <div class="trust reveal">
+        <div class="reveal delay-1">
+          <div class="trust-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M5 17h14"/><path d="M6 17l1.5-5h9L18 17"/><circle cx="8" cy="18" r="1.7"/><circle cx="16" cy="18" r="1.7"/><path d="M7 12V9l2-2h6l2 2v3"/></svg>
+          </div>
+          <strong>ESPECIALISTAS BMW MOTORRAD</strong><p>Solo sistemas de llave de motos BMW.</p>
+        </div>
+        <div class="reveal delay-2">
+          <div class="trust-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M7 15c0-3.5 2.5-6 5.5-6h4.5"/><path d="M15 6l3 3-3 3"/><path d="M4 20h16"/><path d="M7 20v-5"/><path d="M12 20v-4"/><path d="M17 20v-7"/></svg>
+          </div>
+          <strong>PÉRDIDA TOTAL DE LLAVES</strong>
+          <p>Recuperación sin llave funcional.</p>
+        </div>
+        <div class="reveal delay-3">
+          <div class="trust-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.8-2.8 7.8-7 10-4.2-2.2-7-5.2-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
+          </div>
+          <strong>Seguridad digital</strong>
+          <p>Códigos tratados como información sensible.</p>
+        </div>
+        <div class="reveal delay-3">
+          <div class="trust-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M3 12h18"/><path d="M12 3a9 9 0 0 1 0 18"/><path d="M12 3a9 9 0 0 0 0 18"/><path d="M3 12a9 9 0 0 1 18 0"/></svg>
+          </div>
+          <strong>Cobertura nacional</strong>
+          <p>Recepción de módulos y programación en todo México.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container grid2">
+      <div class="section-head reveal">
+        <div class="eyebrow">¿Te está pasando esto?</div>
+        <h2>Perder tu llave no debería significar quedarte sin moto.</h2>
+        <p class="lead">Ese es exactamente el tipo de problema que resolvemos.</p>
+        <div>
+          <a class="btn btn-wa" href="https://wa.me/524521791230?text=Hola%20RE%3AMOTO%20LAB.%20Quiero%20contarles%20qu%C3%A9%20le%20pas%C3%B3%20a%20mi%20BMW." target="_blank" rel="noopener">Cuéntanos qué le pasó a tu BMW</a>
+          <span class="micro">Te decimos qué procedimiento necesita.</span>
+        </div>
+      </div>
+      <div class="issue-list reveal">
+        <div class="issue"><span class="issue-dot">●</span> <b>01</b> Tu BMW dejó de reconocer la llave.</div>
+        <div class="issue"><span class="issue-dot">●</span> <b>02</b> Perdiste todas las llaves.</div>
+        <div class="issue"><span class="issue-dot">●</span> <b>03</b> Solo tienes una y quieres prevenir una pérdida total.</div>
+        <div class="issue"><span class="issue-dot">●</span> <b>04</b> Te preocupa qué sucede con los datos de seguridad de tu moto.</div>
+        <div class="issue"><span class="issue-dot">●</span> <b>05</b> No quieres errores técnicos ni improvisaciones sobre tu moto.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="servicios">
+    <div class="container">
+      <div class="section-head reveal"><div class="eyebrow">Servicios</div><h2>Soluciones para volver a rodar</h2><p class="lead">Desde un duplicado preventivo hasta una recuperación de pérdida total de llaves.</p></div>
+      <div class="cards">
+        <article class="card reveal"><div class="card-top"><div><span class="mono">01 / KEYLESS RIDE</span><h3>DUPLICADO DE PROXIMIDAD</h3></div><div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="6.5" cy="12" r="1.8"/><path d="M8.6 12H10.2"/><path d="M12.4 9.3c1 .55 1.6 1.47 1.6 2.7s-.6 2.15-1.6 2.7"/><path d="M15 7.4c1.72.96 2.8 2.63 2.8 4.6S16.72 15.64 15 16.6"/><path d="M17.7 5.5c2.35 1.28 3.8 3.62 3.8 6.5s-1.45 5.22-3.8 6.5"/></svg></div></div><p>Segunda llave de proximidad programada para tu BMW, ideal como respaldo y para prevenir un procedimiento de recuperación de pérdida total.</p><button class="service-more" data-open="keylessDetail">Ver qué incluye <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></button></article>
+        <article class="card akl reveal delay-1"><div class="card-top"><div><span class="mono">02 / RECUPERACIÓN TOTAL</span><h3>ALL KEYS LOST</h3></div><div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="7.8" cy="7.8" r="3.2"/><path d="M7.1 6.8a1.05 1.05 0 0 1 2.1.2c0 .85-.7 1.05-1.08 1.4-.27.24-.38.47-.38.86"/><circle cx="8.05" cy="10.95" r=".55" fill="#8fdfff" stroke="none"/><circle cx="13.4" cy="15.2" r="2.25"/><path d="M15.65 15.2H21"/><path d="M18.15 15.2V13.4"/><path d="M20.4 15.2v-1.3"/></svg></div></div><p>Recuperación cuando ya no tienes ninguna llave funcional y la motocicleta necesita volver a reconocer una llave válida.</p><button class="service-more" data-open="aklDetail">Ver qué incluye <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></button></article>
+        <article class="card reveal delay-2"><div class="card-top"><div><span class="mono">03 / LLAVE + TRANSPONDER</span><h3>DUPLICADO DE LLAVE MECÁNICA DE GIRO</h3></div><div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="7.5" cy="12.5" r="3.2"/><path d="M10.5 12.5H20"/><path d="M16 12.5V10"/><path d="M19 12.5V10"/></svg></div></div><p>Llave mecánica cortada con tecnología computarizada CNC, con su chip autorizado para que no solo gire: también permita arrancar la motocicleta.</p><button class="service-more" data-open="mechanicalDetail">Ver qué incluye <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></button></article>
+        <article class="card reveal delay-3"><div class="card-top"><div><span class="mono">04 / CODIFICACIÓN</span><h3>TFT SPORT + FUNCIONES PREMIUM</h3></div><div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M7 20h10"/><path d="M9 17v3"/><path d="M15 17v3"/></svg></div></div><p>Activación de entorno Sport y funciones disponibles en la configuración electrónica de modelos compatibles.</p><button class="service-more" data-open="tftDetail">Ver qué incluye <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></button></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="precios"><div class="container">
+<div class="section-head reveal"><div class="eyebrow">Precios</div><h2>Sabes cuánto cuesta antes de empezar.</h2><p class="lead">Precios desde, en pesos mexicanos. El precio final depende de tu modelo, año y diagnóstico.</p></div>
+<div class="price-grid">
+<div class="price-card reveal"><span class="mono">KEYLESS RIDE</span>
+<h3>Duplicado de proximidad</h3>
+<div class="price-row"><span class="mono">DESDE</span><div class="amount">$3,900&nbsp;<small>MXN</small></div></div>
+<p>Segunda llave programada y verificada.</p>
+</div>
+<div class="price-card hl reveal delay-1"><span class="mono">ALL KEYS LOST</span>
+<h3>Pérdida total de llaves</h3>
+<div class="price-row"><span class="mono">PROXIMIDAD DESDE</span><div class="amount">$6,000&nbsp;<small>MXN</small></div></div>
+<div class="price-row"><span class="mono">LLAVE DE GIRO DESDE</span><div class="amount">$2,900&nbsp;<small>MXN</small></div></div>
+<p>Recuperación del sistema y nueva llave autorizada.</p>
+</div>
+<div class="price-card reveal delay-2"><span class="mono">LLAVE DE GIRO</span>
+<h3>Llave mecánica con chip y diagnóstico</h3>
+<div class="price-row"><span class="mono">DESDE</span><div class="amount">$1,500&nbsp;<small>MXN</small></div></div>
+<p>Según modelo y sistema.</p>
+<a class="btn btn-outline" href="https://wa.me/524521791230?text=Hola%20RE%3AMOTO%20LAB.%20Quiero%20una%20cotizaci%C3%B3n.%0A%0AModelo%3A%0AA%C3%B1o%3A" target="_blank" rel="noopener">Cotizar por WhatsApp</a>
+</div>
+<div class="price-card reveal delay-3"><span class="mono">CODIFICACIÓN</span>
+<h3>TFT Sport</h3>
+<div class="price-row"><div class="amount">$750&nbsp;<small>MXN</small></div></div>
+<p>En modelos con tablero compatible.</p>
+</div>
+</div>
+<div class="note reveal">Sin anticipo en servicios ordinarios. El diagnóstico puede tener costo y se bonifica total o parcialmente si autorizas el servicio. Consulta los <a href="javascript:void(0)" data-open="termsModal" style="color:var(--blue)">Términos de servicio</a>.</div>
+</div></section>
+<section class="section" id="compatibilidad"><div class="container">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="i-fob" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="3" width="10" height="18" rx="4"/><circle cx="12" cy="9" r="1.6"/><path d="M10 15h4"/></symbol><symbol id="i-key" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="12" r="3.2"/><path d="M11 12h9M17 12v3M20 12v2.4"/></symbol><symbol id="i-akl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></symbol><symbol id="i-add" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="12" r="3.2"/><path d="M11 12h4M18 9v6M15 12h6"/></symbol><symbol id="i-tft" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M7 20h10M9 17v3M15 17v3"/></symbol><symbol id="i-rs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5a4 4 0 0 0-5 5L4 17l3 3 5.5-5.5a4 4 0 0 0 5-5l-2.5 2.5-2.5-.5-.5-2.5z"/></symbol><symbol id="i-dx" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.2-4.2"/></symbol><symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9.5 12.5l2 2 3.5-4"/></symbol></defs></svg>
+<div class="section-head reveal"><div class="eyebrow">Compatibilidad</div><h2>Confirma si tu BMW está dentro.</h2><p class="lead">Selecciona año, familia y modelo. Te decimos al instante qué servicios aplican.</p></div>
+<div class="vf reveal">
+<div class="vf-form">
+<ol class="vf-steps" aria-hidden="true"><li class="on"><b>1</b>Año</li><li><b>2</b>Familia</li><li><b>3</b>Modelo</li><li><b>4</b>Resultado</li></ol>
+<div class="vf-field"><label for="vfYear">Año de tu moto</label><select id="vfYear"><option value="">Selecciona el año</option></select></div>
+<div class="vf-field"><label for="vfFam">Familia</label><select id="vfFam" disabled><option value="">Primero elige el año</option></select></div>
+<div class="vf-field"><label for="vfModel">Modelo</label><select id="vfModel" disabled><option value="">Primero elige la familia</option></select></div>
+<fieldset class="vf-obs" hidden><legend>¿Qué tipo de llave trae tu moto?</legend>
+<label><input type="radio" name="vfObs" value="keyless"><span><strong>Proximidad</strong><small>La llevas contigo; no se inserta.</small></span></label>
+<label><input type="radio" name="vfObs" value="mechanical"><span><strong>Llave de giro</strong><small>Se inserta y se gira en el interruptor.</small></span></label>
+<label><input type="radio" name="vfObs" value="" checked><span><strong>No estoy seguro</strong><small>Lo confirmamos con un diagnóstico.</small></span></label></fieldset>
+</div>
+<div class="vf-out" id="vfOut" role="status" aria-live="polite"><noscript>Activa JavaScript para usar el verificador o escríbenos por WhatsApp.</noscript></div>
+</div>
+<p class="vf-foot reveal">¿No aparece tu modelo? <a id="vfMissingLink" href="https://wa.me/524521791230?text=Hola%20RE%3AMOTO%20LAB.%20Mi%20moto%20no%20aparece%20en%20el%20verificador." target="_blank" rel="noopener">Escríbenos por WhatsApp</a></p>
+</div></section>
+<section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="eyebrow">Por qué RE:MOTO LAB</div>
+        <h2>No todas las motos se programan igual.</h2>
+        <p class="lead">La diferencia no está solo en programar una llave. Está en saber qué estás tocando y por qué.</p>
+      </div>
+      <div class="features">
+        <div class="feature reveal"><div class="n">01</div><h3>Identificamos el sistema</h3><p>Determinamos qué arquitectura equipa tu BMW.</p></div>
+        <div class="feature reveal delay-1"><div class="n">02</div><h3>Elegimos el procedimiento</h3><p>Sin adivinar y sin soldar. Solo abrimos un módulo cuando el procedimiento lo exige, y te lo explicamos antes.</p></div>
+        <div class="feature reveal delay-2"><div class="n">03</div><h3>Verificamos el componente</h3><p>Antes de empezar te decimos qué componente se instalará: original BMW o compatible de alta calidad.</p></div>
+        <div class="feature reveal delay-3"><div class="n">04</div><h3>Probamos antes de entregar</h3><p>El servicio termina cuando el funcionamiento ha sido verificado.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section ethics" id="seguridad">
+    <div class="container grid2">
+      <div class="reveal">
+        <div class="section-head">
+          <div class="eyebrow">Seguridad digital</div>
+          <h2>Tu moto te pertenece. Sus datos también.</h2>
+          <p class="lead">La programación de llaves implica acceso a sistemas sensibles. Por eso trabajamos con autorización, trazabilidad y tratamiento controlado de la información.</p>
+        </div>
+        <div class="checks">
+          <div class="check"><span>✓</span><span>Los datos necesarios se usan únicamente para ejecutar, documentar o respaldar el servicio.</span></div>
+          <div class="check"><span>✓</span><span>Protegemos los códigos y la información de seguridad de tu motocicleta, limitando su uso al servicio autorizado.</span></div>
+          <div class="check"><span>✓</span><span>Las llaves perdidas pueden desactivarse cuando el sistema lo permite y previa autorización del propietario.</span></div>
+          <div class="check"><span>✓</span><span>El procedimiento se explica antes de comenzar.</span></div>
+        </div>
+        <details class="carta"><summary>Lee los compromisos de la Carta de Ética</summary><ol>
+<li><b>Alcance y propiedad.</b> Pedimos evidencia razonable de propiedad; solo hacemos lo aprobado en la orden y cualquier cosa adicional requiere tu autorización.</li>
+<li><b>Conservación limitada.</b> Guardamos orden, contacto, VIN, autorizaciones, diagnóstico y evidencia de entrega para seguimiento y garantía, con acceso limitado.</li>
+<li><b>Archivos técnicos.</b> Si se requiere un respaldo de configuración, se usa solo para ejecutar o recuperar el servicio y atender la garantía. No comercializamos códigos ni archivos de seguridad.</li>
+<li><b>Llaves extraviadas.</b> Se desactivan solo con tu autorización específica, cuando el equipo y la arquitectura lo permiten y puede verificarse.</li>
+<li><b>Intervención y evidencia.</b> Priorizamos el método de menor intervención. Grabamos el proceso solo con tu autorización.</li>
+<li><b>Garantía.</b> Alcance y vigencia constan en la póliza que acompaña tu orden.</li></ol></details>
+        <span class="micro">Consulta el documento completo en la imagen.</span>
+      </div>
+      <div class="ethics-photo reveal delay-1" data-open="ethicsModal" role="button" tabindex="0" aria-label="Abrir Carta de Ética">
+        <img width="1448" height="1086" loading="lazy" src="assets/etica-lab.webp" alt="Carta de Ética de RE:MOTO LAB junto a llave Keyless Ride y llave mecánica BMW Motorrad en laboratorio">
+        <div class="ethics-overlay"><div class="ethics-tag">Ver documento</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="proceso">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="eyebrow">Proceso</div>
+        <h2>Cinco pasos para volver a rodar</h2>
+        <p class="lead">Desde el primer mensaje sabes qué sigue.</p>
+      </div>
+      <div class="process">
+        <div class="step reveal"><div class="stepnum">01</div><h3>Escríbenos</h3><p>Modelo, año, ubicación y qué ha pasado con tu llave.</p></div>
+        <div class="step reveal delay-1"><div class="stepnum">02</div><h3>Identificamos el sistema</h3><p>Determinamos la arquitectura y el alcance.</p></div>
+        <div class="step reveal delay-2"><div class="stepnum">03</div><h3>Te cotizamos</h3><p>Sabes qué se hará y cuánto costará. Sin sorpresas.</p></div>
+        <div class="step reveal delay-3"><div class="stepnum">04</div><h3>Realizamos el servicio</h3><p>Diagnóstico, programación o recuperación.</p></div>
+        <div class="step reveal delay-3"><div class="stepnum">05</div><h3>Probamos y entregamos</h3><p>Verificamos antes de entregar.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEMPORAL: las imágenes de esta sección son de ejemplo. Reemplazar por fotos reales de tus servicios -->
+  <section class="section" id="casos">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="eyebrow">Casos de éxito</div>
+        <h2>BMW que volvieron a rodar</h2>
+        <p class="lead">Casos reales contados de forma simple: problema, intervención y resultado.</p>
+      </div>
+      <div class="cases">
+        <article class="case reveal">
+          <img width="1536" height="1024" loading="lazy" src="assets/caso-exito.webp" alt="Motociclista saliendo de RE:MOTO LAB con motocicleta BMW">
+          <div class="content">
+            <span class="mono">R 1250 GS · ALL KEYS LOST</span>
+            <h3>Pérdida total de llaves</h3>
+            <p><strong style="color:#fff">Problema:</strong> sin ninguna llave funcional.</p>
+            <p><strong style="color:#fff">Intervención:</strong> recuperación del sistema y programación de nueva llave.</p>
+            <p><strong style="color:#fff">Resultado:</strong> motocicleta nuevamente operativa.</p>
+          </div>
+        </article>
+
+        <article class="case reveal delay-1">
+          <img width="1448" height="1086" loading="lazy" src="assets/hero-lab.webp" alt="BMW y llave Keyless en laboratorio">
+          <div class="content">
+            <span class="mono">R 1250 GS · KEYLESS</span>
+            <h3>Duplicado preventivo</h3>
+            <p><strong style="color:#fff">Problema:</strong> solo una llave disponible.</p>
+            <p><strong style="color:#fff">Intervención:</strong> programación de segunda llave Keyless.</p>
+            <p><strong style="color:#fff">Resultado:</strong> respaldo antes de una pérdida total.</p>
+          </div>
+        </article>
+
+        <article class="case reveal delay-2">
+          <img width="1448" height="1086" loading="lazy" src="assets/recepcion-modulos.webp" alt="Recepción de módulos BMW Motorrad por paquetería con ECU, módulo de inmovilizador y llaves">
+          <div class="content">
+            <span class="mono">SERVICIO NACIONAL</span>
+            <h3>Recepción de módulos</h3>
+            <p><strong style="color:#fff">Problema:</strong> cliente fuera de Michoacán.</p>
+            <p><strong style="color:#fff">Intervención:</strong> diagnóstico y trabajo en laboratorio.</p>
+            <p><strong style="color:#fff">Resultado:</strong> servicio sin trasladar físicamente la motocicleta.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="cobertura">
+    <div class="container cover-wrap">
+      <div class="cover-hero">
+        <div class="cover-map reveal">
+          <img width="1448" height="1086" loading="lazy" src="assets/mapa-cobertura.webp" alt="Cobertura nacional desde Uruapan, Michoacán, con módulos y llaves BMW Motorrad">
+        </div>
+        <div class="cover-copy reveal delay-1">
+          <div class="section-head" style="margin-bottom:24px">
+            <div class="eyebrow">Nuestra Cobertura</div>
+            <h2>Uruapan como base. México como cobertura.</h2>
+            <p class="lead">No necesitas estar en Uruapan para que podamos ayudarte.</p>
+          </div>
+          <div class="coverage-box">
+            <div><h3>Laboratorio</h3><p>Uruapan, Michoacán. Atención presencial con cita.</p></div>
+            <div><h3>Servicio local</h3><p>Atención a domicilio disponible según procedimiento y ubicación.</p></div>
+            <div><h3>Nacional</h3><p>Para determinados sistemas podemos trabajar mediante recepción de módulos por paquetería.</p></div>
+          </div>
+          <div style="margin-top:24px">
+            <a class="btn btn-wa" href="https://wa.me/524521791230?text=Hola%20RE%3AMOTO%20LAB.%20Quiero%20consultar%20cobertura.%0A%0ACiudad%3A" target="_blank" rel="noopener">Consultar cobertura</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="modules-feature reveal">
+        <img width="1448" height="1086" loading="lazy" src="assets/recepcion-modulos.webp" alt="Recepción de módulos BMW Motorrad por paquetería con ECU, módulo de inmovilizador y llaves">
+        <div class="modules-copy">
+          <div class="eyebrow">Recepción de módulos</div>
+          <h3>¿ESTÁS FUERA DE MICHOACÁN?</h3>
+          <p>Te indicamos qué módulos necesitamos, cómo prepararlos y cómo enviarlos. Trabajamos en laboratorio y documentamos el retorno.</p>
+          <ul>
+            <li>📦 Recibimos los módulos indicados.</li>
+            <li>🔬 Realizamos el procedimiento en laboratorio.</li>
+            <li>📤 Retornamos documentando el embalaje.</li>
+          </ul>
+          <div style="margin-top:20px">
+            <a class="btn btn-outline" href="https://wa.me/524521791230?text=Hola%20RE%3AMOTO%20LAB.%20Quiero%20consultar%20un%20servicio%20por%20recepci%C3%B3n%20de%20m%C3%B3dulos.%0A%0AModelo%3A%0AA%C3%B1o%3A%0ACiudad%3A" target="_blank" rel="noopener">Consultar recepción de módulos</a>
+            <span class="micro">Ideal para clientes fuera de Uruapan.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección “Quién está detrás” reservada en PRIVADO_NO_SUBIR/nosotros-pendiente.html hasta completar foto, horario, dirección y reseñas reales. -->
+<section class="section" id="faq"><div class="container"><div class="section-head reveal"><div class="eyebrow">Preguntas frecuentes</div><h2>Antes de tocar tu BMW, resolvemos tus dudas.</h2></div><div class="faq">
+<div class="faq-item reveal"><button class="faq-q"><span>¿Es seguro?</span><span>+</span></button><div class="faq-a"><div><strong style="color:#fff">Reducimos el riesgo con un procedimiento documentado:</strong> estabilizamos el voltaje, respaldamos la configuración antes de modificar, verificamos al terminar y firmamos una Carta de Ética y Seguridad Digital. Ningún procedimiento electrónico está libre de riesgo, por eso te explicamos el alcance antes de empezar y lo respaldamos con garantía por escrito de 90 días.</div></div></div>
+<div class="faq-item reveal delay-1"><button class="faq-q"><span>¿Cuánto tarda?</span><span>+</span></button><div class="faq-a"><div>Muchos servicios pueden resolverse el mismo día. El tiempo depende del modelo, año, sistema y condición de la motocicleta.</div></div></div>
+<div class="faq-item reveal delay-2"><button class="faq-q"><span>¿Usan componentes originales?</span><span>+</span></button><div class="faq-a"><div>Trabajamos con componentes originales BMW o compatibles de alta calidad, previamente verificados. Antes de empezar te decimos cuál se instalará y, cuando hay más de una opción compatible, puedes elegir.</div></div></div>
+<div class="faq-item reveal delay-3"><button class="faq-q"><span>¿Trabajan con cualquier moto BMW?</span><span>+</span></button><div class="faq-a"><div>Atendemos motocicletas BMW Motorrad con llave de transponder o de proximidad, sujeto a diagnóstico de modelo, año y sistema. Estamos ampliando la cobertura a las plataformas más recientes (como R 1300 GS); si tu moto es de esas generaciones, consúltanos disponibilidad. Revisa la <a href="#compatibilidad" style="color:var(--blue)">tabla de compatibilidad</a>.</div></div></div>
+<div class="faq-item reveal"><button class="faq-q"><span>¿Hacen servicio a domicilio?</span><span>+</span></button><div class="faq-a"><div>Sí, dependiendo del procedimiento y ubicación.</div></div></div>
+<div class="faq-item reveal delay-1"><button class="faq-q"><span>¿Qué son los códigos de seguridad?</span><span>+</span></button><div class="faq-a"><div>Son datos utilizados dentro de la arquitectura de seguridad del inmovilizador para reconocer componentes autorizados. Por ese motivo los tratamos como información sensible y limitamos su uso al procedimiento autorizado.</div></div></div>
+<div class="faq-item reveal delay-2"><button class="faq-q"><span>¿Que herramientas o equipos usan para programar llaves?</span><span>+</span></button><div class="faq-a"><div>En RE:MOTO LAB trabajamos con equipos profesionales de diagnóstico y programación especializados en sistemas BMW Motorrad, utilizando software y licencias vigentes para los procedimientos compatibles. Te informamos qué componente se instalará (original BMW o compatible de alta calidad) según el sistema de cada motocicleta. Antes de entregar, comprobamos reconocimiento, arranque y, cuando aplica, alcance y funcionamiento Keyless.</div></div></div>
+<div class="faq-item reveal"><button class="faq-q"><span>¿Cuánto cuesta?</span><span>+</span></button><div class="faq-a"><div>Duplicado Keyless Ride: desde $3,900 MXN. All Keys Lost: desde $6,000 MXN en sistemas de proximidad y desde $2,900 MXN en llave de giro. Duplicado de llave mecánica de giro: desde $1,500 MXN. Codificación TFT: $750 MXN. El precio final depende de tu modelo, año y diagnóstico, y te lo confirmamos antes de empezar. Ver <a href="#precios" style="color:var(--blue)">precios</a>.</div></div></div>
+<div class="faq-item reveal delay-2"><button class="faq-q"><span>¿Por qué el costo de Pérdida Total es mayor que el de un Duplicado?</span><span>+</span></button><div class="faq-a"><div>El costo es superior debido a la necesidad de decodificación mecánica de la moto → acceso autenticado y extracción del respaldo electrónico de seguridad de la ECU/módulo → la generación de la llave maestra desde cero. En un duplicado solo se agrega una llave sobre un sistema funcionando con procesos de escritura mas prácticos.</div></div></div>
+<div class="faq-item reveal delay-1"><button class="faq-q"><span>¿Qué necesito para el servicio?</span><span>+</span></button><div class="faq-a"><div>Evidencia razonable de que eres el propietario o tienes autorización (te indicamos cuál por WhatsApp), la motocicleta o los módulos según sea el caso, y las llaves que conserves. Sin autenticación verificada no intervenimos sistemas de seguridad, es parte de nuestra ética y compromiso profesional.</div></div></div>
+</div></div></section>
+  <section class="section" id="contacto">
+    <div class="container formwrap reveal">
+      <div>
+        <div class="eyebrow">Cotización rápida</div>
+        <h2 style="margin:14px 0 18px">Empecemos por tu BMW</h2>
+        <p class="lead">Te toma menos de 2 minutos. No necesitas saber qué servicio necesitas: nosotros te orientamos y abrimos WhatsApp con la información lista.</p>
+      </div>
+
+      <form id="quoteForm">
+        <div class="formgrid">
+          <div class="field"><label for="name">Tu nombre</label><input id="name" required placeholder="Ej. Carlos"></div>
+          <div class="field"><label for="model">Modelo BMW</label><input id="model" required placeholder="Ej. R 1250 GS"></div>
+          <div class="field"><label for="year">Año</label><input id="year" required placeholder="Ej. 2021"></div>
+          <div class="field"><label for="city">Ciudad</label><input id="city" required placeholder="Ej. Guadalajara"></div>
+          <div class="field full">
+            <label for="service">¿Qué necesitas?</label>
+            <select id="service">
+              <option>Duplicado de llave</option>
+              <option>Perdí todas las llaves</option>
+              <option>Codificar TFT</option>
+              <option>Diagnóstico</option>
+              <option>No estoy seguro</option>
+            </select>
+          </div>
+          <div class="field full">
+            <button class="btn btn-wa" type="submit">Continuar por WhatsApp</button>
+            <span class="micro">No enviamos spam. Tu información solo se utiliza para atender tu consulta.</span>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container cta-inner reveal">
+      <div>
+        <div class="eyebrow" style="color:#9FE1FF">Vuelve a rodar con tranquilidad</div>
+        <h2>¿Tu BMW no arranca? Lo resolvemos.</h2>
+        <p class="lead" style="margin-top:16px">Cuéntanos qué modelo tienes, qué año es y qué pasó con la llave. Nosotros te decimos qué sigue.</p>
+      </div>
+         </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="foot">
+      <div>
+        <div class="footer-logo-card">
+          <img width="800" height="301" loading="lazy" src="assets/logo-duplikey.png" alt="DUPLIKEY MX">
+        </div>
+        <p style="margin-top:14px">RE:MOTO LAB · División especializada en sistemas de llave para motocicletas BMW Motorrad.</p>
+      </div>
+
+      <div class="footlinks">
+        <strong>Contacto</strong>
+        <span>⚲ Uruapan, Michoacán, México</span>
+        <a href="mailto:duplikeymx@gmail.com">✉ duplikeymx@gmail.com</a>
+        <a href="https://wa.me/524521791230" target="_blank" rel="noopener noreferrer">✆ 452 179 1230</a>
+
+        <strong style="margin-top:12px">Síguenos</strong>
+        <div class="socials">
+          <a class="social-link" href="https://www.facebook.com/DuplikeyMX" target="_blank" rel="noopener noreferrer" aria-label="Facebook de DUPLIKEY MX">
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+              <path d="M13.5 22v-9h3l.45-3.5H13.5V7.26c0-1.01.28-1.7 1.74-1.7H17.1V2.43c-.32-.04-1.42-.14-2.7-.14-2.67 0-4.5 1.63-4.5 4.63V9.5H7v3.5h2.9v9h3.6z"/>
+            </svg>
+            <span>@DuplikeyMX</span>
+          </a>
+
+          <a class="social-link" href="https://www.instagram.com/DuplikeyMX/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de DUPLIKEY MX">
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9">
+              <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+              <circle cx="12" cy="12" r="4.25"></circle>
+              <circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"></circle>
+            </svg>
+            <span>@DuplikeyMX</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="footlinks">
+        <strong>Legal</strong>
+        <a href="javascript:void(0)" data-open="privacyModal">Aviso de privacidad</a>
+        <a href="javascript:void(0)" data-open="termsModal">Términos de servicio</a>
+        <a href="javascript:void(0)" data-open="warrantyModal">Póliza de garantía</a>
+        <a href="javascript:void(0)" data-open="ethicsModal">Carta de Ética</a>
+      </div>
+    </div>
+
+    <div class="trademark-note">
+      <strong>Aviso de marcas:</strong> BMW, BMW Motorrad, las denominaciones de sus modelos, logotipos y emblemas son marcas de BMW AG y/o de sus respectivas titulares. DUPLIKEY MX y RE:MOTO LAB son prestadores de servicios independientes y no están afiliados, autorizados, patrocinados ni respaldados por BMW AG ni por su red de concesionarios. Las referencias a BMW Motorrad se utilizan exclusivamente para identificar los vehículos y servicios compatibles.
+    </div>
+  </div>
+</footer>
+
+
+
+<a class="btn btn-wa sticky-wa" href="https://wa.me/524521791230?text=Hola%20RE%3AMOTO%20LAB.%20Quiero%20cotizar%20mi%20BMW%20Motorrad." target="_blank" rel="noopener">Cotizar por WhatsApp</a>
+<button class="chat-launch" id="chatLaunch" aria-label="¿No sabes qué servicio necesitas?" title="¿No sabes qué servicio necesitas?"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.5 9.4 9.4 0 0 1-4-.9L3 21l1.7-4.5A8.4 8.4 0 0 1 3 11.5a8.5 8.5 0 0 1 18 0Z"/><path d="M8 10h8M8 14h5"/></svg></button>
+<div class="chat-panel" id="chatPanel" aria-hidden="true"><div class="chat-head"><div><strong>RE:MOTO LAB</strong><small>Te respondemos en horario laboral</small></div><button class="chat-close" id="chatClose" aria-label="Cerrar">✕</button></div><div class="chat-body"><div class="chat-bubble">Cuéntanos qué BMW tienes y te ayudamos a identificar el servicio adecuado.</div><div class="chat-fields"><input id="chatModel" placeholder="Modelo, ej. R 1250 GS"><input id="chatYear" placeholder="Año, ej. 2021"><select id="chatService"><option value="No estoy seguro">¿Qué necesitas?</option><option>Duplicado Keyless Ride</option><option>All Keys Lost</option><option>Llave mecánica con chip</option><option>TFT Sport + funciones premium</option></select><button class="btn btn-wa" id="chatSend">Continuar en WhatsApp</button></div><div class="chat-note">La conversación continuará de forma segura en WhatsApp.</div></div></div>
+
+<div class="modal" id="keylessDetail" aria-hidden="true"><div class="modal-box"><button class="modal-close" data-close>✕</button><article class="service-detail"><div class="service-kicker">Duplicado Keyless Ride</div><h3>Una segunda llave lista para usar como la original</h3><p class="intro">Si todavía conservas una llave funcional, este servicio agrega una nueva llave autorizada a tu BMW sin alterar innecesariamente la instalación de la moto.</p><div class="service-hero-grid"><aside class="service-visual-card"><img width="931" height="1600" loading="lazy" src="assets/service-keyless.webp" alt="Llave Keyless Ride BMW Motorrad de proximidad"><div><h4>Lo que recibes</h4><p>Control de proximidad compatible con tu sistema BMW, programado y listo para usarse como respaldo operativo.</p></div></aside><div class="service-steps"><div class="service-step"><div class="service-step-num">01</div><div><h4>Preparamos el sistema a trabajar</h4><p>Protegemos la alimentación y estabilizamos el voltaje de la motocicleta para trabajar con seguridad durante la programación.</p></div></div><div class="service-step"><div class="service-step-num">02</div><div><h4>Identificamos y respaldamos</h4><p>Accedemos al módulo de seguridad, leemos la configuración del sistema y realizamos el respaldo necesario antes de registrar una nueva llave.</p></div></div><div class="service-step"><div class="service-step-num">03</div><div><h4>Preparamos y registramos la llave</h4><p>La nueva llave se configura para el sistema exacto de tu motocicleta y se incorpora como una llave autorizada.</p></div></div><div class="service-step"><div class="service-step-num">04</div><div><h4>Probamos todo</h4><p>Verificamos proximidad, encendido, arranque y, cuando aplica, el espadín mecánico de emergencia.</p></div></div></div></div><div class="modal-cta"><a class="btn btn-wa" href="https://wa.me/524521791230?text=Hola%20RE%3AMOTO%20LAB.%20Quiero%20cotizar%20un%20duplicado%20Keyless%20Ride." target="_blank" rel="noopener">Cotizar este servicio</a></div></article></div></div>
+<div class="modal" id="aklDetail" aria-hidden="true"><div class="modal-box"><button class="modal-close" data-close>✕</button><article class="service-detail"><div class="service-kicker">All Keys Lost</div><h3>Cuando ya no queda ninguna llave funcional</h3><p class="intro">Recuperamos el sistema para que tu motocicleta vuelva a reconocer una nueva llave válida, utilizando la ruta de trabajo adecuada para su generación.</p><div class="service-hero-grid"><aside class="service-visual-card"><img width="1254" height="1254" loading="lazy" src="assets/service-akl.webp" alt="Sistema BMW Motorrad para recuperación total de llaves con control keyless, llave mecánica, chip y módulo"><div><h4>Lo que puede incluir</h4><p>Según la generación de tu moto, el resultado puede implicar nueva llave autorizada, resincronización del sistema y recuperación funcional del inmovilizador.</p></div></aside><div class="service-steps"><div class="service-step"><div class="service-step-num">01</div><div><h4>Verificamos propiedad y diagnóstico</h4><p>Confirmamos el modelo, sistema y autorización antes de intervenir cualquier componente de seguridad.</p></div></div><div class="service-step"><div class="service-step-num">02</div><div><h4>Accedemos al sistema correcto</h4><p>Según el modelo, trabajamos directamente en la motocicleta o sobre los módulos necesarios en laboratorio, sin alterar electrónica ni soldar componentes.</p></div></div><div class="service-step"><div class="service-step-num">03</div><div><h4>Recuperamos y registramos una nueva llave</h4><p>Obtenemos la información necesaria del sistema y programamos una llave autorizada para esa motocicleta.</p></div></div><div class="service-step"><div class="service-step-num">04</div><div><h4>Sincronizamos y comprobamos</h4><p>Reinstalamos lo necesario, verificamos arranque y proximidad y, cuando el sistema lo permite y el cliente lo autoriza, desactivamos las llaves reportadas como perdidas.</p></div></div></div></div><div class="modal-cta"><a class="btn btn-wa" href="https://wa.me/524521791230?text=Hola%20RE%3AMOTO%20LAB.%20Perd%C3%AD%20todas%20las%20llaves%20de%20mi%20BMW." target="_blank" rel="noopener">Consultar mi caso</a></div></article></div></div>
+<div class="modal" id="mechanicalDetail" aria-hidden="true"><div class="modal-box"><button class="modal-close" data-close>✕</button><article class="service-detail"><div class="service-kicker">Llave mecánica de giro</div><h3>Corte mecánico + chip autorizado para arrancar</h3><p class="intro">No basta con que la llave gire el switch. También debe llevar el transponder correcto para que el inmovilizador permita el arranque.</p><div class="service-hero-grid"><aside class="service-gallery"><div class="service-visual-card"><img width="1332" height="1181" loading="lazy" src="assets/service-mechanical-key.webp" alt="Llave mecánica BMW Motorrad de giro"><div><h4>Llave mecánica</h4><p>Espadín fresado con perfil correcto para operar switch y cerraduras compatibles.</p></div></div><div class="service-visual-card"><img width="447" height="447" loading="lazy" src="assets/transponder-chip-clean.webp" alt="Transponder para llave BMW Motorrad"><div><h4>Transponder</h4><p>Chip autorizado para que la motocicleta reconozca la llave y permita el arranque.</p></div></div></aside><div class="service-steps"><div class="service-step"><div class="service-step-num">01</div><div><h4>Cortamos el espadín</h4><p>Fresamos con tecnología computarizada CNC una llave con el perfil correspondiente para que opere correctamente el switch y cerraduras mecánicas.</p></div></div><div class="service-step"><div class="service-step-num">02</div><div><h4>Identificamos el sistema electrónico</h4><p>Verificamos qué tipo de transponder utiliza la motocicleta y cuál es el método compatible para autorizarlo.</p></div></div><div class="service-step"><div class="service-step-num">03</div><div><h4>Autorizamos el transponder</h4><p>Registramos o generamos el transponder necesario para que la nueva llave sea reconocida por el inmovilizador.</p></div></div><div class="service-step"><div class="service-step-num">04</div><div><h4>Probamos giro y arranque</h4><p>Comprobamos funcionamiento mecánico, lectura del transponder y encendido de la motocicleta antes de entregar.</p></div></div></div></div><div class="modal-cta"><a class="btn btn-wa" href="https://wa.me/524521791230?text=Hola%20RE%3AMOTO%20LAB.%20Quiero%20cotizar%20una%20llave%20mec%C3%A1nica%20con%20chip." target="_blank" rel="noopener">Cotizar este servicio</a></div></article></div></div>
+<div class="modal" id="tftDetail" aria-hidden="true"><div class="modal-box"><button class="modal-close" data-close>✕</button><article class="service-detail"><div class="service-kicker">TFT Sport + funciones premium</div><h3>Funciones disponibles en tu configuración electrónica</h3><p class="intro">En modelos compatibles podemos habilitar vistas y parámetros que ya forman parte del ecosistema electrónico de la motocicleta, sin modificaciones físicas.</p><div class="service-hero-grid"><aside class="service-visual-card wide"><img width="1280" height="720" loading="lazy" src="assets/service-tft-sport.webp" alt="Pantallas TFT BMW Motorrad con menú Sport"><div><h4>Lo que visualizas</h4><p>Interfaz Sport y funciones compatibles en el tablero TFT según modelo, año y configuración de tu motocicleta.</p></div></aside><div class="service-steps"><div class="service-step"><div class="service-step-num">01</div><div><h4>Confirmamos compatibilidad</h4><p>Revisamos modelo, año, versión de tablero y equipamiento antes de ofrecer cualquier función.</p></div></div><div class="service-step"><div class="service-step-num">02</div><div><h4>Respaldamos la configuración</h4><p>Leemos y conservamos la codificación necesaria antes de realizar cambios.</p></div></div><div class="service-step"><div class="service-step-num">03</div><div><h4>Activamos funciones compatibles</h4><p>Puede incluir interfaz Sport, telemetría en tiempo real como información de inclinación, frenado, intervención DTC y otras funciones disponibles según el modelo.</p></div></div><div class="service-step"><div class="service-step-num">04</div><div><h4>Verificamos funcionamiento</h4><p>Comprobamos que el tablero y las funciones seleccionadas operen correctamente antes de entregar.</p></div></div></div></div><div class="modal-cta"><a class="btn btn-wa" href="https://wa.me/524521791230?text=Hola%20RE%3AMOTO%20LAB.%20Quiero%20consultar%20TFT%20Sport%20y%20funciones%20premium." target="_blank" rel="noopener">Consultar compatibilidad</a></div></article></div></div>
+<div class="modal protected" id="ethicsModal" aria-hidden="true">
+  <div class="modal-box">
+    <button class="modal-close" data-close>✕</button>
+    <div class="modal-img"><img width="1254" height="1254" loading="lazy" src="assets/carta-etica.webp" alt="Carta de Ética y Seguridad Digital RE:MOTO LAB sin datos personales"></div>
+  </div>
+</div>
+
+<div class="modal protected" id="warrantyModal" aria-hidden="true">
+  <div class="modal-box">
+    <button class="modal-close" data-close>✕</button>
+    <div class="modal-img"><img width="1254" height="1254" loading="lazy" src="assets/poliza-garantia.webp" alt="Póliza de garantía RE:MOTO LAB sin datos personales"></div>
+  </div>
+</div>
+
+<div class="modal" id="privacyModal" aria-hidden="true">
+  <div class="modal-box">
+    <button class="modal-close" data-close>✕</button>
+    <article class="legal">
+      <h3>AVISO DE PRIVACIDAD INTEGRAL</h3>
+      <p><strong>DUPLIKEY MX</strong>, incluyendo su división especializada <strong>RE:MOTO LAB</strong>, con operación en Uruapan, Michoacán, es responsable del tratamiento de los datos personales que recaba de clientes, prospectos y usuarios de sus canales de atención.</p>
+
+      <h4>Datos personales que podemos recabar</h4>
+      <p>Podemos recabar, según el servicio solicitado: nombre, teléfono, correo electrónico, ciudad o localidad, datos de facturación, datos de la motocicleta o vehículo (marca, modelo, año, VIN cuando sea necesario), fotografías de llave, tablero, módulos o componentes, domicilio de envío o devolución, y documentación razonable para acreditar propiedad o autorización.</p>
+
+      <h4>Finalidades primarias</h4>
+      <ul>
+        <li>Atender solicitudes de información, diagnóstico y cotización.</li>
+        <li>Confirmar compatibilidad técnica de llaves, módulos, inmovilizadores y componentes.</li>
+        <li>Prestar servicios de programación, duplicado, recuperación de llaves, diagnóstico y codificación.</li>
+        <li>Integrar y conservar órdenes de servicio, autorizaciones, evidencias de entrega y documentación de garantía.</li>
+        <li>Gestionar envíos y devoluciones de módulos o componentes cuando el servicio se realice a distancia.</li>
+        <li>Emitir facturas y cumplir obligaciones fiscales, comerciales y de protección al consumidor.</li>
+        <li>Prevenir fraude, uso no autorizado y solicitudes incompatibles con nuestra política de ética antirrobo.</li>
+        <li>Atender aclaraciones, garantías y seguimiento posterior al servicio.</li>
+      </ul>
+
+      <h4>Finalidades secundarias</h4>
+      <p>De manera opcional, podremos utilizar sus datos de contacto para enviar información sobre servicios, promociones o novedades. Usted puede solicitar en cualquier momento que dejemos de utilizar sus datos para estas finalidades.</p>
+
+      <h4>Datos técnicos y seguridad digital</h4>
+      <p>Cuando un procedimiento requiera lectura de información técnica de un módulo o sistema de inmovilizador, los archivos o datos se utilizarán únicamente para ejecutar, verificar, documentar o recuperar el servicio y atender una eventual garantía. RE:MOTO LAB no comercializa códigos, ISN, respaldos ni archivos de seguridad.</p>
+
+      <h4>Transferencias</h4>
+      <p>Sus datos podrán compartirse únicamente cuando sea necesario con proveedores de paquetería, facturación, plataformas de comunicación o servicios tecnológicos indispensables para prestar el servicio, así como cuando lo exija una autoridad competente. No vendemos ni rentamos datos personales.</p>
+
+      <h4>Derechos ARCO</h4>
+      <p>Usted puede solicitar Acceso, Rectificación, Cancelación u Oposición respecto de sus datos personales, así como revocar su consentimiento cuando legalmente proceda, enviando su solicitud a <strong>duplikeymx@gmail.com</strong> o mediante WhatsApp al <strong>452 179 1230</strong>. La solicitud deberá permitir identificar al titular y precisar el derecho que desea ejercer.</p>
+
+      <h4>Medidas de seguridad</h4>
+      <p>Aplicamos medidas administrativas, técnicas y físicas razonables para limitar el acceso a la información personal y técnica únicamente al personal que la necesita para prestar el servicio.</p>
+
+      <h4>Cambios al aviso</h4>
+      <p>Este aviso podrá actualizarse por cambios operativos, legales o regulatorios. La versión vigente estará disponible en este sitio.</p>
+
+      <p class="legal-note">Última actualización: septiembre de 2026.</p>
+    </article>
+  </div>
+</div>
+
+<div class="modal" id="termsModal" aria-hidden="true">
+  <div class="modal-box">
+    <button class="modal-close" data-close>✕</button>
+    <article class="legal">
+      <h3>TÉRMINOS DE SERVICIO</h3>
+      <p>Estos términos regulan la prestación de servicios ofrecidos por <strong>DUPLIKEY MX</strong> y su división especializada <strong>RE:MOTO LAB</strong>, incluyendo atención presencial, servicio a domicilio y trabajos realizados mediante recepción de módulos o componentes.</p>
+
+      <h4>1. Diagnóstico y autorización</h4>
+      <p>Todo servicio puede requerir diagnóstico previo. Dicho diagnóstico puede generar un cargo, el cual podrá bonificarse total o parcialmente cuando el cliente autorice la reparación, programación o servicio recomendado. Ningún procedimiento adicional al autorizado se realizará sin aprobación del cliente.</p>
+
+      <h4>2. Propiedad y autorización</h4>
+      <p>Por tratarse de servicios relacionados con sistemas de seguridad, inmovilizadores y llaves, RE:MOTO LAB podrá solicitar evidencia razonable de propiedad o autorización. El cliente declara ser propietario legítimo del vehículo o contar con autorización suficiente para solicitar el servicio.</p>
+
+      <h4>3. Anticipos y formas de pago</h4>
+      <p>No se solicita anticipo para servicios ordinarios. En productos o componentes sobre pedido se requiere un anticipo del <strong>50%</strong>. El saldo deberá cubrirse conforme a la cotización antes o al momento de la entrega, según corresponda. Se aceptan pagos en efectivo y transferencia bancaria.</p>
+
+      <h4>4. Componentes</h4>
+      <p>RE:MOTO LAB trabaja con componentes <strong>originales BMW o compatibles de alta calidad, previamente verificados</strong>. No se utilizan componentes genéricos o económicos como sustituto sin informar al cliente. Cuando existan distintas opciones compatibles, se explicará cuál se instalará o suministrará.</p>
+
+      <h4>5. Garantía</h4>
+      <p>La garantía estándar es de <strong>90 días naturales</strong> a partir de la fecha real de entrega para la programación, mano de obra y componentes nuevos suministrados por RE:MOTO LAB, en los términos de la póliza de garantía entregada con el servicio. No cubre golpes, caídas, aplastamiento, líquidos, humedad excesiva, calor intenso, químicos, corrosión, uso anormal, intervenciones de terceros, pérdida, robo, desgaste ordinario ni fallas ajenas al trabajo contratado.</p>
+
+      <h4>6. Servicios por paquetería</h4>
+      <p>Los envíos hacia RE:MOTO LAB viajan por cuenta y riesgo del cliente. El cliente es responsable de embalar adecuadamente los módulos o componentes que envía. El seguro de paquetería es opcional y deberá ser solicitado o contratado por el cliente cuando así lo requiera.</p>
+      <p>En el retorno, RE:MOTO LAB realizará el embalaje y documentará mediante imágenes el estado del paquete antes de su entrega al transportista. Los riesgos inherentes al transporte corresponden al servicio de paquetería contratado.</p>
+
+      <h4>7. Límites técnicos</h4>
+      <p>La viabilidad y resultado de un servicio dependen del estado real de la motocicleta, módulos, inmovilizador, cableado, batería, llaves existentes, daños previos y compatibilidad de la arquitectura electrónica. Algunos modelos o generaciones requieren diagnóstico previo y pueden no admitir determinados procedimientos.</p>
+
+      <h4>8. Cancelaciones</h4>
+      <p>El cliente puede cancelar sin cargo por mano de obra únicamente antes de que comience el procedimiento técnico, salvo costos ya generados por diagnóstico, traslados, paquetería o productos sobre pedido. Una vez iniciado el proceso técnico, si el cliente decide cancelar, se cobrará el <strong>50% del presupuesto autorizado</strong>. Si el procedimiento se concluye, se entregará el trabajo terminado y deberá cubrirse el total acordado.</p>
+
+      <h4>9. Tiempos</h4>
+      <p>Los tiempos comunicados son estimados. Muchos servicios pueden resolverse el mismo día, pero pueden variar por modelo, diagnóstico, disponibilidad de componentes, complejidad, paquetería o condición del sistema.</p>
+
+      <h4>10. Facturación</h4>
+      <p>La factura se emite a solicitud del cliente con los datos fiscales vigentes y dentro del plazo operativo informado al momento del servicio.</p>
+
+      <h4>11. Privacidad y seguridad digital</h4>
+      <p>El tratamiento de datos personales y técnicos se rige por el Aviso de Privacidad y por la Carta de Ética y Seguridad Digital de RE:MOTO LAB.</p>
+
+      <h4>12. Derechos del consumidor</h4>
+      <p>Ninguna disposición de estos términos pretende limitar derechos irrenunciables reconocidos por la legislación mexicana aplicable en materia de protección al consumidor.</p>
+
+      <p class="legal-note">Última actualización: septiembre de 2026.</p>
+    </article>
+  </div>
+</div>
+
+<script>
+/* Header */
+const siteHeader = document.getElementById('siteHeader');
+if (siteHeader) {
+  window.addEventListener('scroll', () => {
+    siteHeader.classList.toggle('scrolled', window.scrollY > 20);
+  });
+}
+
+/* Mobile menu */
+const menuBtn = document.getElementById('menuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+if (menuBtn && mobileMenu) {
+  menuBtn.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    document.body.classList.toggle('menu-open', open);
+  });
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded','false');
+      document.body.classList.remove('menu-open');
+    });
+  });
+}
+
+/* FAQ */
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const panel = btn.parentElement.querySelector('.faq-a');
+    const isOpen = !!panel.style.maxHeight;
+    document.querySelectorAll('.faq-a').forEach(el => el.style.maxHeight = null);
+    document.querySelectorAll('.faq-q span:last-child').forEach(el => el.textContent = '+');
+    if(!isOpen){
+      panel.style.maxHeight = panel.scrollHeight + 'px';
+      btn.querySelector('span:last-child').textContent = '−';
+    }
+  });
+});
+
+/* Modals */
+function closeModal(modal){
+  modal.classList.remove('open');
+  modal.setAttribute('aria-hidden','true');
+  document.body.classList.remove('modal-open');
+}
+document.querySelectorAll('[data-open]').forEach(el => {
+  el.addEventListener('click', () => {
+    const modal = document.getElementById(el.dataset.open);
+    if(!modal) return;
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden','false');
+    document.body.classList.add('modal-open');
+  });
+  el.addEventListener('keydown', (e) => {
+    if((e.key === 'Enter' || e.key === ' ') && el.dataset.open){
+      e.preventDefault();
+      const modal = document.getElementById(el.dataset.open);
+      if(!modal) return;
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden','false');
+      document.body.classList.add('modal-open');
+    }
+  });
+});
+document.querySelectorAll('[data-close]').forEach(btn => btn.addEventListener('click', () => closeModal(btn.closest('.modal'))));
+document.querySelectorAll('.modal').forEach(modal => {
+  modal.addEventListener('click', e => { if(e.target === modal) closeModal(modal); });
+});
+document.addEventListener('keydown', e => {
+  if(e.key === 'Escape'){
+    document.querySelectorAll('.modal.open').forEach(closeModal);
+  }
+});
+
+/* Protection on image docs */
+document.querySelectorAll('.protected').forEach(el => {
+  el.addEventListener('contextmenu', e => e.preventDefault());
+  el.addEventListener('copy', e => e.preventDefault());
+  el.addEventListener('cut', e => e.preventDefault());
+  el.addEventListener('dragstart', e => e.preventDefault());
+});
+document.addEventListener('keydown', e => {
+  const active = document.querySelector('.protected.open');
+  if(!active) return;
+  const k = e.key.toLowerCase();
+  if((e.ctrlKey || e.metaKey) && (k === 'c' || k === 's' || k === 'p' || k === 'u')) e.preventDefault();
+});
+
+/* Form */
+const quoteForm = document.getElementById('quoteForm');
+if (quoteForm) quoteForm.addEventListener('submit', e => {
+  e.preventDefault();
+  const msg = `Hola RE:MOTO LAB. Quiero cotizar un servicio para mi BMW Motorrad.
+
+Nombre: ${document.getElementById('name').value}
+Modelo: ${document.getElementById('model').value}
+Año: ${document.getElementById('year').value}
+Servicio: ${document.getElementById('service').value}
+Ciudad: ${document.getElementById('city').value}`;
+  window.open('https://wa.me/524521791230?text=' + encodeURIComponent(msg), '_blank', 'noopener');
+});
+
+
+/* Mini pre-chat */
+const chatLaunch = document.getElementById('chatLaunch');
+const chatPanel = document.getElementById('chatPanel');
+const chatClose = document.getElementById('chatClose');
+const chatSend = document.getElementById('chatSend');
+if(chatLaunch && chatPanel){chatLaunch.addEventListener('click',()=>{const open=chatPanel.classList.toggle('open');chatPanel.setAttribute('aria-hidden',open?'false':'true');});}
+if(chatClose){chatClose.addEventListener('click',()=>{chatPanel.classList.remove('open');chatPanel.setAttribute('aria-hidden','true');});}
+if(chatSend){chatSend.addEventListener('click',()=>{const model=document.getElementById('chatModel').value.trim();const year=document.getElementById('chatYear').value.trim();const service=document.getElementById('chatService').value;const msg=`Hola RE:MOTO LAB. Quiero orientación para mi BMW Motorrad.
+
+Modelo: ${model||'Por definir'}
+Año: ${year||'Por definir'}
+Servicio: ${service}`;window.open('https://wa.me/524521791230?text='+encodeURIComponent(msg),'_blank','noopener');});}
+
+
+/* Microanimations — progressive enhancement.
+   El contenido siempre es visible por defecto. */
+(() => {
+  const revealEls = [...document.querySelectorAll('.reveal')];
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (reducedMotion || !('IntersectionObserver' in window)) {
+    revealEls.forEach(el => {
+      el.classList.remove('motion-prep');
+      el.classList.add('visible');
+    });
+    return;
+  }
+
+  revealEls.forEach(el => el.classList.add('motion-prep'));
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.10, rootMargin: '0px 0px -4% 0px' });
+
+  revealEls.forEach(el => observer.observe(el));
+
+  /* Salvaguarda: nunca dejar contenido oculto por una falla del observer. */
+  window.setTimeout(() => {
+    revealEls.forEach(el => el.classList.add('visible'));
+  }, 1400);
+})();
+</script>
+<script src="assets/compat-public.js"></script>
+<script>
+(function(){
+var D=window.COMPAT,$=function(i){return document.getElementById(i)},out=$('vfOut');if(!out)return;
+var WA='https://wa.me/524521791230?text=';
+function esc(t){return String(t).replace(/[&<>\"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[c]})}
+if(!D||!D.items){out.innerHTML='<div class="vf-empty"><h3>Verificador no disponible</h3><p>Escríbenos y confirmamos tu modelo.</p><a class="btn btn-wa" href="'+WA+'Hola%2C%20quiero%20confirmar%20mi%20moto." target="_blank" rel="noopener">Escribir por WhatsApp</a></div>';return}
+var Y=$('vfYear'),F=$('vfFam'),M=$('vfModel'),OBS=document.querySelector('.vf-obs'),MISS=$('vfMissingLink'),items=D.items,steps=document.querySelectorAll('.vf-steps li');
+var FAM={R:'Serie R',F:'Serie F',S:'Serie S',K:'Serie K',C:'Serie C',G:'Serie G',M:'Serie M',H:'HP'},ORD='RFSKGCMH';
+var ICON={dk:'fob',mk:'key',akl:'akl',add:'add',tft:'tft',rs:'rs',dx:'dx'},LAB=['Disponible con diagnóstico','En habilitación','Consultar'];
+var SIS={k:'Keyless Ride',m:'Llave de giro con transponder'},IMG={k:'keyfob',m:'mechanical'},TBD='Sistema por confirmar en la unidad';
+var touched=false;
+var EMPTY='<div class="vf-empty"><svg class="vf-radar" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle class="r" cx="60" cy="60" r="50"/><circle class="r r2" cx="60" cy="60" r="50"/><path d="M42 52a26 26 0 0 1 36 0M49 60a16 16 0 0 1 22 0" stroke-linecap="round"/><circle cx="60" cy="68" r="3" fill="currentColor"/></svg><h3>Tu resultado aparece aquí</h3><p>Elige año, familia y modelo y te decimos qué servicios aplican a tu BMW.</p></div>';
+var WAIT='<div class="vf-wait"><strong>Elige el tipo de llave de tu moto para ver el resultado.</strong><span>Si no estás seguro, selecciona “No estoy seguro”.</span></div>';
+function opts(sel,list,ph){sel.innerHTML='<option value="">'+ph+'</option>'+list.map(function(o){return'<option value="'+esc(o[0])+'">'+esc(o[1])+'</option>'}).join('')}
+function cov(y){return items.filter(function(i){return y>=i.a&&y<=i.b})}
+function step(n){steps.forEach(function(li,k){li.classList.toggle('on',k<n)})}
+function uniq(a){return a.filter(function(v,k){return v&&a.indexOf(v)===k})}
+function cats(recs){return uniq([].concat.apply([],recs.map(function(i){return Array.isArray(i.c)?i.c:[]})))}
+function matching(){var y=+Y.value;return cov(y).filter(function(i){return i.f===F.value&&i.m===M.value})}
+function observed(){var r=document.querySelector('input[name=vfObs]:checked');if(!r||!touched)return null;return r.value==='keyless'?'k':r.value==='mechanical'?'m':''}
+function setObsDefault(){var r=document.querySelector('input[name=vfObs][value=""]');if(r)r.checked=true;touched=false}
+function updateMissing(){if(!MISS)return;var parts=['Hola RE:MOTO LAB. Mi moto no aparece en el verificador.'];if(M&&M.value)parts.push('Modelo: '+M.value);if(Y&&Y.value)parts.push('Año: '+Y.value);MISS.href=WA+encodeURIComponent(parts.join('\n'))}
+
+// Solo años que tienen al menos un registro público.
+var yearsSet=new Set();items.forEach(function(i){for(var y=i.a;y<=i.b;y++)yearsSet.add(y)});var years=[...yearsSet].sort(function(a,b){return b-a}).map(function(y){return[y,y]});opts(Y,years,'Selecciona el año');
+function modelNames(){return uniq(cov(+Y.value).filter(function(i){return i.f===F.value}).map(function(i){return i.m}))}
+function fillModels(){var m=modelNames();opts(M,m.map(function(x){return[x,x]}),m.length?'Selecciona tu modelo':'Sin modelos para esta selección');M.disabled=!m.length;OBS.hidden=true;setObsDefault();out.innerHTML=EMPTY;step(F.value?2:1);updateMissing()}
+Y.onchange=function(){var y=+Y.value;out.innerHTML=EMPTY;opts(M,[],'Primero elige la familia');M.disabled=true;OBS.hidden=true;setObsDefault();updateMissing();if(!y){opts(F,[],'Primero elige el año');F.disabled=true;step(1);return}var f=uniq(cov(y).map(function(i){return i.f})).sort(function(a,b){return ORD.indexOf(a)-ORD.indexOf(b)});opts(F,f.map(function(x){return[x,FAM[x]||x]}),'Selecciona la familia');F.disabled=false;step(1)};
+F.onchange=function(){if(!F.value){opts(M,[],'Primero elige la familia');M.disabled=true;OBS.hidden=true;setObsDefault();step(1);out.innerHTML=EMPTY;updateMissing();return}fillModels()};
+
+function resolve(cat){var recs=matching();if(!recs.length)return {m:M.value||'',y:+Y.value,e:2,sv:['dx'],sis:TBD,img:null,ns:null,i:'un servicio de llaves'};var cs=cats(recs),filtered=cat?recs.filter(function(i){return i.c.indexOf(cat)>=0}):recs;if(cat&&!filtered.length)return {m:M.value,y:+Y.value,e:2,sv:['dx'],sis:TBD,img:null,ns:cs.length>=2?'Esta moto puede traer llave Keyless o llave de giro. Confírmalo con diagnóstico.':null,i:'un servicio de llaves'};var use=filtered.length?filtered:recs,e=Math.max.apply(null,use.map(function(i){return i.e})),sv=e?['dx']:uniq([].concat.apply([],use.map(function(i){return i.s})));var sis=cat?SIS[cat]:(cs.length===1?SIS[cs[0]]:TBD);var img=cat?IMG[cat]:(cs.length===1?IMG[cs[0]]:null);var ns=cs.length===1?'Tu moto solo puede traer un sistema de llave. Ya lo confirmamos.':cs.length>=2?'Esta moto puede traer llave Keyless o llave de giro. Confírmalo con diagnóstico.':null;var interest=!e&&cat?(cat==='k'?'un duplicado Keyless Ride':'un duplicado de llave de giro'):'un servicio de llaves';return {m:M.value,y:+Y.value,e:e,sv:sv,sis:sis,img:img,ns:ns,i:interest}}
+function imgHtml(kind){if(kind==='keyfob')return'<div class="vf-img"><img src="assets/keyfob-ref.webp" alt="Keyfob BMW Motorrad de referencia" width="80" height="80" loading="lazy"></div>';if(kind==='mechanical')return'<div class="vf-img"><img src="assets/mechanical-ref.webp" alt="Llave mecánica BMW Motorrad de referencia" width="80" height="80" loading="lazy"></div>';return''}
+function renderResolved(cat){var r=resolve(cat);step(4);var link=WA+encodeURIComponent('Hola, tengo una moto BMW '+r.m+' '+r.y+' y quiero cotizar '+r.i+'.');out.innerHTML='<div class="vf-card s'+r.e+'"><div class="vf-title-row">'+imgHtml(r.img)+'<div class="vf-title-copy"><span class="vf-badge"><i></i>'+LAB[r.e]+'</span><h3>'+esc(r.m)+'</h3></div></div><div class="vf-meta"><span>'+r.y+'</span><span>'+esc(r.sis)+'</span></div>'+(r.ns?'<p class="vf-nota-sistema">'+esc(r.ns)+'</p>':'')+'<ul class="vf-svcs">'+r.sv.map(function(k){return'<li><span class="ic"><svg aria-hidden="true"><use href="#i-'+ICON[k]+'"/></svg></span>'+esc(D.sv[k])+'</li>'}).join('')+'</ul><p class="vf-note">'+esc(D.nota[r.e])+'</p><p class="vf-eth"><svg aria-hidden="true"><use href="#i-shield"/></svg>'+esc(D.etica)+'</p><a class="btn btn-wa" href="'+link+'" target="_blank" rel="noopener">Cotizar esta moto por WhatsApp</a></div>'}
+function prepareModel(){updateMissing();if(!M.value){OBS.hidden=true;setObsDefault();out.innerHTML=EMPTY;return}var recs=matching(),cs=cats(recs);setObsDefault();if(!cs.length){OBS.hidden=true;renderResolved(null);return}if(cs.length===1){OBS.hidden=true;renderResolved(cs[0]);return}OBS.hidden=false;step(3);out.innerHTML=WAIT}
+M.onchange=prepareModel;document.querySelectorAll('input[name=vfObs]').forEach(function(x){x.onchange=function(){touched=true;var c=observed();renderResolved(c||null)}});out.innerHTML=EMPTY;updateMissing();
+})();
+</script>
+<script>
+window.dataLayer=window.dataLayer||[];
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href*="wa.me"]');if(a){window.dataLayer.push({event:'whatsapp_click',link_text:(a.textContent||'').trim().slice(0,60),link_url:a.href});}});
+</script>
+<!-- ANALÍTICA: pega aquí tu snippet de Google Analytics / Meta Pixel; los clics a WhatsApp ya se envían a dataLayer -->
+</body>
+</html>
