@@ -433,8 +433,36 @@ p{margin:0;color:var(--steel)}
   transition:transform .18s ease, border-color .18s ease;
 }
 .case:hover{transform:translateY(-4px);border-color:rgba(0,174,239,.28)}
-.case img{width:100%;height:230px;object-fit:cover}
+.case-image-trigger{
+  position:relative;display:block;width:100%;padding:0;border:0;background:none;
+  overflow:hidden;cursor:zoom-in;text-align:inherit;color:inherit;
+}
+.case-image-trigger img{width:100%;height:230px;object-fit:cover;display:block;transition:transform .28s ease,filter .28s ease}
+.case-image-trigger::after{
+  content:"Ver imagen completa";position:absolute;right:12px;bottom:12px;
+  padding:7px 10px;border-radius:999px;background:rgba(7,10,12,.82);
+  border:1px solid rgba(255,255,255,.20);color:#fff;font-size:.72rem;font-weight:800;
+  letter-spacing:.02em;opacity:0;transform:translateY(5px);transition:.2s ease;
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);pointer-events:none;
+}
+.case-image-trigger:hover img,.case-image-trigger:focus-visible img{transform:scale(1.025);filter:brightness(.88)}
+.case-image-trigger:hover::after,.case-image-trigger:focus-visible::after{opacity:1;transform:none}
+.case-image-trigger:focus-visible{outline:2px solid var(--blue);outline-offset:-2px}
 .case .content{padding:22px}
+
+/* Visor de imágenes de Casos de éxito */
+.case-lightbox .modal-box{
+  width:min(1180px,96vw);max-height:94vh;overflow:hidden;background:#090b0d;
+  display:flex;flex-direction:column;
+}
+.case-lightbox .modal-close{position:absolute;top:8px;right:8px;float:none;margin:0;z-index:5;background:rgba(13,17,20,.88);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.case-lightbox-figure{margin:0;min-height:0;display:flex;align-items:center;justify-content:center;padding:18px}
+.case-lightbox-figure img{display:block;max-width:100%;max-height:calc(94vh - 36px);width:auto;height:auto;object-fit:contain;border-radius:10px}
+@media(max-width:680px){
+  .case-image-trigger::after{opacity:1;transform:none;font-size:.68rem;right:9px;bottom:9px}
+  .case-lightbox-figure{padding:10px}
+  .case-lightbox-figure img{max-height:calc(94vh - 20px);border-radius:8px}
+}
 
 /* Coverage */
 .cover-wrap{display:grid;gap:26px}
@@ -728,7 +756,7 @@ footer{padding:46px 0 104px}
   .trust,.features,.process,.formgrid,.foot{grid-template-columns:1fr}
   .trust>div{border-right:none;border-bottom:1px solid var(--line)}
   .trust>div:last-child{border-bottom:none}
-  .cases .case img{height:210px}
+  .cases .case-image-trigger img{height:210px}
   .foot{gap:26px}
 }
 @media(prefers-reduced-motion:reduce){
@@ -1086,7 +1114,7 @@ details.carta ol{margin:12px 0 0;padding-left:20px;color:var(--steel);font-size:
       </div>
       <div class="cases">
         <article class="case reveal">
-          <img width="1536" height="1024" loading="lazy" src="assets/caso-exito.webp" alt="Motociclista saliendo de RE:MOTO LAB con motocicleta BMW">
+          <button class="case-image-trigger" type="button" data-case-image="assets/caso-exito.webp" data-case-alt="Motociclista saliendo de RE:MOTO LAB con motocicleta BMW" aria-label="Ver imagen completa del caso de pérdida total de llaves"><img width="1536" height="1024" loading="lazy" src="assets/caso-exito.webp" alt="Motociclista saliendo de RE:MOTO LAB con motocicleta BMW"></button>
           <div class="content">
             <span class="mono">R 1250 GS · ALL KEYS LOST</span>
             <h3>Pérdida total de llaves</h3>
@@ -1097,7 +1125,7 @@ details.carta ol{margin:12px 0 0;padding-left:20px;color:var(--steel);font-size:
         </article>
 
         <article class="case reveal delay-1">
-          <img width="1448" height="1086" loading="lazy" src="assets/caso-duplicado.webp" alt="Duplicado exitoso de llave Keyless BMW Motorrad mostrado frente a la motocicleta">
+          <button class="case-image-trigger" type="button" data-case-image="assets/caso-duplicado.webp" data-case-alt="Duplicado exitoso de llave Keyless BMW Motorrad mostrado frente a la motocicleta" aria-label="Ver imagen completa del caso de duplicado preventivo"><img width="1448" height="1086" loading="lazy" src="assets/caso-duplicado.webp" alt="Duplicado exitoso de llave Keyless BMW Motorrad mostrado frente a la motocicleta"></button>
           <div class="content">
             <span class="mono">R 1250 GS · KEYLESS</span>
             <h3>Duplicado preventivo</h3>
@@ -1108,7 +1136,7 @@ details.carta ol{margin:12px 0 0;padding-left:20px;color:var(--steel);font-size:
         </article>
 
         <article class="case reveal delay-2">
-          <img width="1448" height="1086" loading="lazy" src="assets/recepcion-modulos.webp" alt="Recepción de módulos BMW Motorrad por paquetería con ECU, módulo de inmovilizador y llaves">
+          <button class="case-image-trigger" type="button" data-case-image="assets/recepcion-modulos.webp" data-case-alt="Recepción de módulos BMW Motorrad por paquetería con ECU, módulo de inmovilizador y llaves" aria-label="Ver imagen completa del caso de recepción de módulos"><img width="1448" height="1086" loading="lazy" src="assets/recepcion-modulos.webp" alt="Recepción de módulos BMW Motorrad por paquetería con ECU, módulo de inmovilizador y llaves"></button>
           <div class="content">
             <span class="mono">SERVICIO NACIONAL</span>
             <h3>Recepción de módulos</h3>
@@ -1315,6 +1343,14 @@ details.carta ol{margin:12px 0 0;padding-left:20px;color:var(--steel);font-size:
 <button class="chat-launch" id="chatLaunch" aria-label="¿No sabes qué servicio necesitas?" title="¿No sabes qué servicio necesitas?"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.5 9.4 9.4 0 0 1-4-.9L3 21l1.7-4.5A8.4 8.4 0 0 1 3 11.5a8.5 8.5 0 0 1 18 0Z"/><path d="M8 10h8M8 14h5"/></svg></button>
 <div class="chat-panel" id="chatPanel" aria-hidden="true"><div class="chat-head"><div><strong>RE:MOTO LAB</strong><small>Te respondemos en horario laboral</small></div><button class="chat-close" id="chatClose" aria-label="Cerrar">✕</button></div><div class="chat-body"><div class="chat-bubble">Cuéntanos qué BMW tienes y te ayudamos a identificar el servicio adecuado.</div><div class="chat-fields"><input id="chatModel" placeholder="Modelo, ej. R 1250 GS"><input id="chatYear" placeholder="Año, ej. 2021"><select id="chatService"><option value="No estoy seguro">¿Qué necesitas?</option><option>Duplicado Keyless Ride</option><option>All Keys Lost</option><option>Llave mecánica con chip</option><option>TFT Sport + funciones premium</option></select><button class="btn btn-wa" id="chatSend">Continuar en WhatsApp</button></div><div class="chat-note">La conversación continuará de forma segura en WhatsApp.</div></div></div>
 
+<div class="modal case-lightbox" id="caseImageModal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Imagen ampliada del caso de éxito">
+  <div class="modal-box">
+    <button class="modal-close" type="button" data-close aria-label="Cerrar imagen ampliada">✕</button>
+    <figure class="case-lightbox-figure">
+      <img id="caseLightboxImg" src="" alt="">
+    </figure>
+  </div>
+</div>
 <div class="modal" id="keylessDetail" aria-hidden="true"><div class="modal-box"><button class="modal-close" data-close>✕</button><article class="service-detail"><div class="service-kicker">Duplicado Keyless Ride</div><h3>Una segunda llave lista para usar como la original</h3><p class="intro">Si todavía conservas una llave funcional, este servicio agrega una nueva llave autorizada a tu BMW sin alterar innecesariamente la instalación de la moto.</p><div class="service-hero-grid"><aside class="service-visual-card"><img width="931" height="1600" loading="lazy" src="assets/service-keyless.webp" alt="Llave Keyless Ride BMW Motorrad de proximidad"><div><h4>Lo que recibes</h4><p>Control de proximidad compatible con tu sistema BMW, programado y listo para usarse como respaldo operativo.</p></div></aside><div class="service-steps"><div class="service-step"><div class="service-step-num">01</div><div><h4>Preparamos el sistema a trabajar</h4><p>Protegemos la alimentación y estabilizamos el voltaje de la motocicleta para trabajar con seguridad durante la programación.</p></div></div><div class="service-step"><div class="service-step-num">02</div><div><h4>Identificamos y respaldamos</h4><p>Accedemos al módulo de seguridad, leemos la configuración del sistema y realizamos el respaldo necesario antes de registrar una nueva llave.</p></div></div><div class="service-step"><div class="service-step-num">03</div><div><h4>Preparamos y registramos la llave</h4><p>La nueva llave se configura para el sistema exacto de tu motocicleta y se incorpora como una llave autorizada.</p></div></div><div class="service-step"><div class="service-step-num">04</div><div><h4>Probamos todo</h4><p>Verificamos proximidad, encendido, arranque y, cuando aplica, el espadín mecánico de emergencia.</p></div></div></div></div><div class="modal-cta"><a class="btn btn-wa" href="https://wa.me/524521791230?text=Hola%20RE%3AMOTO%20LAB.%20Quiero%20cotizar%20un%20duplicado%20Keyless%20Ride." target="_blank" rel="noopener">Cotizar este servicio</a></div></article></div></div>
 <div class="modal" id="aklDetail" aria-hidden="true"><div class="modal-box"><button class="modal-close" data-close>✕</button><article class="service-detail"><div class="service-kicker">All Keys Lost</div><h3>Cuando ya no queda ninguna llave funcional</h3><p class="intro">Recuperamos el sistema para que tu motocicleta vuelva a reconocer una nueva llave válida, utilizando la ruta de trabajo adecuada para su generación.</p><div class="service-hero-grid"><aside class="service-visual-card"><img width="1254" height="1254" loading="lazy" src="assets/service-akl.webp" alt="Sistema BMW Motorrad para recuperación total de llaves con control keyless, llave mecánica, chip y módulo"><div><h4>Lo que puede incluir</h4><p>Según la generación de tu moto, el resultado puede implicar nueva llave autorizada, resincronización del sistema y recuperación funcional del inmovilizador.</p></div></aside><div class="service-steps"><div class="service-step"><div class="service-step-num">01</div><div><h4>Verificamos propiedad y diagnóstico</h4><p>Confirmamos el modelo, sistema y autorización antes de intervenir cualquier componente de seguridad.</p></div></div><div class="service-step"><div class="service-step-num">02</div><div><h4>Accedemos al sistema correcto</h4><p>Según el modelo, trabajamos directamente en la motocicleta o sobre los módulos necesarios en laboratorio, sin alterar electrónica ni soldar componentes.</p></div></div><div class="service-step"><div class="service-step-num">03</div><div><h4>Recuperamos y registramos una nueva llave</h4><p>Obtenemos la información necesaria del sistema y programamos una llave autorizada para esa motocicleta.</p></div></div><div class="service-step"><div class="service-step-num">04</div><div><h4>Sincronizamos y comprobamos</h4><p>Reinstalamos lo necesario, verificamos arranque y proximidad y, cuando el sistema lo permite y el cliente lo autoriza, desactivamos las llaves reportadas como perdidas.</p></div></div></div></div><div class="modal-cta"><a class="btn btn-wa" href="https://wa.me/524521791230?text=Hola%20RE%3AMOTO%20LAB.%20Perd%C3%AD%20todas%20las%20llaves%20de%20mi%20BMW." target="_blank" rel="noopener">Consultar mi caso</a></div></article></div></div>
 <div class="modal" id="mechanicalDetail" aria-hidden="true"><div class="modal-box"><button class="modal-close" data-close>✕</button><article class="service-detail"><div class="service-kicker">Llave mecánica de giro</div><h3>Corte mecánico + chip autorizado para arrancar</h3><p class="intro">No basta con que la llave gire el switch. También debe llevar el transponder correcto para que el inmovilizador permita el arranque.</p><div class="service-hero-grid"><aside class="service-gallery"><div class="service-visual-card"><img width="1332" height="1181" loading="lazy" src="assets/service-mechanical-key.webp" alt="Llave mecánica BMW Motorrad de giro"><div><h4>Llave mecánica</h4><p>Espadín fresado con perfil correcto para operar switch y cerraduras compatibles.</p></div></div><div class="service-visual-card"><img width="447" height="447" loading="lazy" src="assets/transponder-chip-clean.webp" alt="Transponder para llave BMW Motorrad"><div><h4>Transponder</h4><p>Chip autorizado para que la motocicleta reconozca la llave y permita el arranque.</p></div></div></aside><div class="service-steps"><div class="service-step"><div class="service-step-num">01</div><div><h4>Cortamos el espadín</h4><p>Fresamos con tecnología computarizada CNC una llave con el perfil correspondiente para que opere correctamente el switch y cerraduras mecánicas.</p></div></div><div class="service-step"><div class="service-step-num">02</div><div><h4>Identificamos el sistema electrónico</h4><p>Verificamos qué tipo de transponder utiliza la motocicleta y cuál es el método compatible para autorizarlo.</p></div></div><div class="service-step"><div class="service-step-num">03</div><div><h4>Autorizamos el transponder</h4><p>Registramos o generamos el transponder necesario para que la nueva llave sea reconocida por el inmovilizador.</p></div></div><div class="service-step"><div class="service-step-num">04</div><div><h4>Probamos giro y arranque</h4><p>Comprobamos funcionamiento mecánico, lectura del transponder y encendido de la motocicleta antes de entregar.</p></div></div></div></div><div class="modal-cta"><a class="btn btn-wa" href="https://wa.me/524521791230?text=Hola%20RE%3AMOTO%20LAB.%20Quiero%20cotizar%20una%20llave%20mec%C3%A1nica%20con%20chip." target="_blank" rel="noopener">Cotizar este servicio</a></div></article></div></div>
@@ -1468,11 +1504,36 @@ document.querySelectorAll('.faq-q').forEach(btn => {
   });
 });
 
+/* Visor de imágenes — Casos de éxito */
+const caseImageModal = document.getElementById('caseImageModal');
+const caseLightboxImg = document.getElementById('caseLightboxImg');
+let caseImageTriggerActive = null;
+
+document.querySelectorAll('[data-case-image]').forEach(trigger => {
+  trigger.addEventListener('click', () => {
+    if(!caseImageModal || !caseLightboxImg) return;
+    caseImageTriggerActive = trigger;
+    caseLightboxImg.src = trigger.dataset.caseImage;
+    caseLightboxImg.alt = trigger.dataset.caseAlt || trigger.querySelector('img')?.alt || 'Imagen ampliada';
+    caseImageModal.classList.add('open');
+    caseImageModal.setAttribute('aria-hidden','false');
+    document.body.classList.add('modal-open');
+    caseImageModal.querySelector('[data-close]')?.focus({preventScroll:true});
+  });
+});
+
 /* Modals */
 function closeModal(modal){
   modal.classList.remove('open');
   modal.setAttribute('aria-hidden','true');
   document.body.classList.remove('modal-open');
+  if(modal === caseImageModal){
+    caseLightboxImg.removeAttribute('src');
+    if(caseImageTriggerActive){
+      caseImageTriggerActive.focus({preventScroll:true});
+      caseImageTriggerActive = null;
+    }
+  }
 }
 document.querySelectorAll('[data-open]').forEach(el => {
   el.addEventListener('click', () => {
