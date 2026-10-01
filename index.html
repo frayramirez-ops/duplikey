@@ -871,6 +871,69 @@ details.carta ol{margin:12px 0 0;padding-left:20px;color:var(--steel);font-size:
 .vf-tft-status{margin:0;padding:10px 12px;border-radius:8px;border:1px solid var(--line-strong);font-size:.86rem;line-height:1.45;color:var(--steel);background:rgba(255,255,255,.035)}
 .vf-tft-status strong{color:#fff}
 
+
+/* V10.12 — Cierre de modales con mayor contraste */
+.modal-close{
+  background:#D62828 !important;
+  color:#fff !important;
+  border:1px solid rgba(255,255,255,.42) !important;
+  box-shadow:0 8px 24px rgba(214,40,40,.38),0 0 0 3px rgba(214,40,40,.14);
+}
+.modal-close:hover{
+  background:#B71C1C !important;
+  border-color:rgba(255,255,255,.70) !important;
+}
+.modal-close:focus-visible{
+  outline:3px solid #fff;
+  outline-offset:3px;
+}
+@media(max-width:680px){
+  .modal-close{
+    width:46px;
+    height:46px;
+    font-size:1.35rem;
+  }
+}
+
+
+/* V10.12 — UX móvil de contacto contextual */
+@media(max-width:720px){
+  body{padding-bottom:0 !important}
+  .sticky-wa{display:none !important}
+}
+@media(max-width:680px){
+  .sticky-wa{display:none !important}
+
+  .chat-launch{
+    display:grid !important;
+    right:14px !important;
+    bottom:calc(14px + env(safe-area-inset-bottom, 0px)) !important;
+    width:58px !important;
+    height:58px !important;
+    z-index:62;
+    opacity:0;
+    transform:translateY(8px) scale(.94);
+    pointer-events:none;
+    transition:opacity .18s ease,transform .18s ease,box-shadow .18s ease;
+  }
+  .chat-launch.context-visible{
+    opacity:1;
+    transform:none;
+    pointer-events:auto;
+  }
+  .chat-launch.context-hidden{
+    opacity:0;
+    transform:translateY(8px) scale(.94);
+    pointer-events:none;
+  }
+
+  .chat-panel{
+    right:10px !important;
+    bottom:calc(82px + env(safe-area-inset-bottom, 0px)) !important;
+    width:calc(100vw - 20px) !important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -1683,63 +1746,93 @@ M.onchange=prepareModel;document.querySelectorAll('input[name=vfObs]').forEach(f
 window.dataLayer=window.dataLayer||[];
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href*="wa.me"]');if(a){window.dataLayer.push({event:'whatsapp_click',link_text:(a.textContent||'').trim().slice(0,60),link_url:a.href});}});
 
-/* V10.7 — Mobile CTA visibility.
-   One conversion action at a time: hide sticky while Hero, contact form or footer are visible. */
+/* V10.12 — Mini-chat contextual en móvil.
+   La burbuja aparece solo cuando no hay otra acción de contacto visible.
+   Así evitamos duplicidad de llamadas a WhatsApp y eliminamos la franja verde inferior. */
 (() => {
-  const sticky = document.querySelector('.sticky-wa');
-  const hero = document.querySelector('.hero');
-  const contact = document.getElementById('contacto');
-  const footer = document.querySelector('footer');
-  if (!sticky || !hero) return;
+  const launch = document.getElementById('chatLaunch');
+  const panel = document.getElementById('chatPanel');
+  if (!launch) return;
 
-  let heroVisible = true;
-  let contactVisible = false;
-  let footerVisible = false;
+  const media = window.matchMedia('(max-width: 680px)');
+  const visibleContact = new Set();
+
+  const contactSelectors = [
+    'a[href*="wa.me"]',
+    'a[href="#contacto"]',
+    '#vfMissingLink',
+    '#quoteForm button[type="submit"]',
+    '#quoteForm input[type="submit"]'
+  ];
+
+  const isOwnChatElement = (el) =>
+    el === launch ||
+    el.classList.contains('sticky-wa') ||
+    !!el.closest('#chatPanel');
+
+  const contacts = [...document.querySelectorAll(contactSelectors.join(','))]
+    .filter((el, i, arr) => arr.indexOf(el) === i && !isOwnChatElement(el));
+
+  const modalOpen = () => !!document.querySelector('.modal.open');
 
   const sync = () => {
-    const mobile = window.matchMedia('(max-width: 680px)').matches;
-    sticky.classList.toggle('is-visible', mobile && !heroVisible && !contactVisible && !footerVisible);
+    if (!media.matches) {
+      launch.classList.remove('context-visible','context-hidden');
+      return;
+    }
+
+    const panelOpen = panel && panel.classList.contains('open');
+    const shouldHide = visibleContact.size > 0 || panelOpen || modalOpen();
+
+    launch.classList.toggle('context-visible', !shouldHide);
+    launch.classList.toggle('context-hidden', shouldHide);
   };
 
   if ('IntersectionObserver' in window) {
-    new IntersectionObserver(([entry]) => {
-      heroVisible = entry.isIntersecting;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const el = entry.target;
+        const style = getComputedStyle(el);
+        const rendered = style.display !== 'none' &&
+                         style.visibility !== 'hidden' &&
+                         el.getClientRects().length > 0;
+
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.12 && rendered) {
+          visibleContact.add(el);
+        } else {
+          visibleContact.delete(el);
+        }
+      });
       sync();
-    }, { threshold: 0.15 }).observe(hero);
+    }, { threshold:[0,0.12,0.35,0.7,1] });
 
-    if (contact) {
-      new IntersectionObserver(([entry]) => {
-        contactVisible = entry.isIntersecting;
-        sync();
-      }, { threshold: 0.12 }).observe(contact);
-    }
-
-    if (footer) {
-      new IntersectionObserver(([entry]) => {
-        footerVisible = entry.isIntersecting;
-        sync();
-      }, { threshold: 0.08 }).observe(footer);
-    }
+    contacts.forEach(el => observer.observe(el));
   } else {
     const fallback = () => {
-      heroVisible = window.scrollY < hero.offsetHeight * .75;
-      if (contact) {
-        const r = contact.getBoundingClientRect();
-        contactVisible = r.top < innerHeight && r.bottom > 0;
-      }
-      if (footer) {
-        const r = footer.getBoundingClientRect();
-        footerVisible = r.top < innerHeight && r.bottom > 0;
-      }
+      visibleContact.clear();
+      contacts.forEach((el) => {
+        const style = getComputedStyle(el);
+        if (style.display === 'none' || style.visibility === 'hidden') return;
+        const r = el.getBoundingClientRect();
+        const visiblePx = Math.min(r.bottom, innerHeight) - Math.max(r.top, 0);
+        if (r.width > 0 && visiblePx > Math.min(28, r.height * .12)) visibleContact.add(el);
+      });
       sync();
     };
-    addEventListener('scroll', fallback, { passive:true });
+    addEventListener('scroll', fallback, {passive:true});
     addEventListener('resize', fallback);
     fallback();
   }
 
+  // Re-evaluate when modals or the mini-chat itself open/close.
+  const mutationObserver = new MutationObserver(sync);
+  document.querySelectorAll('.modal,#chatPanel').forEach(el => {
+    mutationObserver.observe(el,{attributes:true,attributeFilter:['class','aria-hidden']});
+  });
+
+  media.addEventListener?.('change', sync);
   addEventListener('resize', sync);
-  sync();
+  requestAnimationFrame(sync);
 })();
 
 </script>
