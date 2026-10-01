@@ -1438,7 +1438,7 @@ details.carta ol{margin:12px 0 0;padding-left:20px;color:var(--steel);font-size:
 
 <a class="btn btn-wa sticky-wa" href="https://wa.me/524521791230?text=Hola%20RE%3AMOTO%20LAB.%20Quiero%20cotizar%20mi%20BMW%20Motorrad." target="_blank" rel="noopener">Solicitar cotización</a>
 <button class="chat-launch" id="chatLaunch" aria-label="¿No sabes qué servicio necesitas?" title="¿No sabes qué servicio necesitas?"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.5 9.4 9.4 0 0 1-4-.9L3 21l1.7-4.5A8.4 8.4 0 0 1 3 11.5a8.5 8.5 0 0 1 18 0Z"/><path d="M8 10h8M8 14h5"/></svg></button>
-<div class="chat-panel" id="chatPanel" aria-hidden="true"><div class="chat-head"><div><strong>RE:MOTO LAB</strong><small>Te respondemos en horario laboral</small></div><button class="chat-close" id="chatClose" aria-label="Cerrar">✕</button></div><div class="chat-body"><div class="chat-bubble">Cuéntanos qué BMW tienes y te ayudamos a identificar el servicio adecuado.</div><div class="chat-fields"><input id="chatModel" placeholder="Modelo, ej. R 1250 GS"><input id="chatYear" placeholder="Año, ej. 2021"><select id="chatService" aria-label="¿Qué necesitas?"><option>Duplicado de llave</option><option>Perdí todas las llaves</option><option>Codificar TFT</option><option>Diagnóstico</option><option>Recepción de módulos</option><option>No estoy seguro</option></select><button class="btn btn-wa" id="chatSend">Continuar en WhatsApp</button></div><div class="chat-note">La conversación continuará de forma segura en WhatsApp.</div></div></div>
+<div class="chat-panel" id="chatPanel" aria-hidden="true"><div class="chat-head"><div><strong>RE:MOTO LAB</strong><small>Te respondemos en horario laboral</small></div><button class="chat-close" id="chatClose" aria-label="Cerrar">✕</button></div><div class="chat-body"><div class="chat-bubble">Cuéntanos qué BMW tienes y te ayudamos a identificar el servicio adecuado.</div><div class="chat-fields"><input id="chatName" placeholder="Tu Nombre, Ej. Carlos"><input id="chatModel" placeholder="Tu Moto, Ej. R1200GS"><input id="chatYear" placeholder="Año, Ej. 2017"><select id="chatService" aria-label="¿Qué necesitas?"><option value="" selected disabled>Elije Servicio</option><option>Duplicado de llave</option><option>Perdí todas las llaves</option><option>Codificar TFT</option><option>Diagnóstico</option><option>Recepción de módulos</option><option>No estoy seguro</option></select><button class="btn btn-wa" id="chatSend">Continuar en WhatsApp</button></div><div class="chat-note">La conversación continuará de forma segura en WhatsApp.</div></div></div>
 
 <div class="modal case-lightbox" id="caseImageModal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Imagen ampliada del caso de éxito">
   <div class="modal-box">
@@ -1709,11 +1709,12 @@ if(chatClose && chatPanel){
     chatLaunch?.focus({preventScroll:true});
   });
 }
-if(chatSend){chatSend.addEventListener('click',()=>{const model=document.getElementById('chatModel').value.trim();const year=document.getElementById('chatYear').value.trim();const service=document.getElementById('chatService').value;const msg=`Hola RE:MOTO LAB. Quiero orientación para mi BMW Motorrad.
+if(chatSend){chatSend.addEventListener('click',()=>{const name=document.getElementById('chatName').value.trim();const model=document.getElementById('chatModel').value.trim();const year=document.getElementById('chatYear').value.trim();const service=document.getElementById('chatService').value;const msg=`Hola RE:MOTO LAB. Quiero orientación para mi BMW Motorrad.
 
+Nombre: ${name||'Por definir'}
 Modelo: ${model||'Por definir'}
 Año: ${year||'Por definir'}
-Servicio: ${service}`;window.open('https://wa.me/524521791230?text='+encodeURIComponent(msg),'_blank','noopener');});}
+Servicio: ${service||'Por definir'}`;window.open('https://wa.me/524521791230?text='+encodeURIComponent(msg),'_blank','noopener');});}
 
 /* Cierre por Escape del mini-chat */
 document.addEventListener('keydown', (e) => {
