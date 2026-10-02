@@ -1,25 +1,48 @@
-RE:MOTO LAB · SITIO PÚBLICO V10.6
-=================================
-Esta es la única carpeta que debe publicarse.
-NO subas PRIVADO_NO_SUBIR ni catalog.json.
-Antes de producción configura el dominio definitivo en los metadatos SEO indicados en LEEME.txt.
+RE:MOTO LAB · SITIO PÚBLICO V10.14 RC2
+========================================
 
+Estado
+------
+Release Candidate 2 para revisión final antes de producción.
 
-V10.12 — UX MÓVIL
-- Todos los modales usan botón de cierre rojo de alto contraste.
-- Se elimina por completo el CTA WhatsApp fijo de ancho completo en móvil.
-- Se restaura la burbuja flotante del mini-chat.
-- La burbuja se oculta automáticamente cuando hay otra acción de contacto visible.
-- La burbuja vuelve a aparecer cuando no hay otro CTA de contacto en pantalla.
-- Se elimina el padding inferior móvil que contribuía a la franja verde en Safari/iPhone.
-- Se conserva el visor/lightbox de imágenes en Casos de éxito.
+Publicación
+-----------
+Esta carpeta contiene únicamente el sitio público.
+No publicar nunca archivos privados como catalog.json, resumen.js,
+construir-publico.js, validar-publico.js ni la carpeta PRIVADO_NO_SUBIR.
 
+Dominio actual
+--------------
+https://duplikey.netlify.app/
 
-V10.13 — MINI-CHAT FIX
-- Botones de cierre rojos con X blanca en escritorio y móvil.
-- Incluye cierre rojo del mini-chat.
-- Corregido bug móvil: el panel del mini-chat ya no queda oculto por display:none!important.
-- La burbuja abre correctamente el mini-chat y reaparece tras cerrarlo cuando no hay otro CTA visible.
-- Se mantiene la lógica contextual: la burbuja desaparece cuando hay otro CTA de contacto visible.
-- Selector del mini-chat igualado a Cotización rápida:
-  Duplicado de llave / Perdí todas las llaves / Codificar TFT / Diagnóstico / Recepción de módulos / No estoy seguro.
+Cambios consolidados de RC2
+---------------------------
+- Correcciones ortográficas y de acentuación en FAQ y mini-chat.
+- Copy de privacidad ajustado para evitar afirmaciones absolutas sobre códigos de seguridad.
+- Copy de componentes ajustado a “calidad OEM o premium, previamente verificados”.
+- “Programación nivel OEM” sustituido por una descripción de especialización técnica sin insinuar afiliación oficial.
+- AKL: redacción ajustada para priorizar métodos no invasivos sin prometer ausencia absoluta de soldadura.
+- Cobertura nacional: aclarado “Recepción de módulos desde todo México”.
+- Accesibilidad del mini-chat mejorada con aria-label, autocomplete e inputmode.
+- Limpieza conservadora de CSS heredado que ya estaba sobrescrito.
+- Se conservan los horarios actuales definidos por el propietario.
+- Se conservan lightbox de Casos de éxito, cierres rojos, mini-chat contextual y lógica TFT actual.
+
+Historial reciente
+------------------
+V10.12
+- UX móvil de contacto contextual.
+- Eliminación del CTA fijo inferior de WhatsApp.
+- Lightbox en Casos de éxito.
+- Cierres de modales de alto contraste.
+
+V10.13
+- Corrección funcional del mini-chat móvil.
+- Selector del mini-chat alineado con Cotización rápida.
+
+V10.14 RC1
+- Ajustes editoriales y de contenido realizados por el propietario.
+- Consolidación previa a release.
+
+V10.14 RC2
+- Corrección editorial, claims, accesibilidad y limpieza técnica conservadora.
