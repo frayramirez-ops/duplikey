@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="es-MX">
 <head>
+<!-- Google tag (gtag.js) · Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-52P1XFVECT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-52P1XFVECT');
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Llaves BMW Motorrad | Keyless Ride y All Keys Lost | RE:MOTO LAB</title>
@@ -9,16 +17,19 @@
 <meta property="og:description" content="Keyless Ride, All Keys Lost y diagnóstico BMW Motorrad. Vuelve a rodar con tranquilidad.">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#0A0A0A">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:site_name" content="DUPLIKEY MX | RE:MOTO LAB">
+<meta name="twitter:image" content="https://www.duplikey.mx/assets/og-image.jpg">
 <meta property="og:locale" content="es_MX">
-<meta property="og:image" content="https://duplikey.netlify.app/assets/og-image.jpg">
+<meta property="og:image" content="https://www.duplikey.mx/assets/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Montserrat:wght@600;800&family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
-<link rel="canonical" href="https://duplikey.netlify.app/">
-<meta property="og:url" content="https://duplikey.netlify.app/">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"RE:MOTO LAB by DUPLIKEY MX","description":"Programación, duplicado y recuperación de llaves BMW Motorrad.","telephone":"+524521791230","email":"duplikeymx@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Uruapan","addressRegion":"Michoacán","addressCountry":"MX"},"areaServed":"MX","sameAs":["https://www.facebook.com/DuplikeyMX","https://www.instagram.com/DuplikeyMX/"]}</script>
+<link rel="canonical" href="https://www.duplikey.mx/">
+<meta property="og:url" content="https://www.duplikey.mx/">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"RE:MOTO LAB by DUPLIKEY MX","description":"Programación, duplicado y recuperación de llaves BMW Motorrad.","telephone":"+524521791230","email":"duplikeymx@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Uruapan","addressRegion":"Michoacán","addressCountry":"MX"},"areaServed":"MX","sameAs":["https://www.facebook.com/DuplikeyMX","https://www.instagram.com/DuplikeyMX/"],"url":"https://www.duplikey.mx/","@id":"https://www.duplikey.mx/#business","image":"https://www.duplikey.mx/assets/og-image.jpg","logo":"https://www.duplikey.mx/assets/logo-duplikey.png"}</script>
 <style>
 :root{
   --bg:#0A0A0A;
@@ -1536,6 +1547,14 @@ if (siteHeader) {
 }
 
 /* Mobile menu */
+/* V10.15 — Analítica de interacción.
+   No almacena nombres, teléfonos, ciudad ni texto escrito por el usuario. */
+function trackEvent(name, params = {}){
+  if(typeof window.gtag === 'function'){
+    window.gtag('event', name, params);
+  }
+}
+
 const menuBtn = document.getElementById('menuBtn');
 const mobileMenu = document.getElementById('mobileMenu');
 if (menuBtn && mobileMenu) {
@@ -1575,6 +1594,9 @@ let caseImageTriggerActive = null;
 document.querySelectorAll('[data-case-image]').forEach(trigger => {
   trigger.addEventListener('click', () => {
     if(!caseImageModal || !caseLightboxImg) return;
+    trackEvent('case_image_open', {
+      case_name: (trigger.dataset.caseAlt || trigger.querySelector('img')?.alt || 'caso_exito').slice(0,100)
+    });
     caseImageTriggerActive = trigger;
     caseLightboxImg.src = trigger.dataset.caseImage;
     caseLightboxImg.alt = trigger.dataset.caseAlt || trigger.querySelector('img')?.alt || 'Imagen ampliada';
@@ -1602,6 +1624,10 @@ document.querySelectorAll('[data-open]').forEach(el => {
   el.addEventListener('click', () => {
     const modal = document.getElementById(el.dataset.open);
     if(!modal) return;
+    trackEvent('modal_open', {
+      modal_id: el.dataset.open || 'unknown',
+      link_text: (el.textContent || '').trim().slice(0,80)
+    });
     modal.classList.add('open');
     modal.setAttribute('aria-hidden','false');
     document.body.classList.add('modal-open');
@@ -1611,6 +1637,11 @@ document.querySelectorAll('[data-open]').forEach(el => {
       e.preventDefault();
       const modal = document.getElementById(el.dataset.open);
       if(!modal) return;
+      trackEvent('modal_open', {
+        modal_id: el.dataset.open || 'unknown',
+        link_text: (el.textContent || '').trim().slice(0,80),
+        interaction: 'keyboard'
+      });
       modal.classList.add('open');
       modal.setAttribute('aria-hidden','false');
       document.body.classList.add('modal-open');
@@ -1645,6 +1676,10 @@ document.addEventListener('keydown', e => {
 const quoteForm = document.getElementById('quoteForm');
 if (quoteForm) quoteForm.addEventListener('submit', e => {
   e.preventDefault();
+  trackEvent('generate_lead', {
+    lead_source: 'cotizacion_rapida',
+    service: document.getElementById('service').value || 'sin_seleccionar'
+  });
   const msg = `Hola RE:MOTO LAB. Quiero cotizar un servicio para mi BMW Motorrad.
 
 Nombre: ${document.getElementById('name').value}
@@ -1663,6 +1698,7 @@ const chatClose = document.getElementById('chatClose');
 const chatSend = document.getElementById('chatSend');
 if(chatLaunch && chatPanel){
   chatLaunch.addEventListener('click',()=>{
+    trackEvent('mini_chat_open', {source: 'floating_bubble'});
     chatPanel.classList.add('open');
     chatPanel.setAttribute('aria-hidden','false');
     chatClose?.focus({preventScroll:true});
@@ -1675,7 +1711,7 @@ if(chatClose && chatPanel){
     chatLaunch?.focus({preventScroll:true});
   });
 }
-if(chatSend){chatSend.addEventListener('click',()=>{const name=document.getElementById('chatName').value.trim();const model=document.getElementById('chatModel').value.trim();const year=document.getElementById('chatYear').value.trim();const service=document.getElementById('chatService').value;const msg=`Hola RE:MOTO LAB. Quiero orientación para mi BMW Motorrad.
+if(chatSend){chatSend.addEventListener('click',()=>{const name=document.getElementById('chatName').value.trim();const model=document.getElementById('chatModel').value.trim();const year=document.getElementById('chatYear').value.trim();const service=document.getElementById('chatService').value;trackEvent('generate_lead',{lead_source:'mini_chat',service:service||'sin_seleccionar'});const msg=`Hola RE:MOTO LAB. Quiero orientación para mi BMW Motorrad.
 
 Nombre: ${name||'Por definir'}
 Modelo: ${model||'Por definir'}
@@ -1760,14 +1796,46 @@ F.onchange=function(){if(!F.value){opts(M,[],'Primero elige la familia');M.disab
 function resolve(cat){var recs=matching();if(!recs.length)return {m:M.value||'',y:+Y.value,e:2,sv:['dx'],sis:TBD,img:null,ns:null,t:'u',i:'un servicio de llaves'};var cs=cats(recs),filtered=cat?recs.filter(function(i){return i.c.indexOf(cat)>=0}):recs;if(cat&&!filtered.length)return {m:M.value,y:+Y.value,e:2,sv:['dx'],sis:TBD,img:null,ns:cs.length>=2?'Esta moto puede traer llave Keyless o llave de giro. Confírmalo con diagnóstico.':null,t:'u',i:'un servicio de llaves'};var use=filtered.length?filtered:recs,e=Math.max.apply(null,use.map(function(i){return i.e})),sv=e?['dx']:uniq([].concat.apply([],use.map(function(i){return i.s})));var sis=cat?SIS[cat]:(cs.length===1?SIS[cs[0]]:TBD);var img=cat?IMG[cat]:(cs.length===1?IMG[cs[0]]:null);var ns=cs.length===1?'Tu moto solo puede traer un sistema de llave. Ya lo confirmamos.':cs.length>=2?'Esta moto puede traer llave Keyless o llave de giro. Confírmalo con diagnóstico.':null;var ts=uniq(use.map(function(i){return i.t||'u'}));var t=ts.length===1?ts[0]:(ts.indexOf('p')>=0||ts.indexOf('c')>=0||ts.indexOf('n')>=0?'p':'u');var interest=!e&&cat?(cat==='k'?'un duplicado Keyless Ride':'un duplicado de llave de giro'):'un servicio de llaves';return {m:M.value,y:+Y.value,e:e,sv:sv,sis:sis,img:img,ns:ns,t:t,i:interest}}
 function tftStatusHtml(t){if(t==='c')return'<p class="vf-tft-status"><strong>TFT Sport:</strong> activación disponible con validación previa de la unidad.</p>';if(t==='n')return'<p class="vf-tft-status"><strong>TFT Sport:</strong> esta generación ya lo incluye de fábrica; no requiere nuestro servicio de activación.</p>';if(t==='p')return'<p class="vf-tft-status"><strong>TFT Sport:</strong> compatibilidad variable. Primero debemos validar la configuración exacta de la motocicleta.</p>';if(t==='x')return'<p class="vf-tft-status"><strong>TFT Sport:</strong> no está disponible para esta configuración.</p>';return''}
 function imgHtml(kind){if(kind==='keyfob')return'<div class="vf-img"><img src="assets/keyfob-ref.webp" alt="Keyfob BMW Motorrad de referencia" width="80" height="80" loading="lazy"></div>';if(kind==='mechanical')return'<div class="vf-img"><img src="assets/mechanical-ref.webp" alt="Llave mecánica BMW Motorrad de referencia" width="80" height="80" loading="lazy"></div>';return''}
-function renderResolved(cat){var r=resolve(cat);step(4);var link=WA+encodeURIComponent('Hola, tengo una moto BMW '+r.m+' '+r.y+' y quiero cotizar '+r.i+'.');out.innerHTML='<div class="vf-card s'+r.e+'"><div class="vf-title-row">'+imgHtml(r.img)+'<div class="vf-title-copy"><span class="vf-badge"><i></i>'+LAB[r.e]+'</span><h3>'+esc(r.m)+'</h3></div></div><div class="vf-meta"><span>'+r.y+'</span><span>'+esc(r.sis)+'</span></div>'+(r.ns?'<p class="vf-nota-sistema">'+esc(r.ns)+'</p>':'')+tftStatusHtml(r.t)+'<ul class="vf-svcs">'+r.sv.map(function(k){return'<li><span class="ic"><svg aria-hidden="true"><use href="#i-'+ICON[k]+'"/></svg></span>'+esc(D.sv[k])+'</li>'}).join('')+'</ul><p class="vf-note">'+esc(D.nota[r.e])+'</p><p class="vf-eth"><svg aria-hidden="true"><use href="#i-shield"/></svg>'+esc(D.etica)+'</p><a class="btn btn-wa" href="'+link+'" target="_blank" rel="noopener">Cotizar esta moto por WhatsApp</a></div>'}
+function renderResolved(cat){var r=resolve(cat);step(4);if(typeof window.gtag==='function'){window.gtag('event','compatibility_result',{model:String(r.m||'').slice(0,60),year:String(r.y||''),system:String(r.sis||'').slice(0,60),status:String(r.e),interest:String(r.i||'').slice(0,60)});}var link=WA+encodeURIComponent('Hola, tengo una moto BMW '+r.m+' '+r.y+' y quiero cotizar '+r.i+'.');out.innerHTML='<div class="vf-card s'+r.e+'"><div class="vf-title-row">'+imgHtml(r.img)+'<div class="vf-title-copy"><span class="vf-badge"><i></i>'+LAB[r.e]+'</span><h3>'+esc(r.m)+'</h3></div></div><div class="vf-meta"><span>'+r.y+'</span><span>'+esc(r.sis)+'</span></div>'+(r.ns?'<p class="vf-nota-sistema">'+esc(r.ns)+'</p>':'')+tftStatusHtml(r.t)+'<ul class="vf-svcs">'+r.sv.map(function(k){return'<li><span class="ic"><svg aria-hidden="true"><use href="#i-'+ICON[k]+'"/></svg></span>'+esc(D.sv[k])+'</li>'}).join('')+'</ul><p class="vf-note">'+esc(D.nota[r.e])+'</p><p class="vf-eth"><svg aria-hidden="true"><use href="#i-shield"/></svg>'+esc(D.etica)+'</p><a class="btn btn-wa" href="'+link+'" target="_blank" rel="noopener">Cotizar esta moto por WhatsApp</a></div>'}
 function prepareModel(){updateMissing();if(!M.value){OBS.hidden=true;setObsDefault();out.innerHTML=EMPTY;return}var recs=matching(),cs=cats(recs);setObsDefault();if(!cs.length){OBS.hidden=true;renderResolved(null);return}if(cs.length===1){OBS.hidden=true;renderResolved(cs[0]);return}OBS.hidden=false;step(3);out.innerHTML=WAIT}
 M.onchange=prepareModel;document.querySelectorAll('input[name=vfObs]').forEach(function(x){x.onchange=function(){touched=true;var c=observed();renderResolved(c||null)}});out.innerHTML=EMPTY;updateMissing();
 })();
 </script>
 <script>
-window.dataLayer=window.dataLayer||[];
-document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href*="wa.me"]');if(a){window.dataLayer.push({event:'whatsapp_click',link_text:(a.textContent||'').trim().slice(0,60),link_url:a.href});}});
+/* V10.15 — Eventos globales de conversión */
+document.addEventListener('click', function(e){
+  const a = e.target.closest && e.target.closest('a');
+  if(!a) return;
+
+  const text = (a.textContent || a.getAttribute('aria-label') || '').trim().slice(0,80);
+
+  if(a.href && a.href.includes('wa.me')){
+    trackEvent('whatsapp_click', {
+      link_text: text || 'WhatsApp',
+      contact_source:
+        a.id === 'vfMissingLink' ? 'modelo_no_encontrado' :
+        a.closest('#vfOut') ? 'verificador' :
+        a.closest('#contacto') ? 'cotizacion_rapida' :
+        a.closest('.modal') ? 'modal' :
+        a.classList.contains('sticky-wa') ? 'sticky' : 'sitio'
+    });
+  }
+
+  if(a.matches('.social-link')){
+    trackEvent('social_click', {
+      network: a.href.includes('facebook.com') ? 'facebook' :
+               a.href.includes('instagram.com') ? 'instagram' : 'other'
+    });
+  }
+
+  if(a.id === 'vfMissingLink'){
+    trackEvent('compatibility_missing_model', {source:'verificador'});
+  }
+
+  if(a.getAttribute('href') === '#contacto'){
+    trackEvent('contact_cta_click', {link_text:text || 'contacto'});
+  }
+});
 
 /* V10.12 — Mini-chat contextual en móvil.
    La burbuja aparece solo cuando no hay otra acción de contacto visible.
@@ -1859,6 +1927,6 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
 })();
 
 </script>
-<!-- ANALÍTICA: pega aquí tu snippet de Google Analytics / Meta Pixel; los clics a WhatsApp ya se envían a dataLayer -->
+<!-- Google Analytics 4 activo: G-52P1XFVECT -->
 </body>
 </html>

@@ -1,48 +1,68 @@
-RE:MOTO LAB · SITIO PÚBLICO V10.14 RC2
-========================================
+RE:MOTO LAB · SITIO PÚBLICO V10.15 DOMAIN + ANALYTICS RC1
+==========================================================
 
 Estado
 ------
-Release Candidate 2 para revisión final antes de producción.
+Release Candidate 1 con dominio oficial y Google Analytics 4 integrado.
 
-Publicación
------------
-Esta carpeta contiene únicamente el sitio público.
-No publicar nunca archivos privados como catalog.json, resumen.js,
-construir-publico.js, validar-publico.js ni la carpeta PRIVADO_NO_SUBIR.
+Dominio canónico
+----------------
+https://www.duplikey.mx/
 
-Dominio actual
---------------
-https://duplikey.netlify.app/
-
-Cambios consolidados de RC2
----------------------------
-- Correcciones ortográficas y de acentuación en FAQ y mini-chat.
-- Copy de privacidad ajustado para evitar afirmaciones absolutas sobre códigos de seguridad.
-- Copy de componentes ajustado a “calidad OEM o premium, previamente verificados”.
-- “Programación nivel OEM” sustituido por una descripción de especialización técnica sin insinuar afiliación oficial.
-- AKL: redacción ajustada para priorizar métodos no invasivos sin prometer ausencia absoluta de soldadura.
-- Cobertura nacional: aclarado “Recepción de módulos desde todo México”.
-- Accesibilidad del mini-chat mejorada con aria-label, autocomplete e inputmode.
-- Limpieza conservadora de CSS heredado que ya estaba sobrescrito.
-- Se conservan los horarios actuales definidos por el propietario.
-- Se conservan lightbox de Casos de éxito, cierres rojos, mini-chat contextual y lógica TFT actual.
-
-Historial reciente
+Google Analytics 4
 ------------------
-V10.12
-- UX móvil de contacto contextual.
-- Eliminación del CTA fijo inferior de WhatsApp.
-- Lightbox en Casos de éxito.
-- Cierres de modales de alto contraste.
+Measurement ID: G-52P1XFVECT
 
-V10.13
-- Corrección funcional del mini-chat móvil.
-- Selector del mini-chat alineado con Cotización rápida.
+La etiqueta de Google está instalada inmediatamente después de <head>.
+No añadir una segunda etiqueta GA4 mientras este ID siga activo.
 
-V10.14 RC1
-- Ajustes editoriales y de contenido realizados por el propietario.
-- Consolidación previa a release.
+Eventos medidos
+---------------
+- page_view: automático por GA4.
+- whatsapp_click: clic en enlaces de WhatsApp y origen aproximado del CTA.
+- generate_lead: envío desde Cotización rápida o mini-chat.
+- mini_chat_open: apertura de la burbuja de ayuda.
+- compatibility_result: resultado del verificador.
+- compatibility_missing_model: clic en “No aparece tu modelo”.
+- modal_open: apertura de servicios, legales, ética, garantía, etc.
+- case_image_open: ampliación de un Caso de éxito.
+- contact_cta_click: acceso a la sección de contacto.
+- social_click: clic en Facebook o Instagram.
 
-V10.14 RC2
-- Corrección editorial, claims, accesibilidad y limpieza técnica conservadora.
+Privacidad de analítica
+-----------------------
+Los eventos personalizados NO envían a Analytics:
+- nombre del cliente
+- teléfono
+- ciudad
+- texto escrito en formularios o mini-chat
+
+El evento compatibility_result utiliza únicamente selecciones del catálogo
+público del verificador: modelo, año, sistema, estado e interés.
+
+SEO / dominio
+-------------
+Actualizado al dominio oficial https://www.duplikey.mx/ en:
+- canonical
+- og:url
+- og:image
+- Twitter image
+- JSON-LD (url, @id, image y logo)
+- sitemap.xml
+- robots.txt
+
+Se añadió meta robots:
+index,follow,max-image-preview:large
+
+Siguiente paso después de publicar
+-----------------------------------
+1. Confirmar que https://www.duplikey.mx/ carga esta versión.
+2. Comprobar Google Analytics > Tiempo real.
+3. Configurar Google Search Console para el dominio duplikey.mx.
+4. Enviar https://www.duplikey.mx/sitemap.xml a Search Console.
+5. Después integrar Bing Webmaster Tools, preferiblemente importando Search Console.
+
+Notas de publicación
+--------------------
+Publicar únicamente este paquete público.
+No subir archivos privados de catálogo o herramientas internas.
