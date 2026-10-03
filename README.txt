@@ -1,13 +1,13 @@
-RE:MOTO LAB · SITIO PÚBLICO V10.15 DOMAIN + ANALYTICS RC1
+RE:MOTO LAB · SITIO PÚBLICO V10.15 DOMAIN + ANALYTICS RC2
 ==========================================================
 
 Estado
 ------
-Release Candidate 1 con dominio oficial y Google Analytics 4 integrado.
+Release Candidate 2 con dominio oficial y Google Analytics 4 integrado.
 
 Dominio canónico
 ----------------
-https://www.duplikey.mx/
+https://duplikey.mx/
 
 Google Analytics 4
 ------------------
@@ -42,7 +42,7 @@ público del verificador: modelo, año, sistema, estado e interés.
 
 SEO / dominio
 -------------
-Actualizado al dominio oficial https://www.duplikey.mx/ en:
+Actualizado al dominio oficial https://duplikey.mx/ en:
 - canonical
 - og:url
 - og:image
@@ -56,13 +56,20 @@ index,follow,max-image-preview:large
 
 Siguiente paso después de publicar
 -----------------------------------
-1. Confirmar que https://www.duplikey.mx/ carga esta versión.
+1. Confirmar que https://duplikey.mx/ carga esta versión.
 2. Comprobar Google Analytics > Tiempo real.
 3. Configurar Google Search Console para el dominio duplikey.mx.
-4. Enviar https://www.duplikey.mx/sitemap.xml a Search Console.
+4. Enviar https://duplikey.mx/sitemap.xml a Search Console.
 5. Después integrar Bing Webmaster Tools, preferiblemente importando Search Console.
 
 Notas de publicación
 --------------------
 Publicar únicamente este paquete público.
 No subir archivos privados de catálogo o herramientas internas.
+
+RC2 — Ajuste de dominio canónico
+---------------------------------
+- Dominio principal definitivo: https://duplikey.mx/
+- www.duplikey.mx permanece como redirección automática administrada por Netlify.
+- canonical, Open Graph, Twitter, JSON-LD, sitemap y robots alineados al dominio principal.
+- Google Analytics 4 conserva el Measurement ID G-52P1XFVECT.
