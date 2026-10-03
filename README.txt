@@ -1,75 +1,27 @@
-RE:MOTO LAB · SITIO PÚBLICO V10.15 DOMAIN + ANALYTICS RC2
-==========================================================
+RE:MOTO LAB WEB V10.17 — SEO + VISUAL SERVICE ARCHITECTURE
+============================================================
 
-Estado
-------
-Release Candidate 2 con dominio oficial y Google Analytics 4 integrado.
-
-Dominio canónico
-----------------
+Dominio canónico:
 https://duplikey.mx/
 
-Google Analytics 4
-------------------
-Measurement ID: G-52P1XFVECT
+Cambios principales:
+- Arquitectura SEO diferenciada por intención, evitando páginas casi idénticas.
+- 11 páginas internas indexables + homepage.
+- Cobertura visible de GS, R/RS/RT, S1000/XR, K1600 y scooters C compatibles.
+- 7 flyers reales del negocio integrados, optimizados en WebP y con lightbox.
+- Tres páginas adicionales para servicios con intención propia:
+  /actualizacion-llave-bmw-motorrad/
+  /modo-sport-bmw-motorrad-tft/
+  /reseteo-servicio-bmw-motorrad/
+- Páginas GS/R1250GS/R1200GS conservadas, con contenido realmente distinto.
+- Página local Uruapan/Michoacán diferenciada del contenido técnico.
+- Imágenes hero asignadas por contexto; sin placeholders.
+- Assets de páginas internas usan rutas relativas ../assets para evitar imagen rota en previews locales.
+- GA4 G-52P1XFVECT preservado.
+- Sitemap actualizado con 12 URLs.
+- Canonical individual por página.
+- JSON-LD Service + WebPage + BreadcrumbList en páginas internas.
+- Flyers no envían PII a Analytics; solo evento flyer_open con nombre de pieza y ruta.
 
-La etiqueta de Google está instalada inmediatamente después de <head>.
-No añadir una segunda etiqueta GA4 mientras este ID siga activo.
-
-Eventos medidos
----------------
-- page_view: automático por GA4.
-- whatsapp_click: clic en enlaces de WhatsApp y origen aproximado del CTA.
-- generate_lead: envío desde Cotización rápida o mini-chat.
-- mini_chat_open: apertura de la burbuja de ayuda.
-- compatibility_result: resultado del verificador.
-- compatibility_missing_model: clic en “No aparece tu modelo”.
-- modal_open: apertura de servicios, legales, ética, garantía, etc.
-- case_image_open: ampliación de un Caso de éxito.
-- contact_cta_click: acceso a la sección de contacto.
-- social_click: clic en Facebook o Instagram.
-
-Privacidad de analítica
------------------------
-Los eventos personalizados NO envían a Analytics:
-- nombre del cliente
-- teléfono
-- ciudad
-- texto escrito en formularios o mini-chat
-
-El evento compatibility_result utiliza únicamente selecciones del catálogo
-público del verificador: modelo, año, sistema, estado e interés.
-
-SEO / dominio
--------------
-Actualizado al dominio oficial https://duplikey.mx/ en:
-- canonical
-- og:url
-- og:image
-- Twitter image
-- JSON-LD (url, @id, image y logo)
-- sitemap.xml
-- robots.txt
-
-Se añadió meta robots:
-index,follow,max-image-preview:large
-
-Siguiente paso después de publicar
------------------------------------
-1. Confirmar que https://duplikey.mx/ carga esta versión.
-2. Comprobar Google Analytics > Tiempo real.
-3. Configurar Google Search Console para el dominio duplikey.mx.
-4. Enviar https://duplikey.mx/sitemap.xml a Search Console.
-5. Después integrar Bing Webmaster Tools, preferiblemente importando Search Console.
-
-Notas de publicación
---------------------
-Publicar únicamente este paquete público.
-No subir archivos privados de catálogo o herramientas internas.
-
-RC2 — Ajuste de dominio canónico
----------------------------------
-- Dominio principal definitivo: https://duplikey.mx/
-- www.duplikey.mx permanece como redirección automática administrada por Netlify.
-- canonical, Open Graph, Twitter, JSON-LD, sitemap y robots alineados al dominio principal.
-- Google Analytics 4 conserva el Measurement ID G-52P1XFVECT.
+PUBLICACIÓN:
+Subir el contenido de esta carpeta/ZIP a Netlify. Después reenviar sitemap.xml en Google Search Console.
