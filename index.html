@@ -11,10 +11,10 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Llaves BMW Motorrad | Keyless Ride y All Keys Lost | RE:MOTO LAB</title>
-<meta name="description" content="Programación, duplicado y recuperación de llaves BMW Motorrad. Keyless Ride, All Keys Lost, diagnóstico y TFT. Atención en Uruapan y cobertura nacional.">
-<meta property="og:title" content="RE:MOTO LAB | Llaves BMW Motorrad">
-<meta property="og:description" content="Keyless Ride, All Keys Lost y diagnóstico BMW Motorrad. Vuelve a rodar con tranquilidad.">
+<title>Llaves BMW Motorrad | Keyless, Duplicado y Pérdida Total | DUPLIKEY</title>
+<meta name="description" content="Programación y duplicado de llaves BMW Motorrad. Keyless Ride, llave con chip y recuperación por pérdida total. Uruapan, Michoacán y recepción nacional de módulos.">
+<meta property="og:title" content="Llaves BMW Motorrad | DUPLIKEY · RE:MOTO LAB">
+<meta property="og:description" content="Duplicado, Keyless Ride, llave con chip y recuperación por pérdida total para BMW Motorrad. Atención desde Uruapan, Michoacán.">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#0A0A0A">
 <meta name="robots" content="index,follow,max-image-preview:large">
@@ -128,13 +128,13 @@ p{margin:0;color:var(--steel)}
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  background:#fff;
-  border-radius:10px;
-  padding:6px 10px;
-  border:1px solid rgba(255,255,255,.16);
-  box-shadow:0 10px 28px rgba(0,0,0,.18);
+  background:transparent;
+  border-radius:0;
+  padding:0;
+  border:0;
+  box-shadow:none;
 }
-.logo-remoto{height:54px;width:auto;display:block}
+.logo-remoto{height:58px;width:auto;display:block}
 .navlinks{
   display:flex;
   align-items:center;
@@ -417,6 +417,17 @@ p{margin:0;color:var(--steel)}
   color:#d7dce0;
 }
 .check span:first-child{color:var(--blue);font-weight:900}
+
+
+.flyers-accordion{margin-top:20px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.02);overflow:hidden}
+.flyers-accordion summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:18px 20px;font-weight:800;color:#fff;background:rgba(255,255,255,.02)}
+.flyers-accordion summary::-webkit-details-marker{display:none}
+.flyers-accordion summary .acc-copy{display:grid;gap:3px}
+.flyers-accordion summary small{font-weight:500;color:var(--muted);font-size:.85rem}
+.flyers-accordion summary .acc-icon{width:38px;height:38px;border-radius:999px;border:1px solid var(--line);display:grid;place-items:center;color:var(--blue);font-size:1.25rem;flex:0 0 38px;background:rgba(0,174,239,.08)}
+.flyers-accordion[open] summary{border-bottom:1px solid var(--line)}
+.flyers-accordion .accordion-body{padding:18px 18px 6px}
+.flyers-accordion .accordion-note{padding:0 18px 18px;color:var(--muted);font-size:.9rem}
 
 /* Process */
 .process{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
@@ -944,13 +955,43 @@ details.carta ol{margin:12px 0 0;padding-left:20px;color:var(--steel);font-size:
   }
 }
 
+
+/* V10.17 — Flyers informativos */
+.flyers-showcase{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:28px}
+.flyer-tile{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--panel);position:relative}
+.flyer-tile .case-image-trigger{width:100%;display:block;border:0;background:none;padding:0;cursor:pointer}
+.flyer-tile .case-image-trigger img{width:100%;height:auto;aspect-ratio:1122/1402;object-fit:cover}
+.flyer-copy{padding:15px 16px 17px}.flyer-copy h3{font-size:1rem;margin:0 0 5px}.flyer-copy p{font-size:.82rem;color:var(--muted);margin:0}
+@media(max-width:1000px){.flyers-showcase{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.flyers-showcase{grid-template-columns:1fr}}
+.header-extras{display:flex;align-items:center;gap:12px}
+.header-socials{display:flex;align-items:center;gap:8px}
+.header-social-link{width:36px;height:36px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.18);background:#12161a;transition:.18s ease;color:#fff;box-shadow:0 8px 24px rgba(0,0,0,.18)}
+.header-social-link:hover{transform:translateY(-1px);border-color:rgba(255,255,255,.35)}
+.header-social-link svg{width:18px;height:18px;display:block}
+.header-social-link.facebook{background:rgba(24,119,242,.16);border-color:rgba(24,119,242,.35);color:#1877F2}
+.header-social-link.instagram{background:linear-gradient(135deg,rgba(245,133,41,.18),rgba(221,42,123,.18) 55%,rgba(81,91,212,.18));border-color:rgba(221,42,123,.35);color:#fff}
+.foot{display:grid;grid-template-columns:1.35fr .95fr .95fr .8fr;gap:34px;align-items:start}
+.footlinks strong{display:block;margin-bottom:10px;color:#fff;font-size:1rem}
+.footer-brand p{max-width:540px}
+.socials{display:flex;gap:12px;align-items:center;margin-top:14px;flex-wrap:wrap}
+.social-link{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 13px;border:1px solid rgba(255,255,255,.16);border-radius:10px;color:#fff;background:#111315;transition:.18s ease}
+.social-link:hover{transform:translateY(-1px);border-color:rgba(255,255,255,.28)}
+.social-link svg{width:19px;height:19px;flex:0 0 auto}
+.social-link.facebook{background:rgba(24,119,242,.12);border-color:rgba(24,119,242,.30)}
+.social-link.facebook svg{color:#1877F2}
+.social-link.instagram{background:linear-gradient(135deg,rgba(245,133,41,.12),rgba(221,42,123,.12) 55%,rgba(81,91,212,.12));border-color:rgba(221,42,123,.28)}
+.trademark-note{margin-top:26px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:.86rem;line-height:1.6}
+@media(max-width:1180px){.foot{grid-template-columns:1.2fr .9fr .9fr .8fr}.navlinks{gap:14px}}
+@media(max-width:1040px){.foot{grid-template-columns:1fr 1fr}.header-socials{display:flex}}
+@media(max-width:720px){.foot{grid-template-columns:1fr}.header-social-link{width:34px;height:34px}.header-social-link svg{width:17px;height:17px}}
+
 </style>
 </head>
 <body>
 
 <header class="header" id="siteHeader">
   <div class="container nav">
-    <a href="#inicio" class="logo-wrap" aria-label="RE:MOTO LAB - inicio"><img width="640" height="210" class="logo-remoto" src="assets/logo-remoto.png" alt="RE:MOTO LAB"></a>
+    <a href="#inicio" class="logo-wrap" aria-label="RE:MOTO LAB - inicio"><img width="640" height="210" class="logo-remoto" src="assets/logo-remoto-header-home.png" alt="RE:MOTO LAB"></a>
 
     <nav class="navlinks" aria-label="Navegación principal">
       <a href="#servicios">Servicios</a>
@@ -965,7 +1006,17 @@ details.carta ol{margin:12px 0 0;padding-left:20px;color:var(--steel);font-size:
     </nav>
 
 
-    <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <div class="header-extras">
+      <div class="header-socials" aria-label="Síguenos en redes sociales">
+        <a class="header-social-link facebook" href="https://www.facebook.com/DuplikeyMX" target="_blank" rel="noopener noreferrer" aria-label="Facebook de DUPLIKEY MX">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M13.5 22v-9h3l.45-3.5H13.5V7.26c0-1.01.28-1.7 1.74-1.7H17.1V2.43c-.32-.04-1.42-.14-2.7-.14-2.67 0-4.5 1.63-4.5 4.63V9.5H7v3.5h2.9v9h3.6z"/></svg>
+        </a>
+        <a class="header-social-link instagram" href="https://www.instagram.com/DuplikeyMX/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de DUPLIKEY MX">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4.25"></circle><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"></circle></svg>
+        </a>
+      </div>
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    </div>
   </div>
 </header>
 
@@ -1068,6 +1119,85 @@ details.carta ol{margin:12px 0 0;padding-left:20px;color:var(--steel);font-size:
     </div>
   </section>
 
+
+
+<section class="section" id="servicios-visuales">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Servicios destacados</div>
+      <h2>Nuestros servicios mas solicitados.</h2>
+      <p class="lead">En esta sección puedes visualizar nuestros pósters informativos.</p>
+    </div>
+
+    <details class="flyers-accordion reveal" id="flyersAccordion">
+      <summary>
+        <span class="acc-copy">
+          <span>Conócelos aquí</span>
+          <small>Despliega para ver los 7 servicios mas pedidos. Toca cualquiera para verlo completo.</small>
+        </span>
+        <span class="acc-icon" aria-hidden="true">+</span>
+      </summary>
+
+      <div class="accordion-body">
+        <div class="flyers-showcase">
+          <article class="flyer-tile reveal">
+            <button class="case-image-trigger" type="button" data-case-image="assets/flyer-duplicado-keyless.webp" data-case-alt="Duplicado Keyless" aria-label="Ver flyer completo: Duplicado Keyless">
+              <img loading="lazy" src="assets/flyer-duplicado-keyless.webp" alt="Duplicado Keyless">
+            </button>
+            <div class="flyer-copy"><h3>1. Duplicado Keyless</h3><p>Segunda llave de proximidad para sistemas compatibles.</p></div>
+          </article>
+
+          <article class="flyer-tile reveal">
+            <button class="case-image-trigger" type="button" data-case-image="assets/flyer-duplicado-mecanica.webp" data-case-alt="Duplicado mecánico" aria-label="Ver flyer completo: Duplicado mecánico">
+              <img loading="lazy" src="assets/flyer-duplicado-mecanica.webp" alt="Duplicado mecánico">
+            </button>
+            <div class="flyer-copy"><h3>2. Duplicado mecánico</h3><p>Llave mecánica de giro con corte de precisión CNC y transponder autorizado.</p></div>
+          </article>
+
+          <article class="flyer-tile reveal">
+            <button class="case-image-trigger" type="button" data-case-image="assets/flyer-akl-keyless.webp" data-case-alt="AKL Keyless" aria-label="Ver flyer completo: AKL Keyless">
+              <img loading="lazy" src="assets/flyer-akl-keyless.webp" alt="AKL Keyless">
+            </button>
+            <div class="flyer-copy"><h3>3. Pérdida Total Keyless</h3><p>Recuperación cuando ya no existe una llave de proximidad funcional.</p></div>
+          </article>
+
+          <article class="flyer-tile reveal">
+            <button class="case-image-trigger" type="button" data-case-image="assets/flyer-akl-mecanica.webp" data-case-alt="AKL mecánica" aria-label="Ver flyer completo: AKL mecánica">
+              <img loading="lazy" src="assets/flyer-akl-mecanica.webp" alt="AKL mecánica">
+            </button>
+            <div class="flyer-copy"><h3>4. Pérdida Total llave mecánica</h3><p>Pérdida total en sistemas de llave de giro con inmovilizador.</p></div>
+          </article>
+
+          <article class="flyer-tile reveal">
+            <button class="case-image-trigger" type="button" data-case-image="assets/flyer-upgrade-estetico.webp" data-case-alt="Upgrade estético" aria-label="Ver flyer completo: Upgrade estético">
+              <img loading="lazy" src="assets/flyer-upgrade-estetico.webp" alt="Upgrade estético">
+            </button>
+            <div class="flyer-copy"><h3>5. Upgrade Estilo Premium</h3><p>Tu llave normal a tipo Flip sin modificar sistema actual de giro de tu motocicleta.</p></div>
+          </article>
+
+          <article class="flyer-tile reveal">
+            <button class="case-image-trigger" type="button" data-case-image="assets/flyer-tft-sport.webp" data-case-alt="TFT Sport" aria-label="Ver flyer completo: TFT Sport">
+              <img loading="lazy" src="assets/flyer-tft-sport.webp" alt="TFT Sport">
+            </button>
+            <div class="flyer-copy"><h3>6. TFT Sport</h3><p>Codificación en modelos donde la función existe y es compatible.</p></div>
+          </article>
+
+          <article class="flyer-tile reveal">
+            <button class="case-image-trigger" type="button" data-case-image="assets/flyer-reset-servicio.webp" data-case-alt="Servicio y diagnóstico" aria-label="Ver flyer completo: Servicio y diagnóstico">
+              <img loading="lazy" src="assets/flyer-reset-servicio.webp" alt="Servicio y diagnóstico">
+            </button>
+            <div class="flyer-copy"><h3>7. Servicio y diagnóstico</h3><p>Reseteo de mantenimiento y revisión de códigos de falla.</p></div>
+          </article>
+        </div>
+
+        <div class="note" style="margin-top:18px">
+          ¿No sabes cuál aplica? <a href="#compatibilidad" style="color:var(--blue)">Usa el verificador</a> o envíanos modelo, año y una foto de tu llave por WhatsApp.
+        </div>
+      </div>
+    </details>
+  </div>
+</section>
+
   <section class="section" id="precios"><div class="container">
 <div class="section-head reveal"><div class="eyebrow">Precios</div><h2>Sabes cuánto cuesta antes de empezar.</h2><p class="lead">Precios <span class="mono">DESDE</span> en pesos mexicanos. El precio final depende de tu modelo, año y diagnóstico.</p></div>
 <div class="price-grid">
@@ -1087,6 +1217,12 @@ details.carta ol{margin:12px 0 0;padding-left:20px;color:var(--steel);font-size:
 <div class="price-row"><span class="mono">PROXIMIDAD DESDE:</span><div class="amount">$6,000&nbsp;<small>MXN</small></div></div>
 <div class="price-row"><span class="mono">LLAVE DE GIRO DESDE:</span><div class="amount">$2,900&nbsp;<small>MXN</small></div></div>
 <p>Recuperación del sistema y nueva llave autorizada.</p>
+</div>
+<div class="price-card reveal delay-2"><span class="mono">🔁UPGRADE PREMIUM</span>
+<h3>Llave mecánica a diseño abatible</h3>
+<div class="price-row"><span class="mono">DESDE:</span><div class="amount">$990&nbsp;<small>MXN</small></div></div>
+<p>Conversión a llave plegable premium. <strong>Sin modificar</strong> el sistema original de encendido.</p>
+<a class="section-cta-link" href="#contacto">Quiero cotizar este servicio →</a>
 </div>
 <div class="price-card reveal delay-3"><span class="mono">🏍️CODIFICACIÓN</span>
 <h3>TFT Sport</h3>
@@ -1188,7 +1324,7 @@ details.carta ol{margin:12px 0 0;padding-left:20px;color:var(--steel);font-size:
       </div>
       <div class="cases">
         <article class="case reveal">
-          <button class="case-image-trigger" type="button" data-case-image="assets/caso-exito.webp" data-case-alt="Motociclista saliendo de RE:MOTO LAB con motocicleta BMW" aria-label="Ver imagen completa del caso de pérdida total de llaves"><img width="1536" height="1024" loading="lazy" src="assets/caso-exito.webp" alt="Motociclista saliendo de RE:MOTO LAB con motocicleta BMW"></button>
+          <button class="case-image-trigger" type="button" data-case-image="assets/case-akl-lab.webp" data-case-alt="Módulo BMW Motorrad con yugo, llave Keyless y equipo de diagnóstico sobre banco de trabajo en laboratorio" aria-label="Ver imagen completa del caso de pérdida total de llaves"><img width="1120" height="1400" loading="lazy" src="assets/case-akl-lab.webp" alt="Módulo BMW Motorrad con yugo, llave Keyless y equipo de diagnóstico sobre banco de trabajo en laboratorio"></button>
           <div class="content">
             <span class="mono">R 1250 GS · ALL KEYS LOST</span>
             <h3>Pérdida total de llaves</h3>
@@ -1210,7 +1346,7 @@ details.carta ol{margin:12px 0 0;padding-left:20px;color:var(--steel);font-size:
         </article>
 
         <article class="case reveal delay-2">
-          <button class="case-image-trigger" type="button" data-case-image="assets/recepcion-modulos.webp" data-case-alt="Recepción de módulos BMW Motorrad por paquetería con ECU, módulo de inmovilizador y llaves" aria-label="Ver imagen completa del caso de recepción de módulos"><img width="1448" height="1086" loading="lazy" src="assets/recepcion-modulos.webp" alt="Recepción de módulos BMW Motorrad por paquetería con ECU, módulo de inmovilizador y llaves"></button>
+          <button class="case-image-trigger" type="button" data-case-image="assets/case-recepcion-lab.webp" data-case-alt="Módulo BMW Motorrad recibido y trabajado en laboratorio con llave Keyless y equipo de diagnóstico" aria-label="Ver imagen completa del caso de recepción de módulos"><img width="1120" height="1400" loading="lazy" src="assets/case-recepcion-lab.webp" alt="Módulo BMW Motorrad recibido y trabajado en laboratorio con llave Keyless y equipo de diagnóstico"></button>
           <div class="content">
             <span class="mono">SERVICIO NACIONAL</span>
             <h3>Recepción de módulos</h3>
@@ -1304,6 +1440,9 @@ details.carta ol{margin:12px 0 0;padding-left:20px;color:var(--steel);font-size:
     </div>
   </div>
 </section>
+
+
+<section class="section" id="servicios-bmw-seo"><div class="container"><div class="section-head reveal"><div class="eyebrow">Elige tu caso</div><h2>Encuentra la ruta correcta de una manera simple.</h2><p class="lead">Esta parte está pensada para que el cliente no "navegue por navegar", sino para que entre directo al escenario que más se parece a su caso.</p></div><div class="cards"><article class="card reveal"><span class="mono">PUNTO DE PARTIDA</span><h3>No sé cuál servicio necesito</h3><p>Mapa general de servicios, familias BMW y formas de atención.</p><a class="section-cta-link" href="/llaves-bmw-motorrad/">Ir al centro general →</a></article><article class="card reveal delay-1"><span class="mono">TENGO UNA LLAVE</span><h3>Quiero un respaldo o duplicado</h3><p>Para motos con Keyless Ride o llave mecánica con chip.</p><a class="section-cta-link" href="/duplicado-llave-bmw-motorrad/">Ver duplicados →</a></article><article class="card reveal delay-2"><span class="mono">NO TENGO NINGUNA</span><h3>Perdí todas mis llaves</h3><p>Ruta específica de recuperación All Keys Lost.</p><a class="section-cta-link" href="/all-keys-lost-bmw-motorrad/">Ver recuperación →</a></article><article class="card reveal delay-3"><span class="mono">FAMILIA GS</span><h3>Tengo una GS y quiero ir a lo seguro</h3><p>R1200GS, R1250GS, F750GS, F850GS, F900GS y variantes Adventure.</p><a class="section-cta-link" href="/llaves-bmw-gs/">Ver familia GS →</a></article></div><div class="note reveal" style="margin-top:18px">¿Tu moto no es GS? También atendemos <strong>R / RS / RT, S1000, XR, K1600 y scooters C</strong> compatibles. Puedes entrar al <a href="/llaves-bmw-motorrad/" style="color:var(--blue)">centro general</a> o escribirnos por WhatsApp y te orientamos.</div></div></section>
 <section class="section" id="faq"><div class="container"><div class="section-head reveal"><div class="eyebrow">Preguntas frecuentes</div><h2>Antes de tocar tu BMW, resolvemos tus dudas.</h2></div><div class="faq">
 <div class="faq-item reveal"><button class="faq-q"><span>¿Es seguro el procedimiento?</span><span>+</span></button><div class="faq-a"><div><strong style="color:#fff">Muy seguro. Ya que contamos con un procedimiento totalmente documentado, estrictamente diseñado y controlado para reducir el riesgo al mínimo:</strong> estabilizamos el voltaje, respaldamos la configuración antes de modificar, verificamos al terminar y firmamos una Carta de Ética y Seguridad Digital. Ningún procedimiento electrónico está libre de riesgo, por eso te explicamos el alcance antes de empezar y lo respaldamos con garantía por escrito de 90 días.</div></div></div>
 <div class="faq-item reveal delay-1"><button class="faq-q"><span>¿Cuánto tardan en hacer el servicio?</span><span>+</span></button><div class="faq-a"><div>Muchos servicios pueden resolverse el mismo día. El tiempo depende del tipo de servicio, del modelo, año, sistema y condición de la motocicleta.</div></div></div>
@@ -1363,11 +1502,12 @@ details.carta ol{margin:12px 0 0;padding-left:20px;color:var(--steel);font-size:
 <footer>
   <div class="container">
     <div class="foot">
-      <div>
+      <div class="footer-brand">
         <div class="footer-logo-card">
           <img width="800" height="301" loading="lazy" src="assets/logo-duplikey.png" alt="DUPLIKEY MX">
         </div>
-        <p style="margin-top:14px">RE:MOTO LAB · División especializada en sistemas de llaves para motocicletas BMW Motorrad.</p>
+        <p style="margin-top:14px">DUPLIKEY MX es una empresa mexicana con sede en Uruapan, Michoacán, especializada en soluciones avanzadas de programación de llaves inteligentes y electrónicas de alta precisión para vehículos y motocicletas, con cobertura local y servicio nacional.</p>
+	<p style="margin-top:14px">RE:MOTO LAB · División especializada en sistemas de llaves para motocicletas BMW Motorrad.</p>
       </div>
 
       <div class="footlinks">
@@ -1378,14 +1518,14 @@ details.carta ol{margin:12px 0 0;padding-left:20px;color:var(--steel);font-size:
 
         <strong style="margin-top:12px">Síguenos</strong>
         <div class="socials">
-          <a class="social-link" href="https://www.facebook.com/DuplikeyMX" target="_blank" rel="noopener noreferrer" aria-label="Facebook de DUPLIKEY MX">
+          <a class="social-link facebook" href="https://www.facebook.com/DuplikeyMX" target="_blank" rel="noopener noreferrer" aria-label="Facebook de DUPLIKEY MX">
             <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
               <path d="M13.5 22v-9h3l.45-3.5H13.5V7.26c0-1.01.28-1.7 1.74-1.7H17.1V2.43c-.32-.04-1.42-.14-2.7-.14-2.67 0-4.5 1.63-4.5 4.63V9.5H7v3.5h2.9v9h3.6z"/>
             </svg>
             <span>@DuplikeyMX</span>
           </a>
 
-          <a class="social-link" href="https://www.instagram.com/DuplikeyMX/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de DUPLIKEY MX">
+          <a class="social-link instagram" href="https://www.instagram.com/DuplikeyMX/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de DUPLIKEY MX">
             <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9">
               <rect x="3" y="3" width="18" height="18" rx="5"></rect>
               <circle cx="12" cy="12" r="4.25"></circle>
@@ -1394,6 +1534,15 @@ details.carta ol{margin:12px 0 0;padding-left:20px;color:var(--steel);font-size:
             <span>@DuplikeyMX</span>
           </a>
         </div>
+      </div>
+
+      <div class="footlinks">
+        <strong>BMW Motorrad</strong>
+        <a href="/llaves-bmw-motorrad/">Llaves BMW Motorrad</a>
+        <a href="/duplicado-llave-bmw-motorrad/">Duplicado BMW Motorrad</a>
+        <a href="/llave-keyless-bmw-motorrad/">Llave Keyless BMW</a>
+        <a href="/all-keys-lost-bmw-motorrad/">All Keys Lost</a>
+        <a href="/llaves-bmw-gs/">Llaves BMW GS</a>
       </div>
 
       <div class="footlinks">
@@ -1928,5 +2077,17 @@ document.addEventListener('click', function(e){
 
 </script>
 <!-- Google Analytics 4 activo: G-52P1XFVECT -->
+
+<script>
+(() => {
+  const acc = document.getElementById('flyersAccordion');
+  if (!acc) return;
+  const icon = acc.querySelector('.acc-icon');
+  const update = () => { if (icon) icon.textContent = acc.open ? '−' : '+'; };
+  update();
+  acc.addEventListener('toggle', update);
+})();
+</script>
+
 </body>
 </html>
