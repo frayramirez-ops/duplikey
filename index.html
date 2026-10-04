@@ -16,15 +16,19 @@
 <meta property="og:title" content="Llaves BMW Motorrad | DUPLIKEY · RE:MOTO LAB">
 <meta property="og:description" content="Duplicado, Keyless Ride, llave con chip y recuperación por pérdida total para BMW Motorrad. Atención desde Uruapan, Michoacán.">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#0A0A0A">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta property="og:site_name" content="DUPLIKEY MX | RE:MOTO LAB">
 <meta name="twitter:image" content="https://duplikey.mx/assets/og-image.jpg">
 <meta property="og:locale" content="es_MX">
 <meta property="og:image" content="https://duplikey.mx/assets/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
-<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<!-- Favicons / identidad del sitio -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#090b0d">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Montserrat:wght@600;800&family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
 <link rel="canonical" href="https://duplikey.mx/">
@@ -428,6 +432,100 @@ p{margin:0;color:var(--steel)}
 .flyers-accordion[open] summary{border-bottom:1px solid rgba(0,174,239,.34);background:linear-gradient(90deg,rgba(0,174,239,.26),rgba(0,59,92,.20) 52%,rgba(255,255,255,.025))}.flyers-accordion .acc-copy>span:first-child{font-size:1.02rem}.flyers-accordion .acc-copy small{color:#c4dce7}.accordion-badge{display:inline-flex;align-items:center;justify-content:center;padding:5px 9px;border-radius:999px;background:rgba(0,174,239,.15);border:1px solid rgba(0,174,239,.35);color:#9fe8ff;font:800 .68rem/1 Inter,Arial,sans-serif;letter-spacing:.08em;margin-left:10px;vertical-align:middle}
 .flyers-accordion .accordion-body{padding:18px 18px 6px}
 .flyers-accordion .accordion-note{padding:0 18px 18px;color:var(--muted);font-size:.9rem}
+
+
+/* V10.18.6a — Secciones principales plegables */
+.section-fold{
+  border:1px solid rgba(0,174,239,.52);
+  border-radius:20px;
+  overflow:hidden;
+  background:
+    radial-gradient(120% 180% at 0 0,rgba(0,174,239,.15),transparent 45%),
+    linear-gradient(135deg,rgba(0,59,92,.34),rgba(13,18,22,.98) 58%);
+  box-shadow:0 18px 54px rgba(0,0,0,.25),0 0 0 1px rgba(0,174,239,.05);
+}
+.section-fold>summary{
+  list-style:none;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  padding:24px 26px;
+  background:linear-gradient(90deg,rgba(0,174,239,.20),rgba(0,59,92,.13) 58%,rgba(255,255,255,.02));
+  transition:background .18s ease,border-color .18s ease;
+}
+.section-fold>summary::-webkit-details-marker{display:none}
+.section-fold>summary:hover{
+  background:linear-gradient(90deg,rgba(0,174,239,.29),rgba(0,59,92,.19) 58%,rgba(255,255,255,.035));
+}
+.section-fold[open]>summary{
+  border-bottom:1px solid rgba(0,174,239,.28);
+}
+.fold-copy{display:grid;gap:5px;min-width:0}
+.fold-eyebrow{
+  color:#55d8ff;
+  font:900 .72rem/1.2 "Roboto Mono",monospace;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+}
+.fold-title{
+  color:#fff;
+  font-size:clamp(1.35rem,2.5vw,2rem);
+  font-weight:900;
+  letter-spacing:-.025em;
+  line-height:1.08;
+}
+.fold-desc{
+  color:#bfd1da;
+  font-size:.92rem;
+  font-weight:500;
+  line-height:1.5;
+  max-width:840px;
+}
+.fold-actions{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex:0 0 auto;
+}
+.fold-badge{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:30px;
+  padding:0 10px;
+  border-radius:999px;
+  border:1px solid rgba(0,174,239,.42);
+  background:rgba(0,174,239,.12);
+  color:#aeeaff;
+  font:800 .66rem/1 Inter,Arial,sans-serif;
+  letter-spacing:.09em;
+}
+.fold-icon{
+  width:42px;height:42px;border-radius:50%;
+  display:grid;place-items:center;
+  color:#fff;
+  border:1px solid rgba(0,174,239,.62);
+  background:linear-gradient(145deg,#008ec7,#003b5c);
+  box-shadow:0 0 20px rgba(0,174,239,.18);
+  font-size:1.35rem;font-weight:800;
+}
+.fold-body{padding:30px 26px 28px}
+.section-fold.about-fold{border-color:rgba(99,215,255,.46)}
+.section-fold.routes-fold{border-color:rgba(0,174,239,.58)}
+.section-fold.faq-fold{border-color:rgba(111,194,224,.50)}
+.section-fold .about{margin-top:0}
+.section-fold .where{margin-top:34px}
+.section-fold .faq{max-width:none}
+@media(max-width:720px){
+  .section-fold>summary{padding:19px 18px;align-items:flex-start}
+  .fold-actions{align-self:center}
+  .fold-badge{display:none}
+  .fold-icon{width:38px;height:38px;flex-basis:38px}
+  .fold-body{padding:22px 17px 22px}
+  .fold-desc{font-size:.86rem}
+}
 
 /* Process */
 .process{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
@@ -1404,46 +1502,92 @@ details.carta ol{margin:12px 0 0;padding-left:20px;color:var(--steel);font-size:
 
   <section class="section" id="nosotros">
   <div class="container">
-    <div class="about reveal">
-      <div class="ph">
-        <img width="800" height="1000" loading="lazy" src="assets/fundador.webp" alt="Fundador de RE:MOTO LAB en ruta sobre su BMW R 1250 GS Adventure" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius)">
-      </div>
-      <div>
-        <div class="eyebrow">Quién está detrás</div>
-        <h2 style="margin:14px 0 18px">De biker a biker.</h2>
-	<div class="eyebrow">Precision • Técnica • Pasión por la ruta</div>
-        <p class="lead">Soy Efra, fundador de DUPLIKEY MX™ y de RE:MOTO LAB™  división especializada en llaves para BMW Motorrad.</p>
-        <p style="margin-top:14px">Como dueño y piloto de una BMW R1250GS Adventure, entiendo perfectamente lo que significa tu motocicleta: la libertad de la ruta, el valor del equipamiento y la exigencia de mantener cada sistema electrónico impecable.</p>
-	<p style="margin-top:14px">RE:MOTO LAB nace de mi búsqueda personal por ofrecer un servicio de grado laboratorio: Combinamos tecnología profesional de diagnóstico y programación especializada en BMW Motorrad con una política estricta de protección de códigos de seguridad digital, protocolos no invasivos ni improvisados y un método preciso documentado. Trabajo cada moto, componente y llave con el mismo rigor, confidencialidad y cuidado obsesivo que exijo para mi propia moto.</p>
-      </div>
-    </div>
-    <div class="where reveal">
-      <div>
-        <h3>Laboratorio</h3>
-        <p>Uruapan, Michoacán.</p><p>Atención presencial y servicio a domicilio con previa cita.</p>
-      </div>
-      <div>
-        <h3>Horario</h3>
-        <p>Lun-Vie de 9:00 a 18:00 hrs.</p><p>Sábado de 9:00 a 14:00</p><p>Domingo ⚠ Solo emergencias ⚠</p>
+    <details class="section-fold about-fold" id="aboutAccordion">
+      <summary>
+        <span class="fold-copy">
+          <span class="fold-eyebrow">Quién está detrás</span>
+          <span class="fold-title">De biker a biker.</span>
+          <span class="fold-desc">Conoce quién está detrás de RE:MOTO LAB, la filosofía de trabajo y cómo atendemos cada BMW Motorrad.</span>
+        </span>
+        <span class="fold-actions">
+          <span class="fold-badge">CONOCER</span>
+          <span class="fold-icon" aria-hidden="true">+</span>
+        </span>
+      </summary>
+      <div class="fold-body">
+        <div class="about reveal">
+          <div class="ph">
+            <img width="800" height="1000" loading="lazy" src="assets/fundador.webp" alt="Fundador de RE:MOTO LAB en ruta sobre su BMW R 1250 GS Adventure" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius)">
+          </div>
+          <div>
+            <div class="eyebrow">Precisión • Técnica • Pasión por la ruta</div>
+            <p class="lead" style="margin-top:14px">Soy Efra, fundador de DUPLIKEY MX™ y de RE:MOTO LAB™ división especializada en llaves para BMW Motorrad.</p>
+            <p style="margin-top:14px">Como dueño y piloto de una BMW R1250GS Adventure, entiendo perfectamente lo que significa tu motocicleta: la libertad de la ruta, el valor del equipamiento y la exigencia de mantener cada sistema electrónico impecable.</p>
+            <p style="margin-top:14px">RE:MOTO LAB nace de mi búsqueda personal por ofrecer un servicio de grado laboratorio: combinamos tecnología profesional de diagnóstico y programación especializada en BMW Motorrad con una política estricta de protección de códigos de seguridad digital, protocolos no invasivos ni improvisados y un método preciso documentado. Trabajo cada moto, componente y llave con el mismo rigor, confidencialidad y cuidado que exijo para mi propia moto.</p>
+          </div>
         </div>
-      <div>
-        <h3>Cómo llegar</h3>
-        <p>Uruapan, Michoacán, México</p>
-        <a href="https://www.google.com/maps/search/?api=1&query=Uruapan+Michoacan" target="_blank" rel="noopener" style="color:var(--blue)">
-          Abrir en Google Maps
-        </a>
+        <div class="where reveal">
+          <div>
+            <h3>Laboratorio</h3>
+            <p>Uruapan, Michoacán.</p><p>Atención presencial y servicio a domicilio con previa cita.</p>
+          </div>
+          <div>
+            <h3>Horario</h3>
+            <p>Lun-Vie de 9:00 a 18:00 hrs.</p><p>Sábado de 9:00 a 14:00</p><p>Domingo ⚠ Solo emergencias ⚠</p>
+          </div>
+          <div>
+            <h3>Cómo llegar</h3>
+            <p>Uruapan, Michoacán, México</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=Uruapan+Michoacan" target="_blank" rel="noopener" style="color:var(--blue)">Abrir en Google Maps</a>
+          </div>
+          <div>
+            <h3>Reseñas</h3>
+            <p>Próximamente disponibles en Google Business.</p>
+          </div>
+        </div>
       </div>
-      <div>
-        <h3>Reseñas</h3>
-        <p>Próximamente disponibles en Google Business.</p>
-      </div>
-    </div>
+    </details>
   </div>
 </section>
 
 
-<section class="section" id="servicios-bmw-seo"><div class="container"><div class="section-head reveal"><div class="eyebrow">Elige tu caso</div><h2>Encuentra la ruta correcta de una manera simple.</h2><p class="lead">Entra directamente al escenario que más se parece a tu necesidad. Cada guía explica un servicio concreto sin mezclar procedimientos.</p></div><div class="cards"><article class="card reveal"><span class="mono">PUNTO DE PARTIDA</span><h3>No sé cuál servicio necesito</h3><p>Mapa general de servicios, familias BMW y formas de atención.</p><a class="section-cta-link" href="/llaves-bmw-motorrad/">Ir al centro general →</a></article><article class="card reveal delay-1"><span class="mono">TENGO UNA LLAVE</span><h3>Quiero un respaldo o duplicado</h3><p>Para motos con Keyless Ride o llave mecánica con chip.</p><a class="section-cta-link" href="/duplicado-llave-bmw-motorrad/">Ver duplicados →</a></article><article class="card reveal delay-2"><span class="mono">NO TENGO NINGUNA</span><h3>Perdí todas mis llaves</h3><p>Ruta específica de recuperación All Keys Lost.</p><a class="section-cta-link" href="/all-keys-lost-bmw-motorrad/">Ver recuperación →</a></article><article class="card reveal delay-3"><span class="mono">FAMILIA GS</span><h3>Tengo una GS</h3><p>R1200GS, R1250GS, F750GS, F850GS, F900GS y variantes Adventure.</p><a class="section-cta-link" href="/llaves-bmw-gs/">Ver familia GS →</a></article><article class="card reveal"><span class="mono">UPGRADE ESTÉTICO</span><h3>Quiero modernizar mi llave mecánica</h3><p>Actualización a diseño abatible tipo flip sin convertir la moto a proximidad.</p><a class="section-cta-link" href="/actualizacion-llave-bmw-motorrad/">Ver upgrade estético →</a></article><article class="card reveal delay-1"><span class="mono">SERVICIO Y DIAGNÓSTICO</span><h3>Quiero resetear servicio o revisar fallas</h3><p>Reseteo de mantenimiento y revisión de códigos en modelos compatibles.</p><a class="section-cta-link" href="/reseteo-servicio-bmw-motorrad/">Ver diagnóstico →</a></article><article class="card reveal delay-2"><span class="mono">MICHOACÁN / SERVICIO NACIONAL</span><h3>Estoy fuera de Uruapan</h3><p>Atención en Michoacán, servicio según ubicación y recepción nacional de módulos.</p><a class="section-cta-link" href="/llaves-bmw-motorrad-michoacan/">Ver cobertura y recepción →</a></article></div><div class="note reveal" style="margin-top:18px">También atendemos <strong>R / RS / RT, S1000, XR, K1600 y scooters C</strong> compatibles. Si tu caso no encaja exactamente en una categoría, entra al <a href="/llaves-bmw-motorrad/" style="color:var(--blue)">centro general</a> o escríbenos por WhatsApp.</div></div></section>
-<section class="section" id="faq"><div class="container"><div class="section-head reveal"><div class="eyebrow">Preguntas frecuentes</div><h2>Antes de tocar tu BMW, resolvemos tus dudas.</h2></div><div class="faq">
+<section class="section" id="servicios-bmw-seo">
+  <div class="container">
+    <details class="section-fold routes-fold" id="routesAccordion">
+      <summary>
+        <span class="fold-copy">
+          <span class="fold-eyebrow">Elige tu caso</span>
+          <span class="fold-title">Encuentra la ruta correcta de una manera simple.</span>
+          <span class="fold-desc">Abre esta guía solo si quieres identificar rápidamente qué servicio se parece más a tu necesidad.</span>
+        </span>
+        <span class="fold-actions">
+          <span class="fold-badge">VER RUTAS</span>
+          <span class="fold-icon" aria-hidden="true">+</span>
+        </span>
+      </summary>
+      <div class="fold-body">
+        <div class="cards"><article class="card reveal"><span class="mono">PUNTO DE PARTIDA</span><h3>No sé cuál servicio necesito</h3><p>Mapa general de servicios, familias BMW y formas de atención.</p><a class="section-cta-link" href="/llaves-bmw-motorrad/">Ir al centro general →</a></article><article class="card reveal delay-1"><span class="mono">TENGO UNA LLAVE</span><h3>Quiero un respaldo o duplicado</h3><p>Para motos con Keyless Ride o llave mecánica con chip.</p><a class="section-cta-link" href="/duplicado-llave-bmw-motorrad/">Ver duplicados →</a></article><article class="card reveal delay-2"><span class="mono">NO TENGO NINGUNA</span><h3>Perdí todas mis llaves</h3><p>Ruta específica de recuperación All Keys Lost.</p><a class="section-cta-link" href="/all-keys-lost-bmw-motorrad/">Ver recuperación →</a></article><article class="card reveal delay-3"><span class="mono">FAMILIA GS</span><h3>Tengo una GS</h3><p>R1200GS, R1250GS, F750GS, F850GS, F900GS y variantes Adventure.</p><a class="section-cta-link" href="/llaves-bmw-gs/">Ver familia GS →</a></article><article class="card reveal"><span class="mono">UPGRADE ESTÉTICO</span><h3>Quiero modernizar mi llave mecánica</h3><p>Actualización a diseño abatible tipo flip sin convertir la moto a proximidad.</p><a class="section-cta-link" href="/actualizacion-llave-bmw-motorrad/">Ver upgrade estético →</a></article><article class="card reveal delay-1"><span class="mono">SERVICIO Y DIAGNÓSTICO</span><h3>Quiero resetear servicio o revisar fallas</h3><p>Reseteo de mantenimiento y revisión de códigos en modelos compatibles.</p><a class="section-cta-link" href="/reseteo-servicio-bmw-motorrad/">Ver diagnóstico →</a></article><article class="card reveal delay-2"><span class="mono">MICHOACÁN / SERVICIO NACIONAL</span><h3>Estoy fuera de Uruapan</h3><p>Atención en Michoacán, servicio según ubicación y recepción nacional de módulos.</p><a class="section-cta-link" href="/llaves-bmw-motorrad-michoacan/">Ver cobertura y recepción →</a></article></div>
+        <div class="note reveal" style="margin-top:18px">También atendemos <strong>R / RS / RT, S1000, XR, K1600 y scooters C</strong> compatibles. Si tu caso no encaja exactamente en una categoría, entra al <a href="/llaves-bmw-motorrad/" style="color:var(--blue)">centro general</a> o escríbenos por WhatsApp.</div>
+      </div>
+    </details>
+  </div>
+</section>
+<section class="section" id="faq">
+  <div class="container">
+    <details class="section-fold faq-fold" id="faqAccordion">
+      <summary>
+        <span class="fold-copy">
+          <span class="fold-eyebrow">Preguntas frecuentes</span>
+          <span class="fold-title">Antes de tocar tu BMW, resolvemos tus dudas.</span>
+          <span class="fold-desc">Despliega la sección y consulta solo las preguntas que te interesen. Cada respuesta se abre de forma independiente.</span>
+        </span>
+        <span class="fold-actions">
+          <span class="fold-badge">VER FAQ</span>
+          <span class="fold-icon" aria-hidden="true">+</span>
+        </span>
+      </summary>
+      <div class="fold-body">
+        <div class="faq">
 <div class="faq-item reveal"><button class="faq-q"><span>¿Es seguro el procedimiento?</span><span>+</span></button><div class="faq-a"><div><strong style="color:#fff">Muy seguro. Ya que contamos con un procedimiento totalmente documentado, estrictamente diseñado y controlado para reducir el riesgo al mínimo:</strong> estabilizamos el voltaje, respaldamos la configuración antes de modificar, verificamos al terminar y firmamos una Carta de Ética y Seguridad Digital. Ningún procedimiento electrónico está libre de riesgo, por eso te explicamos el alcance antes de empezar y lo respaldamos con garantía por escrito de 90 días.</div></div></div>
 <div class="faq-item reveal delay-1"><button class="faq-q"><span>¿Cuánto tardan en hacer el servicio?</span><span>+</span></button><div class="faq-a"><div>Muchos servicios pueden resolverse el mismo día. El tiempo depende del tipo de servicio, del modelo, año, sistema y condición de la motocicleta.</div></div></div>
 <div class="faq-item reveal delay-2"><button class="faq-q"><span>¿Qué calidad de componentes usan?</span><span>+</span></button><div class="faq-a"><div>Trabajamos con componentes de calidad OEM o premium, previamente verificados para el sistema específico de cada motocicleta. Antes de empezar te decimos cuál se instalará y, cuando hubiera más de una opción compatible, puedes elegir.</div></div></div>
@@ -1453,9 +1597,19 @@ details.carta ol{margin:12px 0 0;padding-left:20px;color:var(--steel);font-size:
 <div class="faq-item reveal delay-2"><button class="faq-q"><span>¿Qué herramientas o equipos usan para programar llaves?</span><span>+</span></button><div class="faq-a"><div>En RE:MOTO LAB trabajamos con equipos profesionales de diagnóstico y programación especializados en sistemas BMW Motorrad, utilizando software y licencias vigentes para los procedimientos compatibles. Te informamos qué componente se instalará según el sistema de cada motocicleta. Antes de entregar, comprobamos reconocimiento, arranque y, cuando aplica, alcance y funcionamiento Keyless.</div></div></div>
 <div class="faq-item reveal"><button class="faq-q"><span>¿Cuánto cuesta hacerme una llave?</span><span>+</span></button><div class="faq-a"><div>✅Duplicado Keyless Ride: desde $3,900 MXN. ✅All Keys Lost: desde $6,000 MXN en sistemas de proximidad y desde $2,900 MXN en llave de giro. ✅Duplicado de llave mecánica de giro: desde $1,500 MXN. ✅Codificación TFT Sport: $750 MXN únicamente en modelos codificables. ✅El precio final depende de tu modelo, año y diagnóstico, y te lo confirmamos antes de empezar. Ver <a href="#precios" style="color:var(--blue)">precios</a>.</div></div></div>
 <div class="faq-item reveal delay-2"><button class="faq-q"><span>¿Por qué cuesta más una Pérdida Total que un Duplicado?</span><span>+</span></button><div class="faq-a"><div>El costo es superior debido a que es un método especial y a la ⏩ necesidad de decodificación mecánica de la moto ⏩ acceso autenticado y extracción del respaldo electrónico de seguridad de la ECU/módulo ⏩ la generación de la llave maestra desde cero. En un duplicado solo se agrega una llave sobre un sistema funcionando con procesos de escritura más prácticos.</div></div></div>
+
+<div class="faq-item reveal">
+  <button class="faq-q"><span>¿Por qué me piden documentación de mi moto si solo quiero un duplicado?</span><span>+</span></button>
+  <div class="faq-a"><div>Porque una llave programada no es solo una copia física: puede autorizar el acceso y el arranque de la motocicleta mediante su sistema inmovilizador. Por seguridad del propietario, de la moto y de nuestro taller, verificamos que quien solicita el servicio sea el propietario o cuente con autorización legítima. En un duplicado ordinario pedimos únicamente evidencia razonable para validar el servicio; no buscamos documentación innecesaria. Los datos se utilizan para la validación y el procedimiento autorizado conforme a nuestra política de privacidad y ética profesional.</div></div>
+</div>
 <div class="faq-item reveal delay-1"><button class="faq-q"><span>¿Qué necesito para el servicio?</span><span>+</span></button><div class="faq-a"><div>Evidencia razonable de que eres el propietario o tienes autorización (te indicamos cuál por WhatsApp), la motocicleta o los módulos según sea el caso, y las llaves que conserves. Sin autenticación verificada no intervenimos sistemas de seguridad, es parte de nuestra ética y compromiso profesional.</div></div></div>
-</div></div></section>
-  <section class="section" id="contacto">
+</div>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section class="section" id="contacto">
     <div class="container formwrap reveal">
       <div>
         <div class="eyebrow">Cotización rápida</div>
@@ -2076,7 +2230,7 @@ document.addEventListener('click', function(e){
 })();
 
 </script>
-<!-- Google Analytics 4 activo: G-52P1XFVECT -->
+<!-- Google Analytics 4 activo: G-52P1XFVECT | V10.18.6a -->
 
 <script>
 (() => {
@@ -2086,6 +2240,40 @@ document.addEventListener('click', function(e){
   const update = () => { if (icon) icon.textContent = acc.open ? '−' : '+'; };
   update();
   acc.addEventListener('toggle', update);
+})();
+</script>
+
+
+<script>
+(() => {
+  const folds = document.querySelectorAll('.section-fold');
+  const syncFold = (fold) => {
+    const icon = fold.querySelector('.fold-icon');
+    const badge = fold.querySelector('.fold-badge');
+    if(icon) icon.textContent = fold.open ? '−' : '+';
+    if(badge){
+      const closed = badge.dataset.closed || badge.textContent.trim();
+      if(!badge.dataset.closed) badge.dataset.closed = closed;
+      badge.textContent = fold.open ? 'OCULTAR' : badge.dataset.closed;
+    }
+  };
+  folds.forEach(fold => {
+    syncFold(fold);
+    fold.addEventListener('toggle', () => syncFold(fold));
+  });
+
+  const openHashSection = () => {
+    if(!location.hash) return;
+    const target = document.querySelector(location.hash);
+    if(!target) return;
+    const fold = target.matches?.('.section-fold') ? target : target.querySelector?.('.section-fold');
+    if(fold){
+      fold.open = true;
+      syncFold(fold);
+    }
+  };
+  openHashSection();
+  window.addEventListener('hashchange', openHashSection);
 })();
 </script>
 
