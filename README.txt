@@ -25,3 +25,13 @@ Cambios principales:
 
 PUBLICACIÓN:
 Subir el contenido de esta carpeta/ZIP a Netlify. Después reenviar sitemap.xml en Google Search Console.
+
+
+V10.18.7 SEO Local + Nacional (2026-10-04):
+- Meta title/description Home refinados.
+- Schema WebSite + LocalBusiness/Organization + WebPage.
+- Cobertura Michoacán ampliada sin páginas ciudad duplicadas.
+- Nueva landing /servicio-nacional-bmw-motorrad/.
+- Semántica técnica distribuida en páginas relevantes.
+- Sitemap actualizado.
+- Interlinking hacia servicio nacional.
