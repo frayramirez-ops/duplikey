@@ -6,3 +6,7 @@
 
 /assets/*
   Cache-Control: public, max-age=604800
+
+/remoto/remoto-lab.vcf
+  Content-Type: text/vcard; charset=utf-8
+  Content-Disposition: attachment; filename="RE-MOTO-LAB.vcf"
