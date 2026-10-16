@@ -19,3 +19,6 @@
 
 ## Brand note
 DUPLIKEY MX and RE:MOTO LAB are independent service providers and are not affiliated with or endorsed by BMW AG.
+
+## Professional affiliation
+- The technical lead of RE:MOTO LAB is a member of ACEPRO — Asociación de Cerrajeros y Programadores S.C. (https://acepro.mx/), a Mexican professional association founded in 2019 and focused on training, community and professional development.

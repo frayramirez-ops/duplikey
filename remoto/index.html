@@ -38,7 +38,7 @@ a{color:inherit;text-decoration:none}button{font:inherit}.page{width:min(calc(10
   radial-gradient(circle at 88% 12%,rgba(0,174,239,.18),transparent 24%);pointer-events:none
 }
 .brand{position:relative;padding:26px 20px 21px;text-align:center}
-.brand img{width:min(330px,86vw);height:auto;margin:auto}
+.brand img{width:min(340px,86vw);height:auto;margin:auto;display:block;filter:drop-shadow(0 8px 22px rgba(0,0,0,.28))}
 .kicker{margin-top:16px;color:var(--blue2);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;font-weight:900}
 h1{font-family:Montserrat,Inter,sans-serif;font-size:clamp(2rem,8vw,3.05rem);line-height:.98;letter-spacing:-.045em;margin:8px 0 10px}
 .tagline{margin:0 auto;color:#d8e0e4;font-size:.95rem;max-width:460px}
@@ -72,7 +72,7 @@ h1{font-family:Montserrat,Inter,sans-serif;font-size:clamp(2rem,8vw,3.05rem);lin
 .toast{position:fixed;left:50%;bottom:18px;transform:translate(-50%,120px);z-index:2500;background:#111a20;border:1px solid rgba(0,174,239,.4);color:#fff;padding:10px 14px;border-radius:10px;font-size:.8rem;box-shadow:var(--shadow);transition:.22s}.toast.show{transform:translate(-50%,0)}
 .cookie{position:fixed;z-index:3000;left:12px;right:12px;bottom:12px;max-width:550px;margin:auto;padding:14px;background:#11191f;border:1px solid rgba(0,174,239,.38);border-radius:14px;box-shadow:var(--shadow);display:none}.cookie.show{display:block}.cookie p{font-size:.76rem;color:#c2ccd2;margin:0 0 10px}.cookie-row{display:flex;gap:8px}.cookie button{border-radius:9px;min-height:40px;padding:0 12px;font-weight:800;border:1px solid var(--line);cursor:pointer}.cookie .accept{background:var(--wa);color:#04150a;border:0}.cookie .necessary{background:transparent;color:#fff}
 @media(max-width:390px){.primary,.quick,.trust{grid-template-columns:1fr}.brand{padding-left:15px;padding-right:15px}}
-</style>
+.acepro-digital{display:grid;grid-template-columns:68px 1fr;gap:13px;align-items:center;margin-top:10px;padding:13px;border-radius:14px;border:1px solid rgba(218,178,95,.27);background:linear-gradient(135deg,rgba(218,178,95,.08),rgba(255,255,255,.018))}.acepro-digital img{width:64px;height:64px;object-fit:contain}.acepro-digital b{display:block;color:#fff;font-size:.88rem}.acepro-digital span{display:block;color:#aeb8be;font-size:.74rem;margin-top:2px}.acepro-digital a{color:#ead18e;font-weight:800;font-size:.72rem;display:inline-block;margin-top:4px}</style>
 <script>
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
 try{var rc=localStorage.getItem('rml_consent')}catch(e){var rc=null}
@@ -85,7 +85,7 @@ gtag('consent','default',{analytics_storage:rc==='accepted'?'granted':'denied',a
 <main class="page">
 <section class="profile">
   <div class="brand">
-    <img src="/assets/logo-remoto-header.webp" alt="RE:MOTO LAB">
+    <img src="/assets/logo-remoto-header-home.png" alt="RE:MOTO LAB">
     <div class="kicker">División especializada de DUPLIKEY MX</div>
     <h1>Tarjeta Digital</h1>
     <p class="tagline">Programación especializada de llaves BMW Motorrad · Keyless Ride · pérdida total · llave mecánica · TFT y diagnóstico.</p>
@@ -110,6 +110,8 @@ gtag('consent','default',{analytics_storage:rc==='accepted'?'granted':'denied',a
   <a class="track" data-event="digital_site" href="/"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>Sitio web</a>
   <button id="shareBtn" type="button"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="2.2"/><circle cx="6" cy="12" r="2.2"/><circle cx="18" cy="19" r="2.2"/><path d="m8 11 8-5M8 13l8 5"/></svg>Compartir</button>
 </div>
+
+<div class="acepro-digital"><img src="/assets/acepro-miembro-sello.webp" width="64" height="64" loading="lazy" alt="Miembro ACEPRO"><div><b>Miembro ACEPRO</b><span>Responsable técnico afiliado a la Asociación de Cerrajeros y Programadores S.C.</span><a href="https://acepro.mx/" target="_blank" rel="noopener">Conocer la asociación ↗</a></div></div>
 
 <div class="leadbox">
   <b>Enviar datos de mi BMW</b>
@@ -141,7 +143,7 @@ gtag('consent','default',{analytics_storage:rc==='accepted'?'granted':'denied',a
 
 <div class="site"><a href="/">www.duplikey.mx</a></div>
 <div class="slogan">Vuelve a rodar con <span>tranquilidad.</span></div>
-<div class="legal">BMW y BMW Motorrad son marcas de sus respectivas titulares. DUPLIKEY MX / RE:MOTO LAB es un prestador independiente y no está afiliado, autorizado ni respaldado por BMW AG.</div>
+<div class="legal"><strong>Aviso de marcas:</strong> BMW, BMW Motorrad, las denominaciones de sus modelos, logotipos y emblemas son marcas de BMW AG y/o de sus respectivas titulares. DUPLIKEY MX y RE:MOTO LAB son prestadores de servicios independientes y no están afiliados, ni patrocinados por BMW AG ni por su red de concesionarios. Las referencias a BMW Motorrad se utilizan exclusivamente para identificar los vehículos y servicios compatibles.</div>
 </main>
 
 <div class="toast" id="toast">Enlace copiado</div>
