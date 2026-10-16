@@ -2360,50 +2360,104 @@ document.addEventListener('click', function(e){
 (() => {
   const autoDetails = [...document.querySelectorAll('details[data-auto-collapse="true"]')];
   if (!autoDetails.length) return;
+
   let lastY = window.scrollY;
-  let ticking = false;
-  let compensating = false;
+  let direction = 0; // 1 = abajo, -1 = arriba
+  let settleTimer = 0;
+  let busy = false;
+
+  const HEADER_GAP = 18;
+  const SETTLE_MS = 230;
+  const EXTRA_CLEARANCE = 80;
 
   function headerOffset(){
     const h = document.querySelector('.header');
-    return (h ? h.getBoundingClientRect().height : 0) + 8;
+    return (h ? h.getBoundingClientRect().height : 0) + HEADER_GAP;
   }
 
-  function closePassedSections(){
-    ticking = false;
-    const y = window.scrollY;
-    const goingDown = y > lastY + 2;
-    lastY = y;
-    if (!goingDown || compensating) return;
+  function visibleAnchor(){
+    const y = headerOffset();
+    const x = Math.min(window.innerWidth - 24, Math.max(24, window.innerWidth * .5));
+    let el = document.elementFromPoint(x, Math.min(window.innerHeight - 20, y + 20));
+    if (!el) return null;
 
-    const cutoff = headerOffset();
-    const toClose = autoDetails.filter(d => d.open && d.getBoundingClientRect().bottom < cutoff);
-    if (!toClose.length) return;
+    // Buscamos un contenedor relativamente estable para usarlo como ancla visual.
+    return el.closest('section, article, .container, .trustbar, .footer, main') || el;
+  }
 
-    let removed = 0;
-    toClose.forEach(d => {
-      const before = d.getBoundingClientRect().height;
-      d.open = false;
-      const after = d.getBoundingClientRect().height;
-      removed += Math.max(0, before - after);
+  function closeSilently(detailsToClose){
+    if (!detailsToClose.length || busy) return;
+    busy = true;
+
+    const anchor = visibleAnchor();
+    const anchorTopBefore = anchor ? anchor.getBoundingClientRect().top : null;
+
+    // Evita que el scroll anchoring nativo del navegador compita con
+    // nuestra compensación manual durante este único cambio de layout.
+    const root = document.documentElement;
+    const prevBehavior = root.style.scrollBehavior;
+    const prevAnchor = root.style.overflowAnchor;
+    root.style.scrollBehavior = 'auto';
+    root.style.overflowAnchor = 'none';
+
+    detailsToClose.forEach(d => { d.open = false; });
+
+    if (anchor && anchorTopBefore !== null && document.contains(anchor)) {
+      const anchorTopAfter = anchor.getBoundingClientRect().top;
+      const delta = anchorTopAfter - anchorTopBefore;
+      if (Math.abs(delta) > .5) {
+        window.scrollBy(0, delta);
+      }
+    }
+
+    requestAnimationFrame(() => {
+      root.style.scrollBehavior = prevBehavior;
+      root.style.overflowAnchor = prevAnchor;
+      lastY = window.scrollY;
+      busy = false;
+    });
+  }
+
+  function collapsePassed(){
+    if (busy || direction !== 1) return;
+
+    const cutoff = headerOffset() - EXTRA_CLEARANCE;
+    const passed = autoDetails.filter(d => {
+      if (!d.open) return false;
+      const r = d.getBoundingClientRect();
+      return r.bottom < cutoff;
     });
 
-    if (removed > 0) {
-      compensating = true;
-      window.scrollBy(0, -removed);
-      requestAnimationFrame(() => {
-        lastY = window.scrollY;
-        compensating = false;
-      });
-    }
+    closeSilently(passed);
+  }
+
+  function scheduleCollapse(){
+    clearTimeout(settleTimer);
+    settleTimer = window.setTimeout(collapsePassed, SETTLE_MS);
   }
 
   window.addEventListener('scroll', () => {
-    if (!ticking) {
-      ticking = true;
-      requestAnimationFrame(closePassedSections);
+    const y = window.scrollY;
+    const delta = y - lastY;
+
+    if (Math.abs(delta) > 1) {
+      direction = delta > 0 ? 1 : -1;
+      lastY = y;
     }
+
+    // El plegado ocurre cuando el usuario ya dejó de desplazar la página,
+    // no en medio del gesto de scroll.
+    if (direction === 1) scheduleCollapse();
+    else clearTimeout(settleTimer);
   }, {passive:true});
+
+  // En navegadores con scrollend usamos además la señal nativa.
+  if ('onscrollend' in window) {
+    window.addEventListener('scrollend', () => {
+      clearTimeout(settleTimer);
+      if (direction === 1) collapsePassed();
+    }, {passive:true});
+  }
 })();
 </script>
 </body>
