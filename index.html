@@ -1096,12 +1096,17 @@ h1,h2,h3{font-family:Montserrat,Inter,Arial,sans-serif}.mono{font-family:"Roboto
 
 /* V10.18.12 · afiliación profesional ACEPRO */
 .acepro-section{padding:54px 0;background:linear-gradient(180deg,rgba(255,255,255,.012),rgba(218,178,95,.035));border-top:1px solid rgba(218,178,95,.16);border-bottom:1px solid rgba(218,178,95,.16)}
-.acepro-card{display:grid;grid-template-columns:190px 1fr;gap:34px;align-items:center;padding:30px;border-radius:22px;border:1px solid rgba(218,178,95,.30);background:linear-gradient(135deg,rgba(26,22,15,.78),rgba(9,13,16,.95));box-shadow:0 18px 55px rgba(0,0,0,.25)}
-.acepro-seal{width:170px;max-width:100%;margin:auto;filter:drop-shadow(0 12px 24px rgba(0,0,0,.35))}
-.acepro-copy .eyebrow{color:#e7c986}.acepro-copy h2{margin:7px 0 12px}.acepro-copy p{color:var(--steel);margin:0 0 12px;max-width:820px}.acepro-points{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 0}.acepro-points span{border:1px solid rgba(218,178,95,.24);background:rgba(218,178,95,.06);color:#eadcb9;padding:7px 10px;border-radius:999px;font-size:.78rem;font-weight:800}
-.acepro-note{font-size:.74rem!important;color:#8f989f!important;margin-top:14px!important}.acepro-link{display:inline-flex;align-items:center;gap:7px;margin-top:7px;color:#edd28d;font-weight:800;font-size:.84rem}
+.acepro-premium-corp{border:1px solid rgba(221,183,102,.32);border-radius:24px;overflow:hidden;background:linear-gradient(145deg,rgba(30,24,14,.86),rgba(8,13,16,.98));box-shadow:0 28px 90px rgba(0,0,0,.36)}
+.acepro-premium-corp>summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:118px 1fr auto;gap:20px;align-items:center;padding:24px 26px;position:relative}
+.acepro-premium-corp>summary::-webkit-details-marker{display:none}.acepro-premium-corp>summary:after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,rgba(221,183,102,.34),transparent);opacity:0;transition:.2s}.acepro-premium-corp[open]>summary:after{opacity:1}
+.acepro-seal-wrap{position:relative;width:118px;height:118px;display:grid;place-items:center}.acepro-seal-wrap:before{content:"";position:absolute;width:112px;height:112px;border-radius:50%;background:radial-gradient(circle,rgba(221,183,102,.16),transparent 68%);filter:blur(3px)}.acepro-seal-large{width:106px;height:106px;object-fit:contain;position:relative;filter:drop-shadow(0 12px 24px rgba(0,0,0,.42))}
+.acepro-summary .eyebrow{color:#f2d895;font-weight:900;font-size:.72rem;letter-spacing:.15em;text-transform:uppercase}.acepro-summary h2{font-size:clamp(1.8rem,3.5vw,2.7rem);line-height:1.03;margin:5px 0 7px}.acepro-summary p{margin:0;color:#c3ccd1;max-width:720px;font-size:.95rem}.acepro-micro{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px;color:#b6c0c5;font-size:.75rem;font-weight:700}.acepro-micro span:not(:last-child)::after{content:" •";color:#ddb766;margin-left:7px}
+.acepro-toggle{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;border:1px solid rgba(221,183,102,.29);background:rgba(221,183,102,.08);color:#f0d38e;font-size:.8rem;font-weight:900;white-space:nowrap}.acepro-toggle:after{content:"▾";transition:transform .22s}.acepro-premium-corp[open] .acepro-toggle:after{transform:rotate(180deg)}
+.acepro-corp-body{padding:26px}.acepro-intro{padding:20px 22px;border-radius:17px;border:1px solid rgba(221,183,102,.17);background:rgba(255,255,255,.018)}.acepro-intro h3{margin:0 0 8px;font-size:1.08rem}.acepro-intro p{margin:0;color:#adb8be;line-height:1.65}
+.acepro-inner{margin-top:16px;border:1px solid rgba(255,255,255,.07);border-radius:17px;overflow:hidden}.acepro-inner details{background:rgba(255,255,255,.012)}.acepro-inner details+details{border-top:1px solid rgba(255,255,255,.07)}.acepro-inner summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 18px;cursor:pointer;font-weight:850;font-size:.92rem}.acepro-inner summary::-webkit-details-marker{display:none}.acepro-plus{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(221,183,102,.24);color:#f2d895;font-size:1rem;line-height:1;transition:transform .2s}.acepro-inner details[open] .acepro-plus{transform:rotate(45deg)}.acepro-answer{padding:0 18px 18px;color:#9eabb2;font-size:.88rem;line-height:1.62}.acepro-answer p{margin:0}
+.acepro-points{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}.acepro-points span{border:1px solid rgba(221,183,102,.22);background:rgba(221,183,102,.055);color:#e7d7ac;padding:8px 10px;border-radius:999px;font-size:.76rem;font-weight:800}.acepro-foot{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin-top:18px;padding-top:18px;border-top:1px solid rgba(221,183,102,.14)}.acepro-link{color:#f0d38e;text-decoration:none;font-weight:850}.acepro-note{max-width:680px;color:#78858c;font-size:.72rem;line-height:1.5;text-align:right}
 .acepro-inline{display:grid;grid-template-columns:72px 1fr;gap:14px;align-items:center;margin-top:22px;padding:14px 16px;border-radius:14px;border:1px solid rgba(218,178,95,.24);background:rgba(218,178,95,.045)}.acepro-inline img{width:68px;height:68px;object-fit:contain}.acepro-inline b{display:block;color:#fff;margin-bottom:3px}.acepro-inline span{color:var(--muted);font-size:.82rem}
-@media(max-width:720px){.acepro-card{grid-template-columns:1fr;text-align:center;padding:24px 18px}.acepro-seal{width:145px}.acepro-points{justify-content:center}.acepro-copy p{margin-left:auto;margin-right:auto}.acepro-inline{grid-template-columns:58px 1fr;text-align:left}.acepro-inline img{width:54px;height:54px}}
+@media(max-width:720px){.acepro-premium-corp>summary{grid-template-columns:82px 1fr;padding:18px}.acepro-seal-wrap{width:82px;height:82px}.acepro-seal-large{width:74px;height:74px}.acepro-toggle{grid-column:1/-1;justify-self:start}.acepro-micro{display:none}.acepro-corp-body{padding:18px}.acepro-foot{align-items:flex-start;flex-direction:column}.acepro-note{text-align:left}.acepro-inline{grid-template-columns:58px 1fr;text-align:left}.acepro-inline img{width:54px;height:54px}}
 </style>
 <meta content="DUPLIKEY MX y RE:MOTO LAB, servicios especializados para llaves BMW Motorrad" property="og:image:alt"/><meta content="Llaves BMW Motorrad en México | DUPLIKEY RE:MOTO LAB" name="twitter:title"/><meta content="Duplicado Keyless, All Keys Lost, llaves mecánicas y programación BMW Motorrad en Uruapan, Michoacán y por paquetería en todo México." name="twitter:description"/><link as="image" href="/assets/hero-lab.webp" rel="preload" type="image/webp"/><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://duplikey.mx/#organization","name":"DUPLIKEY MX","alternateName":"Duplikey","url":"https://duplikey.mx/","logo":{"@type":"ImageObject","url":"https://duplikey.mx/assets/logo-duplikey-schema.png","width":256,"height":256},"sameAs":["https://www.facebook.com/DuplikeyMX","https://www.instagram.com/DuplikeyMX/"],"contactPoint":{"@type":"ContactPoint","telephone":"+524521791230","contactType":"customer service","areaServed":"MX","availableLanguage":["es"]}},{"@type":["Locksmith","LocalBusiness"],"@id":"https://duplikey.mx/#business","name":"RE:MOTO LAB","alternateName":"RE:MOTO LAB by DUPLIKEY MX","parentOrganization":{"@id":"https://duplikey.mx/#organization"},"url":"https://duplikey.mx/","description":"División especializada de DUPLIKEY MX para duplicado, programación y recuperación de llaves BMW Motorrad, diagnóstico y servicios electrónicos compatibles desde Uruapan, Michoacán, con recepción nacional de módulos.","telephone":"+524521791230","email":"duplikeymx@gmail.com","logo":"https://duplikey.mx/assets/logo-remoto-header.webp","image":"https://duplikey.mx/assets/og-image.jpg","address":{"@type":"PostalAddress","addressLocality":"Uruapan","addressRegion":"Michoacán","addressCountry":"MX"},"areaServed":[{"@type":"City","name":"Uruapan"},{"@type":"AdministrativeArea","name":"Michoacán"},{"@type":"Country","name":"México"}],"sameAs":["https://www.facebook.com/DuplikeyMX","https://www.instagram.com/DuplikeyMX/"],"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"14:00"}],"knowsAbout":["BMW Motorrad","Keyless Ride","llaves con transponder","All Keys Lost","EWS","BMS-K","BMS-O","diagnóstico DTC","pantalla TFT BMW Motorrad"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Servicios BMW Motorrad","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Duplicado de llave Keyless Ride BMW Motorrad"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Duplicado de llave mecánica BMW Motorrad"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Programación de llaves y transponder BMW Motorrad"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Recuperación All Keys Lost BMW Motorrad"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Upgrade de llave BMW a diseño abatible"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Codificación TFT Sport BMW Motorrad"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Reseteo de servicio y diagnóstico DTC BMW Motorrad"}}]}},{"@type":"WebSite","@id":"https://duplikey.mx/#website","url":"https://duplikey.mx/","name":"DUPLIKEY MX | RE:MOTO LAB","alternateName":"RE:MOTO LAB","inLanguage":"es-MX","publisher":{"@id":"https://duplikey.mx/#organization"}},{"@type":"WebPage","@id":"https://duplikey.mx/#webpage","url":"https://duplikey.mx/","name":"Llaves BMW Motorrad en México | DUPLIKEY RE:MOTO LAB","description":"Duplicado Keyless, All Keys Lost, llaves mecánicas y programación BMW Motorrad en Uruapan, Michoacán y por paquetería en todo México.","inLanguage":"es-MX","dateModified":"2026-10-05","isPartOf":{"@id":"https://duplikey.mx/#website"},"about":{"@id":"https://duplikey.mx/#business"}}]}</script><meta content="1200" property="og:image:width"/><meta content="630" property="og:image:height"/><style>
 /* V10.18.9d · Volver al inicio contextual */
@@ -1253,7 +1258,7 @@ h1,h2,h3{font-family:Montserrat,Inter,Arial,sans-serif}.mono{font-family:"Roboto
 <h2>Nuestros servicios mas solicitados.</h2>
 <p class="lead">En esta sección puedes visualizar nuestros pósters informativos.</p>
 </div>
-<details class="flyers-accordion reveal" id="flyersAccordion">
+<details class="flyers-accordion reveal" id="flyersAccordion" data-auto-collapse="true">
 <summary>
 <span class="acc-copy">
 <span>Conócelos aquí <span class="accordion-badge">DESPLEGAR</span></span>
@@ -1394,7 +1399,7 @@ h1,h2,h3{font-family:Montserrat,Inter,Arial,sans-serif}.mono{font-family:"Roboto
 <div class="check"><span>•</span><span>Las llaves perdidas, para seguridad, pueden desactivarse cuando el sistema lo permite y previa autorización del propietario.</span></div>
 <div class="check"><span>•</span><span>El procedimiento se explica antes de comenzar.</span></div>
 </div>
-<details class="carta"><summary>Lee los compromisos de la Carta de Ética</summary><ol>
+<details class="carta" data-auto-collapse="true"><summary>Lee los compromisos de la Carta de Ética</summary><ol>
 <li><b>Alcance y propiedad.</b> Pedimos evidencia razonable de propiedad; solo hacemos lo aprobado en la orden y cualquier cosa adicional requiere tu autorización.</li>
 <li><b>Conservación limitada.</b> Guardamos orden, contacto, VIN, autorizaciones, diagnóstico y evidencia de entrega para seguimiento y garantía, con acceso limitado.</li>
 <li><b>Archivos técnicos.</b> Si se requiere un respaldo de configuración, se usa solo para ejecutar o recuperar el servicio y atender la garantía. No comercializamos códigos ni archivos de seguridad.</li>
@@ -1409,7 +1414,7 @@ h1,h2,h3{font-family:Montserrat,Inter,Arial,sans-serif}.mono{font-family:"Roboto
 </div>
 </div>
 </section>
-<section class="acepro-section" id="respaldo-profesional"><div class="container"><div class="acepro-card reveal"><div><img class="acepro-seal" src="/assets/acepro-miembro-sello.webp" width="709" height="720" loading="lazy" alt="Miembro ACEPRO, Asociación de Cerrajeros y Programadores S.C."></div><div class="acepro-copy"><div class="eyebrow">Respaldo gremial y actualización profesional</div><h2>Miembro de ACEPRO</h2><p>El responsable técnico de RE:MOTO LAB forma parte de <strong>ACEPRO · Asociación de Cerrajeros y Programadores S.C.</strong>, organización mexicana fundada en 2019 que agrupa a profesionales del gremio y promueve capacitación continua, colaboración técnica, recursos profesionales y una red nacional de apoyo.</p><p>Para nuestros clientes, esta afiliación representa una señal adicional de integración gremial, actualización constante y compromiso con buenas prácticas. Cada servicio de RE:MOTO LAB mantiene su propia responsabilidad, diagnóstico, garantía y documentación.</p><div class="acepro-points"><span>Capacitación continua</span><span>Comunidad técnica nacional</span><span>Actualización profesional</span><span>Red gremial</span></div><a class="acepro-link" href="https://acepro.mx/" target="_blank" rel="noopener">Conocer ACEPRO ↗</a><p class="acepro-note">La membresía no implica que ACEPRO ejecute, garantice o supervise cada servicio realizado por RE:MOTO LAB.</p></div></div></div></section><section class="section" id="proceso">
+<section class="acepro-section" id="respaldo-profesional"><div class="container"><details class="acepro-premium-corp reveal" data-auto-collapse="true"><summary><div class="acepro-seal-wrap"><img class="acepro-seal-large" src="/assets/acepro-miembro-sello.webp" width="709" height="720" loading="lazy" alt="Miembro ACEPRO, Asociación de Cerrajeros y Programadores S.C."></div><div class="acepro-summary"><div class="eyebrow">Respaldo gremial y actualización profesional</div><h2>Miembro ACEPRO</h2><p>Una señal adicional de profesionalismo, actualización técnica y participación activa dentro del gremio especializado.</p><div class="acepro-micro"><span>Capacitación continua</span><span>Comunidad técnica</span><span>Red profesional</span></div></div><span class="acepro-toggle">Saber más</span></summary><div class="acepro-corp-body"><div class="acepro-intro"><h3>¿Qué significa esta afiliación para nuestros clientes?</h3><p>El responsable técnico de RE:MOTO LAB forma parte de <strong>ACEPRO · Asociación de Cerrajeros y Programadores S.C.</strong>, dentro de una red profesional orientada a capacitación, actualización técnica, colaboración y fortalecimiento del gremio.</p></div><div class="acepro-inner"><details open><summary><span>Capacitación y actualización profesional</span><span class="acepro-plus">+</span></summary><div class="acepro-answer"><p>La pertenencia a una asociación profesional favorece el acceso a formación, actualización tecnológica y espacios especializados de aprendizaje continuo.</p></div></details><details><summary><span>Comunidad técnica nacional</span><span class="acepro-plus">+</span></summary><div class="acepro-answer"><p>La afiliación conecta al responsable técnico con una red de profesionales del sector, facilitando intercambio de experiencias, soporte entre colegas y colaboración técnica.</p></div></details><details><summary><span>Buenas prácticas y profesionalismo</span><span class="acepro-plus">+</span></summary><div class="acepro-answer"><p>Para el cliente representa una señal adicional de integración gremial, responsabilidad profesional y compromiso con procesos serios y documentados.</p></div></details><details><summary><span>Alcance de la afiliación</span><span class="acepro-plus">+</span></summary><div class="acepro-answer"><p>Cada servicio realizado por RE:MOTO LAB mantiene su propia responsabilidad, diagnóstico, garantía y documentación. La membresía no significa que ACEPRO ejecute, garantice o supervise cada trabajo.</p></div></details></div><div class="acepro-points"><span>Capacitación continua</span><span>Comunidad técnica nacional</span><span>Actualización profesional</span><span>Red gremial</span></div><div class="acepro-foot"><a class="acepro-link" href="https://acepro.mx/" target="_blank" rel="noopener">Conocer ACEPRO ↗</a><div class="acepro-note">Afiliación profesional utilizada como señal de respaldo gremial. No sustituye la responsabilidad directa de RE:MOTO LAB sobre cada servicio.</div></div></div></details></div></section><section class="section" id="proceso">
 <div class="container">
 <div class="section-head reveal">
 <div class="eyebrow">Proceso</div>
@@ -1500,7 +1505,7 @@ h1,h2,h3{font-family:Montserrat,Inter,Arial,sans-serif}.mono{font-family:"Roboto
 <li><strong>Laboratorio:</strong> realizamos el procedimiento autorizado.</li>
 <li><strong>Retorno:</strong> documentamos el embalaje de devolución.</li>
 </ul>
-<details class="shipping-details"><summary>¿Qué tengo que enviar y cómo protegemos mis módulos?</summary><div class="shipping-details-body"><p>Primero revisamos tu BMW a distancia y <strong>te damos una lista exacta de componentes</strong>. No necesitas desmontar ni enviar piezas adicionales “por si acaso”.</p><div class="shipping-trust"><div class="shipping-step"><b>1. Qué se envía</b><span>Depende del modelo y sistema. Puede ser uno o más módulos electrónicos, el conjunto de autorización/encendido que corresponda y las llaves disponibles. Te indicamos exactamente cuáles antes del envío.</span></div><div class="shipping-step"><b>2. Recepción documentada</b><span>Al llegar el paquete registramos la recepción y revisamos condición exterior, conectores y componentes. Si detectamos alguna anomalía, te avisamos antes de continuar.</span></div><div class="shipping-step"><b>3. Trabajo y verificación</b><span>Realizamos únicamente el procedimiento autorizado y documentamos el avance. Verificamos el resultado en banco cuando la arquitectura permite comprobarlo de esa forma.</span></div><div class="shipping-step"><b>4. Re-embalaje y retorno</b><span>Protegemos conectores y módulos de forma individual, inmovilizamos las piezas dentro de una caja resistente y coordinamos el retorno con guía de seguimiento.</span></div></div><p class="shipping-note"><strong>Importante:</strong> el transporte depende de las condiciones de la paquetería. Si deseas cobertura adicional, podemos recomendar valor declarado o seguro disponible antes de generar la guía.</p></div></details>
+<details class="shipping-details" data-auto-collapse="true"><summary>¿Qué tengo que enviar y cómo protegemos mis módulos?</summary><div class="shipping-details-body"><p>Primero revisamos tu BMW a distancia y <strong>te damos una lista exacta de componentes</strong>. No necesitas desmontar ni enviar piezas adicionales “por si acaso”.</p><div class="shipping-trust"><div class="shipping-step"><b>1. Qué se envía</b><span>Depende del modelo y sistema. Puede ser uno o más módulos electrónicos, el conjunto de autorización/encendido que corresponda y las llaves disponibles. Te indicamos exactamente cuáles antes del envío.</span></div><div class="shipping-step"><b>2. Recepción documentada</b><span>Al llegar el paquete registramos la recepción y revisamos condición exterior, conectores y componentes. Si detectamos alguna anomalía, te avisamos antes de continuar.</span></div><div class="shipping-step"><b>3. Trabajo y verificación</b><span>Realizamos únicamente el procedimiento autorizado y documentamos el avance. Verificamos el resultado en banco cuando la arquitectura permite comprobarlo de esa forma.</span></div><div class="shipping-step"><b>4. Re-embalaje y retorno</b><span>Protegemos conectores y módulos de forma individual, inmovilizamos las piezas dentro de una caja resistente y coordinamos el retorno con guía de seguimiento.</span></div></div><p class="shipping-note"><strong>Importante:</strong> el transporte depende de las condiciones de la paquetería. Si deseas cobertura adicional, podemos recomendar valor declarado o seguro disponible antes de generar la guía.</p></div></details>
 <div style="margin-top:20px">
 <a class="btn btn-outline" href="#contacto">Consultar recepción de módulos</a>
 <span class="micro">Ideal para clientes fuera de Uruapan.</span>
@@ -1511,7 +1516,7 @@ h1,h2,h3{font-family:Montserrat,Inter,Arial,sans-serif}.mono{font-family:"Roboto
 </section>
 <section class="section" id="nosotros">
 <div class="container">
-<details class="section-fold about-fold" id="aboutAccordion">
+<details class="section-fold about-fold" id="aboutAccordion" data-auto-collapse="true">
 <summary>
 <span class="fold-copy">
 <span class="fold-eyebrow">Quién está detrás</span>
@@ -1560,7 +1565,7 @@ h1,h2,h3{font-family:Montserrat,Inter,Arial,sans-serif}.mono{font-family:"Roboto
 </section>
 <section class="section" id="servicios-bmw-seo">
 <div class="container">
-<details class="section-fold routes-fold" id="routesAccordion">
+<details class="section-fold routes-fold" id="routesAccordion" data-auto-collapse="true">
 <summary>
 <span class="fold-copy">
 <span class="fold-eyebrow">Elige tu caso</span>
@@ -1581,7 +1586,7 @@ h1,h2,h3{font-family:Montserrat,Inter,Arial,sans-serif}.mono{font-family:"Roboto
 </section>
 <section class="section" id="faq">
 <div class="container">
-<details class="section-fold faq-fold" id="faqAccordion">
+<details class="section-fold faq-fold" id="faqAccordion" data-auto-collapse="true">
 <summary>
 <span class="fold-copy">
 <span class="fold-eyebrow">Preguntas frecuentes</span>
@@ -1705,7 +1710,7 @@ h1,h2,h3{font-family:Montserrat,Inter,Arial,sans-serif}.mono{font-family:"Roboto
 </div>
 </div>
 <div class="trademark-note">
-<strong>Aviso de marcas:</strong> BMW, BMW Motorrad, las denominaciones de sus modelos, logotipos y emblemas son marcas de BMW AG y/o de sus respectivas titulares. DUPLIKEY MX y RE:MOTO LAB son prestadores de servicios independientes y no están afiliados, patrocinados ni respaldados por BMW AG ni por su red de concesionarios. Las referencias a BMW Motorrad se utilizan exclusivamente para identificar los vehículos y servicios compatibles.
+<strong>Aviso de marcas:</strong> BMW, BMW Motorrad, las denominaciones de sus modelos, logotipos y emblemas son marcas de BMW AG y/o de sus respectivas titulares. DUPLIKEY MX y RE:MOTO LAB son prestadores de servicios independientes y no están afiliados, ni patrocinados por BMW AG ni por su red de concesionarios. Las referencias a BMW Motorrad se utilizan exclusivamente para identificar los vehículos y servicios compatibles.
     </div>
 <a href="/preguntas-frecuentes-bmw-motorrad/">Preguntas frecuentes BMW</a><a href="/glosario-bmw-motorrad/">Glosario BMW Motorrad</a></div>
 </footer>
@@ -2350,5 +2355,56 @@ document.addEventListener('click', function(e){
     }).observe(chatPanel,{attributes:true,attributeFilter:['class']});
   }
 })();
-</script></body>
+</script>
+<script>
+(() => {
+  const autoDetails = [...document.querySelectorAll('details[data-auto-collapse="true"]')];
+  if (!autoDetails.length) return;
+  let lastY = window.scrollY;
+  let ticking = false;
+  let compensating = false;
+
+  function headerOffset(){
+    const h = document.querySelector('.header');
+    return (h ? h.getBoundingClientRect().height : 0) + 8;
+  }
+
+  function closePassedSections(){
+    ticking = false;
+    const y = window.scrollY;
+    const goingDown = y > lastY + 2;
+    lastY = y;
+    if (!goingDown || compensating) return;
+
+    const cutoff = headerOffset();
+    const toClose = autoDetails.filter(d => d.open && d.getBoundingClientRect().bottom < cutoff);
+    if (!toClose.length) return;
+
+    let removed = 0;
+    toClose.forEach(d => {
+      const before = d.getBoundingClientRect().height;
+      d.open = false;
+      const after = d.getBoundingClientRect().height;
+      removed += Math.max(0, before - after);
+    });
+
+    if (removed > 0) {
+      compensating = true;
+      window.scrollBy(0, -removed);
+      requestAnimationFrame(() => {
+        lastY = window.scrollY;
+        compensating = false;
+      });
+    }
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(closePassedSections);
+    }
+  }, {passive:true});
+})();
+</script>
+</body>
 </html>
