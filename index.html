@@ -1203,11 +1203,508 @@ body{font-family:"Arial Narrow","Roboto Condensed",Arial,sans-serif!important;ba
   .back-to-top.with-chat{bottom:86px;right:78px}
 }
 @media(prefers-reduced-motion:reduce){.back-to-top{transition:none}}
-</style></head>
+
+/* =========================================================
+   V10.18.14 · FIDELITY PASS
+   Rebuild of the Motorsport prototype as a coherent UI system
+   ========================================================= */
+:root{
+  --ms-sky:#45a9de;
+  --ms-blue:#0878c9;
+  --ms-navy:#123c70;
+  --ms-red:#dc3044;
+  --ms-ink:#111820;
+  --ms-text:#24333e;
+  --ms-muted:#637480;
+  --ms-paper:#e8edf1;
+  --ms-paper-2:#f4f6f7;
+  --ms-card:#ffffff;
+  --ms-border:#cbd5dc;
+}
+html{background:var(--ms-paper)!important}
+body{
+  margin:0!important;
+  background:var(--ms-paper)!important;
+  color:var(--ms-ink)!important;
+  font-family:"IBM Plex Sans",Arial,sans-serif!important;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+body p, body li, body label, body input, body select, body textarea{
+  font-family:"IBM Plex Sans",Arial,sans-serif!important;
+}
+h1,h2,h3,h4,.home-section-summary h2,.section-head h2{
+  font-family:"Barlow Condensed","Arial Narrow",Arial,sans-serif!important;
+  letter-spacing:.005em!important;
+}
+.container{width:min(1440px,calc(100% - 48px))!important}
+
+/* HEADER */
+.motorsport-header{
+  height:76px!important;
+  background:rgba(248,250,251,.98)!important;
+  border-bottom:1px solid #d5dee4!important;
+  box-shadow:0 8px 26px rgba(22,40,55,.08)!important;
+}
+.motorsport-nav{
+  min-height:76px!important;
+  height:76px!important;
+  display:flex!important;
+  align-items:center!important;
+  gap:28px!important;
+}
+.ms-wordmark{
+  display:flex!important;
+  align-items:center!important;
+  gap:13px!important;
+  width:auto!important;
+  min-width:300px!important;
+  text-decoration:none!important;
+}
+.ms-brand-stripes{display:flex;gap:0;transform:skewX(-22deg);height:37px}
+.ms-brand-stripes i{display:block;width:16px;height:37px}
+.ms-brand-stripes i:nth-child(1){background:var(--ms-sky)}
+.ms-brand-stripes i:nth-child(2){background:var(--ms-navy)}
+.ms-brand-stripes i:nth-child(3){background:var(--ms-red)}
+.ms-brand-copy{display:flex;flex-direction:column;line-height:.94}
+.ms-brand-copy b{
+  font:800 2rem/1 "Barlow Condensed",sans-serif!important;
+  font-style:italic!important;
+  letter-spacing:.015em!important;
+  color:#111820!important;
+  white-space:nowrap
+}
+.ms-brand-copy em{font-style:inherit;color:#087cca}
+.ms-brand-copy small{
+  margin-top:4px;
+  font:700 .58rem/1 "IBM Plex Sans",sans-serif!important;
+  letter-spacing:.34em;
+  color:#60717d;
+  text-align:center
+}
+.motorsport-links{display:flex!important;align-items:center!important;gap:34px!important;margin-left:auto!important}
+.motorsport-links a{
+  font:700 .77rem/1 "IBM Plex Sans",sans-serif!important;
+  letter-spacing:.045em!important;
+  padding:29px 0 24px!important;
+  color:#17232c!important
+}
+.motorsport-links a.active{color:#087cca!important;border-bottom:3px solid #129fe9!important}
+.header-acepro{margin-left:10px!important;min-width:112px}
+.header-acepro img{width:42px!important;height:42px!important}
+.header-acepro b{font-size:.78rem!important;color:#1b252d!important}
+.header-quote{
+  position:relative!important;
+  overflow:hidden!important;
+  min-width:174px!important;
+  padding:15px 42px 15px 20px!important;
+  border-radius:4px!important;
+  background:#102333!important;
+  color:#fff!important;
+  font:800 .76rem/1 "IBM Plex Sans",sans-serif!important;
+  letter-spacing:.06em!important;
+}
+.header-quote:after{
+  content:"→";
+  position:absolute;right:0;top:0;bottom:0;width:42px;
+  display:grid;place-items:center;
+  background:linear-gradient(135deg,#078fe5,#0067c2);
+  color:#fff;font-size:1.05rem
+}
+
+/* HERO */
+.motorsport-hero{
+  min-height:590px!important;
+  background:
+    linear-gradient(118deg,rgba(255,255,255,.98) 0 37%,rgba(241,245,247,.88) 53%,rgba(225,233,238,.93) 100%)!important;
+  color:var(--ms-ink)!important;
+  border:0!important;
+  overflow:hidden!important;
+}
+.motorsport-hero:after{
+  content:"";
+  position:absolute;inset:0;
+  pointer-events:none;
+  background:
+    linear-gradient(121deg,transparent 0 61%,rgba(70,169,222,.055) 61% 67%,transparent 67%),
+    linear-gradient(121deg,transparent 0 72%,rgba(18,60,112,.055) 72% 78%,transparent 78%);
+}
+.ms-stripes{right:4%!important;z-index:0!important}
+.ms-stripes i{width:38px!important;height:145px!important}
+.motorsport-hero-grid{
+  grid-template-columns:minmax(440px,.82fr) minmax(660px,1.18fr)!important;
+  gap:44px!important;
+  align-items:center!important;
+  padding-top:38px!important;
+  padding-bottom:30px!important;
+  position:relative!important;
+  z-index:2!important
+}
+.ms-hero-copy{max-width:600px!important}
+.ms-eyebrow{
+  color:#0a6da9!important;
+  font:700 .76rem/1.25 "IBM Plex Sans",sans-serif!important;
+  letter-spacing:.19em!important;
+}
+.ms-hero-copy h1{
+  margin:14px 0 19px!important;
+  max-width:590px!important;
+  color:#11171d!important;
+  font:800 clamp(3.45rem,4.25vw,5rem)/.88 "Barlow Condensed",sans-serif!important;
+  letter-spacing:-.015em!important;
+  text-transform:uppercase!important;
+  text-wrap:balance!important;
+}
+.ms-hero-copy h1 span{color:#138ad5!important}
+.ms-hero-copy .lead{
+  max-width:570px!important;
+  margin:0!important;
+  color:#374852!important;
+  font:500 1.02rem/1.52 "IBM Plex Sans",sans-serif!important
+}
+.ms-actions{display:flex!important;align-items:flex-start!important;gap:14px!important;margin-top:25px!important}
+.ms-actions>div{display:flex!important;flex-direction:column!important;align-items:flex-start!important}
+.btn.ms-primary,.btn.btn-wa{
+  position:relative!important;
+  overflow:hidden!important;
+  min-height:52px!important;
+  padding:0 56px 0 22px!important;
+  border:0!important;
+  border-radius:4px!important;
+  background:linear-gradient(90deg,#0b2840,#0d3657)!important;
+  color:#fff!important;
+  box-shadow:0 8px 18px rgba(11,47,76,.16)!important;
+  font:800 .82rem/1 "IBM Plex Sans",sans-serif!important;
+  letter-spacing:.03em!important;
+}
+.btn.ms-primary:after,.btn.btn-wa:after{
+  content:"→";
+  position:absolute;right:0;top:0;bottom:0;width:46px;
+  display:grid;place-items:center;
+  background:linear-gradient(135deg,#0aa2f4,#0875cc);
+  color:#fff;font-size:1.05rem
+}
+.btn.ms-secondary{
+  min-height:52px!important;
+  padding:0 22px!important;
+  border:1px solid #8094a3!important;
+  border-radius:4px!important;
+  background:rgba(255,255,255,.46)!important;
+  color:#132634!important;
+  font:800 .8rem/1 "IBM Plex Sans",sans-serif!important
+}
+.micro{color:#75848e!important;font-size:.68rem!important;margin-top:7px!important}
+.ms-mini-trust{
+  display:grid!important;
+  grid-template-columns:repeat(3,max-content)!important;
+  gap:25px!important;
+  margin-top:25px!important;
+  color:#2e414e!important;
+  font:600 .72rem/1.2 "IBM Plex Sans",sans-serif!important
+}
+
+/* carousel / large bike stage */
+.ms-bike-stage{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) 290px!important;
+  gap:24px!important;
+  align-items:center!important;
+}
+.ms-bike-frame{
+  height:480px!important;
+  border:0!important;
+  border-radius:0!important;
+  overflow:hidden!important;
+  background:
+    radial-gradient(ellipse at 50% 78%,rgba(142,160,172,.20),transparent 42%),
+    linear-gradient(180deg,#e8eef2 0,#f9fafb 100%)!important;
+  box-shadow:none!important;
+  position:relative!important
+}
+.ms-bike-frame:after{
+  content:"";
+  position:absolute;left:8%;right:8%;bottom:26px;height:18px;
+  border-radius:50%;
+  background:rgba(35,45,52,.18);
+  filter:blur(14px);
+  z-index:0
+}
+.ms-bike-frame img{
+  position:relative!important;
+  z-index:1!important;
+  width:100%!important;
+  height:100%!important;
+  padding:0!important;
+  object-fit:cover!important;
+  object-position:center!important;
+  mix-blend-mode:multiply;
+  transition:opacity .28s ease,transform .45s ease!important
+}
+.ms-bike-frame.is-sliding img{opacity:.12!important;transform:translateX(-4%) scale(.99)!important}
+.ms-family-selector{gap:9px!important}
+.ms-family-kicker{
+  margin:0 0 7px 17px!important;
+  color:#526b7b!important;
+  font:700 .71rem/1 "IBM Plex Sans",sans-serif!important;
+  letter-spacing:.19em!important
+}
+.ms-family{
+  min-height:73px!important;
+  grid-template-columns:116px 1fr!important;
+  gap:8px!important;
+  padding:6px 17px 6px 8px!important;
+  border:1px solid #ccd5dc!important;
+  background:rgba(255,255,255,.86)!important;
+  clip-path:polygon(9% 0,100% 0,94% 100%,0 100%)!important;
+  box-shadow:0 4px 12px rgba(24,45,61,.035)!important
+}
+.ms-family .thumb{
+  height:60px!important;
+  background:#e7edf1!important;
+  clip-path:polygon(8% 0,100% 0,92% 100%,0 100%)!important;
+  overflow:hidden!important
+}
+.ms-family .thumb img{
+  width:100%!important;height:100%!important;
+  object-fit:cover!important;
+  object-position:center!important
+}
+.ms-family strong{
+  color:#122331!important;
+  font:800 1.17rem/1 "Barlow Condensed",sans-serif!important;
+  letter-spacing:.01em!important
+}
+.ms-family.is-active{
+  border:2px solid #149ff0!important;
+  background:linear-gradient(90deg,#edf9ff,#d9efff)!important;
+  box-shadow:0 5px 16px rgba(0,144,225,.11)!important
+}
+.ms-dots span{width:21px!important;height:4px!important}.ms-dots span.on{background:#079eea!important}
+
+/* dark trust strip */
+.motorsport-trustbar{
+  width:100%!important;
+  max-width:none!important;
+  margin:0!important;
+  padding:0 max(24px,calc((100% - 1440px)/2))!important;
+  display:grid!important;
+  grid-template-columns:repeat(4,1fr)!important;
+  background:linear-gradient(100deg,#142432,#0a1720)!important;
+  border:0!important;
+  color:#fff!important;
+}
+.motorsport-trustbar>div{
+  min-height:82px!important;
+  padding:18px 24px!important;
+  display:flex!important;
+  flex-direction:column!important;
+  justify-content:center!important;
+  border-right:1px solid rgba(255,255,255,.15)!important;
+  color:#fff!important;
+  font:700 .76rem/1.2 "IBM Plex Sans",sans-serif!important
+}
+.motorsport-trustbar>div:last-child{border-right:0!important}
+.motorsport-trustbar>div b{font-size:1rem!important;color:#159ee9!important}
+.motorsport-trustbar>div span{color:#afc1cc!important;font:500 .73rem/1.35 "IBM Plex Sans",sans-serif!important}
+
+/* GLOBAL HOME RHYTHM */
+.section{
+  background:#e9eef2!important;
+  color:#17232c!important;
+  border-top:1px solid #d4dce2!important;
+  padding-top:70px!important;
+  padding-bottom:70px!important
+}
+.section:nth-of-type(even){background:#f4f6f7!important}
+.section:nth-of-type(odd){background:#e8edf1!important}
+.section p,.section li,.section label{color:#556773!important}
+.section strong,.section h3,.section h4{color:#15212a!important}
+.section-head .eyebrow,.home-section-summary .eyebrow{
+  color:#0876bc!important;
+  font:700 .72rem/1 "IBM Plex Sans",sans-serif!important;
+  letter-spacing:.17em!important
+}
+.section-head h2,.home-section-summary h2{
+  color:#111820!important;
+  font:800 clamp(2.35rem,3vw,3.6rem)/.94 "Barlow Condensed",sans-serif!important;
+  letter-spacing:.002em!important;
+  text-transform:uppercase!important;
+  margin-top:10px!important
+}
+.section-head .lead,.home-section-summary p{
+  color:#6c7b85!important;
+  font-size:1rem!important;
+  line-height:1.55!important
+}
+.trust{
+  background:rgba(255,255,255,.36)!important;
+  border:1px solid rgba(178,193,203,.24)!important;
+  border-radius:16px!important
+}
+.trust strong{color:#087fc6!important}
+.trust p{color:#7b8992!important}
+.issue-list .issue{
+  color:#31424d!important;
+  border-color:#cbd5dc!important;
+  background:rgba(255,255,255,.46)!important
+}
+.issue-list .issue b,.issue-dot{color:#0698e8!important}
+
+/* SERVICE GRID - no cut images */
+#servicios .cards{
+  display:grid!important;
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  gap:14px!important
+}
+#servicios .card{
+  min-height:390px!important;
+  padding:22px!important;
+  display:flex!important;
+  flex-direction:column!important;
+  overflow:hidden!important;
+  background:#fff!important;
+  border:1px solid #ccd6dd!important;
+  border-radius:7px!important;
+  box-shadow:0 8px 23px rgba(29,50,64,.055)!important
+}
+#servicios .card:nth-child(5){
+  grid-column:2 / span 2!important;
+  min-height:300px!important
+}
+#servicios .card h3{
+  margin-top:7px!important;
+  color:#101820!important;
+  font:800 1.35rem/1.02 "Barlow Condensed",sans-serif!important;
+  text-transform:uppercase!important
+}
+#servicios .card .mono{
+  color:#0789d2!important;
+  font:700 .67rem/1 "IBM Plex Sans",sans-serif!important;
+  letter-spacing:.08em!important
+}
+#servicios .card p{
+  color:#586975!important;
+  font-size:.82rem!important;
+  line-height:1.55!important
+}
+#servicios .service-more{
+  margin-top:8px!important;
+  color:#0498e6!important;
+  font:700 .76rem/1 "IBM Plex Sans",sans-serif!important
+}
+#servicios .ms-card-visual,
+#servicios .ms-card-visual.ms-dual{
+  position:static!important;
+  order:5!important;
+  width:100%!important;
+  height:145px!important;
+  margin-top:auto!important;
+  padding-top:12px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:6px!important;
+  overflow:hidden!important
+}
+#servicios .ms-card-visual img{
+  width:auto!important;
+  height:auto!important;
+  max-width:84%!important;
+  max-height:132px!important;
+  object-fit:contain!important;
+  object-position:center!important
+}
+#servicios .ms-card-visual.ms-dual img{max-width:48%!important;max-height:125px!important}
+#servicios .card-icon{
+  background:#e9f6fd!important;
+  border-color:#c1e6f8!important;
+  color:#0798e2!important
+}
+
+/* Accordions and interactive blocks */
+.home-section-accordion,.section-fold,.shipping-details,.price-card,.vf-card,.case{
+  background:rgba(255,255,255,.75)!important;
+  color:#17232c!important;
+  border:1px solid #cbd5dc!important;
+  border-radius:7px!important;
+  box-shadow:0 8px 25px rgba(25,43,57,.045)!important
+}
+.home-section-accordion>summary{
+  background:linear-gradient(90deg,rgba(31,157,224,.075),rgba(255,255,255,.5))!important
+}
+.home-section-accordion[open]>summary{
+  background:linear-gradient(90deg,rgba(31,157,224,.12),rgba(255,255,255,.55))!important
+}
+.home-section-toggle,.fold-toggle{
+  border:1px solid #a7bac7!important;
+  background:#fff!important;
+  color:#16405c!important;
+  border-radius:4px!important
+}
+.price-card .amount,.price-card h3,.vf-card h3{color:#13212b!important}
+.legal{color:#75838c!important}
+
+/* Footer keeps contrast */
+.footer{background:#0e1820!important;color:#edf4f7!important}
+.footer p,.footer a,.footer .legal{color:#aabac4!important}
+.footer strong{color:#fff!important}
+
+/* responsive */
+@media(max-width:1180px){
+  .container{width:min(100% - 32px,1100px)!important}
+  .motorsport-links{gap:18px!important}
+  .motorsport-hero-grid{grid-template-columns:1fr!important;gap:20px!important}
+  .ms-hero-copy{max-width:760px!important}
+  .ms-bike-stage{grid-template-columns:minmax(0,1fr) 290px!important}
+  .ms-bike-frame{height:420px!important}
+  #servicios .cards{grid-template-columns:repeat(2,1fr)!important}
+  #servicios .card:nth-child(5){grid-column:auto!important}
+}
+@media(max-width:880px){
+  .motorsport-links{display:none!important}
+  .header-acepro{display:none!important}
+  .ms-wordmark{min-width:230px!important}
+  .ms-brand-copy b{font-size:1.65rem!important}
+  .ms-bike-stage{grid-template-columns:1fr!important}
+  .ms-family-selector{grid-template-columns:repeat(4,1fr)!important}
+  .ms-family-kicker,.ms-dots{grid-column:1/-1!important}
+  .ms-family{grid-template-columns:1fr!important;clip-path:none!important;padding:6px!important}
+  .ms-family .thumb{clip-path:none!important}
+  .ms-family strong{font-size:.82rem!important;padding-bottom:5px}
+  .motorsport-trustbar{grid-template-columns:repeat(2,1fr)!important}
+}
+@media(max-width:620px){
+  .container{width:min(100% - 20px,600px)!important}
+  .motorsport-header,.motorsport-nav{height:66px!important;min-height:66px!important}
+  .ms-wordmark{min-width:0!important}
+  .ms-brand-stripes{height:28px}.ms-brand-stripes i{width:11px;height:28px}
+  .ms-brand-copy b{font-size:1.38rem!important}.ms-brand-copy small{font-size:.44rem!important}
+  .header-quote{display:none!important}
+  .motorsport-hero-grid{padding-top:28px!important}
+  .ms-hero-copy h1{font-size:3.05rem!important;max-width:100%!important}
+  .ms-hero-copy .lead{font-size:.94rem!important}
+  .ms-actions{flex-direction:column!important;align-items:stretch!important}
+  .ms-actions .btn{width:100%!important;justify-content:center!important}
+  .ms-mini-trust{grid-template-columns:1fr!important;gap:8px!important}
+  .ms-bike-frame{height:300px!important}
+  .ms-family-selector{grid-template-columns:repeat(2,1fr)!important}
+  .ms-family{min-height:72px!important}
+  .motorsport-trustbar{grid-template-columns:1fr!important}
+  .motorsport-trustbar>div{border-right:0!important;border-bottom:1px solid rgba(255,255,255,.12)!important}
+  #servicios .cards{grid-template-columns:1fr!important}
+  #servicios .card:nth-child(5){grid-column:auto!important}
+  .section{padding-top:48px!important;padding-bottom:48px!important}
+}
+
+</style><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+</head>
 <body><a class="skip-link" href="#contenido">Saltar al contenido</a>
 <header class="header motorsport-header" id="siteHeader">
 <div class="container nav motorsport-nav">
-<a aria-label="RE:MOTO LAB - inicio" class="logo-wrap motorsport-brand" href="#inicio"><img alt="RE:MOTO LAB" class="logo-remoto" src="/assets/logo-remoto-header-home.png"/><span class="brand-sub">DUPLIKEY MX</span></a>
+<a aria-label="RE:MOTO LAB - inicio" class="motorsport-brand ms-wordmark" href="#inicio">
+  <span class="ms-brand-stripes" aria-hidden="true"><i></i><i></i><i></i></span>
+  <span class="ms-brand-copy"><b>RE:<em>MOTO</em> LAB</b><small>DUPLIKEY MX</small></span>
+</a>
 <nav aria-label="Navegación principal" class="navlinks motorsport-links">
 <a class="active" href="#inicio">Inicio</a><a href="#servicios">Servicios</a><a href="#proceso">Proceso</a><a href="#nosotros">Nosotros</a><a href="#faq">FAQ</a>
 </nav>
