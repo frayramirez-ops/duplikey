@@ -1,0 +1,6 @@
+V10.18.25j · MOBILE HERO HOTFIX
+- Base: V10.18.25i Casos Reales Lightbox.
+- Desktop: sin cambios estructurales.
+- Mobile <=720px: hero en flujo vertical texto -> moto -> familias.
+- Eliminada visualmente la barra flotante inferior WhatsApp/Llamar.
+- Cache busting CSS: motorsport-theme-v25j.css?v=10.18.25j
