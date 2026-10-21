@@ -1,0 +1,7 @@
+V10.18.25d
+- Base: V10.18.25c_Familias_Fondos_Corregidos
+- Popup familias: CTA en 2 líneas: “Este es mi modelo” / “Cotizar servicio”.
+- Icono WhatsApp en verde #25D366 en botones WhatsApp del sitio.
+- Home: eliminados CTA redundantes “Solicitar cotización” y “Ver servicios” del hero.
+- Home: agregado título “TIENES TODO NUESTRO RESPALDO PROFESIONAL” sobre los 4 cuadros de respaldo.
+- CSS nuevo con cache-busting: motorsport-theme-v25d.css?v=10.18.25d
