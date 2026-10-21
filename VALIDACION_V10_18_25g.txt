@@ -1,0 +1,3 @@
+V10.18.25g — Casos reales corregidos
+Caso 002: BMW R1250GS 2020 = Duplicado preventivo Keyless Ride, domicilio, 2 hrs, prueba remoto/pasivo/cerraduras.
+Caso 003: BMW R1200GS Adventure 2018 = AKL, Celaya Gto., recepción de módulos, mismo día, prueba en banco.
