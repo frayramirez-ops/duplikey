@@ -1,0 +1,7 @@
+V10.18.25f · Casos Reales 003
+- Base: V10.18.25e Casos Reales Interactivos.
+- Caso 001 conservado.
+- Caso 002 agregado: BMW R1250GS 2020.
+- Caso 003 agregado: BMW R1200GS Adventure 2018.
+- Modal ampliado con Tiempo de resolución y Validación final.
+- Imágenes convertidas a WebP sin recorte ni alteración de contenido.

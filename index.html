@@ -1196,7 +1196,7 @@ h1,h2,h3{font-family:Montserrat,Inter,Arial,sans-serif}.mono{font-family:"Roboto
 }
 @media(prefers-reduced-motion:reduce){.back-to-top{transition:none}}
 </style><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="/assets/motorsport-theme-v25e.css?v=10.18.25e" rel="stylesheet"/>
+<link href="/assets/motorsport-theme-v25f.css?v=10.18.25f" rel="stylesheet"/>
 </head>
 <body class="motorsport-theme home-page"><a class="skip-link" href="#contenido">Saltar al contenido</a>
 <header class="header" id="siteHeader">
@@ -1875,6 +1875,8 @@ h1,h2,h3{font-family:Montserrat,Inter,Arial,sans-serif}.mono{font-family:"Roboto
         <div><strong>Situación inicial</strong><span id="realCaseModalSituation"></span></div>
         <div><strong>Intervención</strong><span id="realCaseModalIntervention"></span></div>
         <div><strong>Resultado</strong><span id="realCaseModalResult"></span></div>
+        <div><strong>Tiempo de resolución</strong><span id="realCaseModalTime"></span></div>
+        <div><strong>Validación final</strong><span id="realCaseModalProof"></span></div>
       </div>
       <a class="btn btn-wa real-case-modal-cta" id="realCaseModalCta" href="#" target="_blank" rel="noopener">Tengo un caso similar · Consultar servicio</a>
       <p class="real-case-privacy">La información publicada omite datos personales y datos sensibles de seguridad del vehículo.</p>
@@ -2634,7 +2636,7 @@ document.addEventListener('click', function(e){
 
 <script id="family-selector-js">(()=>{const data={adventure:{title:'Adventure',image:'/assets/family-adventure.webp',text:'Familia orientada a viaje, aventura y uso mixto. Incluye configuraciones GS y GS Adventure en distintas generaciones y sistemas de llave.'},roadster:{title:'Roadster',image:'/assets/family-roadster.webp',text:'Motos naked enfocadas en agilidad, control y conducción directa. La compatibilidad de llave y programación se confirma según modelo y año.'},heritage:{title:'Heritage',image:'/assets/family-heritage.webp',text:'Modelos de carácter clásico y boxer con distintas arquitecturas electrónicas. Revisamos el sistema concreto antes de intervenir.'},urban:{title:'Urban',image:'/assets/family-urban.webp',text:'Scooters y soluciones de movilidad urbana BMW Motorrad. Atendemos sistemas compatibles de llave, inmovilizador y funciones electrónicas.'},sport:{title:'Sport',image:'/assets/family-sport.webp',text:'Familia de alto rendimiento con sistemas electrónicos avanzados. Verificamos llave, inmovilizador y compatibilidad específica antes de cotizar.'},touring:{title:'Touring',image:'/assets/family-touring.webp',text:'Modelos concebidos para largas distancias y confort, con distintas generaciones de llave y módulos de autorización.'}};const modal=document.getElementById('familyModal');if(!modal)return;const img=document.getElementById('familyModalImage'),title=document.getElementById('familyModalTitle'),text=document.getElementById('familyModalText'),cta=document.getElementById('familyModalCta'),close=modal.querySelector('.family-modal-close');let opener=null;function openFamily(key,el){const d=data[key];if(!d)return;opener=el||null;img.src=d.image;img.alt='Motocicleta representativa de la familia BMW Motorrad '+d.title;title.textContent=d.title;text.textContent=d.text;cta.href='https://wa.me/524521791230?text='+encodeURIComponent('Hola RE:MOTO LAB. Este es mi modelo y quiero cotizar servicio para una BMW Motorrad de la familia '+d.title+'.\n\nModelo:\nAño:\nCiudad:');modal.classList.add('is-open');modal.setAttribute('aria-hidden','false');document.body.classList.add('family-modal-open');close.focus()}function closeFamily(){modal.classList.remove('is-open');modal.setAttribute('aria-hidden','true');document.body.classList.remove('family-modal-open');if(opener)opener.focus()}document.querySelectorAll('.ms-family[data-family]').forEach(btn=>btn.addEventListener('click',()=>openFamily(btn.dataset.family,btn)));close.addEventListener('click',closeFamily);modal.addEventListener('click',e=>{if(e.target===modal)closeFamily()});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('is-open'))closeFamily()})})();</script>
 
-<script src="assets/casos-reales.js?v=10.18.25e"></script>
+<script src="assets/casos-reales.js?v=10.18.25f"></script>
 <script id="real-cases-js">
 (()=>{
   const cases=Array.isArray(window.REMOTO_CASOS_REALES)?window.REMOTO_CASOS_REALES:[];
@@ -2652,6 +2654,8 @@ document.addEventListener('click', function(e){
   const mSituation=document.getElementById('realCaseModalSituation');
   const mIntervention=document.getElementById('realCaseModalIntervention');
   const mResult=document.getElementById('realCaseModalResult');
+  const mTime=document.getElementById('realCaseModalTime');
+  const mProof=document.getElementById('realCaseModalProof');
   const mCta=document.getElementById('realCaseModalCta');
   let active=0,opener=null;
   const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -2663,7 +2667,7 @@ document.addEventListener('click', function(e){
   const cards=[...track.querySelectorAll('.real-case-card')];
   function setStatus(i){active=Math.max(0,Math.min(i,cases.length-1));status.textContent=`${active+1} / ${cases.length}`;prev.disabled=active===0;next.disabled=active===cases.length-1}
   function go(i){setStatus(i);cards[active]?.scrollIntoView({behavior:'smooth',inline:'start',block:'nearest'})}
-  function openCase(i,el){const c=cases[i];if(!c||!modal)return;opener=el||null;mImg.src=c.imagen;mImg.alt=c.alt||c.titulo;mTitle.textContent=c.titulo;mService.textContent=c.servicio;mMeta.innerHTML=`<span>${esc(c.ubicacion)}</span><span>${esc(c.modalidad)}</span>`;mSituation.textContent=c.situacion;mIntervention.textContent=c.intervencion;mResult.textContent=c.resultado;mCta.href='https://wa.me/524521791230?text='+encodeURIComponent('Hola RE:MOTO LAB. Vi el caso real '+c.titulo+' ('+c.servicio+') y tengo un caso similar. Quiero consultar el servicio.\n\nMi BMW es:\nAño:\nCiudad:');modal.classList.add('is-open');modal.setAttribute('aria-hidden','false');document.body.classList.add('real-case-modal-open');close?.focus()}
+  function openCase(i,el){const c=cases[i];if(!c||!modal)return;opener=el||null;mImg.src=c.imagen;mImg.alt=c.alt||c.titulo;mTitle.textContent=c.titulo;mService.textContent=c.servicio;mMeta.innerHTML=`<span>${esc(c.ubicacion)}</span><span>${esc(c.modalidad)}</span>`;mSituation.textContent=c.situacion;mIntervention.textContent=c.intervencion;mResult.textContent=c.resultado;mTime.textContent=c.tiempo||'—';mProof.textContent=c.prueba||'—';mCta.href='https://wa.me/524521791230?text='+encodeURIComponent('Hola RE:MOTO LAB. Vi el caso real '+c.titulo+' ('+c.servicio+') y tengo un caso similar. Quiero consultar el servicio.\n\nMi BMW es:\nAño:\nCiudad:');modal.classList.add('is-open');modal.setAttribute('aria-hidden','false');document.body.classList.add('real-case-modal-open');close?.focus()}
   function closeCase(){if(!modal)return;modal.classList.remove('is-open');modal.setAttribute('aria-hidden','true');document.body.classList.remove('real-case-modal-open');mImg?.removeAttribute('src');opener?.focus()}
   track.addEventListener('click',e=>{const b=e.target.closest('[data-case-open]');if(b)openCase(Number(b.dataset.caseOpen),b)});
   prev?.addEventListener('click',()=>go(active-1));next?.addEventListener('click',()=>go(active+1));close?.addEventListener('click',closeCase);modal?.addEventListener('click',e=>{if(e.target===modal)closeCase()});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal?.classList.contains('is-open'))closeCase()});
