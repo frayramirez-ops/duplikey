@@ -1,0 +1,1326 @@
+/* RE:MOTO LAB · Motorsport Technical Editorial Theme
+   Visual layer only. Content, sections, images and functionality remain from V10.18.12d. */
+:root{
+  --ms-sky:#49a9d8;
+  --ms-blue:#087ec6;
+  --ms-navy:#153f70;
+  --ms-red:#dd3447;
+  --ms-ink:#101820;
+  --ms-text:#334650;
+  --ms-muted:#697983;
+  --ms-paper:#e9eef1;
+  --ms-paper-alt:#f4f6f7;
+  --ms-card:#ffffff;
+  --ms-line:#cbd5dc;
+  --ms-dark:#10202d;
+  --ms-dark-2:#0b151d;
+  --ms-gold:#d4ad55;
+}
+html{background:var(--ms-paper)!important}
+body.motorsport-theme{
+  background:var(--ms-paper)!important;
+  color:var(--ms-ink)!important;
+  font-family:"IBM Plex Sans",Inter,Arial,sans-serif!important;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+body.motorsport-theme h1,body.motorsport-theme h2,body.motorsport-theme h3,
+body.motorsport-theme h4,body.motorsport-theme .display{
+  font-family:"Barlow Condensed",Montserrat,Inter,Arial,sans-serif!important;
+  letter-spacing:.005em!important;
+}
+body.motorsport-theme .container{width:min(1180px,calc(100% - 40px))!important}
+body.motorsport-theme .eyebrow,
+body.motorsport-theme .mono{
+  color:var(--ms-blue)!important;
+  letter-spacing:.15em!important;
+  font-weight:800!important;
+}
+
+/* Header */
+body.motorsport-theme .header{
+  background:rgba(249,250,251,.97)!important;
+  border-bottom:1px solid #d3dde3!important;
+  box-shadow:0 8px 26px rgba(24,43,57,.07)!important;
+  backdrop-filter:blur(14px);
+}
+body.motorsport-theme .header .nav{min-height:74px!important}
+body.motorsport-theme .logo-wrap img,
+body.motorsport-theme .logo img{
+  max-height:54px!important;
+  width:auto!important;
+  object-fit:contain!important;
+  filter:none!important;
+}
+body.motorsport-theme .navlinks a{
+  color:#172631!important;
+  font-size:.78rem!important;
+  font-weight:800!important;
+  letter-spacing:.03em!important;
+  position:relative;
+}
+body.motorsport-theme .navlinks a:hover{color:var(--ms-blue)!important}
+body.motorsport-theme .navlinks a::after{
+  content:"";position:absolute;left:0;right:100%;bottom:-9px;height:2px;
+  background:var(--ms-blue);transition:right .18s ease;
+}
+body.motorsport-theme .navlinks a:hover::after{right:0}
+body.motorsport-theme .header-call,
+body.motorsport-theme .header .btn.wa{
+  border-radius:3px!important;
+  border:1px solid #9eb1bd!important;
+  background:#fff!important;
+  color:#16364b!important;
+  font-weight:800!important;
+}
+body.motorsport-theme .header .btn.wa{
+  background:var(--ms-dark)!important;
+  color:#fff!important;
+  border-color:var(--ms-dark)!important;
+}
+
+/* Base page rhythm */
+body.motorsport-theme .section{
+  background:var(--ms-paper)!important;
+  color:var(--ms-ink)!important;
+  border-top:1px solid #d4dde2!important;
+}
+body.motorsport-theme .section.alt{background:var(--ms-paper-alt)!important}
+body.motorsport-theme .section:nth-of-type(even){background:var(--ms-paper-alt)!important}
+body.motorsport-theme .section:nth-of-type(odd){background:var(--ms-paper)!important}
+body.motorsport-theme .section p,
+body.motorsport-theme .section li,
+body.motorsport-theme .section .lead,
+body.motorsport-theme .fine{color:var(--ms-text)!important}
+body.motorsport-theme .section-head h2,
+body.motorsport-theme .section h2{
+  color:var(--ms-ink)!important;
+  font-weight:800!important;
+  text-transform:uppercase;
+}
+body.motorsport-theme .section-head p{color:var(--ms-muted)!important}
+
+/* Cards, grids, price and related blocks */
+body.motorsport-theme .card,
+body.motorsport-theme .case,
+body.motorsport-theme .price-reference,
+body.motorsport-theme .price-pill,
+body.motorsport-theme .family,
+body.motorsport-theme .faq,
+body.motorsport-theme .trust,
+body.motorsport-theme .related,
+body.motorsport-theme .shipping-details,
+body.motorsport-theme .acepro-service-trust{
+  background:rgba(255,255,255,.90)!important;
+  color:var(--ms-ink)!important;
+  border:1px solid var(--ms-line)!important;
+  border-radius:7px!important;
+  box-shadow:0 8px 25px rgba(29,48,61,.05)!important;
+}
+body.motorsport-theme .card p,
+body.motorsport-theme .case p,
+body.motorsport-theme .price-reference p,
+body.motorsport-theme .family p,
+body.motorsport-theme .related p{color:#586a75!important}
+body.motorsport-theme .price-values strong,
+body.motorsport-theme .price-pill strong{color:var(--ms-ink)!important}
+
+/* Buttons */
+body.motorsport-theme .btn{
+  border-radius:3px!important;
+  font-family:"IBM Plex Sans",Inter,Arial,sans-serif!important;
+  font-weight:800!important;
+  letter-spacing:.03em!important;
+}
+body.motorsport-theme .btn-wa,
+body.motorsport-theme .btn.wa,
+body.motorsport-theme .price-cta{
+  position:relative!important;
+  background:linear-gradient(90deg,#102b42,#0c3d61)!important;
+  color:#fff!important;
+  border-color:#102b42!important;
+}
+body.motorsport-theme .btn-outline,
+body.motorsport-theme .btn.light{
+  background:#fff!important;color:#16364b!important;border-color:#95aab8!important;
+}
+
+/* ACCORDIONS — one visual language everywhere */
+body.motorsport-theme details,
+body.motorsport-theme .home-section-accordion,
+body.motorsport-theme .section-fold{
+  color:var(--ms-ink)!important;
+}
+body.motorsport-theme .home-section-accordion,
+body.motorsport-theme .section-fold,
+body.motorsport-theme details.shipping-details{
+  background:rgba(255,255,255,.88)!important;
+  border:1px solid var(--ms-line)!important;
+  border-radius:7px!important;
+  box-shadow:0 8px 24px rgba(27,47,60,.045)!important;
+  overflow:hidden!important;
+}
+body.motorsport-theme .home-section-accordion>summary,
+body.motorsport-theme .section-fold>summary,
+body.motorsport-theme details.shipping-details>summary{
+  background:linear-gradient(90deg,rgba(73,169,216,.10),rgba(255,255,255,.78))!important;
+  color:var(--ms-ink)!important;
+  border-bottom:0!important;
+}
+body.motorsport-theme .home-section-accordion[open]>summary,
+body.motorsport-theme .section-fold[open]>summary,
+body.motorsport-theme details.shipping-details[open]>summary{
+  background:linear-gradient(90deg,rgba(73,169,216,.16),rgba(255,255,255,.86))!important;
+  border-bottom:1px solid #d5dee4!important;
+}
+body.motorsport-theme .home-section-summary h2,
+body.motorsport-theme .section-fold h2,
+body.motorsport-theme details summary strong{color:var(--ms-ink)!important}
+body.motorsport-theme .home-section-summary p,
+body.motorsport-theme .fold-sub{color:var(--ms-muted)!important}
+body.motorsport-theme .home-section-toggle,
+body.motorsport-theme .fold-toggle{
+  background:#fff!important;
+  color:#153c56!important;
+  border:1px solid #9db2bf!important;
+  border-radius:4px!important;
+}
+
+/* Home hero: preserve original text, add approved transparent motorcycle + families */
+body.home-page .hero{
+  position:relative!important;
+  min-height:610px!important;
+  overflow:hidden!important;
+  background:linear-gradient(118deg,#f9fafb 0%,#f0f4f6 52%,#dfe8ed 100%)!important;
+  color:var(--ms-ink)!important;
+  border-bottom:1px solid #cbd6dc!important;
+}
+body.home-page .hero::before{
+  content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:url('/assets/hero-lab.webp') center/cover no-repeat;
+  opacity:.075;filter:grayscale(.35) contrast(.8);
+}
+body.home-page .hero::after{
+  content:"";position:absolute;right:5%;top:0;width:190px;height:182px;z-index:1;
+  transform:skewX(-22deg);
+  background:linear-gradient(90deg,var(--ms-sky) 0 33%,var(--ms-navy) 33% 67%,var(--ms-red) 67% 100%);
+}
+body.home-page .hero-inner{
+  position:relative!important;z-index:3!important;
+  width:min(1180px,calc(100% - 40px))!important;
+  margin:auto!important;
+  padding:84px 610px 78px 0!important;
+  max-width:none!important;
+  min-height:610px!important;
+}
+body.home-page .hero .eyebrow{color:#0d6ca6!important}
+body.home-page .hero h1{
+  color:#111820!important;
+  font:800 clamp(3.7rem,5.3vw,5.7rem)/.88 "Barlow Condensed",sans-serif!important;
+  text-shadow:none!important;
+  max-width:610px!important;
+}
+body.home-page .hero h1 span{color:var(--ms-blue)!important}
+body.home-page .hero .lead{color:#344753!important;max-width:575px!important}
+body.home-page .hero .lead strong{color:#17252f!important}
+body.home-page .hero .safety-line{color:#546975!important}
+body.home-page .hero .btn-outline{color:#17374c!important;background:rgba(255,255,255,.72)!important}
+.ms-hero-visual{
+  position:absolute;z-index:4;right:max(20px,calc((100vw - 1180px)/2));top:86px;
+  width:585px;height:490px;display:grid;grid-template-columns:1fr 210px;gap:12px;align-items:end;pointer-events:none;
+}
+.ms-bike-wrap{height:480px;display:flex;align-items:flex-end;justify-content:center;position:relative}
+.ms-bike-wrap::after{content:"";position:absolute;left:12%;right:8%;bottom:5px;height:22px;background:rgba(29,43,54,.18);filter:blur(16px);border-radius:50%}
+.ms-bike-wrap img{position:relative;z-index:2;max-width:100%;max-height:478px;object-fit:contain;filter:drop-shadow(0 18px 18px rgba(20,35,45,.20))}
+.ms-families{align-self:center;display:flex;flex-direction:column;gap:8px;padding-top:88px;position:relative}
+.ms-families::before{content:"";position:absolute;right:-4px;top:0;width:184px;height:110px;transform:skewX(-22deg);background:linear-gradient(90deg,var(--ms-sky) 0 33%,var(--ms-navy) 33% 67%,var(--ms-red) 67% 100%)}
+.ms-family-title{position:relative;z-index:2;color:#314f61;font-size:.66rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;margin:0 0 4px 10px;white-space:nowrap}
+.ms-family{position:relative;z-index:2;min-height:41px;display:flex;align-items:center;padding:10px 14px 10px 24px;background:rgba(255,255,255,.93);color:#192731;font:800 .95rem/1 "Barlow Condensed",sans-serif;text-transform:uppercase;clip-path:polygon(10% 0,100% 0,94% 100%,0 100%)}
+.ms-family::before,.ms-family::after{content:"";position:absolute;left:9%;right:6%;height:2px;background:linear-gradient(90deg,#159eea,#5ec7f0)}
+.ms-family::before{top:0}.ms-family::after{bottom:0}
+.ms-family:first-of-type{background:linear-gradient(90deg,#edf8ff,#dcefff)}
+
+/* Home specific content blocks */
+body.home-page .trust{background:rgba(255,255,255,.62)!important}
+body.home-page #respaldo-profesional{background:#e8edf1!important}
+body.home-page #respaldo-profesional .acepro-premium-corp,
+body.home-page .acepro-premium-corp{
+  background:linear-gradient(135deg,#181612,#0f171d)!important;
+  border-color:rgba(212,173,85,.42)!important;
+  color:#fff!important;
+}
+body.home-page .acepro-premium-corp p{color:#d7dde1!important}
+
+/* Subpage heroes: keep each original image; standardize typography and contrast */
+body.sub-page .hero{
+  color:#fff!important;
+  border-bottom:1px solid #223541!important;
+}
+body.sub-page .hero h1{
+  font-family:"Barlow Condensed",sans-serif!important;
+  font-weight:800!important;
+  line-height:.95!important;
+  text-transform:uppercase;
+}
+body.sub-page .hero .lead{color:#edf4f7!important}
+body.sub-page .hero .eyebrow{color:#77cdf1!important}
+body.sub-page .hero .btn.light{background:rgba(255,255,255,.95)!important;color:#15374c!important}
+body.sub-page .crumbs{color:#6b7d88!important}
+
+/* Coverage / forms / footer */
+body.motorsport-theme .contact-list,
+body.motorsport-theme .contact-item{color:var(--ms-text)!important}
+body.motorsport-theme input,
+body.motorsport-theme select,
+body.motorsport-theme textarea{
+  background:#fff!important;color:#16242e!important;border-color:#aebec8!important;
+}
+body.motorsport-theme label{color:#40545f!important}
+body.motorsport-theme .cta{
+  background:linear-gradient(105deg,#0d334d,#064466)!important;
+  color:#fff!important;
+}
+body.motorsport-theme .cta h2,body.motorsport-theme .cta p{color:#fff!important}
+body.motorsport-theme .footer{
+  background:var(--ms-dark-2)!important;
+  color:#e9f0f4!important;
+  border-top:4px solid var(--ms-navy)!important;
+}
+body.motorsport-theme .footer p,
+body.motorsport-theme .footer a,
+body.motorsport-theme .footer .legal{color:#aabac4!important}
+body.motorsport-theme .footer strong,body.motorsport-theme .footer h3,body.motorsport-theme .footer h4{color:#fff!important}
+body.motorsport-theme .acepro-footer-badge{color:#fff!important}
+
+/* Digital card keeps its compact identity, but receives the same Motorsport palette */
+body.digital-card{background:#e9eef1!important}
+body.digital-card .page{color:#12202a!important}
+body.digital-card .profile,
+body.digital-card .service,
+body.digital-card .trust{
+  border-radius:7px!important;
+  box-shadow:0 8px 26px rgba(24,43,57,.06)!important;
+}
+body.digital-card .primary,body.digital-card .whatsapp{border-radius:4px!important}
+
+/* Mobile */
+@media(max-width:1050px){
+  body.home-page .hero-inner{padding:72px 0 500px!important;min-height:1040px!important}
+  .ms-hero-visual{left:20px;right:20px;top:auto;bottom:25px;width:auto;height:470px;grid-template-columns:minmax(0,1fr) 220px}
+  .ms-bike-wrap{height:450px}.ms-bike-wrap img{max-height:445px}
+  .ms-families{padding-top:0}.ms-families::before{display:none}
+}
+@media(max-width:720px){
+  body.motorsport-theme .container{width:min(100% - 22px,680px)!important}
+  body.home-page .hero-inner{width:min(100% - 22px,680px)!important;padding:54px 0 500px!important;min-height:1010px!important}
+  body.home-page .hero h1{font-size:3.1rem!important}
+  body.home-page .hero::after{width:120px;height:116px;right:-18px}
+  .ms-hero-visual{left:10px;right:10px;height:460px;grid-template-columns:1fr}
+  .ms-bike-wrap{height:330px}.ms-bike-wrap img{max-height:325px}
+  .ms-families{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;align-self:end}
+  .ms-family-title{grid-column:1/-1;margin-left:0}.ms-family{clip-path:none;padding:9px 8px;justify-content:center;font-size:.82rem;min-height:38px}
+  body.motorsport-theme .navlinks{display:none!important}
+}
+
+
+/* =====================================================================
+   V10.18.19 · AUDITORÍA VISUAL CORPORATIVA
+   Capa correctiva final sobre V10.18.12d/V10.18.18.
+   Objetivo: contraste WCAG razonable, homogeneidad de superficies,
+   tipografía consistente y cero texto claro sobre fondos claros.
+   NO modifica contenido, estructura funcional ni compat-public.js.
+   ===================================================================== */
+
+:root{
+  --ms-page:#e9eef2;
+  --ms-page-alt:#f4f6f7;
+  --ms-surface:#ffffff;
+  --ms-surface-soft:#f8fafb;
+  --ms-ink:#101820;
+  --ms-copy:#344854;
+  --ms-muted:#657883;
+  --ms-line:#c9d5dc;
+  --ms-blue:#087fc8;
+  --ms-blue-deep:#0d456a;
+  --ms-navy:#153f70;
+  --ms-dark:#0c1a24;
+  --ms-dark-2:#07131b;
+}
+
+/* --- Typography hierarchy --- */
+body.motorsport-theme{
+  background:var(--ms-page)!important;
+  color:var(--ms-ink)!important;
+  font-family:"IBM Plex Sans",Inter,Arial,sans-serif!important;
+}
+body.motorsport-theme h1,
+body.motorsport-theme h2,
+body.motorsport-theme h3,
+body.motorsport-theme h4,
+body.motorsport-theme .fold-title{
+  font-family:"Barlow Condensed",Montserrat,Inter,Arial,sans-serif!important;
+  color:var(--ms-ink)!important;
+}
+body.motorsport-theme .section p,
+body.motorsport-theme .section li,
+body.motorsport-theme .section .lead,
+body.motorsport-theme .section small,
+body.motorsport-theme .section .micro{
+  color:var(--ms-copy)!important;
+}
+body.motorsport-theme .eyebrow,
+body.motorsport-theme .mono,
+body.motorsport-theme .fold-eyebrow{
+  color:var(--ms-blue)!important;
+}
+
+/* --- RE:MOTO LAB wordmark: replaces the old shield image in headers --- */
+body.motorsport-theme .logo-wrap,
+body.motorsport-theme .logo{
+  display:inline-flex!important;
+  align-items:center!important;
+  gap:11px!important;
+  min-width:max-content!important;
+  text-decoration:none!important;
+}
+.ms-wordmark-stripes{display:flex;height:34px;transform:skewX(-22deg);flex:0 0 auto}
+.ms-wordmark-stripes i{display:block;width:14px;height:100%}
+.ms-wordmark-stripes i:nth-child(1){background:#42a8dc}
+.ms-wordmark-stripes i:nth-child(2){background:#164779}
+.ms-wordmark-stripes i:nth-child(3){background:#df3447}
+.ms-wordmark-copy{display:flex;flex-direction:column;line-height:.86}
+.ms-wordmark-copy strong{font:800 italic 1.8rem/1 "Barlow Condensed",sans-serif!important;color:#111820!important;white-space:nowrap;letter-spacing:.01em}
+.ms-wordmark-copy strong em{font-style:inherit;color:#087fc8!important}
+.ms-wordmark-copy small{margin-top:5px!important;font:700 .52rem/1 "IBM Plex Sans",sans-serif!important;letter-spacing:.30em!important;color:#6c7d87!important;text-align:center!important}
+
+/* --- Header --- */
+body.motorsport-theme .header{background:rgba(249,251,252,.98)!important;border-bottom:1px solid #d2dde3!important}
+body.motorsport-theme .header .nav{min-height:74px!important}
+body.motorsport-theme .navlinks a{color:#162630!important;font-weight:800!important}
+body.motorsport-theme .header-call{background:#fff!important;color:#14384f!important;border:1px solid #9eb2be!important}
+body.motorsport-theme .header-social-link{background:#f4f8fb!important;border-color:#bdd0db!important}
+
+/* --- Hero: larger motorcycle and cleaner family block --- */
+body.home-page .hero-inner{padding-right:640px!important}
+.ms-hero-visual{width:635px!important;grid-template-columns:minmax(0,1fr) 220px!important;gap:8px!important;right:max(14px,calc((100vw - 1180px)/2))!important}
+.ms-bike-wrap{height:505px!important;overflow:visible!important}
+.ms-bike-wrap img{max-height:500px!important;max-width:118%!important;transform:scale(1.10) translate(-3px,8px)!important;transform-origin:58% 100%!important;filter:drop-shadow(0 20px 18px rgba(20,35,45,.22))!important}
+.ms-families{padding-top:122px!important;gap:8px!important}
+.ms-families::before{width:196px!important;height:112px!important;right:0!important}
+.ms-family-title{
+  position:relative!important;z-index:4!important;
+  width:max-content!important;max-width:100%!important;
+  margin:0 0 6px 5px!important;padding:6px 9px!important;
+  background:rgba(248,250,251,.94)!important;
+  border-left:3px solid #149eea!important;
+  color:#17394e!important;
+  font-size:.68rem!important;font-weight:900!important;letter-spacing:.14em!important;
+  text-shadow:none!important;white-space:nowrap!important;
+}
+.ms-family{color:#142631!important;background:rgba(255,255,255,.96)!important}
+.ms-family:first-of-type{background:linear-gradient(90deg,#edf8ff,#dcefff)!important}
+
+/* --- Section rhythm: one coherent aluminum/white system --- */
+body.motorsport-theme .section{background:var(--ms-page)!important;border-top:1px solid #d5dee4!important}
+body.motorsport-theme .section:nth-of-type(even){background:var(--ms-page-alt)!important}
+body.motorsport-theme .section:nth-of-type(odd){background:var(--ms-page)!important}
+body.motorsport-theme .section-head h2{color:var(--ms-ink)!important}
+body.motorsport-theme .section-head .lead{color:var(--ms-copy)!important}
+
+/* --- Intro trust row --- */
+body.home-page .trust{background:rgba(255,255,255,.92)!important;border:1px solid var(--ms-line)!important}
+body.home-page .trust>div{border-color:#d7e0e5!important}
+body.home-page .trust strong{color:#087fc8!important}
+body.home-page .trust p{color:#334854!important}
+body.home-page .trust-icon{background:#eaf6fc!important;border-color:#a8dcf3!important}
+body.home-page .trust-icon svg{stroke:#28a9e7!important}
+
+/* --- “¿Te está pasando esto?” issue list: fix invisible white text --- */
+body.home-page .issue-list{gap:12px!important}
+body.home-page .issue{
+  background:rgba(255,255,255,.90)!important;
+  border:1px solid var(--ms-line)!important;
+  color:#233842!important;
+  box-shadow:0 6px 18px rgba(30,49,61,.035)!important;
+}
+body.home-page .issue b{color:#0794df!important}
+body.home-page .issue .issue-dot{color:#0794df!important}
+
+/* --- Generic cards, service cards and route cards --- */
+body.motorsport-theme .card,
+body.motorsport-theme .price-card,
+body.motorsport-theme .case,
+body.motorsport-theme .feature,
+body.motorsport-theme .service-visual-card,
+body.motorsport-theme .coverage-box,
+body.motorsport-theme .where>div{
+  background:var(--ms-surface)!important;
+  border:1px solid var(--ms-line)!important;
+  color:var(--ms-ink)!important;
+  box-shadow:0 8px 24px rgba(27,47,60,.05)!important;
+}
+body.motorsport-theme .card:hover{border-color:#8fcce9!important;box-shadow:0 13px 28px rgba(27,47,60,.09)!important}
+body.motorsport-theme .card h3,
+body.motorsport-theme .price-card h3,
+body.motorsport-theme .feature h3,
+body.motorsport-theme .case h3{color:#111820!important}
+body.motorsport-theme .card p,
+body.motorsport-theme .price-card p,
+body.motorsport-theme .feature p,
+body.motorsport-theme .case p{color:#4f6571!important}
+body.motorsport-theme .card-icon,
+body.motorsport-theme .price-icon{background:#eaf7fd!important;border-color:#a9dcf2!important}
+body.motorsport-theme .card-icon svg,
+body.motorsport-theme .price-icon svg{stroke:#28a9e7!important;color:#28a9e7!important}
+body.motorsport-theme .service-more,
+body.motorsport-theme .section-cta-link{color:#078ccc!important;font-weight:800!important}
+body.motorsport-theme .service-more:hover,
+body.motorsport-theme .service-more:focus-visible,
+body.motorsport-theme .section-cta-link:hover,
+body.motorsport-theme .section-cta-link:focus-visible{color:#0b4b74!important;text-decoration:underline!important}
+
+/* --- Unified accordion language: flyers + prices + verifier + about + routes + FAQ --- */
+body.motorsport-theme .flyers-accordion,
+body.motorsport-theme .home-section-accordion,
+body.motorsport-theme .section-fold{
+  background:rgba(255,255,255,.92)!important;
+  border:1px solid var(--ms-line)!important;
+  border-radius:8px!important;
+  box-shadow:0 9px 26px rgba(27,47,60,.055)!important;
+  overflow:hidden!important;
+}
+body.motorsport-theme .flyers-accordion>summary,
+body.motorsport-theme .home-section-accordion>summary,
+body.motorsport-theme .section-fold>summary{
+  min-height:112px!important;
+  padding:22px 24px!important;
+  background:linear-gradient(90deg,#e7f6fd 0%,#f8fafb 55%,#fff 100%)!important;
+  color:var(--ms-ink)!important;
+  border:0!important;
+}
+body.motorsport-theme .flyers-accordion[open]>summary,
+body.motorsport-theme .home-section-accordion[open]>summary,
+body.motorsport-theme .section-fold[open]>summary{
+  background:linear-gradient(90deg,#dcf1fb 0%,#f4f8fa 58%,#fff 100%)!important;
+  border-bottom:1px solid #d3dde3!important;
+}
+body.motorsport-theme .flyers-accordion .acc-copy>span:first-child,
+body.motorsport-theme .home-section-summary h2,
+body.motorsport-theme .fold-title{color:#111820!important;text-shadow:none!important}
+body.motorsport-theme .flyers-accordion .acc-copy small,
+body.motorsport-theme .home-section-summary p,
+body.motorsport-theme .fold-desc{color:#5d717d!important;text-shadow:none!important}
+body.motorsport-theme .accordion-badge,
+body.motorsport-theme .fold-badge{
+  color:#087fc8!important;background:#eef8fd!important;border:1px solid #9cd9f2!important;
+}
+body.motorsport-theme .flyers-accordion .acc-icon,
+body.motorsport-theme .fold-icon{
+  background:linear-gradient(145deg,#0799dd,#075c88)!important;color:#fff!important;border:1px solid #0799dd!important;
+  box-shadow:0 5px 14px rgba(8,126,198,.16)!important;
+}
+body.motorsport-theme .home-section-toggle{
+  background:#fff!important;color:#153f58!important;border:1px solid #9cb4c2!important;
+}
+body.motorsport-theme .accordion-body,
+body.motorsport-theme .home-section-body,
+body.motorsport-theme .fold-body{background:#f7f9fa!important;color:var(--ms-copy)!important}
+
+/* Flyers inside accordion */
+body.motorsport-theme .flyers-showcase{background:transparent!important}
+body.motorsport-theme .flyer-tile{background:#fff!important;border:1px solid #cbd5dc!important;color:#111820!important;box-shadow:0 6px 18px rgba(27,47,60,.04)!important}
+body.motorsport-theme .flyer-copy h3{color:#111820!important}
+body.motorsport-theme .flyer-copy p{color:#536a76!important}
+
+/* Price cards */
+body.motorsport-theme .price-card.hl{background:linear-gradient(145deg,#f1f9fd,#ffffff)!important;border-color:#9fd8f0!important}
+body.motorsport-theme .price-row{border-color:#d6e0e5!important}
+body.motorsport-theme .amount{color:#0f2533!important}
+body.motorsport-theme .amount small{color:#627580!important}
+body.motorsport-theme .note{background:#f5f8fa!important;border-color:#ccd8df!important;color:#4d626e!important}
+
+/* Compatibility verifier */
+body.motorsport-theme .vf{background:#fff!important;border:1px solid var(--ms-line)!important;box-shadow:0 8px 24px rgba(27,47,60,.05)!important}
+body.motorsport-theme .vf-form{background:#f8fafb!important;border-color:#d6dfe4!important}
+body.motorsport-theme .vf-steps li{color:#647984!important}
+body.motorsport-theme .vf-steps li.on{color:#087fc8!important}
+body.motorsport-theme .vf-out{background:#f5f8fa!important;color:#243a46!important;border-color:#d2dde3!important}
+body.motorsport-theme .vf-foot{color:#526873!important}
+body.motorsport-theme .vf-foot a{color:#087fc8!important}
+
+/* “No todas las motos...” features */
+body.motorsport-theme .feature .n{color:#87a7b8!important}
+body.motorsport-theme .feature{padding:20px!important;border-top:3px solid #46a9d8!important;border-radius:6px!important}
+
+/* Process */
+body.motorsport-theme .process .step{background:#fff!important;border:1px solid var(--ms-line)!important;color:#273d48!important}
+body.motorsport-theme .process .step h3{color:#111820!important}
+body.motorsport-theme .process .step p{color:#526873!important}
+body.motorsport-theme .stepnum{background:#e9f7fd!important;color:#087fc8!important;border-color:#9dd9f2!important}
+
+/* Cases / coverage / modules */
+body.motorsport-theme .case .content{background:#fff!important}
+body.motorsport-theme .cover-wrap,
+body.motorsport-theme .modules-feature{background:#fff!important;border:1px solid var(--ms-line)!important;box-shadow:0 8px 24px rgba(27,47,60,.05)!important}
+body.motorsport-theme .cover-copy,
+body.motorsport-theme .modules-copy{color:#263b47!important;background:#fff!important}
+body.motorsport-theme .cover-copy h2,
+body.motorsport-theme .cover-copy h3,
+body.motorsport-theme .modules-copy h2,
+body.motorsport-theme .modules-copy h3{color:#111820!important}
+body.motorsport-theme .cover-copy p,
+body.motorsport-theme .cover-copy li,
+body.motorsport-theme .modules-copy p,
+body.motorsport-theme .modules-copy li{color:#526873!important}
+body.motorsport-theme .shipping-details{background:#f7f9fa!important;border:1px solid #cad6dd!important}
+body.motorsport-theme .shipping-details>summary{color:#17384c!important;background:#edf7fc!important}
+body.motorsport-theme .shipping-details-body{color:#526873!important;background:#fff!important}
+
+/* About / Routes / FAQ */
+body.motorsport-theme .about p,
+body.motorsport-theme .where p{color:#526873!important}
+body.motorsport-theme .where h3{color:#111820!important}
+body.motorsport-theme .acepro-inline{background:#f7f9fa!important;border-color:#ccd8df!important;color:#243944!important}
+body.motorsport-theme .faq{background:#fff!important;border:1px solid var(--ms-line)!important;border-radius:7px!important;overflow:hidden!important}
+body.motorsport-theme .faq-item{background:#fff!important;border-color:#d8e1e6!important}
+body.motorsport-theme .faq-q{background:#fff!important;color:#18303f!important;border-bottom:1px solid #dce4e8!important}
+body.motorsport-theme .faq-q:hover{background:#edf7fc!important;color:#0a5f91!important}
+body.motorsport-theme .faq-a{background:#f8fafb!important}
+body.motorsport-theme .faq-a div,
+body.motorsport-theme .faq-a div strong{color:#465c68!important}
+body.motorsport-theme .faq-a a{color:#087fc8!important}
+
+/* Quick quotation: same light visual family, no unrelated black split */
+body.motorsport-theme .formwrap{
+  background:linear-gradient(112deg,#e5f2f8 0%,#f8fafb 35%,#ffffff 100%)!important;
+  border:1px solid var(--ms-line)!important;
+  border-radius:8px!important;
+  box-shadow:0 10px 28px rgba(27,47,60,.06)!important;
+}
+body.motorsport-theme .formwrap h2{color:#111820!important}
+body.motorsport-theme .formwrap .lead,
+body.motorsport-theme .formwrap .micro{color:#536974!important}
+body.motorsport-theme .formwrap label{color:#334b58!important}
+body.motorsport-theme .formwrap input,
+body.motorsport-theme .formwrap select{
+  background:#fff!important;color:#172a35!important;border:1px solid #aebfc9!important;
+}
+body.motorsport-theme .formwrap input::placeholder{color:#7a8a93!important}
+body.motorsport-theme .privacy-check span{color:#405762!important}
+body.motorsport-theme .privacy-check a{color:#087fc8!important}
+body.motorsport-theme .formwrap .btn-wa{background:linear-gradient(90deg,#102f48,#0c4c75)!important;color:#fff!important}
+
+/* CTA is the intentional dark closing band */
+body.motorsport-theme .cta{background:linear-gradient(105deg,#0b344f,#07496c)!important;color:#fff!important}
+body.motorsport-theme .cta h2,
+body.motorsport-theme .cta p,
+body.motorsport-theme .cta .eyebrow{color:#fff!important}
+body.motorsport-theme .cta .eyebrow{color:#6dd1f6!important}
+
+/* Footer: actual element selector, not an unused .footer class */
+body.motorsport-theme footer{
+  background:#0a151d!important;
+  color:#e7eef2!important;
+  border-top:4px solid #164779!important;
+}
+body.motorsport-theme footer p,
+body.motorsport-theme footer a,
+body.motorsport-theme footer .footlinks,
+body.motorsport-theme footer .trademark-note{color:#9fb1bc!important}
+body.motorsport-theme footer strong,
+body.motorsport-theme footer h3,
+body.motorsport-theme footer h4,
+body.motorsport-theme footer .footlinks strong{color:#fff!important}
+body.motorsport-theme footer .footer-logo-card{background:#fff!important;border-radius:8px!important}
+body.motorsport-theme footer .social-link{background:#10222f!important;color:#eaf3f7!important;border-color:#2b4a5e!important}
+body.motorsport-theme footer .social-link:hover{background:#153248!important;border-color:#42a8dc!important}
+
+/* ACEPRO keeps its institutional gold, but its text remains readable */
+body.home-page .acepro-premium-corp{background:linear-gradient(135deg,#171817,#0d1921)!important;color:#fff!important}
+body.home-page .acepro-premium-corp h2,
+body.home-page .acepro-premium-corp h3,
+body.home-page .acepro-premium-corp strong{color:#fff!important}
+body.home-page .acepro-premium-corp p,
+body.home-page .acepro-premium-corp li,
+body.home-page .acepro-premium-corp span{color:#d8e0e4!important}
+body.home-page .acepro-premium-corp .acepro-micro{color:#d4ad55!important}
+
+/* Keep dark components dark: ethics and modals */
+body.home-page .ethics{background:linear-gradient(120deg,#0c1115,#0a1a23)!important}
+body.home-page .ethics h2,body.home-page .ethics h3,body.home-page .ethics strong{color:#fff!important}
+body.home-page .ethics p,body.home-page .ethics li{color:#c8d3d9!important}
+body.motorsport-theme .modal-box{color:#eaf0f3!important}
+body.motorsport-theme .modal-box h2,body.motorsport-theme .modal-box h3,body.motorsport-theme .modal-box h4{color:#fff!important}
+body.motorsport-theme .modal-box p,body.motorsport-theme .modal-box li{color:#c5d0d6!important}
+
+/* Subpages: same corporate surfaces and footer/header language */
+body.sub-page .section,body.sub-page main>section{background:var(--ms-page)!important;color:var(--ms-ink)!important}
+body.sub-page .card,body.sub-page .box,body.sub-page .content-card,body.sub-page .service-card{background:#fff!important;color:var(--ms-ink)!important;border-color:var(--ms-line)!important}
+body.sub-page main p,body.sub-page main li{color:var(--ms-copy)}
+body.sub-page .hero p,body.sub-page .hero li{color:#edf4f7!important}
+
+/* Responsive refinements */
+@media(max-width:1180px){
+  body.home-page .hero-inner{padding-right:570px!important}
+  .ms-hero-visual{width:570px!important;grid-template-columns:minmax(0,1fr) 205px!important}
+  .ms-bike-wrap img{transform:scale(1.06) translateY(7px)!important}
+}
+@media(max-width:1050px){
+  body.home-page .hero-inner{padding:72px 0 520px!important}
+  .ms-hero-visual{width:auto!important;left:20px!important;right:20px!important;grid-template-columns:minmax(0,1fr) 220px!important}
+  .ms-families{padding-top:0!important}.ms-families::before{display:none!important}
+  .ms-bike-wrap img{max-height:445px!important;transform:scale(1.05) translateY(6px)!important}
+}
+@media(max-width:720px){
+  .ms-wordmark-copy strong{font-size:1.35rem!important}.ms-wordmark-stripes{height:28px!important}.ms-wordmark-stripes i{width:11px!important}.ms-wordmark-copy small{font-size:.42rem!important}
+  .ms-hero-visual{grid-template-columns:1fr!important;height:470px!important}
+  .ms-bike-wrap{height:330px!important}.ms-bike-wrap img{max-height:325px!important;max-width:100%!important;transform:none!important}
+  .ms-families{display:grid!important;grid-template-columns:repeat(3,1fr)!important}.ms-family-title{grid-column:1/-1!important}
+  body.motorsport-theme .flyers-accordion>summary,
+  body.motorsport-theme .home-section-accordion>summary,
+  body.motorsport-theme .section-fold>summary{min-height:0!important;padding:18px!important}
+  body.motorsport-theme .formwrap{padding:24px!important}
+}
+
+
+/* =====================================================================
+   V10.18.20 · SISTEMA CORPORATIVO HOMOGÉNEO / CACHE-BUSTED
+   Auditoría integral de Home + subpáginas.
+   Mantiene contenido, imágenes, rutas, funciones y estructura informativa.
+   ===================================================================== */
+:root{
+  --v20-page:#e8eef2;
+  --v20-page-alt:#f3f6f8;
+  --v20-card:#ffffff;
+  --v20-ink:#101923;
+  --v20-copy:#304754;
+  --v20-muted:#607681;
+  --v20-line:#c3d0d8;
+  --v20-cyan:#0796dc;
+  --v20-cyan-2:#35b9ef;
+  --v20-navy:#123d61;
+  --v20-navy-2:#0a263b;
+  --v20-red:#df3447;
+}
+
+/* Core legibility */
+body.motorsport-theme{background:var(--v20-page)!important;color:var(--v20-ink)!important}
+body.motorsport-theme h1,body.motorsport-theme h2,body.motorsport-theme h3,body.motorsport-theme h4{color:var(--v20-ink)!important}
+body.motorsport-theme p,body.motorsport-theme li{color:var(--v20-copy)}
+body.motorsport-theme .eyebrow,body.motorsport-theme .mono{color:#007fc5!important;font-weight:800!important}
+body.motorsport-theme .section{background:var(--v20-page)!important}
+body.motorsport-theme .section:nth-of-type(even){background:var(--v20-page-alt)!important}
+body.motorsport-theme .section:nth-of-type(odd){background:var(--v20-page)!important}
+body.motorsport-theme .section-head .lead,body.motorsport-theme .section-head p{color:#4d6572!important}
+
+/* HEADER — same on Home and all subpages */
+body.motorsport-theme .header{background:#f9fbfc!important;border-bottom:1px solid #cfdbe2!important;box-shadow:0 5px 18px rgba(20,40,54,.07)!important}
+body.motorsport-theme .navlinks a{color:#162a36!important}
+body.motorsport-theme .navlinks a:hover,body.motorsport-theme .navlinks a:focus-visible{color:#007fc5!important}
+body.motorsport-theme .header-call{background:#fff!important;color:#113a55!important;border:1px solid #8fa8b7!important}
+
+/* HOME HERO — one stripe set only; larger bike; family label below Touring */
+body.home-page .hero::after{display:none!important;content:none!important}
+body.home-page .hero-inner{padding-right:675px!important}
+.ms-hero-visual{
+  width:710px!important;height:520px!important;top:84px!important;
+  grid-template-columns:minmax(0,1fr) 225px!important;gap:12px!important;
+  right:max(8px,calc((100vw - 1180px)/2 - 12px))!important;
+}
+.ms-bike-wrap{height:515px!important;overflow:visible!important;align-items:flex-end!important}
+.ms-bike-wrap img{
+  max-height:545px!important;max-width:132%!important;
+  transform:scale(1.19) translate(-12px,6px)!important;transform-origin:58% 100%!important;
+  filter:drop-shadow(0 22px 20px rgba(18,34,46,.24))!important;
+}
+.ms-families{padding-top:110px!important;gap:8px!important;align-self:center!important}
+.ms-families::before{
+  display:block!important;content:""!important;position:absolute!important;
+  right:2px!important;top:0!important;width:202px!important;height:102px!important;
+  transform:skewX(-22deg)!important;
+  background:linear-gradient(90deg,#48a9d8 0 33%,#174779 33% 67%,#df3447 67% 100%)!important;
+}
+.ms-family{min-height:43px!important;color:#122735!important;background:#fff!important;font-size:1rem!important;font-weight:800!important}
+.ms-family::before,.ms-family::after{background:#159eea!important;height:2px!important}
+.ms-family:first-of-type{background:linear-gradient(90deg,#edf8ff,#dcefff)!important}
+.ms-family-title{
+  order:99!important;margin:6px 0 0 4px!important;padding:7px 10px!important;
+  width:calc(100% - 10px)!important;background:#113d5d!important;color:#fff!important;
+  border:0!important;border-left:4px solid #24afea!important;border-radius:2px!important;
+  font-size:.69rem!important;font-weight:800!important;letter-spacing:.13em!important;
+  text-shadow:none!important;white-space:normal!important;text-align:left!important;
+}
+body.home-page .hero .lead{color:#29424f!important}
+body.home-page .hero .lead strong{color:#101923!important}
+body.home-page .hero .safety-line{color:#415b68!important}
+
+/* Intro benefit row — icons should feel technical, not washed out */
+body.home-page .trust{background:#fff!important;border:1px solid var(--v20-line)!important;box-shadow:0 10px 28px rgba(27,47,60,.06)!important}
+body.home-page .trust strong{color:#007fc5!important;font-weight:900!important}
+body.home-page .trust p{color:#263f4d!important}
+body.home-page .trust-icon{
+  background:linear-gradient(145deg,#e4f6fd,#cfeaf6)!important;
+  border:2px solid #68c6ec!important;box-shadow:0 6px 15px rgba(7,150,220,.12)!important;
+}
+body.home-page .trust-icon svg{stroke:#007dbb!important;stroke-width:1.9!important}
+
+/* Problem list — explicit high-contrast text */
+body.home-page .issue-list .issue{
+  background:#f9fbfc!important;border:1px solid #c5d3db!important;
+  color:#263d49!important;font-weight:600!important;opacity:1!important;
+  box-shadow:0 5px 14px rgba(27,47,60,.035)!important;
+}
+body.home-page .issue-list .issue b{color:#007fc5!important;font-weight:900!important}
+body.home-page .issue-list .issue .issue-dot{color:#24afea!important}
+
+/* Service cards — stronger icons and persistent links on hover */
+body.motorsport-theme .card{background:#fff!important;border:1px solid #c4d1d9!important}
+body.motorsport-theme .card h3{color:#101923!important}
+body.motorsport-theme .card p{color:#425b68!important}
+body.motorsport-theme .card-icon,body.motorsport-theme .price-icon{
+  background:linear-gradient(145deg,#e2f5fd,#cdeaf7)!important;
+  border:2px solid #68c7ed!important;box-shadow:0 5px 15px rgba(7,150,220,.11)!important;
+}
+body.motorsport-theme .card-icon svg,body.motorsport-theme .price-icon svg{stroke:#007dbb!important;stroke-width:1.9!important;color:#007dbb!important}
+body.motorsport-theme button.service-more,body.motorsport-theme a.service-more,
+body.motorsport-theme .section-cta-link{
+  color:#0078b8!important;background:transparent!important;font-weight:900!important;opacity:1!important;
+}
+body.motorsport-theme button.service-more:hover,body.motorsport-theme button.service-more:focus-visible,
+body.motorsport-theme a.service-more:hover,body.motorsport-theme a.service-more:focus-visible,
+body.motorsport-theme .section-cta-link:hover,body.motorsport-theme .section-cta-link:focus-visible{
+  color:#0c405f!important;background:transparent!important;text-decoration:underline!important;opacity:1!important;
+}
+body.motorsport-theme .service-more svg{stroke:currentColor!important}
+
+/* ONE accordion system — all expandable Home families */
+body.motorsport-theme details.flyers-accordion,
+body.motorsport-theme details.home-section-accordion,
+body.motorsport-theme details.section-fold{
+  background:#fff!important;border:1px solid #bdccd5!important;border-radius:9px!important;
+  box-shadow:0 10px 28px rgba(24,45,59,.065)!important;overflow:hidden!important;
+}
+body.motorsport-theme details.flyers-accordion > summary,
+body.motorsport-theme details.home-section-accordion > summary,
+body.motorsport-theme details.section-fold > summary{
+  min-height:108px!important;padding:22px 24px!important;
+  background:linear-gradient(90deg,#dff2fa 0%,#eef6f9 38%,#ffffff 100%)!important;
+  color:#102331!important;border:0!important;box-shadow:none!important;
+}
+body.motorsport-theme details.flyers-accordion > summary:hover,
+body.motorsport-theme details.home-section-accordion > summary:hover,
+body.motorsport-theme details.section-fold > summary:hover{
+  background:linear-gradient(90deg,#d3eef9 0%,#eaf4f8 40%,#fbfdfe 100%)!important;
+}
+body.motorsport-theme details.flyers-accordion[open] > summary,
+body.motorsport-theme details.home-section-accordion[open] > summary,
+body.motorsport-theme details.section-fold[open] > summary{
+  background:linear-gradient(90deg,#cfeaf6 0%,#e7f3f8 42%,#fff 100%)!important;
+  border-bottom:1px solid #c5d3db!important;
+}
+body.motorsport-theme details.flyers-accordion .acc-copy > span:first-child,
+body.motorsport-theme details.home-section-accordion .home-section-summary h2,
+body.motorsport-theme details.section-fold .fold-title{
+  color:#10202c!important;text-shadow:none!important;opacity:1!important;
+}
+body.motorsport-theme details.flyers-accordion .acc-copy small,
+body.motorsport-theme details.home-section-accordion .home-section-summary p,
+body.motorsport-theme details.section-fold .fold-desc{
+  color:#4d6572!important;text-shadow:none!important;opacity:1!important;font-weight:500!important;
+}
+body.motorsport-theme .accordion-badge,body.motorsport-theme .fold-badge{
+  background:#fff!important;color:#086fa9!important;border:1px solid #69c5ea!important;font-weight:900!important;
+}
+body.motorsport-theme .flyers-accordion .acc-icon,
+body.motorsport-theme .section-fold .fold-icon{
+  background:linear-gradient(145deg,#0b9ee0,#08618e)!important;color:#fff!important;
+  border:1px solid #087fbb!important;box-shadow:0 6px 15px rgba(7,126,187,.20)!important;
+}
+body.motorsport-theme .home-section-toggle{
+  background:#fff!important;color:#123e58!important;border:1px solid #8da9b9!important;font-weight:900!important;
+}
+body.motorsport-theme .accordion-body,body.motorsport-theme .home-section-body,body.motorsport-theme .fold-body{
+  background:#f7fafb!important;color:#324b58!important;
+}
+/* kill special legacy per-section accordion color schemes */
+body.home-page #precios .home-section-accordion,
+body.home-page #compatibilidad .home-section-accordion,
+body.home-page #seguridad .home-section-accordion{border-color:#bdccd5!important}
+body.home-page #precios .home-section-accordion > summary,
+body.home-page #compatibilidad .home-section-accordion > summary,
+body.home-page #seguridad .home-section-accordion > summary{background:linear-gradient(90deg,#dff2fa 0%,#eef6f9 38%,#fff 100%)!important}
+
+/* Flyer accordion internals */
+body.motorsport-theme .flyer-tile{background:#fff!important;border:1px solid #c6d3da!important;color:#101923!important}
+body.motorsport-theme .flyer-copy h3{color:#101923!important}
+body.motorsport-theme .flyer-copy p,body.motorsport-theme .flyers-accordion .accordion-note{color:#4d6572!important}
+
+/* About / routes / FAQ accordions: force readable headings */
+body.home-page details.section-fold .fold-eyebrow{color:#007fc5!important}
+body.home-page details.section-fold .fold-title{color:#10202c!important}
+body.home-page details.section-fold .fold-desc{color:#4d6572!important}
+
+/* FAQ internals */
+body.motorsport-theme .faq,body.motorsport-theme .faq-item{background:#fff!important;border-color:#cbd6dc!important}
+body.motorsport-theme .faq-q{background:#fff!important;color:#183240!important;font-weight:800!important}
+body.motorsport-theme .faq-q:hover,body.motorsport-theme .faq-q:focus-visible{background:#e8f5fb!important;color:#075d8b!important}
+body.motorsport-theme .faq-a{background:#f7fafb!important}
+body.motorsport-theme .faq-a div,body.motorsport-theme .faq-a p,body.motorsport-theme .faq-a strong{color:#3b5360!important}
+
+/* Quick quote — calm, light, integrated surface */
+body.motorsport-theme .formwrap{
+  background:linear-gradient(120deg,#e2f1f7 0%,#f4f8fa 42%,#ffffff 100%)!important;
+  border:1px solid #bdccd5!important;border-radius:9px!important;
+  box-shadow:0 11px 30px rgba(25,46,60,.07)!important;color:#10202c!important;
+}
+body.motorsport-theme .formwrap h2{color:#10202c!important}
+body.motorsport-theme .formwrap .lead{color:#3e5865!important}
+body.motorsport-theme .formwrap .micro{color:#5d7380!important}
+body.motorsport-theme .formwrap label{color:#264654!important;font-weight:700!important}
+body.motorsport-theme .formwrap input,body.motorsport-theme .formwrap select{
+  background:#fff!important;color:#182d39!important;border:1px solid #9eb2be!important;box-shadow:0 1px 0 rgba(14,45,63,.03)!important;
+}
+body.motorsport-theme .formwrap .privacy-check span{color:#354e5b!important}
+body.motorsport-theme .formwrap .privacy-check a{color:#006fae!important;font-weight:800!important}
+body.motorsport-theme .formwrap .btn-wa{background:linear-gradient(90deg,#123e60,#075c88)!important;color:#fff!important;border-color:#123e60!important}
+
+/* Footer — richer, still corporate; no washed-out gray */
+body.motorsport-theme footer{
+  background:linear-gradient(115deg,#0b1d29 0%,#0d2636 55%,#0a1821 100%)!important;
+  color:#edf3f6!important;border-top:4px solid #174a79!important;
+}
+body.motorsport-theme footer p,body.motorsport-theme footer span,
+body.motorsport-theme footer a,body.motorsport-theme footer .trademark-note{color:#b9c9d2!important}
+body.motorsport-theme footer strong,body.motorsport-theme footer h3,body.motorsport-theme footer h4{color:#fff!important}
+body.motorsport-theme footer a:hover,body.motorsport-theme footer a:focus-visible{color:#6fd3f7!important}
+body.motorsport-theme footer .footer-logo-card{background:rgba(255,255,255,.97)!important;border:1px solid rgba(255,255,255,.16)!important;padding:10px!important}
+body.motorsport-theme footer .social-link{background:#102f43!important;color:#eaf5f9!important;border:1px solid #32617b!important}
+body.motorsport-theme footer .social-link:hover{background:#17445e!important;color:#fff!important;border-color:#4fc5ef!important}
+body.motorsport-theme footer .acepro-footer-home span,body.motorsport-theme footer .acepro-footer-badge{color:#c7d3da!important}
+body.motorsport-theme footer .acepro-footer-home strong,body.motorsport-theme footer .acepro-footer-badge strong{color:#fff!important}
+
+/* SUBPAGES — same visual grammar, not a second site */
+body.sub-page{background:var(--v20-page)!important;color:var(--v20-ink)!important}
+body.sub-page main>section,body.sub-page .section{background:var(--v20-page)!important;border-top:1px solid #d4dee4!important}
+body.sub-page main>section:nth-of-type(even),body.sub-page .section.alt{background:var(--v20-page-alt)!important}
+body.sub-page .card,body.sub-page .box,body.sub-page .content-card,body.sub-page .service-card,
+body.sub-page .price-reference,body.sub-page .price-pill,body.sub-page .related,
+body.sub-page .trust,body.sub-page .family,body.sub-page .faq,body.sub-page .contact-item{
+  background:#fff!important;color:#10202c!important;border:1px solid #c4d1d9!important;
+  border-radius:8px!important;box-shadow:0 8px 24px rgba(25,46,60,.05)!important;
+}
+body.sub-page main h2,body.sub-page main h3,body.sub-page main h4{color:#101923!important}
+body.sub-page main p,body.sub-page main li,body.sub-page .intro,body.sub-page .legal{color:#405966!important}
+body.sub-page .topic-label,body.sub-page .eyebrow{color:#007fc5!important;font-weight:900!important}
+body.sub-page .price-pill strong,body.sub-page .price-values strong{color:#10202c!important}
+body.sub-page .price-cta,body.sub-page .btn.wa,body.sub-page .btn-wa{background:linear-gradient(90deg,#123e60,#075c88)!important;color:#fff!important;border-color:#123e60!important}
+body.sub-page .btn.light,body.sub-page .btn-outline{background:#fff!important;color:#133e57!important;border-color:#8fa8b7!important}
+body.sub-page .related a,body.sub-page main a:not(.btn):not(.wa):not(.header-call):not(.logo){color:#006fae}
+body.sub-page .related a:hover,body.sub-page main a:not(.btn):not(.wa):not(.header-call):not(.logo):hover{color:#0a4668}
+body.sub-page .contact-icon{background:#e2f5fd!important;color:#007dbb!important;border:1px solid #6bc8ed!important}
+body.sub-page .contact-item strong{color:#10202c!important}
+body.sub-page .contact-item span,body.sub-page .contact-item p{color:#4b6470!important}
+body.sub-page footer{background:linear-gradient(115deg,#0b1d29,#0d2636 55%,#0a1821)!important}
+
+/* Preserve intentional dark regions */
+body.home-page .ethics,body.home-page .acepro-premium-corp{color:#fff!important}
+body.home-page .ethics h2,body.home-page .ethics h3,body.home-page .ethics strong,
+body.home-page .acepro-premium-corp h2,body.home-page .acepro-premium-corp h3,body.home-page .acepro-premium-corp strong{color:#fff!important}
+body.home-page .ethics p,body.home-page .ethics li{color:#d0dbe0!important}
+body.home-page .acepro-premium-corp p,body.home-page .acepro-premium-corp li,body.home-page .acepro-premium-corp span{color:#d8e0e4!important}
+
+@media(max-width:1180px){
+  body.home-page .hero-inner{padding-right:610px!important}
+  .ms-hero-visual{width:625px!important;grid-template-columns:minmax(0,1fr) 210px!important}
+  .ms-bike-wrap img{transform:scale(1.13) translate(-6px,6px)!important}
+}
+@media(max-width:1050px){
+  body.home-page .hero-inner{padding:72px 0 535px!important}
+  .ms-hero-visual{left:20px!important;right:20px!important;width:auto!important;height:500px!important;grid-template-columns:minmax(0,1fr) 220px!important}
+  .ms-families{padding-top:0!important}.ms-families::before{display:none!important}
+  .ms-family-title{order:99!important}
+  .ms-bike-wrap img{max-height:470px!important;transform:scale(1.08) translateY(5px)!important}
+}
+@media(max-width:720px){
+  body.home-page .hero-inner{padding:52px 0 515px!important}
+  .ms-hero-visual{height:490px!important;grid-template-columns:1fr!important}
+  .ms-bike-wrap{height:325px!important}.ms-bike-wrap img{max-height:320px!important;max-width:100%!important;transform:none!important}
+  .ms-families{grid-template-columns:repeat(2,1fr)!important}
+  .ms-family-title{grid-column:1/-1!important;width:100%!important;margin:4px 0 0!important;text-align:center!important}
+  body.motorsport-theme details.flyers-accordion > summary,
+  body.motorsport-theme details.home-section-accordion > summary,
+  body.motorsport-theme details.section-fold > summary{min-height:0!important;padding:18px!important}
+}
+
+/* =====================================================================
+   V10.18.21 · HOMOLOGACIÓN HOME + SUBPÁGINAS
+   Ajustes solicitados: moto ligeramente menor, Instagram reforzado,
+   botones Motorsport homogéneos, FAQ/relacionados claros y legibles,
+   previews visuales compactos con ampliación al click.
+   ===================================================================== */
+
+/* Hero: reducción fina, únicamente para liberar la línea de texto */
+@media (min-width:1051px){
+  body.home-page .ms-bike-wrap img{
+    max-height:486px!important;
+    max-width:114%!important;
+    transform:scale(1.065) translate(2px,8px)!important;
+    transform-origin:60% 100%!important;
+  }
+}
+
+/* Redes de header: Instagram debe leerse con la misma fuerza que Facebook */
+body.motorsport-theme .header-social-link.instagram{
+  color:#cf2f78!important;
+  background:#fff4f8!important;
+  border:1.5px solid #df6b9f!important;
+  box-shadow:0 6px 16px rgba(207,47,120,.12)!important;
+}
+body.motorsport-theme .header-social-link.instagram svg{
+  color:#cf2f78!important;
+  stroke:#cf2f78!important;
+  opacity:1!important;
+  stroke-width:2.15!important;
+}
+body.motorsport-theme .header-social-link.facebook{
+  color:#1877f2!important;
+  border-color:#88b9f4!important;
+  background:#f3f8ff!important;
+}
+
+/* SISTEMA ÚNICO DE BOTONES MOTORSPORT */
+body.motorsport-theme .btn,
+body.motorsport-theme .header-call,
+body.motorsport-theme .home-section-toggle,
+body.motorsport-theme .fold-toggle,
+body.motorsport-theme .acepro-toggle{
+  position:relative!important;
+  overflow:hidden!important;
+  min-height:46px!important;
+  padding:0 52px 0 20px!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  border:0!important;
+  border-radius:3px!important;
+  background:linear-gradient(90deg,#102c43 0%,#0d3f62 100%)!important;
+  color:#fff!important;
+  font-family:"IBM Plex Sans",Inter,Arial,sans-serif!important;
+  font-weight:800!important;
+  letter-spacing:.025em!important;
+  text-decoration:none!important;
+  box-shadow:0 7px 18px rgba(14,45,67,.12)!important;
+  transition:transform .16s ease,box-shadow .16s ease,filter .16s ease!important;
+}
+body.motorsport-theme .btn::after,
+body.motorsport-theme .header-call::after,
+body.motorsport-theme .home-section-toggle::after,
+body.motorsport-theme .fold-toggle::after,
+body.motorsport-theme .acepro-toggle::after{
+  content:"→"!important;
+  position:absolute!important;
+  right:0!important;top:0!important;bottom:0!important;
+  width:42px!important;
+  display:grid!important;place-items:center!important;
+  background:linear-gradient(135deg,#08a1ef,#0877ce)!important;
+  color:#fff!important;
+  font-size:1.05rem!important;
+  transform:none!important;
+}
+body.motorsport-theme .btn:hover,
+body.motorsport-theme .header-call:hover,
+body.motorsport-theme .home-section-toggle:hover,
+body.motorsport-theme .fold-toggle:hover,
+body.motorsport-theme .acepro-toggle:hover{
+  color:#fff!important;
+  filter:brightness(1.06)!important;
+  transform:translateY(-1px)!important;
+  box-shadow:0 10px 24px rgba(14,45,67,.18)!important;
+  text-decoration:none!important;
+}
+/* Los desplegables usan chevron en el remate azul */
+body.motorsport-theme .home-section-toggle::after,
+body.motorsport-theme .fold-toggle::after{
+  content:"▾"!important;
+  font-size:.92rem!important;
+}
+body.motorsport-theme details[open] .home-section-toggle::after,
+body.motorsport-theme details[open] .fold-toggle::after{content:"▴"!important}
+/* WhatsApp conserva icono/texto original y adopta la misma carrocería */
+body.motorsport-theme .btn-wa,
+body.motorsport-theme .btn.wa,
+body.motorsport-theme .price-cta,
+body.motorsport-theme .btn-outline,
+body.motorsport-theme .btn.light{
+  background:linear-gradient(90deg,#102c43,#0d3f62)!important;
+  color:#fff!important;
+  border:0!important;
+}
+
+/* SUBPÁGINAS: FAQ claro, corporativo, igual al lenguaje del Home */
+body.sub-page .faq{
+  display:grid!important;
+  gap:10px!important;
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+}
+body.sub-page .faq details{
+  background:#fff!important;
+  border:1px solid #c8d5dd!important;
+  border-radius:7px!important;
+  color:#172631!important;
+  box-shadow:0 6px 18px rgba(24,46,61,.045)!important;
+  overflow:hidden!important;
+  padding:0 18px!important;
+}
+body.sub-page .faq details:hover{border-color:#8fcce9!important}
+body.sub-page .faq summary{
+  color:#172631!important;
+  background:linear-gradient(90deg,#edf8fd 0%,#fff 72%)!important;
+  font-weight:800!important;
+  padding:16px 0!important;
+}
+body.sub-page .faq details[open] summary{color:#0b5f8f!important}
+body.sub-page .faq p{color:#506672!important;padding:0 0 18px!important}
+
+/* SUBPÁGINAS: “También puede interesarte” deja de ser un bloque negro */
+body.sub-page .related{
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+  gap:12px!important;
+}
+body.sub-page .related a{
+  position:relative!important;
+  overflow:hidden!important;
+  background:#fff!important;
+  border:1px solid #c8d5dd!important;
+  border-radius:7px!important;
+  padding:18px 20px!important;
+  color:#172631!important;
+  box-shadow:0 6px 18px rgba(24,46,61,.04)!important;
+  transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease!important;
+}
+body.sub-page .related a::before{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:#149eea;
+}
+body.sub-page .related a:hover{
+  transform:translateY(-2px)!important;
+  border-color:#7dc4e7!important;
+  box-shadow:0 10px 24px rgba(24,46,61,.08)!important;
+}
+body.sub-page .related b{color:#142732!important;font-weight:800!important}
+body.sub-page .related span{color:#617681!important}
+
+/* SUBPÁGINAS: guías visuales compactas. El modal conserva la imagen completa. */
+body.sub-page .flyer-grid{
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:14px!important;
+  align-items:start!important;
+}
+body.sub-page .flyer-card{
+  background:#fff!important;
+  border:1px solid #c8d5dd!important;
+  border-radius:8px!important;
+  box-shadow:0 7px 20px rgba(24,46,61,.045)!important;
+  overflow:hidden!important;
+}
+body.sub-page .flyer-card button{
+  display:block!important;
+  width:100%!important;
+  height:330px!important;
+  overflow:hidden!important;
+  background:#e8eef2!important;
+}
+body.sub-page .flyer-card img{
+  width:100%!important;
+  height:100%!important;
+  aspect-ratio:auto!important;
+  object-fit:cover!important;
+  object-position:50% 16%!important;
+  transition:transform .2s ease,filter .2s ease!important;
+}
+body.sub-page .flyer-card:hover img{transform:scale(1.02)!important;filter:brightness(.96)!important}
+body.sub-page .flyer-meta{padding:13px 15px 15px!important;background:#fff!important}
+body.sub-page .flyer-meta b{color:#132631!important;font-weight:800!important}
+body.sub-page .flyer-meta span{color:#657a85!important}
+
+/* Subpáginas: tarjetas genéricas no pueden volver a fondo negro por CSS local */
+body.sub-page .card,
+body.sub-page .grid .card,
+body.sub-page .family,
+body.sub-page .price-reference,
+body.sub-page .price-pill{
+  background:#fff!important;
+  color:#172631!important;
+  border-color:#c8d5dd!important;
+}
+body.sub-page .card h3,
+body.sub-page .family h3{color:#142631!important}
+body.sub-page .card p,
+body.sub-page .family p{color:#526974!important}
+
+@media(max-width:900px){
+  body.sub-page .flyer-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  body.sub-page .flyer-card button{height:310px!important}
+}
+@media(max-width:600px){
+  body.sub-page .flyer-grid{grid-template-columns:1fr!important}
+  body.sub-page .flyer-card button{height:300px!important}
+  body.motorsport-theme .btn,
+  body.motorsport-theme .header-call,
+  body.motorsport-theme .home-section-toggle,
+  body.motorsport-theme .fold-toggle{min-height:44px!important;padding-left:16px!important;padding-right:48px!important}
+}
+
+
+/* =====================================================================
+   V10.18.22 · PULIDO CORPORATIVO / AJUSTES DE JERARQUÍA Y CONTRASTE
+   - Eyebrows +1 punto visual
+   - Hero CTA simétricos
+   - Casos: etiquetas Problema/Intervención/Resultado legibles
+   - Modales de servicios claros y coherentes
+   - ACEPRO bronce/ocre premium
+   - Proceso y cobertura con contenido mejor centrado
+   - Menos espacio vertical entre acordeones editoriales
+   ===================================================================== */
+
+/* Mini títulos / eyebrows: incremento global aproximado de 1px */
+body.motorsport-theme .eyebrow,
+body.motorsport-theme .topic-label,
+body.motorsport-theme .fold-eyebrow,
+body.motorsport-theme .service-kicker,
+body.motorsport-theme .mono{
+  font-size:calc(1em + 1px)!important;
+  letter-spacing:.16em!important;
+}
+
+/* Hero: CTA principales con proporción simétrica */
+@media (min-width:721px){
+  body.home-page .hero .actions{display:flex!important;gap:12px!important;align-items:flex-start!important}
+  body.home-page .hero .actions>div,
+  body.home-page .hero .actions>a{width:252px!important;max-width:252px!important;flex:0 0 252px!important}
+  body.home-page .hero .actions .btn{width:252px!important;max-width:252px!important;min-width:252px!important}
+}
+
+/* Hero: reducción final mínima para librar el texto sin perder presencia */
+@media (min-width:1051px){
+  body.home-page .ms-bike-wrap img{
+    max-height:474px!important;
+    max-width:111%!important;
+    transform:scale(1.035) translate(8px,8px)!important;
+    transform-origin:60% 100%!important;
+  }
+}
+
+/* Casos: las etiquetas estaban forzadas a blanco por estilo inline */
+body.home-page #casos .case .content strong{
+  color:#132631!important;
+  font-weight:850!important;
+}
+body.home-page #casos .case .content p{color:#4b6370!important}
+
+/* MODALES DE SERVICIO: de negro pesado a superficie editorial clara */
+body.motorsport-theme .modal{background:rgba(11,24,33,.58)!important;backdrop-filter:blur(5px)!important}
+body.motorsport-theme .modal-box{
+  background:linear-gradient(145deg,#ffffff 0%,#f3f7f9 100%)!important;
+  color:#172631!important;
+  border:1px solid #b9cad4!important;
+  box-shadow:0 28px 80px rgba(12,31,44,.24)!important;
+}
+body.motorsport-theme .modal-box h2,
+body.motorsport-theme .modal-box h3,
+body.motorsport-theme .modal-box h4{color:#111820!important}
+body.motorsport-theme .modal-box p,
+body.motorsport-theme .modal-box li,
+body.motorsport-theme .service-detail .intro{color:#435a67!important}
+body.motorsport-theme .service-detail .service-kicker{color:#007fc5!important}
+body.motorsport-theme .service-step{border-color:#d5e0e6!important}
+body.motorsport-theme .service-step-num{
+  background:#e5f5fc!important;color:#087fc3!important;border-color:#88cfea!important
+}
+body.motorsport-theme .service-visual-card{
+  background:#fff!important;border:1px solid #cad7de!important;color:#172631!important
+}
+body.motorsport-theme .service-visual-card>div{background:#fff!important}
+body.motorsport-theme .service-visual-card img{background:#f4f7f9!important;display:block!important;max-width:100%!important;height:auto!important}
+body.motorsport-theme .service-visual-card h4{color:#142631!important}
+body.motorsport-theme .service-visual-card p{color:#536a76!important}
+body.motorsport-theme .modal-close{z-index:20!important}
+
+/* ACEPRO: bronce/ocre premium, menos negro y menos severo */
+body.home-page .acepro-section{
+  background:linear-gradient(180deg,#edf0ef 0%,#e7e9e6 100%)!important;
+  border-color:#d2c09a!important
+}
+body.home-page .acepro-premium-corp{
+  background:linear-gradient(135deg,#70572f 0%,#5a4629 42%,#3f3527 100%)!important;
+  border:1px solid #b89453!important;
+  box-shadow:0 18px 44px rgba(70,53,31,.18)!important
+}
+body.home-page .acepro-premium-corp h2,
+body.home-page .acepro-premium-corp h3,
+body.home-page .acepro-premium-corp strong{color:#fffdf7!important}
+body.home-page .acepro-premium-corp p,
+body.home-page .acepro-premium-corp li,
+body.home-page .acepro-premium-corp span{color:#f0e8d7!important}
+body.home-page .acepro-premium-corp .eyebrow,
+body.home-page .acepro-premium-corp .acepro-micro,
+body.home-page .acepro-premium-corp .acepro-link{color:#ffd77c!important}
+body.home-page .acepro-premium-corp .acepro-toggle{
+  background:linear-gradient(90deg,#4e3e26,#6e552e)!important;
+  color:#fff7e4!important;
+  box-shadow:0 8px 18px rgba(47,34,19,.18)!important
+}
+body.home-page .acepro-premium-corp .acepro-toggle::after{background:linear-gradient(135deg,#d09b3f,#a87827)!important}
+body.home-page .acepro-inner,
+body.home-page .acepro-intro{border-color:rgba(255,224,160,.28)!important;background:rgba(255,255,255,.07)!important}
+body.home-page .acepro-answer{color:#efe6d5!important}
+
+/* Cinco pasos: más aire interior y distribución centrada */
+body.home-page .process .step{
+  min-height:172px!important;
+  padding:24px 20px!important;
+  display:flex!important;
+  flex-direction:column!important;
+  justify-content:center!important;
+  align-items:flex-start!important;
+}
+body.home-page .process .step h3{margin:12px 0 6px!important;line-height:1.15!important}
+body.home-page .process .step p{margin:0!important;line-height:1.5!important}
+
+/* Cobertura: mismo criterio de sangría y ritmo interior */
+body.home-page .coverage-box{
+  background:#fff!important;
+  border:1px solid #c6d4dc!important;
+  border-radius:8px!important;
+  padding:8px 24px!important;
+  box-shadow:0 7px 20px rgba(24,46,61,.04)!important
+}
+body.home-page .coverage-box>div{
+  padding:20px 4px!important;
+  margin:0!important;
+}
+body.home-page .coverage-box>div+div{border-top:1px solid #d7e1e7!important}
+body.home-page .coverage-box h3{margin:0 0 8px!important;color:#142631!important}
+body.home-page .coverage-box p{margin:0!important;color:#536a76!important;line-height:1.55!important}
+
+/* Reduce aproximadamente a la mitad el vacío entre los acordeones editoriales inferiores */
+body.home-page #nosotros,
+body.home-page #servicios-bmw-seo,
+body.home-page #faq{
+  padding-top:34px!important;
+  padding-bottom:34px!important;
+}
+body.home-page #nosotros + section,
+body.home-page #servicios-bmw-seo + section,
+body.home-page #faq + section{margin-top:0!important}
+body.home-page details.section-fold,
+body.home-page details.home-section-accordion{margin-top:0!important;margin-bottom:0!important}
+
+@media(max-width:720px){
+  body.home-page .process .step{min-height:0!important;padding:20px 18px!important}
+  body.home-page .coverage-box{padding:6px 18px!important}
+  body.home-page #nosotros,body.home-page #servicios-bmw-seo,body.home-page #faq{padding-top:24px!important;padding-bottom:24px!important}
+}

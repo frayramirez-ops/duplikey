@@ -1,0 +1,9 @@
+V10.18.22 VALIDACIÓN
+sections: 18
+details: 14
+articles: 30
+modals: 7
+html files: 19
+css v22 refs: 19
+case inline white labels remaining: 0
+compat-public.js identical: True
