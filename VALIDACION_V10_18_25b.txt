@@ -1,6 +1,0 @@
-V10.18.25b
-- Base: V10.18.25a_Familias_Interactivo_Preview
-- Nuevo CSS: /assets/motorsport-theme-v25b.css
-- CTA popup familias: “Este es mi modelo · Cotizar servicio”.
-- Ambientación de subpáginas refinada como fondo integrado, sin efecto de imagen pegada.
-- Hero de subpáginas corregido con fondo editorial y mejor contraste.

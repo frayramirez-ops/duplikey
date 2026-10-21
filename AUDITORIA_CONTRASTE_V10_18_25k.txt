@@ -1,0 +1,20 @@
+AUDITORÍA V10.18.25k · CONTRASTE GLOBAL
+
+Base: V10.18.25j Mobile Hero Hotfix
+
+Áreas revisadas:
+- Home: compatibilidad, precios, servicios, acordeones, FAQ, formularios, casos reales, proceso, cobertura, seguridad y CTA.
+- Subpáginas SEO: 14 páginas de servicios/modelos/localización + FAQ + glosario.
+- Formularios, labels, placeholders, metadatos, tarjetas relacionadas y modelos.
+- Footer y superficies oscuras preservadas con texto claro.
+
+Correcciones principales:
+1. Verificador: opciones y pasos con contraste alto; panel de resultado claro; badges por estado; servicios y notas legibles.
+2. CTA del verificador: “Cotizar servicio para esta BMW”.
+3. Textos heredados de --steel/--muted reforzados en superficies claras de subpáginas.
+4. Accordions, FAQ, related cards, tags/modelos y formularios reforzados.
+5. Placeholders y labels con contraste superior.
+6. WhatsApp: iconografía verde reforzada donde existe SVG.
+7. Footer/CTA/ACEPRO/ética: se mantiene texto claro en fondos oscuros.
+
+No se modificó compat-public.js.
