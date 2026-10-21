@@ -1,0 +1,6 @@
+V10.18.25i — Casos Reales Lightbox
+- Base: V10.18.25h.
+- Click en flyer de caso real abre lightbox de imagen ampliada.
+- Click en “Ver caso completo” conserva acordeón horizontal en desktop.
+- En móvil, flyer abre lightbox y detalle del caso conserva modal vertical.
+- CSS: /assets/motorsport-theme-v25i.css
