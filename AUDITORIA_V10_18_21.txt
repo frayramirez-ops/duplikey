@@ -1,0 +1,14 @@
+RE:MOTO LAB · V10.18.21 · Auditoría Home + Subpáginas
+
+Cambios visuales globales:
+- Hero: moto reducida finamente respecto V10.18.20 para liberar texto.
+- Instagram: contraste reforzado.
+- Sistema de botones Motorsport homologado (CTA, llamar, ver sección, cobertura, WhatsApp, etc.).
+- FAQ de subpáginas: fondos claros, texto oscuro, contraste consistente.
+- Bloques "También puede interesarte": tarjetas claras con acento azul.
+- Guías visuales/posters de subpáginas: previews compactos (330 px aprox.) con recorte controlado; click conserva ampliación completa existente.
+- Tarjetas genéricas de subpáginas: neutralización de fondos negros heredados.
+- Nuevo stylesheet motorsport-theme-v21.css para evitar caché de V20.
+
+Integridad:
+- No se alteran textos, rutas, JSON-LD, imágenes originales, modales ni compat-public.js.
