@@ -1,174 +1,323 @@
-/* RE:MOTO LAB · V10.18.16 · Motorsport real visual system
-   Visual-only layer over V10.18.12d. Existing content, sections, images and JS are preserved. */
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+/* RE:MOTO LAB · Motorsport Technical Editorial Theme
+   Visual layer only. Content, sections, images and functionality remain from V10.18.12d. */
 :root{
- --ms-sky:#45a9de;--ms-blue:#0789d2;--ms-navy:#173f70;--ms-red:#df3347;
- --ms-ink:#111820;--ms-text:#344854;--ms-muted:#6b7b85;--ms-paper:#e8edf1;
- --ms-paper2:#f4f6f7;--ms-card:#fff;--ms-line:#cbd6dd;--ms-dark:#101e2a;--ms-dark2:#0a151d;
- --blue:#0789d2;--blue2:#173f70;--ink:#111820;--muted:#6b7b85;--line:#cbd6dd;
+  --ms-sky:#49a9d8;
+  --ms-blue:#087ec6;
+  --ms-navy:#153f70;
+  --ms-red:#dd3447;
+  --ms-ink:#101820;
+  --ms-text:#334650;
+  --ms-muted:#697983;
+  --ms-paper:#e9eef1;
+  --ms-paper-alt:#f4f6f7;
+  --ms-card:#ffffff;
+  --ms-line:#cbd5dc;
+  --ms-dark:#10202d;
+  --ms-dark-2:#0b151d;
+  --ms-gold:#d4ad55;
 }
-html{background:var(--ms-paper)!important;scroll-behavior:smooth}
-body.motorsport-theme{background:var(--ms-paper)!important;color:var(--ms-ink)!important;font-family:'IBM Plex Sans',Arial,sans-serif!important;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-body.motorsport-theme p,body.motorsport-theme li,body.motorsport-theme input,body.motorsport-theme select,body.motorsport-theme textarea,body.motorsport-theme button{font-family:'IBM Plex Sans',Arial,sans-serif!important}
-body.motorsport-theme h1,body.motorsport-theme h2,body.motorsport-theme h3,body.motorsport-theme h4{font-family:'Barlow Condensed','Arial Narrow',Arial,sans-serif!important}
-body.motorsport-theme .container{width:min(1420px,calc(100% - 48px))!important}
+html{background:var(--ms-paper)!important}
+body.motorsport-theme{
+  background:var(--ms-paper)!important;
+  color:var(--ms-ink)!important;
+  font-family:"IBM Plex Sans",Inter,Arial,sans-serif!important;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+body.motorsport-theme h1,body.motorsport-theme h2,body.motorsport-theme h3,
+body.motorsport-theme h4,body.motorsport-theme .display{
+  font-family:"Barlow Condensed",Montserrat,Inter,Arial,sans-serif!important;
+  letter-spacing:.005em!important;
+}
+body.motorsport-theme .container{width:min(1180px,calc(100% - 40px))!important}
+body.motorsport-theme .eyebrow,
+body.motorsport-theme .mono{
+  color:var(--ms-blue)!important;
+  letter-spacing:.15em!important;
+  font-weight:800!important;
+}
 
-/* shared header */
-body.motorsport-theme .header{background:rgba(248,250,251,.98)!important;border-bottom:1px solid #d4dde3!important;box-shadow:0 8px 25px rgba(20,40,55,.065)!important;backdrop-filter:blur(12px)!important}
-body.motorsport-theme .nav{min-height:74px!important}
-body.motorsport-theme .logo-wrap,body.motorsport-theme .logo{display:flex!important;align-items:center!important}
-body.motorsport-theme .logo-remoto,body.motorsport-theme .logo img{width:auto!important;height:58px!important;max-width:235px!important;object-fit:contain!important;filter:none!important}
-body.motorsport-theme .navlinks{gap:25px!important}
-body.motorsport-theme .navlinks a{color:#172630!important;font-weight:700!important;font-size:.77rem!important;letter-spacing:.035em!important;text-transform:uppercase!important;position:relative!important}
+/* Header */
+body.motorsport-theme .header{
+  background:rgba(249,250,251,.97)!important;
+  border-bottom:1px solid #d3dde3!important;
+  box-shadow:0 8px 26px rgba(24,43,57,.07)!important;
+  backdrop-filter:blur(14px);
+}
+body.motorsport-theme .header .nav{min-height:74px!important}
+body.motorsport-theme .logo-wrap img,
+body.motorsport-theme .logo img{
+  max-height:54px!important;
+  width:auto!important;
+  object-fit:contain!important;
+  filter:none!important;
+}
+body.motorsport-theme .navlinks a{
+  color:#172631!important;
+  font-size:.78rem!important;
+  font-weight:800!important;
+  letter-spacing:.03em!important;
+  position:relative;
+}
 body.motorsport-theme .navlinks a:hover{color:var(--ms-blue)!important}
-body.motorsport-theme .header-call{position:relative!important;overflow:hidden!important;border:0!important;border-radius:4px!important;background:#102333!important;color:#fff!important;padding:13px 45px 13px 17px!important;font-weight:800!important;text-transform:uppercase!important;font-size:.74rem!important;letter-spacing:.04em!important}
-body.motorsport-theme .header-call:after{content:'→';position:absolute;right:0;top:0;bottom:0;width:38px;display:grid;place-items:center;background:linear-gradient(135deg,#09a0ef,#0874c9);color:#fff;font-size:1rem}
-body.motorsport-theme .header-social-link{border-color:#cad5dc!important;background:#eef3f6!important;color:#18374c!important}
-body.motorsport-theme .menu-btn{border-color:#a7b8c3!important;color:#18374c!important;background:#f8fafb!important}
-body.motorsport-theme .mobile-menu{background:#f7f9fa!important;border-color:#d4dde3!important}
-body.motorsport-theme .mobile-menu a{color:#172630!important;border-color:#e0e6ea!important}
-
-/* typography & section system */
-body.motorsport-theme .section{background:var(--ms-paper2)!important;color:var(--ms-ink)!important;border-top:1px solid #d5dde2!important;padding-top:66px!important;padding-bottom:66px!important}
-body.motorsport-theme .section.alt,body.motorsport-theme .section:nth-of-type(even){background:var(--ms-paper)!important}
-body.motorsport-theme .section-head,body.motorsport-theme .home-section-summary{position:relative!important}
-body.motorsport-theme .section-head:before,body.motorsport-theme .home-section-summary:before{content:'';display:block;width:82px;height:4px;margin-bottom:12px;background:linear-gradient(90deg,var(--ms-sky) 0 33%,var(--ms-navy) 33% 67%,var(--ms-red) 67%)}
-body.motorsport-theme .eyebrow{color:#0875b6!important;font-size:.69rem!important;font-weight:800!important;letter-spacing:.18em!important;text-transform:uppercase!important}
-body.motorsport-theme .section h2,body.motorsport-theme .section-head h2,body.motorsport-theme .home-section-summary h2{color:var(--ms-ink)!important;font-weight:800!important;font-size:clamp(2.35rem,3vw,3.6rem)!important;line-height:.94!important;letter-spacing:.003em!important;text-transform:uppercase!important;margin-top:8px!important}
-body.motorsport-theme .section h3{color:#14212a!important;font-weight:800!important}
-body.motorsport-theme .lead,body.motorsport-theme .intro,body.motorsport-theme .section p,body.motorsport-theme .section li{color:#596b76!important;line-height:1.58!important}
-body.motorsport-theme .mono{color:#087fc6!important;font-weight:700!important}
-
-/* home hero: existing copy retained + static visual */
-body.motorsport-home .hero{position:relative!important;overflow:hidden!important;min-height:620px!important;background:linear-gradient(120deg,#f9fafb 0%,#f3f6f8 44%,#dde6eb 100%)!important;border-bottom:1px solid #cad5dc!important;color:var(--ms-ink)!important}
-body.motorsport-home .hero:before{content:'';position:absolute;inset:0;background:linear-gradient(123deg,transparent 0 61%,rgba(69,169,222,.055) 61% 68%,transparent 68%),linear-gradient(123deg,transparent 0 73%,rgba(23,63,112,.05) 73% 80%,transparent 80%);pointer-events:none}
-body.motorsport-home .hero:after{content:'';position:absolute;right:4%;top:0;width:190px;height:145px;transform:skewX(-22deg);background:linear-gradient(90deg,var(--ms-sky) 0 33%,var(--ms-navy) 33% 67%,var(--ms-red) 67%);opacity:.98;pointer-events:none}
-body.motorsport-home .hero-inner{display:grid!important;grid-template-columns:minmax(430px,.84fr) minmax(610px,1.16fr)!important;gap:38px!important;align-items:center!important;padding-top:40px!important;padding-bottom:34px!important;max-width:none!important;position:relative!important;z-index:2!important}
-body.motorsport-home .hero-copy{max-width:590px!important}
-body.motorsport-home .hero .eyebrow{color:#0a6fae!important}
-body.motorsport-home .hero h1{color:#111820!important;font-weight:800!important;font-size:clamp(3.65rem,5vw,5.5rem)!important;line-height:.87!important;letter-spacing:-.012em!important;text-transform:uppercase!important;margin:13px 0 18px!important}
-body.motorsport-home .hero h1 span{color:#0b88d2!important;display:block!important}
-body.motorsport-home .hero .lead{color:#3c4f5a!important;font-size:1.01rem!important;line-height:1.55!important;max-width:585px!important}
-body.motorsport-home .hero .lead strong,body.motorsport-home .hero .lead strong[style]{color:#1c2c36!important}
-body.motorsport-home .safety-line{color:#60737f!important;font-size:.74rem!important;margin-top:20px!important}
-body.motorsport-home .actions{gap:14px!important}
-body.motorsport-theme .btn{border-radius:4px!important;font-weight:800!important;letter-spacing:.025em!important;box-shadow:none!important}
-body.motorsport-theme .btn-wa{position:relative!important;overflow:hidden!important;background:linear-gradient(90deg,#102b42,#0e3d61)!important;color:#fff!important;border:0!important;padding-right:56px!important}
-body.motorsport-theme .btn-wa:after{content:'→';position:absolute;right:0;top:0;bottom:0;width:45px;display:grid;place-items:center;background:linear-gradient(135deg,#09a0ef,#0874ca);color:#fff;font-size:1.05rem}
-body.motorsport-theme .btn-outline{background:rgba(255,255,255,.55)!important;color:#142a39!important;border:1px solid #8ba0ae!important}
-body.motorsport-theme .micro{color:#76858e!important}
-.hero-ms-visual{display:grid;grid-template-columns:minmax(0,1fr) 225px;gap:24px;align-items:center;min-width:0}
-.hero-ms-bike{height:500px;display:flex;align-items:flex-end;justify-content:center;position:relative;min-width:0}
-.hero-ms-bike:before{content:'';position:absolute;left:5%;right:5%;bottom:16px;height:30px;background:rgba(31,43,52,.16);border-radius:50%;filter:blur(18px)}
-.hero-ms-bike img{position:relative;z-index:1;max-width:100%;max-height:495px;width:auto;height:auto;object-fit:contain;filter:drop-shadow(0 17px 18px rgba(20,32,41,.21));transform:translateY(5px)}
-.hero-ms-families{display:flex;flex-direction:column;gap:9px;position:relative;padding-top:95px}
-.hero-ms-families:before{content:'';position:absolute;top:0;right:-4px;width:190px;height:112px;transform:skewX(-22deg);background:linear-gradient(90deg,var(--ms-sky) 0 33%,var(--ms-navy) 33% 67%,var(--ms-red) 67%)}
-.hero-ms-family-title{position:relative;z-index:2;color:#24495f;font-weight:800;font-size:.69rem;letter-spacing:.16em;text-transform:uppercase;margin:0 0 8px 8px;white-space:nowrap;background:rgba(242,246,248,.82);padding:6px 9px;width:max-content;border-radius:2px}
-.hero-ms-family{position:relative;z-index:2;min-height:48px;padding:14px 16px 14px 27px;clip-path:polygon(10% 0,100% 0,94% 100%,0 100%);background:rgba(255,255,255,.93);color:#182731;font:800 1rem/1 'Barlow Condensed',sans-serif;text-transform:uppercase}
-.hero-ms-family:before,.hero-ms-family:after{content:'';position:absolute;left:9%;right:6%;height:2px;background:linear-gradient(90deg,#149eea,#63c9f1)}
-.hero-ms-family:before{top:0}.hero-ms-family:after{bottom:0}
-.hero-ms-family:first-of-type{background:linear-gradient(90deg,#edf8ff,#dbeeff);color:#103b55}
-
-/* trust bars and cards */
-body.motorsport-home .trustbar{width:100%!important;max-width:none!important;margin:0!important;padding:0 max(24px,calc((100% - 1420px)/2))!important;display:grid!important;grid-template-columns:repeat(4,1fr)!important;background:linear-gradient(100deg,#152635,#0b1720)!important;border:0!important;border-radius:0!important;color:#fff!important;box-shadow:none!important}
-body.motorsport-home .trustbar>div{padding:18px 23px!important;border-right:1px solid rgba(255,255,255,.14)!important;color:#fff!important;min-height:80px!important;font-weight:800!important;text-transform:uppercase!important}
-body.motorsport-home .trustbar>div:last-child{border-right:0!important}
-body.motorsport-home .trustbar span{color:#a9bfcc!important;font-weight:500!important;text-transform:none!important}
-body.motorsport-theme .trust{background:rgba(255,255,255,.65)!important;border:1px solid #cbd6dd!important;border-radius:7px!important;box-shadow:0 8px 24px rgba(27,47,60,.04)!important}
-body.motorsport-theme .trust strong{color:#087dc3!important}
-body.motorsport-theme .trust p{color:#6b7b85!important}
-body.motorsport-theme .trust-icon{border-color:#9fd4ee!important;background:#e6f4fb!important;color:#087fc6!important}
-body.motorsport-theme .issue{background:rgba(255,255,255,.68)!important;border:1px solid #cbd6dd!important;color:#374a56!important}
-body.motorsport-theme .issue b,body.motorsport-theme .issue-dot{color:#078bd5!important}
-body.motorsport-theme .card,body.motorsport-theme .price-card,body.motorsport-theme .vf-card,body.motorsport-theme .case,body.motorsport-theme .related a,body.motorsport-theme .faq details,body.motorsport-theme .family{background:#fff!important;border:1px solid #cbd6dd!important;border-radius:7px!important;box-shadow:0 8px 23px rgba(27,47,60,.045)!important;color:#16232c!important}
-body.motorsport-theme .card p,body.motorsport-theme .price-card p,body.motorsport-theme .vf-card p,body.motorsport-theme .case p{color:#5c6d78!important}
-body.motorsport-theme .card-icon,body.motorsport-theme .price-icon{background:#e8f5fb!important;border-color:#bce1f3!important;color:#078fda!important}
-body.motorsport-theme .service-more,body.motorsport-theme .section-cta-link{color:#078bd4!important;font-weight:700!important}
-
-/* unified accordion treatment, including existing special accordions */
-body.motorsport-theme details.home-section-accordion,body.motorsport-theme details.flyers-accordion,body.motorsport-theme details.shipping-details,body.motorsport-theme details.acepro-premium-corp{background:rgba(255,255,255,.8)!important;border:1px solid #c9d4db!important;border-radius:7px!important;box-shadow:0 8px 24px rgba(27,47,60,.045)!important;overflow:hidden!important;color:#17242d!important}
-body.motorsport-theme details.home-section-accordion>summary,body.motorsport-theme details.flyers-accordion>summary,body.motorsport-theme details.shipping-details>summary,body.motorsport-theme details.acepro-premium-corp>summary{background:linear-gradient(90deg,rgba(69,169,222,.085),rgba(255,255,255,.78))!important;color:#14212a!important;border:0!important;min-height:100px!important;padding:23px 26px!important}
-body.motorsport-theme details[open]>summary{border-bottom:1px solid #d7e0e5!important}
-body.motorsport-theme .home-section-toggle,body.motorsport-theme .acc-icon,body.motorsport-theme .shipping-details summary:after{background:#fff!important;color:#173c54!important;border:1px solid #9fb3c0!important;border-radius:4px!important}
-body.motorsport-theme .home-section-body,body.motorsport-theme .accordion-body,body.motorsport-theme .shipping-details-body{background:#fff!important;color:#536672!important}
-body.motorsport-theme .flyer-tile{background:#f7f9fa!important;border-color:#d0d9df!important;color:#17242d!important}
-body.motorsport-theme .accordion-badge{background:#e5f4fb!important;color:#0786cc!important;border-color:#b9dfef!important}
-/* ACEPRO keeps its gold identity as a contained accent */
-body.motorsport-theme .acepro-section{background:var(--ms-paper)!important;border-color:#d6c28f!important}
-body.motorsport-theme details.acepro-premium-corp{border-color:#c9a857!important;background:linear-gradient(135deg,#17140f,#10171c)!important;color:#fff!important}
-body.motorsport-theme details.acepro-premium-corp>summary{background:linear-gradient(90deg,rgba(199,168,87,.13),rgba(16,23,28,.96))!important;color:#fff!important}
-body.motorsport-theme details.acepro-premium-corp h2,body.motorsport-theme details.acepro-premium-corp h3,body.motorsport-theme details.acepro-premium-corp strong{color:#fff!important}
-body.motorsport-theme details.acepro-premium-corp p{color:#c4c9cc!important}
-
-/* coverage / about / contact keep originals but visually unified */
-body.motorsport-theme #cobertura .case,body.motorsport-theme #cobertura .shipping-trust,body.motorsport-theme #nosotros .case{background:#fff!important}
-body.motorsport-theme .shipping-step{background:#f1f5f7!important;border-color:#d1dbe1!important;color:#40545f!important}
-body.motorsport-theme .shipping-note{background:#eaf5fa!important;border-color:#b7dfee!important;color:#355366!important}
-body.motorsport-theme #contacto .grid2,body.motorsport-theme #contacto .contact-card{background:#fff!important;border-color:#cbd6dd!important}
-body.motorsport-theme #contacto input,body.motorsport-theme #contacto select,body.motorsport-theme #contacto textarea{background:#f8fafb!important;color:#14212a!important;border-color:#bac9d2!important}
-body.motorsport-theme #contacto label{color:#40545f!important}
-body.motorsport-theme .cta{background:linear-gradient(105deg,#0d324b,#074365)!important;color:#fff!important;border:0!important}
-body.motorsport-theme .cta h2,body.motorsport-theme .cta p,body.motorsport-theme .cta .eyebrow{color:#fff!important}
-
-/* shared subpages */
-body.motorsport-subpage .hero{background:linear-gradient(120deg,#f8fafb,#e5edf2)!important;color:var(--ms-ink)!important;border-bottom:1px solid #cad6dd!important}
-body.motorsport-subpage .hero-grid{align-items:center!important;gap:38px!important}
-body.motorsport-subpage .hero h1{color:#111820!important;font-weight:800!important;font-size:clamp(3.1rem,4.7vw,5rem)!important;line-height:.9!important;text-transform:uppercase!important}
-body.motorsport-subpage .hero .lead,body.motorsport-subpage .crumbs{color:#536773!important}
-body.motorsport-subpage .crumbs a{color:#087dc3!important}
-body.motorsport-subpage .hero-img{border-radius:7px!important;border:1px solid #c8d4db!important;box-shadow:0 15px 35px rgba(25,46,61,.10)!important;background:#e8edf1!important}
-body.motorsport-subpage .hero-img img{display:block!important;width:100%!important;height:100%!important;object-fit:cover!important}
-body.motorsport-subpage .models,body.motorsport-subpage .price-reference,body.motorsport-subpage .trust,body.motorsport-subpage .notice{background:#fff!important;border-color:#cbd6dd!important;color:#263944!important}
-body.motorsport-subpage .faq details{background:#fff!important}
-body.motorsport-subpage .related a{color:#17242d!important}
-body.motorsport-subpage .flyer-card{background:#fff!important;border-color:#cbd6dd!important}
-body.motorsport-subpage .flyer-meta{color:#60727e!important}
-
-/* privacy + 404 */
-body.motorsport-simple{background:var(--ms-paper)!important;color:var(--ms-ink)!important}
-body.motorsport-simple .wrap,body.motorsport-simple .box{background:#fff!important;border:1px solid #cbd6dd!important;color:#263944!important;box-shadow:0 10px 28px rgba(25,45,59,.05)!important}
-body.motorsport-simple h1,body.motorsport-simple h2{color:#111820!important;font-family:'Barlow Condensed',sans-serif!important}
-
-/* digital card / remoto */
-body.motorsport-card{background:linear-gradient(145deg,#e8edf1,#f8fafb)!important;color:#111820!important}
-body.motorsport-card .page{background:transparent!important}
-body.motorsport-card .profile,body.motorsport-card .service,body.motorsport-card .quick a,body.motorsport-card .trust{background:#fff!important;border-color:#cbd6dd!important;color:#14212a!important;box-shadow:0 8px 22px rgba(28,48,61,.05)!important}
-body.motorsport-card .profile{border-top:4px solid #078bd5!important}
-body.motorsport-card .kicker,body.motorsport-card .section-title{color:#087dc3!important}
-body.motorsport-card .tagline,body.motorsport-card .leadbox,body.motorsport-card .legal{color:#60727d!important}
-body.motorsport-card .primary,body.motorsport-card .whatsapp{background:linear-gradient(90deg,#102b42,#0d4770)!important;color:#fff!important;border-radius:4px!important}
-body.motorsport-card .save{background:#eef6fa!important;color:#173a50!important;border-color:#bad9e8!important}
-
-/* footer */
-body.motorsport-theme .footer,body.motorsport-theme footer{background:#0b151d!important;color:#dce7ed!important;border-top:1px solid #22333e!important}
-body.motorsport-theme footer p,body.motorsport-theme footer a,body.motorsport-theme footer .legal,body.motorsport-theme footer .fine{color:#9aadb8!important}
-body.motorsport-theme footer h3,body.motorsport-theme footer h4,body.motorsport-theme footer strong{color:#fff!important}
-body.motorsport-theme footer .logo img{height:70px!important;width:auto!important;max-width:245px!important;object-fit:contain!important}
-
-/* overlays/utilities keep contrast */
-body.motorsport-theme .cookie-banner,body.motorsport-theme .subchat-panel{background:#0e1a22!important;color:#fff!important;border-color:#24404f!important}
-body.motorsport-theme .cookie-copy,body.motorsport-theme .subchat-note{color:#b1c0c9!important}
-body.motorsport-theme .back-to-top,body.motorsport-theme .subchat-launch{background:#0b405f!important;border-color:#1597d8!important;color:#fff!important}
-body.motorsport-theme .mobile-contact-bar{background:#0e1a22!important;border-color:#263a45!important}
-
-@media(max-width:1120px){
- body.motorsport-home .hero-inner{grid-template-columns:1fr!important}
- .hero-ms-visual{grid-template-columns:minmax(0,1fr) 250px}
- .hero-ms-bike{height:430px}.hero-ms-bike img{max-height:425px}
- body.motorsport-theme .navlinks{display:none!important}
+body.motorsport-theme .navlinks a::after{
+  content:"";position:absolute;left:0;right:100%;bottom:-9px;height:2px;
+  background:var(--ms-blue);transition:right .18s ease;
 }
-@media(max-width:760px){
- body.motorsport-theme .container{width:min(100% - 20px,720px)!important}
- body.motorsport-theme .logo-remoto,body.motorsport-theme .logo img{height:50px!important;max-width:200px!important}
- body.motorsport-home .hero{min-height:auto!important}
- body.motorsport-home .hero h1{font-size:3.15rem!important}
- .hero-ms-visual{grid-template-columns:1fr!important;gap:8px}
- .hero-ms-bike{height:330px}.hero-ms-bike img{max-height:325px}
- .hero-ms-families{padding-top:0;display:grid;grid-template-columns:repeat(2,1fr)}
- .hero-ms-families:before{display:none}.hero-ms-family-title{grid-column:1/-1;margin-left:0}
- body.motorsport-home .trustbar{grid-template-columns:1fr 1fr!important}
- body.motorsport-theme .section{padding-top:48px!important;padding-bottom:48px!important}
- body.motorsport-theme .section h2,body.motorsport-theme .section-head h2,body.motorsport-theme .home-section-summary h2{font-size:2.4rem!important}
- body.motorsport-theme details.home-section-accordion>summary,body.motorsport-theme details.flyers-accordion>summary,body.motorsport-theme details.shipping-details>summary{grid-template-columns:1fr!important}
+body.motorsport-theme .navlinks a:hover::after{right:0}
+body.motorsport-theme .header-call,
+body.motorsport-theme .header .btn.wa{
+  border-radius:3px!important;
+  border:1px solid #9eb1bd!important;
+  background:#fff!important;
+  color:#16364b!important;
+  font-weight:800!important;
 }
-@media(max-width:480px){body.motorsport-home .trustbar{grid-template-columns:1fr!important}.hero-ms-bike{height:285px}.hero-ms-bike img{max-height:280px}}
+body.motorsport-theme .header .btn.wa{
+  background:var(--ms-dark)!important;
+  color:#fff!important;
+  border-color:var(--ms-dark)!important;
+}
+
+/* Base page rhythm */
+body.motorsport-theme .section{
+  background:var(--ms-paper)!important;
+  color:var(--ms-ink)!important;
+  border-top:1px solid #d4dde2!important;
+}
+body.motorsport-theme .section.alt{background:var(--ms-paper-alt)!important}
+body.motorsport-theme .section:nth-of-type(even){background:var(--ms-paper-alt)!important}
+body.motorsport-theme .section:nth-of-type(odd){background:var(--ms-paper)!important}
+body.motorsport-theme .section p,
+body.motorsport-theme .section li,
+body.motorsport-theme .section .lead,
+body.motorsport-theme .fine{color:var(--ms-text)!important}
+body.motorsport-theme .section-head h2,
+body.motorsport-theme .section h2{
+  color:var(--ms-ink)!important;
+  font-weight:800!important;
+  text-transform:uppercase;
+}
+body.motorsport-theme .section-head p{color:var(--ms-muted)!important}
+
+/* Cards, grids, price and related blocks */
+body.motorsport-theme .card,
+body.motorsport-theme .case,
+body.motorsport-theme .price-reference,
+body.motorsport-theme .price-pill,
+body.motorsport-theme .family,
+body.motorsport-theme .faq,
+body.motorsport-theme .trust,
+body.motorsport-theme .related,
+body.motorsport-theme .shipping-details,
+body.motorsport-theme .acepro-service-trust{
+  background:rgba(255,255,255,.90)!important;
+  color:var(--ms-ink)!important;
+  border:1px solid var(--ms-line)!important;
+  border-radius:7px!important;
+  box-shadow:0 8px 25px rgba(29,48,61,.05)!important;
+}
+body.motorsport-theme .card p,
+body.motorsport-theme .case p,
+body.motorsport-theme .price-reference p,
+body.motorsport-theme .family p,
+body.motorsport-theme .related p{color:#586a75!important}
+body.motorsport-theme .price-values strong,
+body.motorsport-theme .price-pill strong{color:var(--ms-ink)!important}
+
+/* Buttons */
+body.motorsport-theme .btn{
+  border-radius:3px!important;
+  font-family:"IBM Plex Sans",Inter,Arial,sans-serif!important;
+  font-weight:800!important;
+  letter-spacing:.03em!important;
+}
+body.motorsport-theme .btn-wa,
+body.motorsport-theme .btn.wa,
+body.motorsport-theme .price-cta{
+  position:relative!important;
+  background:linear-gradient(90deg,#102b42,#0c3d61)!important;
+  color:#fff!important;
+  border-color:#102b42!important;
+}
+body.motorsport-theme .btn-outline,
+body.motorsport-theme .btn.light{
+  background:#fff!important;color:#16364b!important;border-color:#95aab8!important;
+}
+
+/* ACCORDIONS — one visual language everywhere */
+body.motorsport-theme details,
+body.motorsport-theme .home-section-accordion,
+body.motorsport-theme .section-fold{
+  color:var(--ms-ink)!important;
+}
+body.motorsport-theme .home-section-accordion,
+body.motorsport-theme .section-fold,
+body.motorsport-theme details.shipping-details{
+  background:rgba(255,255,255,.88)!important;
+  border:1px solid var(--ms-line)!important;
+  border-radius:7px!important;
+  box-shadow:0 8px 24px rgba(27,47,60,.045)!important;
+  overflow:hidden!important;
+}
+body.motorsport-theme .home-section-accordion>summary,
+body.motorsport-theme .section-fold>summary,
+body.motorsport-theme details.shipping-details>summary{
+  background:linear-gradient(90deg,rgba(73,169,216,.10),rgba(255,255,255,.78))!important;
+  color:var(--ms-ink)!important;
+  border-bottom:0!important;
+}
+body.motorsport-theme .home-section-accordion[open]>summary,
+body.motorsport-theme .section-fold[open]>summary,
+body.motorsport-theme details.shipping-details[open]>summary{
+  background:linear-gradient(90deg,rgba(73,169,216,.16),rgba(255,255,255,.86))!important;
+  border-bottom:1px solid #d5dee4!important;
+}
+body.motorsport-theme .home-section-summary h2,
+body.motorsport-theme .section-fold h2,
+body.motorsport-theme details summary strong{color:var(--ms-ink)!important}
+body.motorsport-theme .home-section-summary p,
+body.motorsport-theme .fold-sub{color:var(--ms-muted)!important}
+body.motorsport-theme .home-section-toggle,
+body.motorsport-theme .fold-toggle{
+  background:#fff!important;
+  color:#153c56!important;
+  border:1px solid #9db2bf!important;
+  border-radius:4px!important;
+}
+
+/* Home hero: preserve original text, add approved transparent motorcycle + families */
+body.home-page .hero{
+  position:relative!important;
+  min-height:610px!important;
+  overflow:hidden!important;
+  background:linear-gradient(118deg,#f9fafb 0%,#f0f4f6 52%,#dfe8ed 100%)!important;
+  color:var(--ms-ink)!important;
+  border-bottom:1px solid #cbd6dc!important;
+}
+body.home-page .hero::before{
+  content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:url('/assets/hero-lab.webp') center/cover no-repeat;
+  opacity:.075;filter:grayscale(.35) contrast(.8);
+}
+body.home-page .hero::after{
+  content:"";position:absolute;right:5%;top:0;width:190px;height:182px;z-index:1;
+  transform:skewX(-22deg);
+  background:linear-gradient(90deg,var(--ms-sky) 0 33%,var(--ms-navy) 33% 67%,var(--ms-red) 67% 100%);
+}
+body.home-page .hero-inner{
+  position:relative!important;z-index:3!important;
+  width:min(1180px,calc(100% - 40px))!important;
+  margin:auto!important;
+  padding:84px 610px 78px 0!important;
+  max-width:none!important;
+  min-height:610px!important;
+}
+body.home-page .hero .eyebrow{color:#0d6ca6!important}
+body.home-page .hero h1{
+  color:#111820!important;
+  font:800 clamp(3.7rem,5.3vw,5.7rem)/.88 "Barlow Condensed",sans-serif!important;
+  text-shadow:none!important;
+  max-width:610px!important;
+}
+body.home-page .hero h1 span{color:var(--ms-blue)!important}
+body.home-page .hero .lead{color:#344753!important;max-width:575px!important}
+body.home-page .hero .lead strong{color:#17252f!important}
+body.home-page .hero .safety-line{color:#546975!important}
+body.home-page .hero .btn-outline{color:#17374c!important;background:rgba(255,255,255,.72)!important}
+.ms-hero-visual{
+  position:absolute;z-index:4;right:max(20px,calc((100vw - 1180px)/2));top:86px;
+  width:585px;height:490px;display:grid;grid-template-columns:1fr 210px;gap:12px;align-items:end;pointer-events:none;
+}
+.ms-bike-wrap{height:480px;display:flex;align-items:flex-end;justify-content:center;position:relative}
+.ms-bike-wrap::after{content:"";position:absolute;left:12%;right:8%;bottom:5px;height:22px;background:rgba(29,43,54,.18);filter:blur(16px);border-radius:50%}
+.ms-bike-wrap img{position:relative;z-index:2;max-width:100%;max-height:478px;object-fit:contain;filter:drop-shadow(0 18px 18px rgba(20,35,45,.20))}
+.ms-families{align-self:center;display:flex;flex-direction:column;gap:8px;padding-top:88px;position:relative}
+.ms-families::before{content:"";position:absolute;right:-4px;top:0;width:184px;height:110px;transform:skewX(-22deg);background:linear-gradient(90deg,var(--ms-sky) 0 33%,var(--ms-navy) 33% 67%,var(--ms-red) 67% 100%)}
+.ms-family-title{position:relative;z-index:2;color:#314f61;font-size:.66rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;margin:0 0 4px 10px;white-space:nowrap}
+.ms-family{position:relative;z-index:2;min-height:41px;display:flex;align-items:center;padding:10px 14px 10px 24px;background:rgba(255,255,255,.93);color:#192731;font:800 .95rem/1 "Barlow Condensed",sans-serif;text-transform:uppercase;clip-path:polygon(10% 0,100% 0,94% 100%,0 100%)}
+.ms-family::before,.ms-family::after{content:"";position:absolute;left:9%;right:6%;height:2px;background:linear-gradient(90deg,#159eea,#5ec7f0)}
+.ms-family::before{top:0}.ms-family::after{bottom:0}
+.ms-family:first-of-type{background:linear-gradient(90deg,#edf8ff,#dcefff)}
+
+/* Home specific content blocks */
+body.home-page .trust{background:rgba(255,255,255,.62)!important}
+body.home-page #respaldo-profesional{background:#e8edf1!important}
+body.home-page #respaldo-profesional .acepro-premium-corp,
+body.home-page .acepro-premium-corp{
+  background:linear-gradient(135deg,#181612,#0f171d)!important;
+  border-color:rgba(212,173,85,.42)!important;
+  color:#fff!important;
+}
+body.home-page .acepro-premium-corp p{color:#d7dde1!important}
+
+/* Subpage heroes: keep each original image; standardize typography and contrast */
+body.sub-page .hero{
+  color:#fff!important;
+  border-bottom:1px solid #223541!important;
+}
+body.sub-page .hero h1{
+  font-family:"Barlow Condensed",sans-serif!important;
+  font-weight:800!important;
+  line-height:.95!important;
+  text-transform:uppercase;
+}
+body.sub-page .hero .lead{color:#edf4f7!important}
+body.sub-page .hero .eyebrow{color:#77cdf1!important}
+body.sub-page .hero .btn.light{background:rgba(255,255,255,.95)!important;color:#15374c!important}
+body.sub-page .crumbs{color:#6b7d88!important}
+
+/* Coverage / forms / footer */
+body.motorsport-theme .contact-list,
+body.motorsport-theme .contact-item{color:var(--ms-text)!important}
+body.motorsport-theme input,
+body.motorsport-theme select,
+body.motorsport-theme textarea{
+  background:#fff!important;color:#16242e!important;border-color:#aebec8!important;
+}
+body.motorsport-theme label{color:#40545f!important}
+body.motorsport-theme .cta{
+  background:linear-gradient(105deg,#0d334d,#064466)!important;
+  color:#fff!important;
+}
+body.motorsport-theme .cta h2,body.motorsport-theme .cta p{color:#fff!important}
+body.motorsport-theme .footer{
+  background:var(--ms-dark-2)!important;
+  color:#e9f0f4!important;
+  border-top:4px solid var(--ms-navy)!important;
+}
+body.motorsport-theme .footer p,
+body.motorsport-theme .footer a,
+body.motorsport-theme .footer .legal{color:#aabac4!important}
+body.motorsport-theme .footer strong,body.motorsport-theme .footer h3,body.motorsport-theme .footer h4{color:#fff!important}
+body.motorsport-theme .acepro-footer-badge{color:#fff!important}
+
+/* Digital card keeps its compact identity, but receives the same Motorsport palette */
+body.digital-card{background:#e9eef1!important}
+body.digital-card .page{color:#12202a!important}
+body.digital-card .profile,
+body.digital-card .service,
+body.digital-card .trust{
+  border-radius:7px!important;
+  box-shadow:0 8px 26px rgba(24,43,57,.06)!important;
+}
+body.digital-card .primary,body.digital-card .whatsapp{border-radius:4px!important}
+
+/* Mobile */
+@media(max-width:1050px){
+  body.home-page .hero-inner{padding:72px 0 500px!important;min-height:1040px!important}
+  .ms-hero-visual{left:20px;right:20px;top:auto;bottom:25px;width:auto;height:470px;grid-template-columns:minmax(0,1fr) 220px}
+  .ms-bike-wrap{height:450px}.ms-bike-wrap img{max-height:445px}
+  .ms-families{padding-top:0}.ms-families::before{display:none}
+}
+@media(max-width:720px){
+  body.motorsport-theme .container{width:min(100% - 22px,680px)!important}
+  body.home-page .hero-inner{width:min(100% - 22px,680px)!important;padding:54px 0 500px!important;min-height:1010px!important}
+  body.home-page .hero h1{font-size:3.1rem!important}
+  body.home-page .hero::after{width:120px;height:116px;right:-18px}
+  .ms-hero-visual{left:10px;right:10px;height:460px;grid-template-columns:1fr}
+  .ms-bike-wrap{height:330px}.ms-bike-wrap img{max-height:325px}
+  .ms-families{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;align-self:end}
+  .ms-family-title{grid-column:1/-1;margin-left:0}.ms-family{clip-path:none;padding:9px 8px;justify-content:center;font-size:.82rem;min-height:38px}
+  body.motorsport-theme .navlinks{display:none!important}
+}
