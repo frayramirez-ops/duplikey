@@ -1324,3 +1324,99 @@ body.home-page details.home-section-accordion{margin-top:0!important;margin-bott
   body.home-page .coverage-box{padding:6px 18px!important}
   body.home-page #nosotros,body.home-page #servicios-bmw-seo,body.home-page #faq{padding-top:24px!important;padding-bottom:24px!important}
 }
+
+/* ===== V10.18.23 ajustes de homologación de cuadros y espaciado ===== */
+/* Home y subpáginas: cuadros de proceso al estilo corporativo con borde redondeado y línea azul superior */
+body.motorsport-theme .process .step{
+  background:#ffffff !important;
+  border:1px solid #c8d5dd !important;
+  border-top:3px solid #46a9d8 !important;
+  border-radius:12px !important;
+  box-shadow:0 10px 24px rgba(18,42,56,.05) !important;
+  min-height:176px !important;
+  padding:24px 22px !important;
+  display:flex !important;
+  flex-direction:column !important;
+  justify-content:center !important;
+  align-items:flex-start !important;
+}
+body.motorsport-theme .process .step h3{
+  margin:14px 0 8px !important;
+  color:#111820 !important;
+  line-height:1.15 !important;
+}
+body.motorsport-theme .process .step p{
+  margin:0 !important;
+  color:#526873 !important;
+  line-height:1.5 !important;
+}
+body.motorsport-theme .stepnum{
+  width:46px !important;
+  height:46px !important;
+  min-width:46px !important;
+  border-radius:999px !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  background:#eef8fd !important;
+  color:#087fc8 !important;
+  border:1.5px solid #9dd9f2 !important;
+  box-shadow:none !important;
+}
+
+/* Caja de cobertura/Uruapan con el mismo lenguaje visual */
+body.motorsport-theme .coverage-box{
+  background:#ffffff !important;
+  border:1px solid #c8d5dd !important;
+  border-top:3px solid #46a9d8 !important;
+  border-radius:12px !important;
+  box-shadow:0 10px 24px rgba(18,42,56,.05) !important;
+  padding:10px 24px !important;
+}
+body.motorsport-theme .coverage-box > div{
+  padding:20px 4px !important;
+}
+body.motorsport-theme .coverage-box > div + div{
+  border-top:1px solid #dbe5eb !important;
+}
+
+/* Homologación adicional de cuadros informativos tipo feature en subpáginas */
+body.motorsport-theme .feature,
+body.motorsport-theme .why-card,
+body.motorsport-theme .info-card,
+body.motorsport-theme .case-card{
+  border-radius:12px !important;
+}
+
+/* Menor separación vertical entre servicios destacados, precios y compatibilidad */
+body.home-page #servicios-visuales,
+body.home-page #precios,
+body.home-page #compatibilidad{
+  padding-top:28px !important;
+  padding-bottom:28px !important;
+}
+body.home-page #servicios-visuales .section-head,
+body.home-page #precios .section-head,
+body.home-page #compatibilidad .section-head{
+  margin-bottom:24px !important;
+}
+body.home-page #servicios-visuales + #precios,
+body.home-page #precios + #compatibilidad{
+  margin-top:0 !important;
+}
+
+@media (max-width: 720px){
+  body.motorsport-theme .process .step{
+    min-height:0 !important;
+    padding:20px 18px !important;
+  }
+  body.motorsport-theme .coverage-box{
+    padding:8px 18px !important;
+  }
+  body.home-page #servicios-visuales,
+  body.home-page #precios,
+  body.home-page #compatibilidad{
+    padding-top:20px !important;
+    padding-bottom:20px !important;
+  }
+}
