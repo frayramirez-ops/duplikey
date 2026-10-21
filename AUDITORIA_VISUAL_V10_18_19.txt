@@ -1,0 +1,46 @@
+RE:MOTO LAB · V10.18.19 · Auditoría visual corporativa
+
+BASE: V10.18.18 preservada desde V10.18.12d.
+
+VALIDACIÓN ESTRUCTURAL HOME
+Secciones: 18 -> 18
+Acordeones/details: 14 -> 14
+Formularios: 1 -> 1
+Modales: 10 -> 10
+Tarjetas servicios: 5 -> 5
+Flyers: 7 -> 7
+FAQ items: 11 -> 11
+IDs de secciones idénticos: True
+compat-public.js idéntico byte por byte: True
+
+CORRECCIONES DE AUDITORÍA
+- Header: se sustituye el viejo emblema gráfico por wordmark RE:MOTO LAB / DUPLIKEY MX de estilo Motorsport.
+- Hero: motocicleta aumentada aprox. 10% y familias con rótulo legible fuera de las franjas.
+- Issue list: texto oscuro sobre tarjeta clara; se elimina pérdida de contraste.
+- Servicios: títulos y cuerpo oscuros; Ver qué incluye permanece azul también en hover/focus.
+- Todos los acordeones principales comparten fondo, resumen, bordes, botón/ícono y contraste.
+- Flyers: cuerpo del acordeón y tarjetas convertidos a superficies claras consistentes.
+- Precios y Compatibilidad: superficies y textos alineados al mismo lenguaje visual.
+- De biker a biker / rutas / FAQ: texto oscuro legible; FAQ interior claro y homogéneo.
+- Cotización rápida: se elimina el corte negro; pasa a una tarjeta técnico-editorial clara.
+- CTA final: único bloque oscuro intencional antes del footer.
+- Footer: selector corregido al elemento footer; fondo oscuro y texto legible.
+- Se preserva ACEPRO como excepción institucional dorado/oscuro con contraste reforzado.
+- Se mantienen oscuros únicamente componentes donde el fondo oscuro es intencional: Seguridad/Ética y modales.
+
+HEADERS CON WORDMARK ACTUALIZADOS:
+index.html
+reseteo-servicio-bmw-motorrad/index.html
+duplicado-llave-bmw-motorrad/index.html
+glosario-bmw-motorrad/index.html
+llave-bmw-r1200gs/index.html
+llave-keyless-bmw-motorrad/index.html
+preguntas-frecuentes-bmw-motorrad/index.html
+llave-bmw-r1250gs/index.html
+llaves-bmw-motorrad-michoacan/index.html
+actualizacion-llave-bmw-motorrad/index.html
+all-keys-lost-bmw-motorrad/index.html
+llaves-bmw-gs/index.html
+llaves-bmw-motorrad/index.html
+servicio-nacional-bmw-motorrad/index.html
+modo-sport-bmw-motorrad-tft/index.html
