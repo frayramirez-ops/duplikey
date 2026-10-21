@@ -1196,7 +1196,7 @@ h1,h2,h3{font-family:Montserrat,Inter,Arial,sans-serif}.mono{font-family:"Roboto
 }
 @media(prefers-reduced-motion:reduce){.back-to-top{transition:none}}
 </style><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="/assets/motorsport-theme-v25g.css?v=10.18.25g" rel="stylesheet"/>
+<link href="/assets/motorsport-theme-v25i.css?v=10.18.25i" rel="stylesheet"/>
 </head>
 <body class="motorsport-theme home-page"><a class="skip-link" href="#contenido">Saltar al contenido</a>
 <header class="header" id="siteHeader">
@@ -2636,7 +2636,7 @@ document.addEventListener('click', function(e){
 
 <script id="family-selector-js">(()=>{const data={adventure:{title:'Adventure',image:'/assets/family-adventure.webp',text:'Familia orientada a viaje, aventura y uso mixto. Incluye configuraciones GS y GS Adventure en distintas generaciones y sistemas de llave.'},roadster:{title:'Roadster',image:'/assets/family-roadster.webp',text:'Motos naked enfocadas en agilidad, control y conducción directa. La compatibilidad de llave y programación se confirma según modelo y año.'},heritage:{title:'Heritage',image:'/assets/family-heritage.webp',text:'Modelos de carácter clásico y boxer con distintas arquitecturas electrónicas. Revisamos el sistema concreto antes de intervenir.'},urban:{title:'Urban',image:'/assets/family-urban.webp',text:'Scooters y soluciones de movilidad urbana BMW Motorrad. Atendemos sistemas compatibles de llave, inmovilizador y funciones electrónicas.'},sport:{title:'Sport',image:'/assets/family-sport.webp',text:'Familia de alto rendimiento con sistemas electrónicos avanzados. Verificamos llave, inmovilizador y compatibilidad específica antes de cotizar.'},touring:{title:'Touring',image:'/assets/family-touring.webp',text:'Modelos concebidos para largas distancias y confort, con distintas generaciones de llave y módulos de autorización.'}};const modal=document.getElementById('familyModal');if(!modal)return;const img=document.getElementById('familyModalImage'),title=document.getElementById('familyModalTitle'),text=document.getElementById('familyModalText'),cta=document.getElementById('familyModalCta'),close=modal.querySelector('.family-modal-close');let opener=null;function openFamily(key,el){const d=data[key];if(!d)return;opener=el||null;img.src=d.image;img.alt='Motocicleta representativa de la familia BMW Motorrad '+d.title;title.textContent=d.title;text.textContent=d.text;cta.href='https://wa.me/524521791230?text='+encodeURIComponent('Hola RE:MOTO LAB. Este es mi modelo y quiero cotizar servicio para una BMW Motorrad de la familia '+d.title+'.\n\nModelo:\nAño:\nCiudad:');modal.classList.add('is-open');modal.setAttribute('aria-hidden','false');document.body.classList.add('family-modal-open');close.focus()}function closeFamily(){modal.classList.remove('is-open');modal.setAttribute('aria-hidden','true');document.body.classList.remove('family-modal-open');if(opener)opener.focus()}document.querySelectorAll('.ms-family[data-family]').forEach(btn=>btn.addEventListener('click',()=>openFamily(btn.dataset.family,btn)));close.addEventListener('click',closeFamily);modal.addEventListener('click',e=>{if(e.target===modal)closeFamily()});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('is-open'))closeFamily()})})();</script>
 
-<script src="assets/casos-reales.js?v=10.18.25g"></script>
+<script src="assets/casos-reales.js?v=10.18.25i"></script>
 <script id="real-cases-js">
 (()=>{
   const cases=Array.isArray(window.REMOTO_CASOS_REALES)?window.REMOTO_CASOS_REALES:[];
@@ -2657,21 +2657,61 @@ document.addEventListener('click', function(e){
   const mTime=document.getElementById('realCaseModalTime');
   const mProof=document.getElementById('realCaseModalProof');
   const mCta=document.getElementById('realCaseModalCta');
-  let active=0,opener=null;
+  let active=0,expanded=-1,opener=null;
   const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  track.innerHTML=cases.map((c,i)=>`<article class="real-case-card" data-case-index="${i}">
-    <div class="real-case-media"><span class="real-case-index">Caso ${esc(c.numero||String(i+1).padStart(3,'0'))}</span><img loading="lazy" src="${esc(c.imagen)}" alt="${esc(c.alt||c.titulo)}"></div>
-    <div class="real-case-copy"><div class="real-case-kicker">Caso real documentado</div><h3>${esc(c.titulo)}</h3><div class="real-case-service">${esc(c.servicio)}</div>
-    <div class="real-case-meta"><span>${esc(c.ubicacion)}</span><span>${esc(c.modalidad)}</span></div><p>${esc(c.resumen)}</p><div class="real-case-result"><strong>Resultado:</strong> ${esc(c.resultado)}</div>
-    <div class="real-case-actions"><button class="btn btn-outline real-case-open" type="button" data-case-open="${i}">Ver caso completo →</button></div></div></article>`).join('');
+  const wa=c=>'https://wa.me/524521791230?text='+encodeURIComponent('Hola RE:MOTO LAB. Vi el caso real '+c.titulo+' ('+c.servicio+') y tengo un caso similar. Quiero consultar el servicio.\n\nMi BMW es:\nAño:\nCiudad:');
+  track.innerHTML=cases.map((c,i)=>`<article class="real-case-card" data-case-index="${i}" aria-expanded="false">
+    <div class="real-case-media"><span class="real-case-index">Caso ${esc(c.numero||String(i+1).padStart(3,'0'))}</span><button class="real-case-image-open" type="button" data-real-case-image="${i}" aria-label="Ampliar flyer del caso ${esc(c.numero||String(i+1).padStart(3,'0'))}: ${esc(c.titulo)}"><img loading="lazy" src="${esc(c.imagen)}" alt="${esc(c.alt||c.titulo)}"></button></div>
+    <div class="real-case-compact"><h3>${esc(c.titulo)}</h3><div class="real-case-service">${esc(c.servicio)}</div><button class="btn btn-outline real-case-open" type="button" data-case-open="${i}">Ver caso completo →</button></div>
+    <div class="real-case-expanded">
+      <button class="real-case-collapse" type="button" data-case-collapse aria-label="Replegar caso">←</button>
+      <div class="real-case-kicker">Caso real documentado</div><h3>${esc(c.titulo)}</h3><div class="real-case-service">${esc(c.servicio)}</div>
+      <div class="real-case-meta"><span>${esc(c.ubicacion)}</span><span>${esc(c.modalidad)}</span></div>
+      <p>${esc(c.resumen)}</p>
+      <div class="real-case-inline-detail">
+        <div><strong>Situación inicial</strong><span>${esc(c.situacion)}</span></div>
+        <div><strong>Intervención</strong><span>${esc(c.intervencion)}</span></div>
+        <div><strong>Resultado</strong><span>${esc(c.resultado)}</span></div>
+        <div><strong>Tiempo</strong><span>${esc(c.tiempo||'—')}</span></div>
+        <div><strong>Validación final</strong><span>${esc(c.prueba||'—')}</span></div>
+      </div>
+      <div class="real-case-expanded-actions"><a class="btn btn-wa" href="${wa(c)}" target="_blank" rel="noopener">Tengo un caso similar · Consultar servicio</a></div>
+    </div>
+  </article>`).join('');
   const cards=[...track.querySelectorAll('.real-case-card')];
   function setStatus(i){active=Math.max(0,Math.min(i,cases.length-1));status.textContent=`${active+1} / ${cases.length}`;prev.disabled=active===0;next.disabled=active===cases.length-1}
-  function go(i){setStatus(i);cards[active]?.scrollIntoView({behavior:'smooth',inline:'start',block:'nearest'})}
-  function openCase(i,el){const c=cases[i];if(!c||!modal)return;opener=el||null;mImg.src=c.imagen;mImg.alt=c.alt||c.titulo;mTitle.textContent=c.titulo;mService.textContent=c.servicio;mMeta.innerHTML=`<span>${esc(c.ubicacion)}</span><span>${esc(c.modalidad)}</span>`;mSituation.textContent=c.situacion;mIntervention.textContent=c.intervencion;mResult.textContent=c.resultado;mTime.textContent=c.tiempo||'—';mProof.textContent=c.prueba||'—';mCta.href='https://wa.me/524521791230?text='+encodeURIComponent('Hola RE:MOTO LAB. Vi el caso real '+c.titulo+' ('+c.servicio+') y tengo un caso similar. Quiero consultar el servicio.\n\nMi BMW es:\nAño:\nCiudad:');modal.classList.add('is-open');modal.setAttribute('aria-hidden','false');document.body.classList.add('real-case-modal-open');close?.focus()}
-  function closeCase(){if(!modal)return;modal.classList.remove('is-open');modal.setAttribute('aria-hidden','true');document.body.classList.remove('real-case-modal-open');mImg?.removeAttribute('src');opener?.focus()}
-  track.addEventListener('click',e=>{const b=e.target.closest('[data-case-open]');if(b)openCase(Number(b.dataset.caseOpen),b)});
-  prev?.addEventListener('click',()=>go(active-1));next?.addEventListener('click',()=>go(active+1));close?.addEventListener('click',closeCase);modal?.addEventListener('click',e=>{if(e.target===modal)closeCase()});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal?.classList.contains('is-open'))closeCase()});
-  let raf=0;track.addEventListener('scroll',()=>{cancelAnimationFrame(raf);raf=requestAnimationFrame(()=>{let best=0,bestD=Infinity;cards.forEach((card,i)=>{const d=Math.abs(card.offsetLeft-track.scrollLeft);if(d<bestD){bestD=d;best=i}});setStatus(best)})},{passive:true});
+  function go(i){collapseExpanded(false);setStatus(i);cards[active]?.scrollIntoView({behavior:'smooth',inline:'start',block:'nearest'})}
+  function isMobile(){return window.matchMedia('(max-width:760px)').matches}
+  function openModal(i,el){const c=cases[i];if(!c||!modal)return;opener=el||null;mImg.src=c.imagen;mImg.alt=c.alt||c.titulo;mTitle.textContent=c.titulo;mService.textContent=c.servicio;mMeta.innerHTML=`<span>${esc(c.ubicacion)}</span><span>${esc(c.modalidad)}</span>`;mSituation.textContent=c.situacion;mIntervention.textContent=c.intervencion;mResult.textContent=c.resultado;mTime.textContent=c.tiempo||'—';mProof.textContent=c.prueba||'—';mCta.href=wa(c);modal.classList.add('is-open');modal.setAttribute('aria-hidden','false');document.body.classList.add('real-case-modal-open');close?.focus()}
+  function closeModal(){if(!modal)return;modal.classList.remove('is-open');modal.setAttribute('aria-hidden','true');document.body.classList.remove('real-case-modal-open');mImg?.removeAttribute('src');opener?.focus()}
+  function collapseExpanded(returnFocus=true){if(expanded<0)return;const card=cards[expanded];const btn=card?.querySelector('[data-case-open]');card?.classList.remove('is-expanded');card?.setAttribute('aria-expanded','false');expanded=-1;if(returnFocus)btn?.focus()}
+  function expandCase(i,el){
+    if(isMobile()){openModal(i,el);return;}
+    if(expanded===i){collapseExpanded();return;}
+    collapseExpanded(false);expanded=i;setStatus(i);const card=cards[i];card.classList.add('is-expanded');card.setAttribute('aria-expanded','true');requestAnimationFrame(()=>setTimeout(()=>card.scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'}),40));
+  }
+  function openImageLightbox(i,el){
+    const c=cases[i];
+    const lb=document.getElementById('caseImageModal');
+    const lbImg=document.getElementById('caseLightboxImg');
+    if(!c||!lb||!lbImg)return;
+    lbImg.src=c.imagen;
+    lbImg.alt=c.alt||('Flyer ampliado de '+c.titulo);
+    lb.classList.add('open');
+    lb.setAttribute('aria-hidden','false');
+    document.body.classList.add('modal-open');
+    if(typeof trackEvent==='function')trackEvent('real_case_image_open',{case_name:String(c.titulo||'caso_real').slice(0,100)});
+    lb.querySelector('[data-close]')?.focus({preventScroll:true});
+  }
+  track.addEventListener('click',e=>{
+    const imageOpen=e.target.closest('[data-real-case-image]');if(imageOpen){openImageLightbox(Number(imageOpen.dataset.realCaseImage),imageOpen);return;}
+    const open=e.target.closest('[data-case-open]');if(open){expandCase(Number(open.dataset.caseOpen),open);return;}
+    const collapse=e.target.closest('[data-case-collapse]');if(collapse){collapseExpanded();}
+  });
+  prev?.addEventListener('click',()=>go(active-1));next?.addEventListener('click',()=>go(active+1));close?.addEventListener('click',closeModal);modal?.addEventListener('click',e=>{if(e.target===modal)closeModal()});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'){if(modal?.classList.contains('is-open'))closeModal();else if(expanded>=0)collapseExpanded();}});
+  let raf=0;track.addEventListener('scroll',()=>{if(expanded>=0)return;cancelAnimationFrame(raf);raf=requestAnimationFrame(()=>{let best=0,bestD=Infinity;cards.forEach((card,i)=>{const d=Math.abs(card.offsetLeft-track.scrollLeft);if(d<bestD){bestD=d;best=i}});setStatus(best)})},{passive:true});
+  window.addEventListener('resize',()=>{if(isMobile()&&expanded>=0)collapseExpanded(false)},{passive:true});
   setStatus(0);
 })();
 </script>
