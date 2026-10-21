@@ -1,0 +1,9 @@
+V10.18.25h — Casos Reales Acordeón Horizontal
+
+- Base: V10.18.25g Casos Reales Corregidos.
+- Desktop/tablet: casos compactos en carrusel; al abrir uno se expande horizontalmente dentro de la misma franja.
+- Botón pequeño de repliegue para volver al carrusel compacto.
+- Mobile <=760 px: conserva popup/modal para legibilidad.
+- Casos siguen alimentándose desde assets/casos-reales.js.
+- compat-public.js no modificado.
+- CSS: assets/motorsport-theme-v25h.css?v=10.18.25h.

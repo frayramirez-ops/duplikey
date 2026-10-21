@@ -1,0 +1,5 @@
+V10.18.25c
+Build marker: 10.18.25c
+CSS: /assets/motorsport-theme-v25c.css?v=10.18.25c
+CTA familias: Este es mi modelo · Cotizar servicio
+Fondos de subpaginas: fondo completo por hero/seccion; sin pseudo-elemento rectangular.

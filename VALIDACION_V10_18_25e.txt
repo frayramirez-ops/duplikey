@@ -1,0 +1,11 @@
+V10.18.25e — Casos Reales Interactivos
+
+- Base: V10.18.25d.
+- Nueva sección Home: “Casos reales · resultados que hablan”, colocada después de Situaciones que resolvemos y antes de Cobertura.
+- Carrusel horizontal escalable, swipe móvil, navegación anterior/siguiente y contador.
+- Modal de caso completo con situación, intervención, resultado y CTA “Tengo un caso similar · Consultar servicio”.
+- Primer caso: BMW R1250GS 2021 · All Keys Lost Keyless · Cd. Guzmán, Jalisco.
+- Fuente de datos única: /assets/casos-reales.js. Para agregar un caso: subir imagen a /assets/casos/ y añadir un objeto al arreglo.
+- Imagen real optimizada a WebP sin recorte ni alteración de elementos.
+- CSS nuevo: /assets/motorsport-theme-v25e.css?v=10.18.25e.
+- compat-public.js no modificado.

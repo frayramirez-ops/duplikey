@@ -1,0 +1,2415 @@
+/* RE:MOTO LAB · Motorsport Technical Editorial Theme
+   Visual layer only. Content, sections, images and functionality remain from V10.18.12d. */
+:root{
+  --ms-sky:#49a9d8;
+  --ms-blue:#087ec6;
+  --ms-navy:#153f70;
+  --ms-red:#dd3447;
+  --ms-ink:#101820;
+  --ms-text:#334650;
+  --ms-muted:#697983;
+  --ms-paper:#e9eef1;
+  --ms-paper-alt:#f4f6f7;
+  --ms-card:#ffffff;
+  --ms-line:#cbd5dc;
+  --ms-dark:#10202d;
+  --ms-dark-2:#0b151d;
+  --ms-gold:#d4ad55;
+}
+html{background:var(--ms-paper)!important}
+body.motorsport-theme{
+  background:var(--ms-paper)!important;
+  color:var(--ms-ink)!important;
+  font-family:"IBM Plex Sans",Inter,Arial,sans-serif!important;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+body.motorsport-theme h1,body.motorsport-theme h2,body.motorsport-theme h3,
+body.motorsport-theme h4,body.motorsport-theme .display{
+  font-family:"Barlow Condensed",Montserrat,Inter,Arial,sans-serif!important;
+  letter-spacing:.005em!important;
+}
+body.motorsport-theme .container{width:min(1180px,calc(100% - 40px))!important}
+body.motorsport-theme .eyebrow,
+body.motorsport-theme .mono{
+  color:var(--ms-blue)!important;
+  letter-spacing:.15em!important;
+  font-weight:800!important;
+}
+
+/* Header */
+body.motorsport-theme .header{
+  background:rgba(249,250,251,.97)!important;
+  border-bottom:1px solid #d3dde3!important;
+  box-shadow:0 8px 26px rgba(24,43,57,.07)!important;
+  backdrop-filter:blur(14px);
+}
+body.motorsport-theme .header .nav{min-height:74px!important}
+body.motorsport-theme .logo-wrap img,
+body.motorsport-theme .logo img{
+  max-height:54px!important;
+  width:auto!important;
+  object-fit:contain!important;
+  filter:none!important;
+}
+body.motorsport-theme .navlinks a{
+  color:#172631!important;
+  font-size:.78rem!important;
+  font-weight:800!important;
+  letter-spacing:.03em!important;
+  position:relative;
+}
+body.motorsport-theme .navlinks a:hover{color:var(--ms-blue)!important}
+body.motorsport-theme .navlinks a::after{
+  content:"";position:absolute;left:0;right:100%;bottom:-9px;height:2px;
+  background:var(--ms-blue);transition:right .18s ease;
+}
+body.motorsport-theme .navlinks a:hover::after{right:0}
+body.motorsport-theme .header-call,
+body.motorsport-theme .header .btn.wa{
+  border-radius:3px!important;
+  border:1px solid #9eb1bd!important;
+  background:#fff!important;
+  color:#16364b!important;
+  font-weight:800!important;
+}
+body.motorsport-theme .header .btn.wa{
+  background:var(--ms-dark)!important;
+  color:#fff!important;
+  border-color:var(--ms-dark)!important;
+}
+
+/* Base page rhythm */
+body.motorsport-theme .section{
+  background:var(--ms-paper)!important;
+  color:var(--ms-ink)!important;
+  border-top:1px solid #d4dde2!important;
+}
+body.motorsport-theme .section.alt{background:var(--ms-paper-alt)!important}
+body.motorsport-theme .section:nth-of-type(even){background:var(--ms-paper-alt)!important}
+body.motorsport-theme .section:nth-of-type(odd){background:var(--ms-paper)!important}
+body.motorsport-theme .section p,
+body.motorsport-theme .section li,
+body.motorsport-theme .section .lead,
+body.motorsport-theme .fine{color:var(--ms-text)!important}
+body.motorsport-theme .section-head h2,
+body.motorsport-theme .section h2{
+  color:var(--ms-ink)!important;
+  font-weight:800!important;
+  text-transform:uppercase;
+}
+body.motorsport-theme .section-head p{color:var(--ms-muted)!important}
+
+/* Cards, grids, price and related blocks */
+body.motorsport-theme .card,
+body.motorsport-theme .case,
+body.motorsport-theme .price-reference,
+body.motorsport-theme .price-pill,
+body.motorsport-theme .family,
+body.motorsport-theme .faq,
+body.motorsport-theme .trust,
+body.motorsport-theme .related,
+body.motorsport-theme .shipping-details,
+body.motorsport-theme .acepro-service-trust{
+  background:rgba(255,255,255,.90)!important;
+  color:var(--ms-ink)!important;
+  border:1px solid var(--ms-line)!important;
+  border-radius:7px!important;
+  box-shadow:0 8px 25px rgba(29,48,61,.05)!important;
+}
+body.motorsport-theme .card p,
+body.motorsport-theme .case p,
+body.motorsport-theme .price-reference p,
+body.motorsport-theme .family p,
+body.motorsport-theme .related p{color:#586a75!important}
+body.motorsport-theme .price-values strong,
+body.motorsport-theme .price-pill strong{color:var(--ms-ink)!important}
+
+/* Buttons */
+body.motorsport-theme .btn{
+  border-radius:3px!important;
+  font-family:"IBM Plex Sans",Inter,Arial,sans-serif!important;
+  font-weight:800!important;
+  letter-spacing:.03em!important;
+}
+body.motorsport-theme .btn-wa,
+body.motorsport-theme .btn.wa,
+body.motorsport-theme .price-cta{
+  position:relative!important;
+  background:linear-gradient(90deg,#102b42,#0c3d61)!important;
+  color:#fff!important;
+  border-color:#102b42!important;
+}
+body.motorsport-theme .btn-outline,
+body.motorsport-theme .btn.light{
+  background:#fff!important;color:#16364b!important;border-color:#95aab8!important;
+}
+
+/* ACCORDIONS — one visual language everywhere */
+body.motorsport-theme details,
+body.motorsport-theme .home-section-accordion,
+body.motorsport-theme .section-fold{
+  color:var(--ms-ink)!important;
+}
+body.motorsport-theme .home-section-accordion,
+body.motorsport-theme .section-fold,
+body.motorsport-theme details.shipping-details{
+  background:rgba(255,255,255,.88)!important;
+  border:1px solid var(--ms-line)!important;
+  border-radius:7px!important;
+  box-shadow:0 8px 24px rgba(27,47,60,.045)!important;
+  overflow:hidden!important;
+}
+body.motorsport-theme .home-section-accordion>summary,
+body.motorsport-theme .section-fold>summary,
+body.motorsport-theme details.shipping-details>summary{
+  background:linear-gradient(90deg,rgba(73,169,216,.10),rgba(255,255,255,.78))!important;
+  color:var(--ms-ink)!important;
+  border-bottom:0!important;
+}
+body.motorsport-theme .home-section-accordion[open]>summary,
+body.motorsport-theme .section-fold[open]>summary,
+body.motorsport-theme details.shipping-details[open]>summary{
+  background:linear-gradient(90deg,rgba(73,169,216,.16),rgba(255,255,255,.86))!important;
+  border-bottom:1px solid #d5dee4!important;
+}
+body.motorsport-theme .home-section-summary h2,
+body.motorsport-theme .section-fold h2,
+body.motorsport-theme details summary strong{color:var(--ms-ink)!important}
+body.motorsport-theme .home-section-summary p,
+body.motorsport-theme .fold-sub{color:var(--ms-muted)!important}
+body.motorsport-theme .home-section-toggle,
+body.motorsport-theme .fold-toggle{
+  background:#fff!important;
+  color:#153c56!important;
+  border:1px solid #9db2bf!important;
+  border-radius:4px!important;
+}
+
+/* Home hero: preserve original text, add approved transparent motorcycle + families */
+body.home-page .hero{
+  position:relative!important;
+  min-height:610px!important;
+  overflow:hidden!important;
+  background:linear-gradient(118deg,#f9fafb 0%,#f0f4f6 52%,#dfe8ed 100%)!important;
+  color:var(--ms-ink)!important;
+  border-bottom:1px solid #cbd6dc!important;
+}
+body.home-page .hero::before{
+  content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:url('/assets/hero-lab.webp') center/cover no-repeat;
+  opacity:.075;filter:grayscale(.35) contrast(.8);
+}
+body.home-page .hero::after{
+  content:"";position:absolute;right:5%;top:0;width:190px;height:182px;z-index:1;
+  transform:skewX(-22deg);
+  background:linear-gradient(90deg,var(--ms-sky) 0 33%,var(--ms-navy) 33% 67%,var(--ms-red) 67% 100%);
+}
+body.home-page .hero-inner{
+  position:relative!important;z-index:3!important;
+  width:min(1180px,calc(100% - 40px))!important;
+  margin:auto!important;
+  padding:84px 610px 78px 0!important;
+  max-width:none!important;
+  min-height:610px!important;
+}
+body.home-page .hero .eyebrow{color:#0d6ca6!important}
+body.home-page .hero h1{
+  color:#111820!important;
+  font:800 clamp(3.7rem,5.3vw,5.7rem)/.88 "Barlow Condensed",sans-serif!important;
+  text-shadow:none!important;
+  max-width:610px!important;
+}
+body.home-page .hero h1 span{color:var(--ms-blue)!important}
+body.home-page .hero .lead{color:#344753!important;max-width:575px!important}
+body.home-page .hero .lead strong{color:#17252f!important}
+body.home-page .hero .safety-line{color:#546975!important}
+body.home-page .hero .btn-outline{color:#17374c!important;background:rgba(255,255,255,.72)!important}
+.ms-hero-visual{
+  position:absolute;z-index:4;right:max(20px,calc((100vw - 1180px)/2));top:86px;
+  width:585px;height:490px;display:grid;grid-template-columns:1fr 210px;gap:12px;align-items:end;pointer-events:none;
+}
+.ms-bike-wrap{height:480px;display:flex;align-items:flex-end;justify-content:center;position:relative}
+.ms-bike-wrap::after{content:"";position:absolute;left:12%;right:8%;bottom:5px;height:22px;background:rgba(29,43,54,.18);filter:blur(16px);border-radius:50%}
+.ms-bike-wrap img{position:relative;z-index:2;max-width:100%;max-height:478px;object-fit:contain;filter:drop-shadow(0 18px 18px rgba(20,35,45,.20))}
+.ms-families{align-self:center;display:flex;flex-direction:column;gap:8px;padding-top:88px;position:relative}
+.ms-families::before{content:"";position:absolute;right:-4px;top:0;width:184px;height:110px;transform:skewX(-22deg);background:linear-gradient(90deg,var(--ms-sky) 0 33%,var(--ms-navy) 33% 67%,var(--ms-red) 67% 100%)}
+.ms-family-title{position:relative;z-index:2;color:#314f61;font-size:.66rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;margin:0 0 4px 10px;white-space:nowrap}
+.ms-family{position:relative;z-index:2;min-height:41px;display:flex;align-items:center;padding:10px 14px 10px 24px;background:rgba(255,255,255,.93);color:#192731;font:800 .95rem/1 "Barlow Condensed",sans-serif;text-transform:uppercase;clip-path:polygon(10% 0,100% 0,94% 100%,0 100%)}
+.ms-family::before,.ms-family::after{content:"";position:absolute;left:9%;right:6%;height:2px;background:linear-gradient(90deg,#159eea,#5ec7f0)}
+.ms-family::before{top:0}.ms-family::after{bottom:0}
+.ms-family:first-of-type{background:linear-gradient(90deg,#edf8ff,#dcefff)}
+
+/* Home specific content blocks */
+body.home-page .trust{background:rgba(255,255,255,.62)!important}
+body.home-page #respaldo-profesional{background:#e8edf1!important}
+body.home-page #respaldo-profesional .acepro-premium-corp,
+body.home-page .acepro-premium-corp{
+  background:linear-gradient(135deg,#181612,#0f171d)!important;
+  border-color:rgba(212,173,85,.42)!important;
+  color:#fff!important;
+}
+body.home-page .acepro-premium-corp p{color:#d7dde1!important}
+
+/* Subpage heroes: keep each original image; standardize typography and contrast */
+body.sub-page .hero{
+  color:#fff!important;
+  border-bottom:1px solid #223541!important;
+}
+body.sub-page .hero h1{
+  font-family:"Barlow Condensed",sans-serif!important;
+  font-weight:800!important;
+  line-height:.95!important;
+  text-transform:uppercase;
+}
+body.sub-page .hero .lead{color:#edf4f7!important}
+body.sub-page .hero .eyebrow{color:#77cdf1!important}
+body.sub-page .hero .btn.light{background:rgba(255,255,255,.95)!important;color:#15374c!important}
+body.sub-page .crumbs{color:#6b7d88!important}
+
+/* Coverage / forms / footer */
+body.motorsport-theme .contact-list,
+body.motorsport-theme .contact-item{color:var(--ms-text)!important}
+body.motorsport-theme input,
+body.motorsport-theme select,
+body.motorsport-theme textarea{
+  background:#fff!important;color:#16242e!important;border-color:#aebec8!important;
+}
+body.motorsport-theme label{color:#40545f!important}
+body.motorsport-theme .cta{
+  background:linear-gradient(105deg,#0d334d,#064466)!important;
+  color:#fff!important;
+}
+body.motorsport-theme .cta h2,body.motorsport-theme .cta p{color:#fff!important}
+body.motorsport-theme .footer{
+  background:var(--ms-dark-2)!important;
+  color:#e9f0f4!important;
+  border-top:4px solid var(--ms-navy)!important;
+}
+body.motorsport-theme .footer p,
+body.motorsport-theme .footer a,
+body.motorsport-theme .footer .legal{color:#aabac4!important}
+body.motorsport-theme .footer strong,body.motorsport-theme .footer h3,body.motorsport-theme .footer h4{color:#fff!important}
+body.motorsport-theme .acepro-footer-badge{color:#fff!important}
+
+/* Digital card keeps its compact identity, but receives the same Motorsport palette */
+body.digital-card{background:#e9eef1!important}
+body.digital-card .page{color:#12202a!important}
+body.digital-card .profile,
+body.digital-card .service,
+body.digital-card .trust{
+  border-radius:7px!important;
+  box-shadow:0 8px 26px rgba(24,43,57,.06)!important;
+}
+body.digital-card .primary,body.digital-card .whatsapp{border-radius:4px!important}
+
+/* Mobile */
+@media(max-width:1050px){
+  body.home-page .hero-inner{padding:72px 0 500px!important;min-height:1040px!important}
+  .ms-hero-visual{left:20px;right:20px;top:auto;bottom:25px;width:auto;height:470px;grid-template-columns:minmax(0,1fr) 220px}
+  .ms-bike-wrap{height:450px}.ms-bike-wrap img{max-height:445px}
+  .ms-families{padding-top:0}.ms-families::before{display:none}
+}
+@media(max-width:720px){
+  body.motorsport-theme .container{width:min(100% - 22px,680px)!important}
+  body.home-page .hero-inner{width:min(100% - 22px,680px)!important;padding:54px 0 500px!important;min-height:1010px!important}
+  body.home-page .hero h1{font-size:3.1rem!important}
+  body.home-page .hero::after{width:120px;height:116px;right:-18px}
+  .ms-hero-visual{left:10px;right:10px;height:460px;grid-template-columns:1fr}
+  .ms-bike-wrap{height:330px}.ms-bike-wrap img{max-height:325px}
+  .ms-families{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;align-self:end}
+  .ms-family-title{grid-column:1/-1;margin-left:0}.ms-family{clip-path:none;padding:9px 8px;justify-content:center;font-size:.82rem;min-height:38px}
+  body.motorsport-theme .navlinks{display:none!important}
+}
+
+
+/* =====================================================================
+   V10.18.19 · AUDITORÍA VISUAL CORPORATIVA
+   Capa correctiva final sobre V10.18.12d/V10.18.18.
+   Objetivo: contraste WCAG razonable, homogeneidad de superficies,
+   tipografía consistente y cero texto claro sobre fondos claros.
+   NO modifica contenido, estructura funcional ni compat-public.js.
+   ===================================================================== */
+
+:root{
+  --ms-page:#e9eef2;
+  --ms-page-alt:#f4f6f7;
+  --ms-surface:#ffffff;
+  --ms-surface-soft:#f8fafb;
+  --ms-ink:#101820;
+  --ms-copy:#344854;
+  --ms-muted:#657883;
+  --ms-line:#c9d5dc;
+  --ms-blue:#087fc8;
+  --ms-blue-deep:#0d456a;
+  --ms-navy:#153f70;
+  --ms-dark:#0c1a24;
+  --ms-dark-2:#07131b;
+}
+
+/* --- Typography hierarchy --- */
+body.motorsport-theme{
+  background:var(--ms-page)!important;
+  color:var(--ms-ink)!important;
+  font-family:"IBM Plex Sans",Inter,Arial,sans-serif!important;
+}
+body.motorsport-theme h1,
+body.motorsport-theme h2,
+body.motorsport-theme h3,
+body.motorsport-theme h4,
+body.motorsport-theme .fold-title{
+  font-family:"Barlow Condensed",Montserrat,Inter,Arial,sans-serif!important;
+  color:var(--ms-ink)!important;
+}
+body.motorsport-theme .section p,
+body.motorsport-theme .section li,
+body.motorsport-theme .section .lead,
+body.motorsport-theme .section small,
+body.motorsport-theme .section .micro{
+  color:var(--ms-copy)!important;
+}
+body.motorsport-theme .eyebrow,
+body.motorsport-theme .mono,
+body.motorsport-theme .fold-eyebrow{
+  color:var(--ms-blue)!important;
+}
+
+/* --- RE:MOTO LAB wordmark: replaces the old shield image in headers --- */
+body.motorsport-theme .logo-wrap,
+body.motorsport-theme .logo{
+  display:inline-flex!important;
+  align-items:center!important;
+  gap:11px!important;
+  min-width:max-content!important;
+  text-decoration:none!important;
+}
+.ms-wordmark-stripes{display:flex;height:34px;transform:skewX(-22deg);flex:0 0 auto}
+.ms-wordmark-stripes i{display:block;width:14px;height:100%}
+.ms-wordmark-stripes i:nth-child(1){background:#42a8dc}
+.ms-wordmark-stripes i:nth-child(2){background:#164779}
+.ms-wordmark-stripes i:nth-child(3){background:#df3447}
+.ms-wordmark-copy{display:flex;flex-direction:column;line-height:.86}
+.ms-wordmark-copy strong{font:800 italic 1.8rem/1 "Barlow Condensed",sans-serif!important;color:#111820!important;white-space:nowrap;letter-spacing:.01em}
+.ms-wordmark-copy strong em{font-style:inherit;color:#087fc8!important}
+.ms-wordmark-copy small{margin-top:5px!important;font:700 .52rem/1 "IBM Plex Sans",sans-serif!important;letter-spacing:.30em!important;color:#6c7d87!important;text-align:center!important}
+
+/* --- Header --- */
+body.motorsport-theme .header{background:rgba(249,251,252,.98)!important;border-bottom:1px solid #d2dde3!important}
+body.motorsport-theme .header .nav{min-height:74px!important}
+body.motorsport-theme .navlinks a{color:#162630!important;font-weight:800!important}
+body.motorsport-theme .header-call{background:#fff!important;color:#14384f!important;border:1px solid #9eb2be!important}
+body.motorsport-theme .header-social-link{background:#f4f8fb!important;border-color:#bdd0db!important}
+
+/* --- Hero: larger motorcycle and cleaner family block --- */
+body.home-page .hero-inner{padding-right:640px!important}
+.ms-hero-visual{width:635px!important;grid-template-columns:minmax(0,1fr) 220px!important;gap:8px!important;right:max(14px,calc((100vw - 1180px)/2))!important}
+.ms-bike-wrap{height:505px!important;overflow:visible!important}
+.ms-bike-wrap img{max-height:500px!important;max-width:118%!important;transform:scale(1.10) translate(-3px,8px)!important;transform-origin:58% 100%!important;filter:drop-shadow(0 20px 18px rgba(20,35,45,.22))!important}
+.ms-families{padding-top:122px!important;gap:8px!important}
+.ms-families::before{width:196px!important;height:112px!important;right:0!important}
+.ms-family-title{
+  position:relative!important;z-index:4!important;
+  width:max-content!important;max-width:100%!important;
+  margin:0 0 6px 5px!important;padding:6px 9px!important;
+  background:rgba(248,250,251,.94)!important;
+  border-left:3px solid #149eea!important;
+  color:#17394e!important;
+  font-size:.68rem!important;font-weight:900!important;letter-spacing:.14em!important;
+  text-shadow:none!important;white-space:nowrap!important;
+}
+.ms-family{color:#142631!important;background:rgba(255,255,255,.96)!important}
+.ms-family:first-of-type{background:linear-gradient(90deg,#edf8ff,#dcefff)!important}
+
+/* --- Section rhythm: one coherent aluminum/white system --- */
+body.motorsport-theme .section{background:var(--ms-page)!important;border-top:1px solid #d5dee4!important}
+body.motorsport-theme .section:nth-of-type(even){background:var(--ms-page-alt)!important}
+body.motorsport-theme .section:nth-of-type(odd){background:var(--ms-page)!important}
+body.motorsport-theme .section-head h2{color:var(--ms-ink)!important}
+body.motorsport-theme .section-head .lead{color:var(--ms-copy)!important}
+
+/* --- Intro trust row --- */
+body.home-page .trust{background:rgba(255,255,255,.92)!important;border:1px solid var(--ms-line)!important}
+body.home-page .trust>div{border-color:#d7e0e5!important}
+body.home-page .trust strong{color:#087fc8!important}
+body.home-page .trust p{color:#334854!important}
+body.home-page .trust-icon{background:#eaf6fc!important;border-color:#a8dcf3!important}
+body.home-page .trust-icon svg{stroke:#28a9e7!important}
+
+/* --- “¿Te está pasando esto?” issue list: fix invisible white text --- */
+body.home-page .issue-list{gap:12px!important}
+body.home-page .issue{
+  background:rgba(255,255,255,.90)!important;
+  border:1px solid var(--ms-line)!important;
+  color:#233842!important;
+  box-shadow:0 6px 18px rgba(30,49,61,.035)!important;
+}
+body.home-page .issue b{color:#0794df!important}
+body.home-page .issue .issue-dot{color:#0794df!important}
+
+/* --- Generic cards, service cards and route cards --- */
+body.motorsport-theme .card,
+body.motorsport-theme .price-card,
+body.motorsport-theme .case,
+body.motorsport-theme .feature,
+body.motorsport-theme .service-visual-card,
+body.motorsport-theme .coverage-box,
+body.motorsport-theme .where>div{
+  background:var(--ms-surface)!important;
+  border:1px solid var(--ms-line)!important;
+  color:var(--ms-ink)!important;
+  box-shadow:0 8px 24px rgba(27,47,60,.05)!important;
+}
+body.motorsport-theme .card:hover{border-color:#8fcce9!important;box-shadow:0 13px 28px rgba(27,47,60,.09)!important}
+body.motorsport-theme .card h3,
+body.motorsport-theme .price-card h3,
+body.motorsport-theme .feature h3,
+body.motorsport-theme .case h3{color:#111820!important}
+body.motorsport-theme .card p,
+body.motorsport-theme .price-card p,
+body.motorsport-theme .feature p,
+body.motorsport-theme .case p{color:#4f6571!important}
+body.motorsport-theme .card-icon,
+body.motorsport-theme .price-icon{background:#eaf7fd!important;border-color:#a9dcf2!important}
+body.motorsport-theme .card-icon svg,
+body.motorsport-theme .price-icon svg{stroke:#28a9e7!important;color:#28a9e7!important}
+body.motorsport-theme .service-more,
+body.motorsport-theme .section-cta-link{color:#078ccc!important;font-weight:800!important}
+body.motorsport-theme .service-more:hover,
+body.motorsport-theme .service-more:focus-visible,
+body.motorsport-theme .section-cta-link:hover,
+body.motorsport-theme .section-cta-link:focus-visible{color:#0b4b74!important;text-decoration:underline!important}
+
+/* --- Unified accordion language: flyers + prices + verifier + about + routes + FAQ --- */
+body.motorsport-theme .flyers-accordion,
+body.motorsport-theme .home-section-accordion,
+body.motorsport-theme .section-fold{
+  background:rgba(255,255,255,.92)!important;
+  border:1px solid var(--ms-line)!important;
+  border-radius:8px!important;
+  box-shadow:0 9px 26px rgba(27,47,60,.055)!important;
+  overflow:hidden!important;
+}
+body.motorsport-theme .flyers-accordion>summary,
+body.motorsport-theme .home-section-accordion>summary,
+body.motorsport-theme .section-fold>summary{
+  min-height:112px!important;
+  padding:22px 24px!important;
+  background:linear-gradient(90deg,#e7f6fd 0%,#f8fafb 55%,#fff 100%)!important;
+  color:var(--ms-ink)!important;
+  border:0!important;
+}
+body.motorsport-theme .flyers-accordion[open]>summary,
+body.motorsport-theme .home-section-accordion[open]>summary,
+body.motorsport-theme .section-fold[open]>summary{
+  background:linear-gradient(90deg,#dcf1fb 0%,#f4f8fa 58%,#fff 100%)!important;
+  border-bottom:1px solid #d3dde3!important;
+}
+body.motorsport-theme .flyers-accordion .acc-copy>span:first-child,
+body.motorsport-theme .home-section-summary h2,
+body.motorsport-theme .fold-title{color:#111820!important;text-shadow:none!important}
+body.motorsport-theme .flyers-accordion .acc-copy small,
+body.motorsport-theme .home-section-summary p,
+body.motorsport-theme .fold-desc{color:#5d717d!important;text-shadow:none!important}
+body.motorsport-theme .accordion-badge,
+body.motorsport-theme .fold-badge{
+  color:#087fc8!important;background:#eef8fd!important;border:1px solid #9cd9f2!important;
+}
+body.motorsport-theme .flyers-accordion .acc-icon,
+body.motorsport-theme .fold-icon{
+  background:linear-gradient(145deg,#0799dd,#075c88)!important;color:#fff!important;border:1px solid #0799dd!important;
+  box-shadow:0 5px 14px rgba(8,126,198,.16)!important;
+}
+body.motorsport-theme .home-section-toggle{
+  background:#fff!important;color:#153f58!important;border:1px solid #9cb4c2!important;
+}
+body.motorsport-theme .accordion-body,
+body.motorsport-theme .home-section-body,
+body.motorsport-theme .fold-body{background:#f7f9fa!important;color:var(--ms-copy)!important}
+
+/* Flyers inside accordion */
+body.motorsport-theme .flyers-showcase{background:transparent!important}
+body.motorsport-theme .flyer-tile{background:#fff!important;border:1px solid #cbd5dc!important;color:#111820!important;box-shadow:0 6px 18px rgba(27,47,60,.04)!important}
+body.motorsport-theme .flyer-copy h3{color:#111820!important}
+body.motorsport-theme .flyer-copy p{color:#536a76!important}
+
+/* Price cards */
+body.motorsport-theme .price-card.hl{background:linear-gradient(145deg,#f1f9fd,#ffffff)!important;border-color:#9fd8f0!important}
+body.motorsport-theme .price-row{border-color:#d6e0e5!important}
+body.motorsport-theme .amount{color:#0f2533!important}
+body.motorsport-theme .amount small{color:#627580!important}
+body.motorsport-theme .note{background:#f5f8fa!important;border-color:#ccd8df!important;color:#4d626e!important}
+
+/* Compatibility verifier */
+body.motorsport-theme .vf{background:#fff!important;border:1px solid var(--ms-line)!important;box-shadow:0 8px 24px rgba(27,47,60,.05)!important}
+body.motorsport-theme .vf-form{background:#f8fafb!important;border-color:#d6dfe4!important}
+body.motorsport-theme .vf-steps li{color:#647984!important}
+body.motorsport-theme .vf-steps li.on{color:#087fc8!important}
+body.motorsport-theme .vf-out{background:#f5f8fa!important;color:#243a46!important;border-color:#d2dde3!important}
+body.motorsport-theme .vf-foot{color:#526873!important}
+body.motorsport-theme .vf-foot a{color:#087fc8!important}
+
+/* “No todas las motos...” features */
+body.motorsport-theme .feature .n{color:#87a7b8!important}
+body.motorsport-theme .feature{padding:20px!important;border-top:3px solid #46a9d8!important;border-radius:6px!important}
+
+/* Process */
+body.motorsport-theme .process .step{background:#fff!important;border:1px solid var(--ms-line)!important;color:#273d48!important}
+body.motorsport-theme .process .step h3{color:#111820!important}
+body.motorsport-theme .process .step p{color:#526873!important}
+body.motorsport-theme .stepnum{background:#e9f7fd!important;color:#087fc8!important;border-color:#9dd9f2!important}
+
+/* Cases / coverage / modules */
+body.motorsport-theme .case .content{background:#fff!important}
+body.motorsport-theme .cover-wrap,
+body.motorsport-theme .modules-feature{background:#fff!important;border:1px solid var(--ms-line)!important;box-shadow:0 8px 24px rgba(27,47,60,.05)!important}
+body.motorsport-theme .cover-copy,
+body.motorsport-theme .modules-copy{color:#263b47!important;background:#fff!important}
+body.motorsport-theme .cover-copy h2,
+body.motorsport-theme .cover-copy h3,
+body.motorsport-theme .modules-copy h2,
+body.motorsport-theme .modules-copy h3{color:#111820!important}
+body.motorsport-theme .cover-copy p,
+body.motorsport-theme .cover-copy li,
+body.motorsport-theme .modules-copy p,
+body.motorsport-theme .modules-copy li{color:#526873!important}
+body.motorsport-theme .shipping-details{background:#f7f9fa!important;border:1px solid #cad6dd!important}
+body.motorsport-theme .shipping-details>summary{color:#17384c!important;background:#edf7fc!important}
+body.motorsport-theme .shipping-details-body{color:#526873!important;background:#fff!important}
+
+/* About / Routes / FAQ */
+body.motorsport-theme .about p,
+body.motorsport-theme .where p{color:#526873!important}
+body.motorsport-theme .where h3{color:#111820!important}
+body.motorsport-theme .acepro-inline{background:#f7f9fa!important;border-color:#ccd8df!important;color:#243944!important}
+body.motorsport-theme .faq{background:#fff!important;border:1px solid var(--ms-line)!important;border-radius:7px!important;overflow:hidden!important}
+body.motorsport-theme .faq-item{background:#fff!important;border-color:#d8e1e6!important}
+body.motorsport-theme .faq-q{background:#fff!important;color:#18303f!important;border-bottom:1px solid #dce4e8!important}
+body.motorsport-theme .faq-q:hover{background:#edf7fc!important;color:#0a5f91!important}
+body.motorsport-theme .faq-a{background:#f8fafb!important}
+body.motorsport-theme .faq-a div,
+body.motorsport-theme .faq-a div strong{color:#465c68!important}
+body.motorsport-theme .faq-a a{color:#087fc8!important}
+
+/* Quick quotation: same light visual family, no unrelated black split */
+body.motorsport-theme .formwrap{
+  background:linear-gradient(112deg,#e5f2f8 0%,#f8fafb 35%,#ffffff 100%)!important;
+  border:1px solid var(--ms-line)!important;
+  border-radius:8px!important;
+  box-shadow:0 10px 28px rgba(27,47,60,.06)!important;
+}
+body.motorsport-theme .formwrap h2{color:#111820!important}
+body.motorsport-theme .formwrap .lead,
+body.motorsport-theme .formwrap .micro{color:#536974!important}
+body.motorsport-theme .formwrap label{color:#334b58!important}
+body.motorsport-theme .formwrap input,
+body.motorsport-theme .formwrap select{
+  background:#fff!important;color:#172a35!important;border:1px solid #aebfc9!important;
+}
+body.motorsport-theme .formwrap input::placeholder{color:#7a8a93!important}
+body.motorsport-theme .privacy-check span{color:#405762!important}
+body.motorsport-theme .privacy-check a{color:#087fc8!important}
+body.motorsport-theme .formwrap .btn-wa{background:linear-gradient(90deg,#102f48,#0c4c75)!important;color:#fff!important}
+
+/* CTA is the intentional dark closing band */
+body.motorsport-theme .cta{background:linear-gradient(105deg,#0b344f,#07496c)!important;color:#fff!important}
+body.motorsport-theme .cta h2,
+body.motorsport-theme .cta p,
+body.motorsport-theme .cta .eyebrow{color:#fff!important}
+body.motorsport-theme .cta .eyebrow{color:#6dd1f6!important}
+
+/* Footer: actual element selector, not an unused .footer class */
+body.motorsport-theme footer{
+  background:#0a151d!important;
+  color:#e7eef2!important;
+  border-top:4px solid #164779!important;
+}
+body.motorsport-theme footer p,
+body.motorsport-theme footer a,
+body.motorsport-theme footer .footlinks,
+body.motorsport-theme footer .trademark-note{color:#9fb1bc!important}
+body.motorsport-theme footer strong,
+body.motorsport-theme footer h3,
+body.motorsport-theme footer h4,
+body.motorsport-theme footer .footlinks strong{color:#fff!important}
+body.motorsport-theme footer .footer-logo-card{background:#fff!important;border-radius:8px!important}
+body.motorsport-theme footer .social-link{background:#10222f!important;color:#eaf3f7!important;border-color:#2b4a5e!important}
+body.motorsport-theme footer .social-link:hover{background:#153248!important;border-color:#42a8dc!important}
+
+/* ACEPRO keeps its institutional gold, but its text remains readable */
+body.home-page .acepro-premium-corp{background:linear-gradient(135deg,#171817,#0d1921)!important;color:#fff!important}
+body.home-page .acepro-premium-corp h2,
+body.home-page .acepro-premium-corp h3,
+body.home-page .acepro-premium-corp strong{color:#fff!important}
+body.home-page .acepro-premium-corp p,
+body.home-page .acepro-premium-corp li,
+body.home-page .acepro-premium-corp span{color:#d8e0e4!important}
+body.home-page .acepro-premium-corp .acepro-micro{color:#d4ad55!important}
+
+/* Keep dark components dark: ethics and modals */
+body.home-page .ethics{background:linear-gradient(120deg,#0c1115,#0a1a23)!important}
+body.home-page .ethics h2,body.home-page .ethics h3,body.home-page .ethics strong{color:#fff!important}
+body.home-page .ethics p,body.home-page .ethics li{color:#c8d3d9!important}
+body.motorsport-theme .modal-box{color:#eaf0f3!important}
+body.motorsport-theme .modal-box h2,body.motorsport-theme .modal-box h3,body.motorsport-theme .modal-box h4{color:#fff!important}
+body.motorsport-theme .modal-box p,body.motorsport-theme .modal-box li{color:#c5d0d6!important}
+
+/* Subpages: same corporate surfaces and footer/header language */
+body.sub-page .section,body.sub-page main>section{background:var(--ms-page)!important;color:var(--ms-ink)!important}
+body.sub-page .card,body.sub-page .box,body.sub-page .content-card,body.sub-page .service-card{background:#fff!important;color:var(--ms-ink)!important;border-color:var(--ms-line)!important}
+body.sub-page main p,body.sub-page main li{color:var(--ms-copy)}
+body.sub-page .hero p,body.sub-page .hero li{color:#edf4f7!important}
+
+/* Responsive refinements */
+@media(max-width:1180px){
+  body.home-page .hero-inner{padding-right:570px!important}
+  .ms-hero-visual{width:570px!important;grid-template-columns:minmax(0,1fr) 205px!important}
+  .ms-bike-wrap img{transform:scale(1.06) translateY(7px)!important}
+}
+@media(max-width:1050px){
+  body.home-page .hero-inner{padding:72px 0 520px!important}
+  .ms-hero-visual{width:auto!important;left:20px!important;right:20px!important;grid-template-columns:minmax(0,1fr) 220px!important}
+  .ms-families{padding-top:0!important}.ms-families::before{display:none!important}
+  .ms-bike-wrap img{max-height:445px!important;transform:scale(1.05) translateY(6px)!important}
+}
+@media(max-width:720px){
+  .ms-wordmark-copy strong{font-size:1.35rem!important}.ms-wordmark-stripes{height:28px!important}.ms-wordmark-stripes i{width:11px!important}.ms-wordmark-copy small{font-size:.42rem!important}
+  .ms-hero-visual{grid-template-columns:1fr!important;height:470px!important}
+  .ms-bike-wrap{height:330px!important}.ms-bike-wrap img{max-height:325px!important;max-width:100%!important;transform:none!important}
+  .ms-families{display:grid!important;grid-template-columns:repeat(3,1fr)!important}.ms-family-title{grid-column:1/-1!important}
+  body.motorsport-theme .flyers-accordion>summary,
+  body.motorsport-theme .home-section-accordion>summary,
+  body.motorsport-theme .section-fold>summary{min-height:0!important;padding:18px!important}
+  body.motorsport-theme .formwrap{padding:24px!important}
+}
+
+
+/* =====================================================================
+   V10.18.20 · SISTEMA CORPORATIVO HOMOGÉNEO / CACHE-BUSTED
+   Auditoría integral de Home + subpáginas.
+   Mantiene contenido, imágenes, rutas, funciones y estructura informativa.
+   ===================================================================== */
+:root{
+  --v20-page:#e8eef2;
+  --v20-page-alt:#f3f6f8;
+  --v20-card:#ffffff;
+  --v20-ink:#101923;
+  --v20-copy:#304754;
+  --v20-muted:#607681;
+  --v20-line:#c3d0d8;
+  --v20-cyan:#0796dc;
+  --v20-cyan-2:#35b9ef;
+  --v20-navy:#123d61;
+  --v20-navy-2:#0a263b;
+  --v20-red:#df3447;
+}
+
+/* Core legibility */
+body.motorsport-theme{background:var(--v20-page)!important;color:var(--v20-ink)!important}
+body.motorsport-theme h1,body.motorsport-theme h2,body.motorsport-theme h3,body.motorsport-theme h4{color:var(--v20-ink)!important}
+body.motorsport-theme p,body.motorsport-theme li{color:var(--v20-copy)}
+body.motorsport-theme .eyebrow,body.motorsport-theme .mono{color:#007fc5!important;font-weight:800!important}
+body.motorsport-theme .section{background:var(--v20-page)!important}
+body.motorsport-theme .section:nth-of-type(even){background:var(--v20-page-alt)!important}
+body.motorsport-theme .section:nth-of-type(odd){background:var(--v20-page)!important}
+body.motorsport-theme .section-head .lead,body.motorsport-theme .section-head p{color:#4d6572!important}
+
+/* HEADER — same on Home and all subpages */
+body.motorsport-theme .header{background:#f9fbfc!important;border-bottom:1px solid #cfdbe2!important;box-shadow:0 5px 18px rgba(20,40,54,.07)!important}
+body.motorsport-theme .navlinks a{color:#162a36!important}
+body.motorsport-theme .navlinks a:hover,body.motorsport-theme .navlinks a:focus-visible{color:#007fc5!important}
+body.motorsport-theme .header-call{background:#fff!important;color:#113a55!important;border:1px solid #8fa8b7!important}
+
+/* HOME HERO — one stripe set only; larger bike; family label below Touring */
+body.home-page .hero::after{display:none!important;content:none!important}
+body.home-page .hero-inner{padding-right:675px!important}
+.ms-hero-visual{
+  width:710px!important;height:520px!important;top:84px!important;
+  grid-template-columns:minmax(0,1fr) 225px!important;gap:12px!important;
+  right:max(8px,calc((100vw - 1180px)/2 - 12px))!important;
+}
+.ms-bike-wrap{height:515px!important;overflow:visible!important;align-items:flex-end!important}
+.ms-bike-wrap img{
+  max-height:545px!important;max-width:132%!important;
+  transform:scale(1.19) translate(-12px,6px)!important;transform-origin:58% 100%!important;
+  filter:drop-shadow(0 22px 20px rgba(18,34,46,.24))!important;
+}
+.ms-families{padding-top:110px!important;gap:8px!important;align-self:center!important}
+.ms-families::before{
+  display:block!important;content:""!important;position:absolute!important;
+  right:2px!important;top:0!important;width:202px!important;height:102px!important;
+  transform:skewX(-22deg)!important;
+  background:linear-gradient(90deg,#48a9d8 0 33%,#174779 33% 67%,#df3447 67% 100%)!important;
+}
+.ms-family{min-height:43px!important;color:#122735!important;background:#fff!important;font-size:1rem!important;font-weight:800!important}
+.ms-family::before,.ms-family::after{background:#159eea!important;height:2px!important}
+.ms-family:first-of-type{background:linear-gradient(90deg,#edf8ff,#dcefff)!important}
+.ms-family-title{
+  order:99!important;margin:6px 0 0 4px!important;padding:7px 10px!important;
+  width:calc(100% - 10px)!important;background:#113d5d!important;color:#fff!important;
+  border:0!important;border-left:4px solid #24afea!important;border-radius:2px!important;
+  font-size:.69rem!important;font-weight:800!important;letter-spacing:.13em!important;
+  text-shadow:none!important;white-space:normal!important;text-align:left!important;
+}
+body.home-page .hero .lead{color:#29424f!important}
+body.home-page .hero .lead strong{color:#101923!important}
+body.home-page .hero .safety-line{color:#415b68!important}
+
+/* Intro benefit row — icons should feel technical, not washed out */
+body.home-page .trust{background:#fff!important;border:1px solid var(--v20-line)!important;box-shadow:0 10px 28px rgba(27,47,60,.06)!important}
+body.home-page .trust strong{color:#007fc5!important;font-weight:900!important}
+body.home-page .trust p{color:#263f4d!important}
+body.home-page .trust-icon{
+  background:linear-gradient(145deg,#e4f6fd,#cfeaf6)!important;
+  border:2px solid #68c6ec!important;box-shadow:0 6px 15px rgba(7,150,220,.12)!important;
+}
+body.home-page .trust-icon svg{stroke:#007dbb!important;stroke-width:1.9!important}
+
+/* Problem list — explicit high-contrast text */
+body.home-page .issue-list .issue{
+  background:#f9fbfc!important;border:1px solid #c5d3db!important;
+  color:#263d49!important;font-weight:600!important;opacity:1!important;
+  box-shadow:0 5px 14px rgba(27,47,60,.035)!important;
+}
+body.home-page .issue-list .issue b{color:#007fc5!important;font-weight:900!important}
+body.home-page .issue-list .issue .issue-dot{color:#24afea!important}
+
+/* Service cards — stronger icons and persistent links on hover */
+body.motorsport-theme .card{background:#fff!important;border:1px solid #c4d1d9!important}
+body.motorsport-theme .card h3{color:#101923!important}
+body.motorsport-theme .card p{color:#425b68!important}
+body.motorsport-theme .card-icon,body.motorsport-theme .price-icon{
+  background:linear-gradient(145deg,#e2f5fd,#cdeaf7)!important;
+  border:2px solid #68c7ed!important;box-shadow:0 5px 15px rgba(7,150,220,.11)!important;
+}
+body.motorsport-theme .card-icon svg,body.motorsport-theme .price-icon svg{stroke:#007dbb!important;stroke-width:1.9!important;color:#007dbb!important}
+body.motorsport-theme button.service-more,body.motorsport-theme a.service-more,
+body.motorsport-theme .section-cta-link{
+  color:#0078b8!important;background:transparent!important;font-weight:900!important;opacity:1!important;
+}
+body.motorsport-theme button.service-more:hover,body.motorsport-theme button.service-more:focus-visible,
+body.motorsport-theme a.service-more:hover,body.motorsport-theme a.service-more:focus-visible,
+body.motorsport-theme .section-cta-link:hover,body.motorsport-theme .section-cta-link:focus-visible{
+  color:#0c405f!important;background:transparent!important;text-decoration:underline!important;opacity:1!important;
+}
+body.motorsport-theme .service-more svg{stroke:currentColor!important}
+
+/* ONE accordion system — all expandable Home families */
+body.motorsport-theme details.flyers-accordion,
+body.motorsport-theme details.home-section-accordion,
+body.motorsport-theme details.section-fold{
+  background:#fff!important;border:1px solid #bdccd5!important;border-radius:9px!important;
+  box-shadow:0 10px 28px rgba(24,45,59,.065)!important;overflow:hidden!important;
+}
+body.motorsport-theme details.flyers-accordion > summary,
+body.motorsport-theme details.home-section-accordion > summary,
+body.motorsport-theme details.section-fold > summary{
+  min-height:108px!important;padding:22px 24px!important;
+  background:linear-gradient(90deg,#dff2fa 0%,#eef6f9 38%,#ffffff 100%)!important;
+  color:#102331!important;border:0!important;box-shadow:none!important;
+}
+body.motorsport-theme details.flyers-accordion > summary:hover,
+body.motorsport-theme details.home-section-accordion > summary:hover,
+body.motorsport-theme details.section-fold > summary:hover{
+  background:linear-gradient(90deg,#d3eef9 0%,#eaf4f8 40%,#fbfdfe 100%)!important;
+}
+body.motorsport-theme details.flyers-accordion[open] > summary,
+body.motorsport-theme details.home-section-accordion[open] > summary,
+body.motorsport-theme details.section-fold[open] > summary{
+  background:linear-gradient(90deg,#cfeaf6 0%,#e7f3f8 42%,#fff 100%)!important;
+  border-bottom:1px solid #c5d3db!important;
+}
+body.motorsport-theme details.flyers-accordion .acc-copy > span:first-child,
+body.motorsport-theme details.home-section-accordion .home-section-summary h2,
+body.motorsport-theme details.section-fold .fold-title{
+  color:#10202c!important;text-shadow:none!important;opacity:1!important;
+}
+body.motorsport-theme details.flyers-accordion .acc-copy small,
+body.motorsport-theme details.home-section-accordion .home-section-summary p,
+body.motorsport-theme details.section-fold .fold-desc{
+  color:#4d6572!important;text-shadow:none!important;opacity:1!important;font-weight:500!important;
+}
+body.motorsport-theme .accordion-badge,body.motorsport-theme .fold-badge{
+  background:#fff!important;color:#086fa9!important;border:1px solid #69c5ea!important;font-weight:900!important;
+}
+body.motorsport-theme .flyers-accordion .acc-icon,
+body.motorsport-theme .section-fold .fold-icon{
+  background:linear-gradient(145deg,#0b9ee0,#08618e)!important;color:#fff!important;
+  border:1px solid #087fbb!important;box-shadow:0 6px 15px rgba(7,126,187,.20)!important;
+}
+body.motorsport-theme .home-section-toggle{
+  background:#fff!important;color:#123e58!important;border:1px solid #8da9b9!important;font-weight:900!important;
+}
+body.motorsport-theme .accordion-body,body.motorsport-theme .home-section-body,body.motorsport-theme .fold-body{
+  background:#f7fafb!important;color:#324b58!important;
+}
+/* kill special legacy per-section accordion color schemes */
+body.home-page #precios .home-section-accordion,
+body.home-page #compatibilidad .home-section-accordion,
+body.home-page #seguridad .home-section-accordion{border-color:#bdccd5!important}
+body.home-page #precios .home-section-accordion > summary,
+body.home-page #compatibilidad .home-section-accordion > summary,
+body.home-page #seguridad .home-section-accordion > summary{background:linear-gradient(90deg,#dff2fa 0%,#eef6f9 38%,#fff 100%)!important}
+
+/* Flyer accordion internals */
+body.motorsport-theme .flyer-tile{background:#fff!important;border:1px solid #c6d3da!important;color:#101923!important}
+body.motorsport-theme .flyer-copy h3{color:#101923!important}
+body.motorsport-theme .flyer-copy p,body.motorsport-theme .flyers-accordion .accordion-note{color:#4d6572!important}
+
+/* About / routes / FAQ accordions: force readable headings */
+body.home-page details.section-fold .fold-eyebrow{color:#007fc5!important}
+body.home-page details.section-fold .fold-title{color:#10202c!important}
+body.home-page details.section-fold .fold-desc{color:#4d6572!important}
+
+/* FAQ internals */
+body.motorsport-theme .faq,body.motorsport-theme .faq-item{background:#fff!important;border-color:#cbd6dc!important}
+body.motorsport-theme .faq-q{background:#fff!important;color:#183240!important;font-weight:800!important}
+body.motorsport-theme .faq-q:hover,body.motorsport-theme .faq-q:focus-visible{background:#e8f5fb!important;color:#075d8b!important}
+body.motorsport-theme .faq-a{background:#f7fafb!important}
+body.motorsport-theme .faq-a div,body.motorsport-theme .faq-a p,body.motorsport-theme .faq-a strong{color:#3b5360!important}
+
+/* Quick quote — calm, light, integrated surface */
+body.motorsport-theme .formwrap{
+  background:linear-gradient(120deg,#e2f1f7 0%,#f4f8fa 42%,#ffffff 100%)!important;
+  border:1px solid #bdccd5!important;border-radius:9px!important;
+  box-shadow:0 11px 30px rgba(25,46,60,.07)!important;color:#10202c!important;
+}
+body.motorsport-theme .formwrap h2{color:#10202c!important}
+body.motorsport-theme .formwrap .lead{color:#3e5865!important}
+body.motorsport-theme .formwrap .micro{color:#5d7380!important}
+body.motorsport-theme .formwrap label{color:#264654!important;font-weight:700!important}
+body.motorsport-theme .formwrap input,body.motorsport-theme .formwrap select{
+  background:#fff!important;color:#182d39!important;border:1px solid #9eb2be!important;box-shadow:0 1px 0 rgba(14,45,63,.03)!important;
+}
+body.motorsport-theme .formwrap .privacy-check span{color:#354e5b!important}
+body.motorsport-theme .formwrap .privacy-check a{color:#006fae!important;font-weight:800!important}
+body.motorsport-theme .formwrap .btn-wa{background:linear-gradient(90deg,#123e60,#075c88)!important;color:#fff!important;border-color:#123e60!important}
+
+/* Footer — richer, still corporate; no washed-out gray */
+body.motorsport-theme footer{
+  background:linear-gradient(115deg,#0b1d29 0%,#0d2636 55%,#0a1821 100%)!important;
+  color:#edf3f6!important;border-top:4px solid #174a79!important;
+}
+body.motorsport-theme footer p,body.motorsport-theme footer span,
+body.motorsport-theme footer a,body.motorsport-theme footer .trademark-note{color:#b9c9d2!important}
+body.motorsport-theme footer strong,body.motorsport-theme footer h3,body.motorsport-theme footer h4{color:#fff!important}
+body.motorsport-theme footer a:hover,body.motorsport-theme footer a:focus-visible{color:#6fd3f7!important}
+body.motorsport-theme footer .footer-logo-card{background:rgba(255,255,255,.97)!important;border:1px solid rgba(255,255,255,.16)!important;padding:10px!important}
+body.motorsport-theme footer .social-link{background:#102f43!important;color:#eaf5f9!important;border:1px solid #32617b!important}
+body.motorsport-theme footer .social-link:hover{background:#17445e!important;color:#fff!important;border-color:#4fc5ef!important}
+body.motorsport-theme footer .acepro-footer-home span,body.motorsport-theme footer .acepro-footer-badge{color:#c7d3da!important}
+body.motorsport-theme footer .acepro-footer-home strong,body.motorsport-theme footer .acepro-footer-badge strong{color:#fff!important}
+
+/* SUBPAGES — same visual grammar, not a second site */
+body.sub-page{background:var(--v20-page)!important;color:var(--v20-ink)!important}
+body.sub-page main>section,body.sub-page .section{background:var(--v20-page)!important;border-top:1px solid #d4dee4!important}
+body.sub-page main>section:nth-of-type(even),body.sub-page .section.alt{background:var(--v20-page-alt)!important}
+body.sub-page .card,body.sub-page .box,body.sub-page .content-card,body.sub-page .service-card,
+body.sub-page .price-reference,body.sub-page .price-pill,body.sub-page .related,
+body.sub-page .trust,body.sub-page .family,body.sub-page .faq,body.sub-page .contact-item{
+  background:#fff!important;color:#10202c!important;border:1px solid #c4d1d9!important;
+  border-radius:8px!important;box-shadow:0 8px 24px rgba(25,46,60,.05)!important;
+}
+body.sub-page main h2,body.sub-page main h3,body.sub-page main h4{color:#101923!important}
+body.sub-page main p,body.sub-page main li,body.sub-page .intro,body.sub-page .legal{color:#405966!important}
+body.sub-page .topic-label,body.sub-page .eyebrow{color:#007fc5!important;font-weight:900!important}
+body.sub-page .price-pill strong,body.sub-page .price-values strong{color:#10202c!important}
+body.sub-page .price-cta,body.sub-page .btn.wa,body.sub-page .btn-wa{background:linear-gradient(90deg,#123e60,#075c88)!important;color:#fff!important;border-color:#123e60!important}
+body.sub-page .btn.light,body.sub-page .btn-outline{background:#fff!important;color:#133e57!important;border-color:#8fa8b7!important}
+body.sub-page .related a,body.sub-page main a:not(.btn):not(.wa):not(.header-call):not(.logo){color:#006fae}
+body.sub-page .related a:hover,body.sub-page main a:not(.btn):not(.wa):not(.header-call):not(.logo):hover{color:#0a4668}
+body.sub-page .contact-icon{background:#e2f5fd!important;color:#007dbb!important;border:1px solid #6bc8ed!important}
+body.sub-page .contact-item strong{color:#10202c!important}
+body.sub-page .contact-item span,body.sub-page .contact-item p{color:#4b6470!important}
+body.sub-page footer{background:linear-gradient(115deg,#0b1d29,#0d2636 55%,#0a1821)!important}
+
+/* Preserve intentional dark regions */
+body.home-page .ethics,body.home-page .acepro-premium-corp{color:#fff!important}
+body.home-page .ethics h2,body.home-page .ethics h3,body.home-page .ethics strong,
+body.home-page .acepro-premium-corp h2,body.home-page .acepro-premium-corp h3,body.home-page .acepro-premium-corp strong{color:#fff!important}
+body.home-page .ethics p,body.home-page .ethics li{color:#d0dbe0!important}
+body.home-page .acepro-premium-corp p,body.home-page .acepro-premium-corp li,body.home-page .acepro-premium-corp span{color:#d8e0e4!important}
+
+@media(max-width:1180px){
+  body.home-page .hero-inner{padding-right:610px!important}
+  .ms-hero-visual{width:625px!important;grid-template-columns:minmax(0,1fr) 210px!important}
+  .ms-bike-wrap img{transform:scale(1.13) translate(-6px,6px)!important}
+}
+@media(max-width:1050px){
+  body.home-page .hero-inner{padding:72px 0 535px!important}
+  .ms-hero-visual{left:20px!important;right:20px!important;width:auto!important;height:500px!important;grid-template-columns:minmax(0,1fr) 220px!important}
+  .ms-families{padding-top:0!important}.ms-families::before{display:none!important}
+  .ms-family-title{order:99!important}
+  .ms-bike-wrap img{max-height:470px!important;transform:scale(1.08) translateY(5px)!important}
+}
+@media(max-width:720px){
+  body.home-page .hero-inner{padding:52px 0 515px!important}
+  .ms-hero-visual{height:490px!important;grid-template-columns:1fr!important}
+  .ms-bike-wrap{height:325px!important}.ms-bike-wrap img{max-height:320px!important;max-width:100%!important;transform:none!important}
+  .ms-families{grid-template-columns:repeat(2,1fr)!important}
+  .ms-family-title{grid-column:1/-1!important;width:100%!important;margin:4px 0 0!important;text-align:center!important}
+  body.motorsport-theme details.flyers-accordion > summary,
+  body.motorsport-theme details.home-section-accordion > summary,
+  body.motorsport-theme details.section-fold > summary{min-height:0!important;padding:18px!important}
+}
+
+/* =====================================================================
+   V10.18.21 · HOMOLOGACIÓN HOME + SUBPÁGINAS
+   Ajustes solicitados: moto ligeramente menor, Instagram reforzado,
+   botones Motorsport homogéneos, FAQ/relacionados claros y legibles,
+   previews visuales compactos con ampliación al click.
+   ===================================================================== */
+
+/* Hero: reducción fina, únicamente para liberar la línea de texto */
+@media (min-width:1051px){
+  body.home-page .ms-bike-wrap img{
+    max-height:486px!important;
+    max-width:114%!important;
+    transform:scale(1.065) translate(2px,8px)!important;
+    transform-origin:60% 100%!important;
+  }
+}
+
+/* Redes de header: Instagram debe leerse con la misma fuerza que Facebook */
+body.motorsport-theme .header-social-link.instagram{
+  color:#cf2f78!important;
+  background:#fff4f8!important;
+  border:1.5px solid #df6b9f!important;
+  box-shadow:0 6px 16px rgba(207,47,120,.12)!important;
+}
+body.motorsport-theme .header-social-link.instagram svg{
+  color:#cf2f78!important;
+  stroke:#cf2f78!important;
+  opacity:1!important;
+  stroke-width:2.15!important;
+}
+body.motorsport-theme .header-social-link.facebook{
+  color:#1877f2!important;
+  border-color:#88b9f4!important;
+  background:#f3f8ff!important;
+}
+
+/* SISTEMA ÚNICO DE BOTONES MOTORSPORT */
+body.motorsport-theme .btn,
+body.motorsport-theme .header-call,
+body.motorsport-theme .home-section-toggle,
+body.motorsport-theme .fold-toggle,
+body.motorsport-theme .acepro-toggle{
+  position:relative!important;
+  overflow:hidden!important;
+  min-height:46px!important;
+  padding:0 52px 0 20px!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  border:0!important;
+  border-radius:3px!important;
+  background:linear-gradient(90deg,#102c43 0%,#0d3f62 100%)!important;
+  color:#fff!important;
+  font-family:"IBM Plex Sans",Inter,Arial,sans-serif!important;
+  font-weight:800!important;
+  letter-spacing:.025em!important;
+  text-decoration:none!important;
+  box-shadow:0 7px 18px rgba(14,45,67,.12)!important;
+  transition:transform .16s ease,box-shadow .16s ease,filter .16s ease!important;
+}
+body.motorsport-theme .btn::after,
+body.motorsport-theme .header-call::after,
+body.motorsport-theme .home-section-toggle::after,
+body.motorsport-theme .fold-toggle::after,
+body.motorsport-theme .acepro-toggle::after{
+  content:"→"!important;
+  position:absolute!important;
+  right:0!important;top:0!important;bottom:0!important;
+  width:42px!important;
+  display:grid!important;place-items:center!important;
+  background:linear-gradient(135deg,#08a1ef,#0877ce)!important;
+  color:#fff!important;
+  font-size:1.05rem!important;
+  transform:none!important;
+}
+body.motorsport-theme .btn:hover,
+body.motorsport-theme .header-call:hover,
+body.motorsport-theme .home-section-toggle:hover,
+body.motorsport-theme .fold-toggle:hover,
+body.motorsport-theme .acepro-toggle:hover{
+  color:#fff!important;
+  filter:brightness(1.06)!important;
+  transform:translateY(-1px)!important;
+  box-shadow:0 10px 24px rgba(14,45,67,.18)!important;
+  text-decoration:none!important;
+}
+/* Los desplegables usan chevron en el remate azul */
+body.motorsport-theme .home-section-toggle::after,
+body.motorsport-theme .fold-toggle::after{
+  content:"▾"!important;
+  font-size:.92rem!important;
+}
+body.motorsport-theme details[open] .home-section-toggle::after,
+body.motorsport-theme details[open] .fold-toggle::after{content:"▴"!important}
+/* WhatsApp conserva icono/texto original y adopta la misma carrocería */
+body.motorsport-theme .btn-wa,
+body.motorsport-theme .btn.wa,
+body.motorsport-theme .price-cta,
+body.motorsport-theme .btn-outline,
+body.motorsport-theme .btn.light{
+  background:linear-gradient(90deg,#102c43,#0d3f62)!important;
+  color:#fff!important;
+  border:0!important;
+}
+
+/* SUBPÁGINAS: FAQ claro, corporativo, igual al lenguaje del Home */
+body.sub-page .faq{
+  display:grid!important;
+  gap:10px!important;
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+}
+body.sub-page .faq details{
+  background:#fff!important;
+  border:1px solid #c8d5dd!important;
+  border-radius:7px!important;
+  color:#172631!important;
+  box-shadow:0 6px 18px rgba(24,46,61,.045)!important;
+  overflow:hidden!important;
+  padding:0 18px!important;
+}
+body.sub-page .faq details:hover{border-color:#8fcce9!important}
+body.sub-page .faq summary{
+  color:#172631!important;
+  background:linear-gradient(90deg,#edf8fd 0%,#fff 72%)!important;
+  font-weight:800!important;
+  padding:16px 0!important;
+}
+body.sub-page .faq details[open] summary{color:#0b5f8f!important}
+body.sub-page .faq p{color:#506672!important;padding:0 0 18px!important}
+
+/* SUBPÁGINAS: “También puede interesarte” deja de ser un bloque negro */
+body.sub-page .related{
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+  gap:12px!important;
+}
+body.sub-page .related a{
+  position:relative!important;
+  overflow:hidden!important;
+  background:#fff!important;
+  border:1px solid #c8d5dd!important;
+  border-radius:7px!important;
+  padding:18px 20px!important;
+  color:#172631!important;
+  box-shadow:0 6px 18px rgba(24,46,61,.04)!important;
+  transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease!important;
+}
+body.sub-page .related a::before{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:#149eea;
+}
+body.sub-page .related a:hover{
+  transform:translateY(-2px)!important;
+  border-color:#7dc4e7!important;
+  box-shadow:0 10px 24px rgba(24,46,61,.08)!important;
+}
+body.sub-page .related b{color:#142732!important;font-weight:800!important}
+body.sub-page .related span{color:#617681!important}
+
+/* SUBPÁGINAS: guías visuales compactas. El modal conserva la imagen completa. */
+body.sub-page .flyer-grid{
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:14px!important;
+  align-items:start!important;
+}
+body.sub-page .flyer-card{
+  background:#fff!important;
+  border:1px solid #c8d5dd!important;
+  border-radius:8px!important;
+  box-shadow:0 7px 20px rgba(24,46,61,.045)!important;
+  overflow:hidden!important;
+}
+body.sub-page .flyer-card button{
+  display:block!important;
+  width:100%!important;
+  height:330px!important;
+  overflow:hidden!important;
+  background:#e8eef2!important;
+}
+body.sub-page .flyer-card img{
+  width:100%!important;
+  height:100%!important;
+  aspect-ratio:auto!important;
+  object-fit:cover!important;
+  object-position:50% 16%!important;
+  transition:transform .2s ease,filter .2s ease!important;
+}
+body.sub-page .flyer-card:hover img{transform:scale(1.02)!important;filter:brightness(.96)!important}
+body.sub-page .flyer-meta{padding:13px 15px 15px!important;background:#fff!important}
+body.sub-page .flyer-meta b{color:#132631!important;font-weight:800!important}
+body.sub-page .flyer-meta span{color:#657a85!important}
+
+/* Subpáginas: tarjetas genéricas no pueden volver a fondo negro por CSS local */
+body.sub-page .card,
+body.sub-page .grid .card,
+body.sub-page .family,
+body.sub-page .price-reference,
+body.sub-page .price-pill{
+  background:#fff!important;
+  color:#172631!important;
+  border-color:#c8d5dd!important;
+}
+body.sub-page .card h3,
+body.sub-page .family h3{color:#142631!important}
+body.sub-page .card p,
+body.sub-page .family p{color:#526974!important}
+
+@media(max-width:900px){
+  body.sub-page .flyer-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  body.sub-page .flyer-card button{height:310px!important}
+}
+@media(max-width:600px){
+  body.sub-page .flyer-grid{grid-template-columns:1fr!important}
+  body.sub-page .flyer-card button{height:300px!important}
+  body.motorsport-theme .btn,
+  body.motorsport-theme .header-call,
+  body.motorsport-theme .home-section-toggle,
+  body.motorsport-theme .fold-toggle{min-height:44px!important;padding-left:16px!important;padding-right:48px!important}
+}
+
+
+/* =====================================================================
+   V10.18.22 · PULIDO CORPORATIVO / AJUSTES DE JERARQUÍA Y CONTRASTE
+   - Eyebrows +1 punto visual
+   - Hero CTA simétricos
+   - Casos: etiquetas Problema/Intervención/Resultado legibles
+   - Modales de servicios claros y coherentes
+   - ACEPRO bronce/ocre premium
+   - Proceso y cobertura con contenido mejor centrado
+   - Menos espacio vertical entre acordeones editoriales
+   ===================================================================== */
+
+/* Mini títulos / eyebrows: incremento global aproximado de 1px */
+body.motorsport-theme .eyebrow,
+body.motorsport-theme .topic-label,
+body.motorsport-theme .fold-eyebrow,
+body.motorsport-theme .service-kicker,
+body.motorsport-theme .mono{
+  font-size:calc(1em + 1px)!important;
+  letter-spacing:.16em!important;
+}
+
+/* Hero: CTA principales con proporción simétrica */
+@media (min-width:721px){
+  body.home-page .hero .actions{display:flex!important;gap:12px!important;align-items:flex-start!important}
+  body.home-page .hero .actions>div,
+  body.home-page .hero .actions>a{width:252px!important;max-width:252px!important;flex:0 0 252px!important}
+  body.home-page .hero .actions .btn{width:252px!important;max-width:252px!important;min-width:252px!important}
+}
+
+/* Hero: reducción final mínima para librar el texto sin perder presencia */
+@media (min-width:1051px){
+  body.home-page .ms-bike-wrap img{
+    max-height:474px!important;
+    max-width:111%!important;
+    transform:scale(1.035) translate(8px,8px)!important;
+    transform-origin:60% 100%!important;
+  }
+}
+
+/* Casos: las etiquetas estaban forzadas a blanco por estilo inline */
+body.home-page #casos .case .content strong{
+  color:#132631!important;
+  font-weight:850!important;
+}
+body.home-page #casos .case .content p{color:#4b6370!important}
+
+/* MODALES DE SERVICIO: de negro pesado a superficie editorial clara */
+body.motorsport-theme .modal{background:rgba(11,24,33,.58)!important;backdrop-filter:blur(5px)!important}
+body.motorsport-theme .modal-box{
+  background:linear-gradient(145deg,#ffffff 0%,#f3f7f9 100%)!important;
+  color:#172631!important;
+  border:1px solid #b9cad4!important;
+  box-shadow:0 28px 80px rgba(12,31,44,.24)!important;
+}
+body.motorsport-theme .modal-box h2,
+body.motorsport-theme .modal-box h3,
+body.motorsport-theme .modal-box h4{color:#111820!important}
+body.motorsport-theme .modal-box p,
+body.motorsport-theme .modal-box li,
+body.motorsport-theme .service-detail .intro{color:#435a67!important}
+body.motorsport-theme .service-detail .service-kicker{color:#007fc5!important}
+body.motorsport-theme .service-step{border-color:#d5e0e6!important}
+body.motorsport-theme .service-step-num{
+  background:#e5f5fc!important;color:#087fc3!important;border-color:#88cfea!important
+}
+body.motorsport-theme .service-visual-card{
+  background:#fff!important;border:1px solid #cad7de!important;color:#172631!important
+}
+body.motorsport-theme .service-visual-card>div{background:#fff!important}
+body.motorsport-theme .service-visual-card img{background:#f4f7f9!important;display:block!important;max-width:100%!important;height:auto!important}
+body.motorsport-theme .service-visual-card h4{color:#142631!important}
+body.motorsport-theme .service-visual-card p{color:#536a76!important}
+body.motorsport-theme .modal-close{z-index:20!important}
+
+/* ACEPRO: bronce/ocre premium, menos negro y menos severo */
+body.home-page .acepro-section{
+  background:linear-gradient(180deg,#edf0ef 0%,#e7e9e6 100%)!important;
+  border-color:#d2c09a!important
+}
+body.home-page .acepro-premium-corp{
+  background:linear-gradient(135deg,#70572f 0%,#5a4629 42%,#3f3527 100%)!important;
+  border:1px solid #b89453!important;
+  box-shadow:0 18px 44px rgba(70,53,31,.18)!important
+}
+body.home-page .acepro-premium-corp h2,
+body.home-page .acepro-premium-corp h3,
+body.home-page .acepro-premium-corp strong{color:#fffdf7!important}
+body.home-page .acepro-premium-corp p,
+body.home-page .acepro-premium-corp li,
+body.home-page .acepro-premium-corp span{color:#f0e8d7!important}
+body.home-page .acepro-premium-corp .eyebrow,
+body.home-page .acepro-premium-corp .acepro-micro,
+body.home-page .acepro-premium-corp .acepro-link{color:#ffd77c!important}
+body.home-page .acepro-premium-corp .acepro-toggle{
+  background:linear-gradient(90deg,#4e3e26,#6e552e)!important;
+  color:#fff7e4!important;
+  box-shadow:0 8px 18px rgba(47,34,19,.18)!important
+}
+body.home-page .acepro-premium-corp .acepro-toggle::after{background:linear-gradient(135deg,#d09b3f,#a87827)!important}
+body.home-page .acepro-inner,
+body.home-page .acepro-intro{border-color:rgba(255,224,160,.28)!important;background:rgba(255,255,255,.07)!important}
+body.home-page .acepro-answer{color:#efe6d5!important}
+
+/* Cinco pasos: más aire interior y distribución centrada */
+body.home-page .process .step{
+  min-height:172px!important;
+  padding:24px 20px!important;
+  display:flex!important;
+  flex-direction:column!important;
+  justify-content:center!important;
+  align-items:flex-start!important;
+}
+body.home-page .process .step h3{margin:12px 0 6px!important;line-height:1.15!important}
+body.home-page .process .step p{margin:0!important;line-height:1.5!important}
+
+/* Cobertura: mismo criterio de sangría y ritmo interior */
+body.home-page .coverage-box{
+  background:#fff!important;
+  border:1px solid #c6d4dc!important;
+  border-radius:8px!important;
+  padding:8px 24px!important;
+  box-shadow:0 7px 20px rgba(24,46,61,.04)!important
+}
+body.home-page .coverage-box>div{
+  padding:20px 4px!important;
+  margin:0!important;
+}
+body.home-page .coverage-box>div+div{border-top:1px solid #d7e1e7!important}
+body.home-page .coverage-box h3{margin:0 0 8px!important;color:#142631!important}
+body.home-page .coverage-box p{margin:0!important;color:#536a76!important;line-height:1.55!important}
+
+/* Reduce aproximadamente a la mitad el vacío entre los acordeones editoriales inferiores */
+body.home-page #nosotros,
+body.home-page #servicios-bmw-seo,
+body.home-page #faq{
+  padding-top:34px!important;
+  padding-bottom:34px!important;
+}
+body.home-page #nosotros + section,
+body.home-page #servicios-bmw-seo + section,
+body.home-page #faq + section{margin-top:0!important}
+body.home-page details.section-fold,
+body.home-page details.home-section-accordion{margin-top:0!important;margin-bottom:0!important}
+
+@media(max-width:720px){
+  body.home-page .process .step{min-height:0!important;padding:20px 18px!important}
+  body.home-page .coverage-box{padding:6px 18px!important}
+  body.home-page #nosotros,body.home-page #servicios-bmw-seo,body.home-page #faq{padding-top:24px!important;padding-bottom:24px!important}
+}
+
+/* ===== V10.18.23 ajustes de homologación de cuadros y espaciado ===== */
+/* Home y subpáginas: cuadros de proceso al estilo corporativo con borde redondeado y línea azul superior */
+body.motorsport-theme .process .step{
+  background:#ffffff !important;
+  border:1px solid #c8d5dd !important;
+  border-top:3px solid #46a9d8 !important;
+  border-radius:12px !important;
+  box-shadow:0 10px 24px rgba(18,42,56,.05) !important;
+  min-height:176px !important;
+  padding:24px 22px !important;
+  display:flex !important;
+  flex-direction:column !important;
+  justify-content:center !important;
+  align-items:flex-start !important;
+}
+body.motorsport-theme .process .step h3{
+  margin:14px 0 8px !important;
+  color:#111820 !important;
+  line-height:1.15 !important;
+}
+body.motorsport-theme .process .step p{
+  margin:0 !important;
+  color:#526873 !important;
+  line-height:1.5 !important;
+}
+body.motorsport-theme .stepnum{
+  width:46px !important;
+  height:46px !important;
+  min-width:46px !important;
+  border-radius:999px !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  background:#eef8fd !important;
+  color:#087fc8 !important;
+  border:1.5px solid #9dd9f2 !important;
+  box-shadow:none !important;
+}
+
+/* Caja de cobertura/Uruapan con el mismo lenguaje visual */
+body.motorsport-theme .coverage-box{
+  background:#ffffff !important;
+  border:1px solid #c8d5dd !important;
+  border-top:3px solid #46a9d8 !important;
+  border-radius:12px !important;
+  box-shadow:0 10px 24px rgba(18,42,56,.05) !important;
+  padding:10px 24px !important;
+}
+body.motorsport-theme .coverage-box > div{
+  padding:20px 4px !important;
+}
+body.motorsport-theme .coverage-box > div + div{
+  border-top:1px solid #dbe5eb !important;
+}
+
+/* Homologación adicional de cuadros informativos tipo feature en subpáginas */
+body.motorsport-theme .feature,
+body.motorsport-theme .why-card,
+body.motorsport-theme .info-card,
+body.motorsport-theme .case-card{
+  border-radius:12px !important;
+}
+
+/* Menor separación vertical entre servicios destacados, precios y compatibilidad */
+body.home-page #servicios-visuales,
+body.home-page #precios,
+body.home-page #compatibilidad{
+  padding-top:28px !important;
+  padding-bottom:28px !important;
+}
+body.home-page #servicios-visuales .section-head,
+body.home-page #precios .section-head,
+body.home-page #compatibilidad .section-head{
+  margin-bottom:24px !important;
+}
+body.home-page #servicios-visuales + #precios,
+body.home-page #precios + #compatibilidad{
+  margin-top:0 !important;
+}
+
+@media (max-width: 720px){
+  body.motorsport-theme .process .step{
+    min-height:0 !important;
+    padding:20px 18px !important;
+  }
+  body.motorsport-theme .coverage-box{
+    padding:8px 18px !important;
+  }
+  body.home-page #servicios-visuales,
+  body.home-page #precios,
+  body.home-page #compatibilidad{
+    padding-top:20px !important;
+    padding-bottom:20px !important;
+  }
+}
+
+
+/* =====================================================================
+   V10.18.24 · FONDOS ADHOC + HOMOLOGACIÓN FINAL DE CONTRASTES
+   - Fondos sutiles editoriales en home y subpáginas
+   - Seguridad: contraste corregido y sin repetición visual de título
+   - Subpáginas: guías visuales compactas y tarjetas homogéneas
+   - Acordeones home con menos aire vertical
+   ===================================================================== */
+
+/* Base para fondos sutiles */
+body.motorsport-theme .section,
+body.motorsport-theme .acepro-section,
+body.motorsport-theme .hero,
+body.motorsport-theme .price-reference,
+body.motorsport-theme .coverage-box,
+body.motorsport-theme .related,
+body.motorsport-theme .cta{
+  position:relative!important;
+  isolation:isolate!important;
+}
+body.motorsport-theme .section > .container,
+body.motorsport-theme .acepro-section > .container,
+body.motorsport-theme .hero > .container,
+body.motorsport-theme .price-reference > *,
+body.motorsport-theme .coverage-box > *,
+body.motorsport-theme .cta > *,
+body.motorsport-theme .related > *{
+  position:relative!important;
+  z-index:1!important;
+}
+body.motorsport-theme .soft-art::before,
+body.home-page #proceso::before,
+body.home-page #casos::before,
+body.home-page #cobertura::before,
+body.home-page #precios::before,
+body.home-page #compatibilidad::before,
+body.home-page #seguridad::before,
+body.home-page #faq::before,
+body.home-page #servicios-visuales::before,
+body.home-page #nosotros::before,
+body.home-page #respaldo-profesional::before,
+body.sub-page .section::before{
+  content:"";
+  position:absolute;
+  right:clamp(-24px,-1vw,6px);
+  bottom:10px;
+  width:min(30vw,360px);
+  height:min(30vw,360px);
+  background-repeat:no-repeat;
+  background-size:contain;
+  background-position:100% 100%;
+  opacity:.055;
+  filter:grayscale(12%);
+  pointer-events:none;
+  z-index:0;
+}
+body.home-page #proceso::before{background-image:url('/assets/keyfob-ref.webp')}
+body.home-page #casos::before{background-image:url('/assets/case-recepcion-lab.webp');opacity:.045}
+body.home-page #cobertura::before{background-image:url('/assets/mapa-cobertura.webp');opacity:.05}
+body.home-page #precios::before{background-image:url('/assets/service-mechanical-key.webp');opacity:.048}
+body.home-page #compatibilidad::before{background-image:url('/assets/service-keyless.webp');opacity:.045}
+body.home-page #seguridad::before{background-image:url('/assets/carta-etica.webp');opacity:.05}
+body.home-page #faq::before{background-image:url('/assets/hero-lab.webp');opacity:.038}
+body.home-page #servicios-visuales::before{background-image:url('/assets/flyer-duplicado-keyless.webp');opacity:.04}
+body.home-page #nosotros::before{background-image:url('/assets/fundador.webp');opacity:.042}
+body.home-page #respaldo-profesional::before{background-image:url('/assets/acepro-miembro-sello.webp');opacity:.05; width:min(24vw,250px); height:min(24vw,250px)}
+
+body.sub-page .section:nth-of-type(2)::before{background-image:url('/assets/keyfob-ref.webp')}
+body.sub-page .section:nth-of-type(3)::before{background-image:url('/assets/mechanical-ref.webp');opacity:.05}
+body.sub-page .section:nth-of-type(4)::before{background-image:url('/assets/service-keyless.webp');opacity:.042}
+body.sub-page .section:nth-of-type(5)::before{background-image:url('/assets/hero-lab.webp');opacity:.04}
+body.sub-page .section:nth-of-type(6)::before{background-image:url('/assets/carta-etica.webp');opacity:.045}
+body.sub-page .section:nth-of-type(7)::before{background-image:url('/assets/mapa-cobertura.webp');opacity:.05}
+body.sub-page .hero::before{
+  content:"";
+  position:absolute;
+  right:2%;
+  bottom:8%;
+  width:min(34vw,380px);
+  height:min(34vw,380px);
+  background:url('/assets/hero-lab.webp') no-repeat 100% 100%/contain;
+  opacity:.05;
+  pointer-events:none;
+  z-index:0;
+}
+body.sub-page .hero .container,
+body.sub-page .section .container{position:relative!important;z-index:1!important}
+
+/* Seguridad: corregir contraste del desplegable y evitar repetición visual del título */
+body.home-page #seguridad .home-section-body{background:linear-gradient(180deg,#f8fbfc 0%,#f2f7f9 100%)!important}
+body.home-page #seguridad .home-section-body .section-head h2{display:none!important}
+body.home-page #seguridad .home-section-body .section-head .lead,
+body.home-page #seguridad .home-section-body .checks .check span:last-child,
+body.home-page #seguridad .home-section-body .micro,
+body.home-page #seguridad .home-section-body .carta summary,
+body.home-page #seguridad .home-section-body .carta li,
+body.home-page #seguridad .home-section-body .carta p,
+body.home-page #seguridad .home-section-body .carta ol{
+  color:#4a6270!important;
+  opacity:1!important;
+}
+body.home-page #seguridad .home-section-body .checks .check span:first-child{color:#0a89cb!important}
+body.home-page #seguridad .home-section-body .carta{
+  background:#ffffff!important;
+  border:1px solid #c9d7df!important;
+  box-shadow:0 8px 22px rgba(18,42,56,.05)!important;
+}
+body.home-page #seguridad .home-section-body .carta summary{
+  background:#fff!important;
+  color:#152834!important;
+}
+body.home-page #seguridad .home-section-body .carta[open] summary{
+  border-bottom:1px solid #dbe5ea!important;
+}
+body.home-page #seguridad .ethics-overlay{
+  background:linear-gradient(180deg,rgba(11,28,40,0) 0%,rgba(11,28,40,.52) 100%)!important;
+}
+
+/* Casos: enfatiza palabras guía */
+body.home-page #casos .lead strong,
+body.home-page #casos .illustrative-note,
+body.home-page #casos .content strong{opacity:1!important}
+
+/* Home: aún menos separación en acordeones editoriales */
+body.home-page #servicios-visuales,
+body.home-page #precios,
+body.home-page #compatibilidad,
+body.home-page #nosotros,
+body.home-page #faq{
+  padding-top:20px!important;
+  padding-bottom:20px!important;
+}
+body.home-page #servicios-visuales .container,
+body.home-page #precios .container,
+body.home-page #compatibilidad .container,
+body.home-page #nosotros .container,
+body.home-page #faq .container{padding-top:0!important;padding-bottom:0!important}
+
+/* Subpáginas: tarjetas y guías aún más homogéneas */
+body.sub-page .card,
+body.sub-page .grid .card,
+body.sub-page .family,
+body.sub-page .price-reference,
+body.sub-page .related a,
+body.sub-page .cta{
+  border-radius:12px!important;
+}
+body.sub-page .faq{
+  border-radius:12px!important;
+  box-shadow:0 8px 20px rgba(18,42,56,.05)!important;
+}
+body.sub-page .faq details{background:#fff!important}
+body.sub-page .faq summary{color:#152835!important;font-weight:800!important}
+body.sub-page .faq p{color:#526975!important;opacity:1!important}
+body.sub-page .related a{min-height:104px!important}
+body.sub-page .related a b{display:block!important;margin-bottom:4px!important}
+
+/* Guías visuales más compactas en subpáginas */
+body.sub-page .flyer-grid{gap:16px!important}
+body.sub-page .flyer-card{border-radius:12px!important}
+body.sub-page .flyer-card button{
+  height:280px!important;
+  border:0!important;
+}
+body.sub-page .flyer-card img{object-position:50% 10%!important}
+@media(max-width:900px){
+  body.sub-page .flyer-card button{height:260px!important}
+}
+@media(max-width:600px){
+  body.sub-page .flyer-card button{height:240px!important}
+}
+
+/* Cobertura y proceso: refuerzo visual corporativo en home y subpáginas */
+body.motorsport-theme .process .step,
+body.motorsport-theme .coverage-box,
+body.motorsport-theme .card,
+body.motorsport-theme .cta{
+  backdrop-filter:saturate(102%)!important;
+}
+
+/* Mini fondos también en CTA inferiores */
+body.motorsport-theme .cta::before,
+body.sub-page .price-reference::before{
+  content:"";
+  position:absolute;
+  right:14px;
+  bottom:10px;
+  width:min(20vw,180px);
+  height:min(20vw,180px);
+  background:url('/assets/keyfob-ref.webp') no-repeat 100% 100%/contain;
+  opacity:.045;
+  pointer-events:none;
+  z-index:0;
+}
+
+@media (max-width: 900px){
+  body.home-page #proceso::before,
+  body.home-page #casos::before,
+  body.home-page #cobertura::before,
+  body.home-page #precios::before,
+  body.home-page #compatibilidad::before,
+  body.home-page #seguridad::before,
+  body.home-page #faq::before,
+  body.home-page #servicios-visuales::before,
+  body.home-page #nosotros::before,
+  body.home-page #respaldo-profesional::before,
+  body.sub-page .section::before,
+  body.sub-page .hero::before,
+  body.motorsport-theme .cta::before,
+  body.sub-page .price-reference::before{
+    width:min(42vw,240px);
+    height:min(42vw,240px);
+    opacity:.042;
+  }
+}
+@media (max-width: 640px){
+  body.home-page #proceso::before,
+  body.home-page #casos::before,
+  body.home-page #cobertura::before,
+  body.home-page #precios::before,
+  body.home-page #compatibilidad::before,
+  body.home-page #seguridad::before,
+  body.home-page #faq::before,
+  body.home-page #servicios-visuales::before,
+  body.home-page #nosotros::before,
+  body.home-page #respaldo-profesional::before,
+  body.sub-page .section::before,
+  body.sub-page .hero::before,
+  body.motorsport-theme .cta::before,
+  body.sub-page .price-reference::before{
+    width:44vw;
+    height:44vw;
+    opacity:.032;
+  }
+  body.home-page #servicios-visuales,
+  body.home-page #precios,
+  body.home-page #compatibilidad,
+  body.home-page #nosotros,
+  body.home-page #faq{padding-top:16px!important;padding-bottom:16px!important}
+}
+
+/* =====================================================================
+   V10.18.25 · FAMILIAS INTERACTIVAS + AMBIENTACIÓN FOTOGRÁFICA PRO
+   ===================================================================== */
+
+body.motorsport-theme .section::before,
+body.motorsport-theme .acepro-section::before,
+body.sub-page .section::before{background-image:none!important}
+
+body.home-page #servicios::before,
+body.home-page #proceso::before,
+body.home-page #casos::before,
+body.home-page #cobertura::before,
+body.home-page #seguridad::before,
+body.home-page #faq::before,
+body.home-page #contacto::before,
+body.sub-page .section::before{
+  content:"";position:absolute;inset:0;background-repeat:no-repeat;background-size:cover;
+  background-position:center;pointer-events:none;z-index:0;opacity:1
+}
+body.home-page #servicios::before{background-image:linear-gradient(90deg,rgba(240,246,249,.97) 0%,rgba(240,246,249,.94) 54%,rgba(240,246,249,.78) 100%),url('/assets/bg-keys-tech.webp');background-position:center 48%}
+body.home-page #proceso::before{background-image:linear-gradient(90deg,rgba(235,242,246,.96) 0%,rgba(235,242,246,.91) 54%,rgba(235,242,246,.76) 100%),url('/assets/bg-diagnostics.webp')}
+body.home-page #casos::before{background-image:linear-gradient(90deg,rgba(247,249,250,.97),rgba(247,249,250,.89) 62%,rgba(247,249,250,.76)),url('/assets/bg-lab-keys.webp')}
+body.home-page #cobertura::before{background-image:linear-gradient(90deg,rgba(235,242,246,.98),rgba(235,242,246,.91) 58%,rgba(235,242,246,.78)),url('/assets/bg-coverage.webp')}
+body.home-page #seguridad::before{background-image:linear-gradient(90deg,rgba(244,248,250,.98),rgba(244,248,250,.90) 58%,rgba(244,248,250,.75)),url('/assets/bg-security.webp')}
+body.home-page #faq::before{background-image:linear-gradient(90deg,rgba(239,245,248,.98),rgba(239,245,248,.93) 60%,rgba(239,245,248,.82)),url('/assets/bg-diagnostics.webp')}
+body.home-page #contacto::before{background-image:linear-gradient(90deg,rgba(235,242,246,.98),rgba(235,242,246,.90) 60%,rgba(235,242,246,.76)),url('/assets/bg-lab-keys.webp')}
+body.home-page #servicios>.container,body.home-page #proceso>.container,body.home-page #casos>.container,body.home-page #cobertura>.container,body.home-page #seguridad>.container,body.home-page #faq>.container,body.home-page #contacto>.container,body.sub-page .section>.container{position:relative!important;z-index:1!important}
+
+body.sub-page .section:nth-of-type(2)::before{background-image:linear-gradient(90deg,rgba(242,247,249,.97),rgba(242,247,249,.91) 58%,rgba(242,247,249,.76)),url('/assets/bg-keys-tech.webp')}
+body.sub-page .section:nth-of-type(3)::before{background-image:linear-gradient(90deg,rgba(247,249,250,.98),rgba(247,249,250,.92) 60%,rgba(247,249,250,.78)),url('/assets/bg-diagnostics.webp')}
+body.sub-page .section:nth-of-type(4)::before{background-image:linear-gradient(90deg,rgba(239,245,248,.98),rgba(239,245,248,.92) 60%,rgba(239,245,248,.78)),url('/assets/bg-security.webp')}
+body.sub-page .section:nth-of-type(5)::before{background-image:linear-gradient(90deg,rgba(247,249,250,.98),rgba(247,249,250,.92) 60%,rgba(247,249,250,.80)),url('/assets/bg-lab-keys.webp')}
+body.sub-page .section:nth-of-type(6)::before{background-image:linear-gradient(90deg,rgba(239,245,248,.98),rgba(239,245,248,.92) 60%,rgba(239,245,248,.80)),url('/assets/bg-modules.webp')}
+
+.ms-hero-visual{pointer-events:none!important}.ms-families{pointer-events:auto!important}
+.ms-family{border:0!important;width:100%!important;cursor:pointer!important;justify-content:space-between!important;gap:8px!important;padding-right:18px!important;transition:transform .16s ease,background .16s ease,box-shadow .16s ease!important;box-shadow:0 2px 0 rgba(19,69,100,.06)!important}
+.ms-family:hover,.ms-family:focus-visible{background:linear-gradient(90deg,#e7f5fc 0%,#fff 88%)!important;transform:translateX(-5px)!important;outline:none!important;box-shadow:0 8px 18px rgba(17,64,94,.12)!important}
+.ms-family .ms-family-label{position:relative;z-index:2;white-space:nowrap}
+.ms-family .ms-family-thumb{width:64px!important;height:31px!important;object-fit:contain!important;object-position:center!important;flex:0 0 64px!important;filter:drop-shadow(0 3px 3px rgba(18,32,44,.18))!important;transition:transform .18s ease!important}
+.ms-family:hover .ms-family-thumb{transform:scale(1.12)!important}.ms-family::before,.ms-family::after{pointer-events:none!important}
+
+.family-modal{position:fixed;inset:0;z-index:6000;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(8,23,34,.68);backdrop-filter:blur(8px)}
+.family-modal.is-open{display:flex}
+.family-modal-card{position:relative;width:min(900px,94vw);max-height:88vh;overflow:auto;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(300px,.92fr);gap:0;background:#f7fafb;border:1px solid #a9c1cf;border-radius:18px;box-shadow:0 30px 90px rgba(5,24,37,.32)}
+.family-modal-visual{min-height:500px;display:flex;align-items:center;justify-content:center;padding:42px;background:linear-gradient(145deg,#e9f2f6 0%,#fff 62%);position:relative;overflow:hidden}
+.family-modal-visual::before{content:"";position:absolute;inset:auto -80px -90px auto;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(20,158,234,.16),transparent 68%)}
+.family-modal-visual img{position:relative;z-index:1;width:100%;max-height:420px;object-fit:contain;filter:drop-shadow(0 24px 24px rgba(18,41,56,.22))}
+.family-modal-copy{padding:48px 42px;display:flex;flex-direction:column;justify-content:center}.family-modal-kicker{font:800 .78rem/1 "IBM Plex Sans",sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#007fc5;margin-bottom:12px}
+.family-modal-copy h3{font:800 clamp(2.2rem,4vw,3.65rem)/.95 "Barlow Condensed",sans-serif;text-transform:uppercase;color:#111820;margin:0 0 16px}.family-modal-copy p{color:#4b6370;line-height:1.65;font-size:1rem;margin:0 0 24px}.family-modal-note{font-size:.78rem!important;color:#738792!important;margin-top:10px!important}
+.family-modal-close{position:absolute;right:16px;top:16px;z-index:4;width:44px;height:44px;border-radius:50%;border:1px solid #7ca7bd;background:#0e4263;color:#fff;font-size:1.45rem;cursor:pointer;box-shadow:0 8px 18px rgba(12,43,61,.18)}
+.family-modal-close:hover{background:#0978b4}.family-modal .family-cta{align-self:flex-start;min-width:230px}body.family-modal-open{overflow:hidden}
+@media(max-width:900px){.family-modal-card{grid-template-columns:1fr;max-width:640px}.family-modal-visual{min-height:300px;padding:28px 30px 18px}.family-modal-visual img{max-height:260px}.family-modal-copy{padding:28px 30px 34px}}
+@media(max-width:700px){.ms-family .ms-family-thumb{width:52px!important;height:27px!important;flex-basis:52px!important}.family-modal{padding:12px}.family-modal-copy h3{font-size:2.2rem}}
+
+
+/* =====================================================================
+   V10.18.25a · FAMILIAS INTERACTIVAS — PREVIEW FUNCIONAL
+   Objetivo: que cada familia sea reconocible visualmente y el modal sea
+   realmente clickeable, sin alterar el resto del diseño V25.
+   ===================================================================== */
+@media (min-width:1051px){
+  body.home-page .ms-hero-visual{
+    grid-template-columns:minmax(0,1fr) 252px!important;
+    width:748px!important;
+  }
+  body.home-page .ms-families{
+    width:252px!important;
+    gap:7px!important;
+    pointer-events:auto!important;
+  }
+  body.home-page .ms-family{
+    min-height:50px!important;
+    padding:6px 12px 6px 23px!important;
+    gap:8px!important;
+    pointer-events:auto!important;
+    overflow:hidden!important;
+  }
+  body.home-page .ms-family .ms-family-label{
+    flex:1 1 auto!important;
+    font-size:1rem!important;
+    letter-spacing:.01em!important;
+  }
+  body.home-page .ms-family .ms-family-thumb{
+    width:94px!important;
+    height:44px!important;
+    flex:0 0 94px!important;
+    object-fit:contain!important;
+    object-position:center!important;
+    margin-right:3px!important;
+    filter:drop-shadow(0 4px 4px rgba(12,31,44,.20))!important;
+  }
+  body.home-page .ms-family:hover .ms-family-thumb,
+  body.home-page .ms-family:focus-visible .ms-family-thumb{
+    transform:scale(1.08)!important;
+  }
+  body.home-page .ms-family:hover,
+  body.home-page .ms-family:focus-visible{
+    transform:translateX(-4px)!important;
+  }
+  body.home-page .ms-family-title{
+    width:238px!important;
+    margin:4px 0 0 7px!important;
+    pointer-events:none!important;
+  }
+}
+
+/* Asegurar que el selector sea interactivo aunque el contenedor visual del hero
+   se mantenga sin capturar clics fuera de los botones. */
+body.home-page .ms-families,
+body.home-page .ms-family,
+body.home-page .ms-family *{
+  pointer-events:auto!important;
+}
+body.home-page .ms-family{cursor:pointer!important}
+
+/* Modal de familia: refuerzo visual y comportamiento inequívoco */
+body.home-page .family-modal{z-index:10000!important}
+body.home-page .family-modal-card{
+  width:min(940px,94vw)!important;
+  border-radius:18px!important;
+  overflow:hidden!important;
+}
+body.home-page .family-modal-visual{
+  min-height:480px!important;
+  padding:36px!important;
+}
+body.home-page .family-modal-visual img{
+  max-height:410px!important;
+  width:100%!important;
+  object-fit:contain!important;
+}
+body.home-page .family-modal-copy h3{margin-bottom:14px!important}
+body.home-page .family-modal .family-cta{min-width:242px!important}
+
+@media (max-width:1050px){
+  body.home-page .ms-families,
+  body.home-page .ms-family,
+  body.home-page .ms-family *{pointer-events:auto!important}
+  body.home-page .ms-family .ms-family-thumb{
+    width:72px!important;height:38px!important;flex-basis:72px!important;
+  }
+}
+@media (max-width:700px){
+  body.home-page .ms-family{
+    min-height:52px!important;
+    padding:6px 8px!important;
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    justify-items:center!important;
+    gap:2px!important;
+  }
+  body.home-page .ms-family .ms-family-thumb{
+    width:70px!important;height:31px!important;flex-basis:auto!important;
+    order:-1!important;
+  }
+  body.home-page .ms-family .ms-family-label{font-size:.78rem!important}
+  body.home-page .family-modal-visual{min-height:245px!important;padding:28px 24px 12px!important}
+  body.home-page .family-modal-visual img{max-height:230px!important}
+}
+
+
+/* =====================================================================
+   V10.18.25b · REFINAMIENTO FINAL
+   - Corrige el CTA del popup de familias.
+   - Integra la ambientación fotográfica en subpáginas como fondo real,
+     evitando el efecto de imagen pegada o “bug visual”.
+   - Mantiene legibilidad alta y lenguaje visual homogéneo.
+   ===================================================================== */
+
+/* Popup de familias */
+body.home-page .family-modal .family-cta{
+  min-width:300px!important;
+  text-align:center!important;
+}
+
+/* HERO de subpáginas: fondo integrado, no recuadro flotante */
+body.sub-page .hero{
+  position:relative!important;
+  overflow:hidden!important;
+  background:
+    linear-gradient(90deg,rgba(233,238,242,.97) 0%,rgba(233,238,242,.95) 42%,rgba(233,238,242,.91) 58%,rgba(233,238,242,.84) 74%,rgba(233,238,242,.78) 100%),
+    url('/assets/bg-diagnostics.webp') center/cover no-repeat!important;
+  color:#101820!important;
+  border-bottom:1px solid #cbd6dc!important;
+}
+body.sub-page .hero::before{
+  content:""!important;
+  position:absolute!important;
+  inset:0!important;
+  background:
+    radial-gradient(circle at 82% 30%, rgba(7,150,220,.10), transparent 23%),
+    radial-gradient(circle at 88% 72%, rgba(18,60,92,.07), transparent 28%);
+  pointer-events:none!important;
+  z-index:0!important;
+}
+body.sub-page .hero .container,
+body.sub-page .hero .hero-grid,
+body.sub-page .hero > *{
+  position:relative!important;
+  z-index:1!important;
+}
+body.sub-page .crumbs,
+body.sub-page .crumbs a{color:#6a7c86!important}
+body.sub-page .hero h1{color:#101820!important;text-shadow:none!important}
+body.sub-page .hero .lead,
+body.sub-page .hero p,
+body.sub-page .hero li{color:#415662!important}
+body.sub-page .hero .eyebrow{color:#087fc8!important}
+body.sub-page .hero .btn.light,
+body.sub-page .hero .btn:not(.wa){background:#fff!important;color:#15374c!important;border-color:#9eb2be!important}
+body.sub-page .hero .btn.wa{background:linear-gradient(90deg,#102f48,#0c4c75)!important;color:#fff!important;border-color:#102f48!important}
+body.sub-page .hero .trust{
+  background:rgba(255,255,255,.80)!important;
+  border:1px solid #cbd6dc!important;
+  border-radius:10px!important;
+}
+body.sub-page .hero .hero-img{
+  background:#0b141b!important;
+  border:1px solid #112a3c!important;
+  box-shadow:0 18px 52px rgba(18,35,48,.18)!important;
+}
+
+/* Secciones internas de subpáginas: ambientación realmente de fondo */
+body.sub-page .section,
+body.sub-page main > section{
+  position:relative!important;
+  overflow:hidden!important;
+}
+body.sub-page .section::before{
+  content:""!important;
+  position:absolute!important;
+  inset:0!important;
+  background-repeat:no-repeat,no-repeat!important;
+  background-position:0 0, calc(100% + 18px) 54%!important;
+  background-size:100% 100%, min(44vw,560px) auto!important;
+  pointer-events:none!important;
+  z-index:0!important;
+}
+body.sub-page .section > .container,
+body.sub-page main > section > .container{
+  position:relative!important;
+  z-index:1!important;
+}
+body.sub-page .section:nth-of-type(2)::before{
+  background-image:
+    linear-gradient(90deg,rgba(242,247,249,.98) 0%,rgba(242,247,249,.97) 42%,rgba(242,247,249,.94) 57%,rgba(242,247,249,.86) 72%,rgba(242,247,249,.74) 100%),
+    url('/assets/bg-keys-tech.webp')!important;
+}
+body.sub-page .section:nth-of-type(3)::before{
+  background-image:
+    linear-gradient(90deg,rgba(247,249,250,.985) 0%,rgba(247,249,250,.975) 44%,rgba(247,249,250,.945) 60%,rgba(247,249,250,.88) 74%,rgba(247,249,250,.78) 100%),
+    url('/assets/bg-diagnostics.webp')!important;
+}
+body.sub-page .section:nth-of-type(4)::before{
+  background-image:
+    linear-gradient(90deg,rgba(239,245,248,.985) 0%,rgba(239,245,248,.975) 44%,rgba(239,245,248,.945) 60%,rgba(239,245,248,.88) 74%,rgba(239,245,248,.78) 100%),
+    url('/assets/bg-security.webp')!important;
+}
+body.sub-page .section:nth-of-type(5)::before{
+  background-image:
+    linear-gradient(90deg,rgba(247,249,250,.985) 0%,rgba(247,249,250,.975) 44%,rgba(247,249,250,.945) 60%,rgba(247,249,250,.88) 74%,rgba(247,249,250,.78) 100%),
+    url('/assets/bg-lab-keys.webp')!important;
+}
+body.sub-page .section:nth-of-type(6)::before{
+  background-image:
+    linear-gradient(90deg,rgba(239,245,248,.985) 0%,rgba(239,245,248,.975) 44%,rgba(239,245,248,.945) 60%,rgba(239,245,248,.88) 74%,rgba(239,245,248,.78) 100%),
+    url('/assets/bg-modules.webp')!important;
+}
+body.sub-page .section:nth-of-type(7)::before{
+  background-image:
+    linear-gradient(90deg,rgba(243,247,249,.985) 0%,rgba(243,247,249,.975) 44%,rgba(243,247,249,.945) 60%,rgba(243,247,249,.88) 74%,rgba(243,247,249,.78) 100%),
+    url('/assets/bg-coverage.webp')!important;
+}
+
+/* Evita que la ambientación parezca una tarjeta pegada */
+body.sub-page .card,
+body.sub-page .box,
+body.sub-page .content-card,
+body.sub-page .service-card,
+body.sub-page .price-reference,
+body.sub-page .shipping-details,
+body.sub-page .faq,
+body.sub-page .case,
+body.sub-page .coverage-box{
+  position:relative!important;
+  z-index:1!important;
+}
+
+/* En móvil reducimos aún más la ambientación para no saturar */
+@media(max-width:980px){
+  body.sub-page .hero{
+    background:
+      linear-gradient(180deg,rgba(233,238,242,.98) 0%,rgba(233,238,242,.95) 52%,rgba(233,238,242,.90) 100%),
+      url('/assets/bg-diagnostics.webp') center/cover no-repeat!important;
+  }
+  body.sub-page .section::before{
+    background-position:0 0, calc(100% + 48px) 72%!important;
+    background-size:100% 100%, min(66vw,480px) auto!important;
+  }
+}
+@media(max-width:720px){
+  body.home-page .family-modal .family-cta{min-width:0!important;width:100%!important}
+  body.sub-page .section::before{
+    background-position:0 0, right -54px bottom -6px!important;
+    background-size:100% 100%, min(86vw,360px) auto!important;
+  }
+}
+
+
+/* =====================================================================
+   V10.18.25c · CORRECCIÓN VISUAL + BUILD INEQUÍVOCO
+   ===================================================================== */
+
+/* Eliminar definitivamente los antiguos “parches” fotográficos de subpáginas. */
+body.sub-page .hero::before,
+body.sub-page .section::before{content:none!important;background:none!important}
+
+/* HERO de subpáginas: la fotografía ES el fondo completo. */
+body.sub-page .hero{
+  position:relative!important;
+  overflow:hidden!important;
+  color:#101820!important;
+  border-bottom:1px solid #cbd6dc!important;
+  background-color:#e9eef2!important;
+  background-repeat:no-repeat!important;
+  background-size:cover!important;
+  background-position:center!important;
+}
+body.sub-page.page-akl .hero,
+body.sub-page.page-keyless .hero,
+body.sub-page.page-duplicado .hero{
+  background-image:linear-gradient(90deg,rgba(235,241,245,.985) 0%,rgba(235,241,245,.96) 38%,rgba(235,241,245,.89) 58%,rgba(235,241,245,.73) 100%),url('/assets/bg-lab-keys.webp')!important;
+}
+body.sub-page.page-gs .hero,
+body.sub-page.page-r1250 .hero,
+body.sub-page.page-r1200 .hero,
+body.sub-page.page-actualizacion .hero{
+  background-image:linear-gradient(90deg,rgba(235,241,245,.985) 0%,rgba(235,241,245,.96) 38%,rgba(235,241,245,.90) 58%,rgba(235,241,245,.74) 100%),url('/assets/bg-keys-tech.webp')!important;
+}
+body.sub-page.page-sport .hero,
+body.sub-page.page-reset .hero,
+body.sub-page.page-faq .hero,
+body.sub-page.page-glosario .hero,
+body.sub-page.page-llaves .hero{
+  background-image:linear-gradient(90deg,rgba(235,241,245,.985) 0%,rgba(235,241,245,.955) 38%,rgba(235,241,245,.88) 58%,rgba(235,241,245,.69) 100%),url('/assets/bg-diagnostics.webp')!important;
+}
+body.sub-page.page-nacional .hero,
+body.sub-page.page-michoacan .hero{
+  background-image:linear-gradient(90deg,rgba(235,241,245,.985) 0%,rgba(235,241,245,.96) 38%,rgba(235,241,245,.89) 58%,rgba(235,241,245,.73) 100%),url('/assets/bg-coverage.webp')!important;
+}
+body.sub-page .hero .container{position:relative!important;z-index:2!important}
+body.sub-page .hero h1{color:#101820!important;text-shadow:none!important}
+body.sub-page .hero .lead,body.sub-page .hero p,body.sub-page .hero li{color:#405561!important}
+body.sub-page .hero .eyebrow{color:#087fc8!important}
+body.sub-page .crumbs,body.sub-page .crumbs a{color:#667a86!important}
+body.sub-page .hero .trust{background:rgba(255,255,255,.82)!important;border:1px solid #c4d1d9!important;color:#5b6f7a!important}
+
+/* Interior de subpáginas: ambientación de borde a borde, sin límites rectangulares. */
+body.sub-page .section{
+  position:relative!important;
+  overflow:hidden!important;
+  background-color:#eef3f6!important;
+  background-repeat:no-repeat!important;
+  background-size:cover!important;
+  background-position:center!important;
+}
+body.sub-page .section:nth-of-type(2){background-image:linear-gradient(90deg,rgba(241,246,248,.985) 0%,rgba(241,246,248,.97) 46%,rgba(241,246,248,.88) 70%,rgba(241,246,248,.77) 100%),url('/assets/bg-keys-tech.webp')!important}
+body.sub-page .section:nth-of-type(3){background-image:linear-gradient(90deg,rgba(247,249,250,.99) 0%,rgba(247,249,250,.975) 48%,rgba(247,249,250,.91) 72%,rgba(247,249,250,.80) 100%),url('/assets/bg-diagnostics.webp')!important}
+body.sub-page .section:nth-of-type(4){background-image:linear-gradient(90deg,rgba(241,246,248,.99) 0%,rgba(241,246,248,.975) 48%,rgba(241,246,248,.91) 72%,rgba(241,246,248,.80) 100%),url('/assets/bg-security.webp')!important}
+body.sub-page .section:nth-of-type(5){background-image:linear-gradient(90deg,rgba(247,249,250,.99) 0%,rgba(247,249,250,.975) 48%,rgba(247,249,250,.91) 72%,rgba(247,249,250,.80) 100%),url('/assets/bg-lab-keys.webp')!important}
+body.sub-page .section:nth-of-type(6){background-image:linear-gradient(90deg,rgba(241,246,248,.99) 0%,rgba(241,246,248,.975) 48%,rgba(241,246,248,.91) 72%,rgba(241,246,248,.80) 100%),url('/assets/bg-modules.webp')!important}
+body.sub-page .section:nth-of-type(7){background-image:linear-gradient(90deg,rgba(247,249,250,.99) 0%,rgba(247,249,250,.975) 48%,rgba(247,249,250,.91) 72%,rgba(247,249,250,.80) 100%),url('/assets/bg-coverage.webp')!important}
+body.sub-page .section>.container{position:relative!important;z-index:1!important}
+
+/* Familia: CTA exacto y visual consistente */
+body.home-page .family-modal .family-cta{min-width:322px!important;text-align:center!important}
+
+@media(max-width:900px){
+  body.sub-page .hero{background-position:66% center!important}
+  body.sub-page .section{background-position:70% center!important}
+}
+@media(max-width:720px){
+  body.sub-page .hero{
+    background-image:linear-gradient(180deg,rgba(235,241,245,.99) 0%,rgba(235,241,245,.95) 64%,rgba(235,241,245,.84) 100%),url('/assets/bg-diagnostics.webp')!important;
+    background-position:center!important;
+  }
+  body.sub-page .section{background-image:none!important;background:#eef3f6!important}
+  body.home-page .family-modal .family-cta{min-width:0!important;width:100%!important}
+}
+
+
+/* =====================================================================
+   V10.18.25d · PULIDO CTA / WHATSAPP / RESPALDO
+   ===================================================================== */
+
+/* WhatsApp: icono con contraste de marca en TODOS los botones del sitio */
+body.motorsport-theme .btn-wa::before,
+body.motorsport-theme .btn[href^="https://wa.me/"]::before,
+body.motorsport-theme a[href^="https://wa.me/"].btn::before{
+  content:""!important;
+  width:19px!important;
+  height:19px!important;
+  flex:0 0 19px!important;
+  background:center/contain no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%2325D366' d='M16.04 3C8.86 3 3.02 8.83 3.02 16c0 2.29.6 4.52 1.73 6.49L3 29l6.68-1.75A13 13 0 0 0 16.03 29h.01C23.21 29 29 23.17 29 16S23.21 3 16.04 3Zm0 23.8a10.8 10.8 0 0 1-5.5-1.5l-.4-.24-3.96 1.04 1.06-3.86-.26-.4A10.77 10.77 0 0 1 5.24 16c0-5.96 4.85-10.8 10.81-10.8 5.95 0 10.79 4.84 10.79 10.8 0 5.95-4.84 10.8-10.8 10.8Zm5.92-8.1c-.32-.16-1.91-.94-2.2-1.05-.3-.11-.51-.16-.73.16-.21.32-.83 1.05-1.02 1.26-.19.22-.38.24-.7.08-.32-.16-1.36-.5-2.58-1.6-.95-.85-1.6-1.9-1.79-2.22-.19-.32-.02-.5.14-.66.15-.14.32-.38.49-.57.16-.19.21-.32.32-.54.11-.21.05-.4-.03-.57-.08-.16-.73-1.75-1-2.4-.26-.63-.53-.55-.73-.56h-.62c-.21 0-.57.08-.86.4-.3.33-1.13 1.1-1.13 2.7 0 1.59 1.16 3.13 1.32 3.34.16.22 2.28 3.48 5.52 4.88.77.33 1.37.53 1.84.68.77.24 1.47.21 2.03.13.62-.09 1.91-.78 2.18-1.54.27-.76.27-1.41.19-1.54-.08-.14-.3-.22-.62-.38Z'/%3E%3C/svg%3E")!important;
+  filter:drop-shadow(0 0 4px rgba(37,211,102,.18))!important;
+}
+
+/* Popup de familias: CTA en dos líneas claras */
+body.home-page .family-modal .family-cta{
+  min-height:64px!important;
+  min-width:310px!important;
+  padding-left:50px!important;
+  padding-right:50px!important;
+  gap:10px!important;
+  line-height:1.08!important;
+}
+body.home-page .family-modal .family-cta .family-cta-copy{
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:3px!important;
+  white-space:nowrap!important;
+}
+body.home-page .family-modal .family-cta .family-cta-copy span:first-child{
+  font-size:.84rem!important;
+  font-weight:700!important;
+  opacity:.92!important;
+}
+body.home-page .family-modal .family-cta .family-cta-copy span:last-child{
+  font-size:.98rem!important;
+  font-weight:900!important;
+}
+
+/* Hero Home: al eliminar CTA redundantes, compactamos el hueco sin tocar contenido */
+body.home-page .hero-inner{padding-bottom:64px!important}
+body.home-page .hero .safety-line{margin-top:24px!important}
+
+/* Título pequeño de respaldo antes de los cuatro cuadros */
+body.home-page .support-strip-title{
+  margin:0 0 18px!important;
+  color:#0b6fa9!important;
+  font:800 1.08rem/1.15 "Barlow Condensed",Montserrat,sans-serif!important;
+  letter-spacing:.075em!important;
+  text-transform:uppercase!important;
+}
+
+@media(max-width:720px){
+  body.home-page .family-modal .family-cta{
+    min-width:0!important;
+    width:100%!important;
+    min-height:66px!important;
+  }
+  body.home-page .family-modal .family-cta .family-cta-copy{white-space:normal!important}
+  body.home-page .support-strip-title{font-size:1rem!important;margin-bottom:14px!important}
+}
+
+
+/* =====================================================================
+   V10.18.25e · CASOS REALES INTERACTIVOS
+   Sección documental escalable mediante /assets/casos-reales.js.
+   Las imágenes de trabajos reales se muestran sin alteración de elementos.
+   ===================================================================== */
+body.home-page #casos-reales{
+  position:relative!important;
+  overflow:hidden!important;
+  background:
+    linear-gradient(108deg,rgba(239,245,248,.99) 0%,rgba(239,245,248,.965) 47%,rgba(239,245,248,.89) 70%,rgba(239,245,248,.82) 100%),
+    url('/assets/bg-lab-keys.webp') center/cover no-repeat!important;
+}
+body.home-page #casos-reales::after{
+  content:"";position:absolute;right:-120px;top:-100px;width:380px;height:380px;border-radius:50%;
+  background:radial-gradient(circle,rgba(7,150,220,.14),transparent 67%);pointer-events:none;z-index:0;
+}
+body.home-page #casos-reales>.container{position:relative;z-index:1}
+.real-cases-head{display:flex;align-items:end;justify-content:space-between;gap:28px;margin-bottom:26px}
+.real-cases-head .section-head{margin-bottom:0!important;max-width:790px}
+.real-cases-note{font-size:.78rem!important;color:#697e89!important;max-width:340px;text-align:right}
+.real-cases-shell{position:relative}
+.real-cases-viewport{overflow:hidden;border-radius:14px}
+.real-cases-track{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:4px 2px 18px;scrollbar-width:none}
+.real-cases-track::-webkit-scrollbar{display:none}
+.real-case-card{
+  scroll-snap-align:start;flex:0 0 min(860px,78vw);display:grid;grid-template-columns:320px minmax(0,1fr);
+  min-height:510px;background:rgba(255,255,255,.95);border:1px solid #bfd0d9;border-radius:14px;overflow:hidden;
+  box-shadow:0 16px 40px rgba(22,47,62,.10);transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;
+}
+.real-case-card:hover{transform:translateY(-3px);box-shadow:0 22px 48px rgba(22,47,62,.14);border-color:#86c8e6}
+.real-case-media{position:relative;background:linear-gradient(145deg,#e9f0f4,#f9fbfc);display:flex;align-items:center;justify-content:center;padding:18px;border-right:1px solid #d4dfe5}
+.real-case-media img{width:100%;height:100%;max-height:474px;object-fit:contain;filter:drop-shadow(0 10px 16px rgba(25,42,54,.13))}
+.real-case-index{position:absolute;left:16px;top:16px;padding:6px 9px;border-radius:4px;background:#0d3d5e;color:#fff;font:800 .68rem/1 "IBM Plex Sans",sans-serif;letter-spacing:.13em;text-transform:uppercase}
+.real-case-copy{padding:34px 34px 30px;display:flex;flex-direction:column;justify-content:center}
+.real-case-kicker{color:#087fc8;font-size:.73rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase;margin-bottom:8px}
+.real-case-copy h3{font:800 clamp(2rem,3vw,3rem)/.95 "Barlow Condensed",sans-serif!important;text-transform:uppercase;margin:0 0 8px;color:#101820!important}
+.real-case-service{font-weight:900;color:#0c6fa8;margin-bottom:18px}
+.real-case-meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.real-case-meta span{padding:6px 9px;border:1px solid #c9d8df;border-radius:999px;background:#f6fafc;color:#49616d;font-size:.76rem;font-weight:700}
+.real-case-copy p{color:#4b626e!important;margin-bottom:20px}
+.real-case-result{padding:14px 16px;border-left:3px solid #149eea;background:#edf7fc;color:#234350!important;font-size:.92rem}
+.real-case-actions{margin-top:24px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.real-case-open{border:0;cursor:pointer}
+.real-cases-nav{display:flex;justify-content:flex-end;align-items:center;gap:8px;margin-top:4px}
+.real-cases-nav button{width:44px;height:44px;border:1px solid #9db8c7;background:#fff;color:#123e58;border-radius:4px;cursor:pointer;font-size:1.25rem;font-weight:900}
+.real-cases-nav button:hover{background:#e9f6fc;border-color:#58b8e4}
+.real-cases-nav button:disabled{opacity:.35;cursor:default}
+.real-cases-status{min-width:56px;text-align:center;color:#5d7280;font-size:.78rem;font-weight:800}
+
+.real-case-modal{position:fixed;inset:0;z-index:11000;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(7,23,34,.76);backdrop-filter:blur(9px)}
+.real-case-modal.is-open{display:flex}
+.real-case-modal-card{position:relative;width:min(1100px,95vw);max-height:92vh;overflow:auto;display:grid;grid-template-columns:minmax(360px,.96fr) minmax(360px,1.04fr);background:#f7fafb;border:1px solid #9db9c8;border-radius:18px;box-shadow:0 32px 90px rgba(2,17,27,.36)}
+.real-case-modal-media{display:flex;align-items:center;justify-content:center;padding:28px;background:linear-gradient(145deg,#e5eef3,#fff);min-height:650px}
+.real-case-modal-media img{width:100%;max-height:760px;object-fit:contain;filter:drop-shadow(0 14px 20px rgba(20,38,50,.15))}
+.real-case-modal-copy{padding:46px 42px;display:flex;flex-direction:column;justify-content:center}
+.real-case-modal-copy h3{font:800 clamp(2.4rem,4vw,4rem)/.92 "Barlow Condensed",sans-serif!important;text-transform:uppercase;margin:0 0 10px;color:#101820!important}
+.real-case-modal-close{position:absolute;right:16px;top:16px;z-index:3;width:44px;height:44px;border-radius:50%;border:1px solid #7ca7bd;background:#0e4263;color:#fff;font-size:1.45rem;cursor:pointer;box-shadow:0 8px 18px rgba(12,43,61,.18)}
+.real-case-modal-close:hover{background:#0878b4}
+.real-case-detail{display:grid;gap:13px;margin:22px 0}
+.real-case-detail div{padding:13px 15px;background:#fff;border:1px solid #d0dce2;border-radius:8px}
+.real-case-detail strong{display:block;color:#0b76b4;font-size:.72rem;text-transform:uppercase;letter-spacing:.11em;margin-bottom:3px}
+.real-case-detail span{color:#415965;font-size:.92rem;line-height:1.55}
+.real-case-modal-cta{align-self:flex-start;margin-top:4px}
+.real-case-privacy{font-size:.75rem!important;color:#728590!important;margin-top:14px!important}
+body.real-case-modal-open{overflow:hidden}
+
+@media(max-width:900px){
+  .real-cases-head{display:block}.real-cases-note{text-align:left;margin-top:12px;max-width:none}
+  .real-case-card{flex-basis:min(720px,88vw);grid-template-columns:260px 1fr;min-height:470px}
+  .real-case-modal-card{grid-template-columns:1fr;max-width:720px}.real-case-modal-media{min-height:330px;padding:24px}.real-case-modal-media img{max-height:430px}.real-case-modal-copy{padding:30px}
+}
+@media(max-width:650px){
+  .real-case-card{flex-basis:92vw;grid-template-columns:1fr;min-height:0}.real-case-media{height:400px;border-right:0;border-bottom:1px solid #d4dfe5}.real-case-copy{padding:24px}.real-case-copy h3{font-size:2.15rem!important}.real-case-actions .btn{width:100%;justify-content:center}.real-cases-nav{justify-content:center}
+  .real-case-modal{padding:10px}.real-case-modal-media{min-height:260px}.real-case-modal-media img{max-height:360px}.real-case-modal-copy{padding:26px 22px 30px}.real-case-modal-cta{width:100%;text-align:center}
+}
+
+/* V10.18.25f · tres casos reales documentados */
+
+
+/* =====================================================================
+   V10.18.25h · CASOS REALES — ACORDEÓN HORIZONTAL
+   Desktop: tarjetas compactas en carrusel; el caso seleccionado se abre
+   hacia la derecha dentro de la misma franja. Mobile: popup completo.
+   ===================================================================== */
+
+#casos-reales .real-cases-viewport{
+  overflow:hidden!important;
+  border-radius:14px!important;
+}
+#casos-reales .real-cases-track{
+  display:flex!important;
+  gap:12px!important;
+  overflow-x:auto!important;
+  scroll-snap-type:x proximity!important;
+  scroll-behavior:smooth!important;
+  align-items:stretch!important;
+  padding:4px 2px 18px!important;
+}
+#casos-reales .real-case-card{
+  flex:0 0 272px!important;
+  min-width:272px!important;
+  display:grid!important;
+  grid-template-columns:1fr!important;
+  grid-template-rows:auto 1fr!important;
+  min-height:520px!important;
+  background:#fff!important;
+  border:1px solid #c6d4dc!important;
+  border-radius:12px!important;
+  overflow:hidden!important;
+  scroll-snap-align:start!important;
+  box-shadow:0 10px 28px rgba(22,47,62,.08)!important;
+  transition:flex-basis .32s ease,min-width .32s ease,box-shadow .22s ease,border-color .22s ease!important;
+}
+#casos-reales .real-case-card:hover{
+  transform:none!important;
+  border-color:#82c6e6!important;
+  box-shadow:0 16px 34px rgba(22,47,62,.12)!important;
+}
+#casos-reales .real-case-media{
+  height:390px!important;
+  padding:16px!important;
+  border-right:0!important;
+  border-bottom:1px solid #d7e1e6!important;
+  background:linear-gradient(145deg,#edf3f6,#fbfcfd)!important;
+}
+#casos-reales .real-case-media img{
+  width:100%!important;
+  height:100%!important;
+  max-height:none!important;
+  object-fit:contain!important;
+}
+#casos-reales .real-case-compact{
+  display:flex!important;
+  flex-direction:column!important;
+  gap:9px!important;
+  padding:16px 16px 18px!important;
+}
+#casos-reales .real-case-compact h3{
+  font:800 1.55rem/.96 "Barlow Condensed",sans-serif!important;
+  text-transform:uppercase!important;
+  margin:0!important;
+  color:#101820!important;
+}
+#casos-reales .real-case-compact .real-case-service{
+  margin:0!important;
+  font-size:.84rem!important;
+  line-height:1.35!important;
+}
+#casos-reales .real-case-compact .real-case-open{
+  margin-top:auto!important;
+  width:100%!important;
+  justify-content:center!important;
+  min-height:44px!important;
+}
+#casos-reales .real-case-expanded{
+  display:none!important;
+  min-width:0!important;
+  padding:30px 30px 26px!important;
+  background:linear-gradient(135deg,#fff 0%,#f7fafb 100%)!important;
+  border-left:1px solid #d4dfe5!important;
+  position:relative!important;
+}
+#casos-reales .real-case-card.is-expanded{
+  flex-basis:860px!important;
+  min-width:860px!important;
+  grid-template-columns:300px minmax(0,1fr)!important;
+  grid-template-rows:1fr!important;
+  min-height:520px!important;
+  border-color:#79bddf!important;
+  box-shadow:0 20px 46px rgba(22,47,62,.15)!important;
+}
+#casos-reales .real-case-card.is-expanded .real-case-media{
+  height:auto!important;
+  min-height:520px!important;
+  border-bottom:0!important;
+  border-right:1px solid #d7e1e6!important;
+  padding:18px!important;
+}
+#casos-reales .real-case-card.is-expanded .real-case-compact{display:none!important}
+#casos-reales .real-case-card.is-expanded .real-case-expanded{
+  display:flex!important;
+  flex-direction:column!important;
+  justify-content:center!important;
+}
+#casos-reales .real-case-expanded .real-case-kicker{
+  margin-bottom:8px!important;
+}
+#casos-reales .real-case-expanded h3{
+  font:800 clamp(2.2rem,3vw,3.35rem)/.94 "Barlow Condensed",sans-serif!important;
+  text-transform:uppercase!important;
+  margin:0 0 8px!important;
+  color:#101820!important;
+}
+#casos-reales .real-case-expanded .real-case-service{
+  margin-bottom:14px!important;
+}
+#casos-reales .real-case-expanded .real-case-meta{
+  margin-bottom:16px!important;
+}
+#casos-reales .real-case-inline-detail{
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:10px!important;
+  margin:8px 0 18px!important;
+}
+#casos-reales .real-case-inline-detail > div{
+  padding:11px 12px!important;
+  background:#fff!important;
+  border:1px solid #d3dfe5!important;
+  border-radius:8px!important;
+}
+#casos-reales .real-case-inline-detail > div:nth-child(3){grid-column:1/-1!important}
+#casos-reales .real-case-inline-detail strong{
+  display:block!important;
+  color:#087fc8!important;
+  font-size:.68rem!important;
+  text-transform:uppercase!important;
+  letter-spacing:.11em!important;
+  margin-bottom:3px!important;
+}
+#casos-reales .real-case-inline-detail span{
+  color:#415965!important;
+  font-size:.88rem!important;
+  line-height:1.45!important;
+}
+#casos-reales .real-case-expanded-actions{
+  display:flex!important;
+  gap:10px!important;
+  flex-wrap:wrap!important;
+  align-items:center!important;
+}
+#casos-reales .real-case-collapse{
+  position:absolute!important;
+  right:14px!important;
+  top:14px!important;
+  width:36px!important;
+  height:36px!important;
+  display:grid!important;
+  place-items:center!important;
+  border-radius:50%!important;
+  border:1px solid #9bb7c6!important;
+  background:#fff!important;
+  color:#113e59!important;
+  font-weight:900!important;
+  cursor:pointer!important;
+  box-shadow:0 5px 14px rgba(17,62,89,.10)!important;
+}
+#casos-reales .real-case-collapse:hover{
+  background:#e9f6fc!important;
+  border-color:#53b7e3!important;
+}
+#casos-reales .real-case-card.is-expanded + .real-case-card{
+  scroll-margin-left:12px!important;
+}
+
+/* En pantallas intermedias mantenemos acordeón pero más compacto. */
+@media (max-width:1180px) and (min-width:761px){
+  #casos-reales .real-case-card{flex-basis:250px!important;min-width:250px!important}
+  #casos-reales .real-case-media{height:360px!important}
+  #casos-reales .real-case-card.is-expanded{
+    flex-basis:760px!important;
+    min-width:760px!important;
+    grid-template-columns:270px minmax(0,1fr)!important;
+  }
+  #casos-reales .real-case-inline-detail{grid-template-columns:1fr!important}
+  #casos-reales .real-case-inline-detail > div:nth-child(3){grid-column:auto!important}
+}
+
+/* Móvil: tarjetas compactas y popup, sin expansión horizontal. */
+@media (max-width:760px){
+  #casos-reales .real-cases-track{gap:10px!important}
+  #casos-reales .real-case-card,
+  #casos-reales .real-case-card.is-expanded{
+    flex:0 0 84vw!important;
+    min-width:84vw!important;
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    grid-template-rows:auto 1fr!important;
+    min-height:0!important;
+  }
+  #casos-reales .real-case-media,
+  #casos-reales .real-case-card.is-expanded .real-case-media{
+    height:390px!important;
+    min-height:0!important;
+    border-right:0!important;
+    border-bottom:1px solid #d7e1e6!important;
+  }
+  #casos-reales .real-case-compact,
+  #casos-reales .real-case-card.is-expanded .real-case-compact{display:flex!important}
+  #casos-reales .real-case-expanded,
+  #casos-reales .real-case-card.is-expanded .real-case-expanded{display:none!important}
+  #casos-reales .real-cases-nav{justify-content:center!important}
+}
