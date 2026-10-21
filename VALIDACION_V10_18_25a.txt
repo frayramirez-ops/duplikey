@@ -1,0 +1,8 @@
+V10.18.25a — preview funcional de Familias que atendemos
+- Base: V10.18.25
+- No se reestructura contenido del proyecto.
+- 6 miniaturas de familia aumentadas y visibles.
+- Selector del hero habilitado explícitamente para clic/tap.
+- Modal de familia conservado y reforzado.
+- CTA: Cotizar este modelo.
+- Nuevo CSS: /assets/motorsport-theme-v25a.css para evitar caché de V25.
