@@ -1,0 +1,27 @@
+V10.18.18 validation
+Base: V10.18.12d
+compat-public.js byte-identical: YES
+Home sections: 18
+Home details/accordions: 14
+Missing required Home IDs: none
+
+HTML file checks (base sections -> output sections | base details -> output details):
+404.html: 0->0 | 0->0
+actualizacion-llave-bmw-motorrad/index.html: 7->7 | 4->4
+all-keys-lost-bmw-motorrad/index.html: 7->7 | 4->4
+aviso-privacidad.html: 0->0 | 0->0
+duplicado-llave-bmw-motorrad/index.html: 7->7 | 4->4
+glosario-bmw-motorrad/index.html: 3->3 | 0->0
+index.html: 18->18 | 14->14
+llave-bmw-r1200gs/index.html: 7->7 | 4->4
+llave-bmw-r1250gs/index.html: 7->7 | 4->4
+llave-keyless-bmw-motorrad/index.html: 7->7 | 5->5
+llaves-bmw-gs/index.html: 7->7 | 4->4
+llaves-bmw-motorrad-michoacan/index.html: 7->7 | 5->5
+llaves-bmw-motorrad/index.html: 8->8 | 4->4
+modo-sport-bmw-motorrad-tft/index.html: 7->7 | 4->4
+preguntas-frecuentes-bmw-motorrad/index.html: 3->3 | 24->24
+qr/remoto/index.html: 0->0 | 0->0
+remoto/index.html: 1->1 | 0->0
+reseteo-servicio-bmw-motorrad/index.html: 7->7 | 4->4
+servicio-nacional-bmw-motorrad/index.html: 7->7 | 5->5
