@@ -3059,3 +3059,21 @@ body.home-page #casos > .container{position:relative!important;z-index:1!importa
  body.home-page #seguridad::before,
  body.home-page #casos::before{opacity:.09!important;background-position:70% center!important}
 }
+
+/* V10.18.25q · HOTFIX HEADER FIJO / HERO MÓVIL.
+   El header es position:fixed en index.html y el hotfix 25j
+   anulaba el padding superior del hero: el eyebrow quedaba oculto.
+   Solo restablece el espacio de reserva, conserva texto > moto > familias. */
+@media(max-width:720px){
+  body.home-page .hero{
+    padding-top:90px!important;
+    padding-bottom:0!important;
+    scroll-margin-top:90px;
+  }
+  body.home-page .hero-inner{
+    padding-top:22px!important;
+  }
+}
+@media(max-width:430px){
+  body.home-page .hero-inner{padding-top:22px!important}
+}
