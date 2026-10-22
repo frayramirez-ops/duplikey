@@ -2996,3 +2996,39 @@ body.motorsport-theme.sub-page .cta{max-width:100%}
   body.sub-page .cta .actions{flex-direction:column;align-items:stretch}
   body.sub-page .cta .actions .btn{width:100%;min-height:44px}
 }
+
+/* V10.18.25o · Contención ambiental editorial.
+   Hasta contar con fotografías técnicas originales y verificadas, se eliminan
+   exclusivamente los fondos heredados que repetían imágenes de /assets.
+   No se intervienen fotografías reales, hero, tarjetas ni lightbox. */
+body.home-page #proceso::before,
+body.home-page #casos::before,
+body.home-page #cobertura::before,
+body.home-page #precios::before,
+body.home-page #compatibilidad::before,
+body.home-page #seguridad::before,
+body.home-page #faq::before,
+body.home-page #contacto::before,
+body.home-page #respaldo-profesional::before,
+body.sub-page .section::before,
+body.sub-page .hero::before,
+body.motorsport-theme .cta::before,
+body.sub-page .price-reference::before {
+  background-image:none!important;
+  opacity:0!important;
+}
+/* Evita la repetición de antiguos fondos de sección, manteniendo
+   composición editorial con superficies de color hasta integrar los nuevos. */
+body.sub-page .section,
+body.sub-page .section:nth-of-type(7) {
+  background-image:none!important;
+}
+body.sub-page .hero {
+  background-image:linear-gradient(115deg,#eaf2f6,#f7fafb)!important;
+}
+/* El contraste no debe depender de la opacidad de una fotografía. */
+body.motorsport-theme.sub-page .cta,
+body.motorsport-theme.sub-page.page-faq .notice,
+body.motorsport-theme .shipping-details .shipping-step {
+  background-clip:padding-box!important;
+}
