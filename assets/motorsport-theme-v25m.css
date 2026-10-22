@@ -2982,3 +2982,17 @@ body.motorsport-theme .shipping-details .shipping-trust{grid-template-columns:1f
 body.motorsport-theme.sub-page .cta{max-width:100%}
 }
 /* FIN V10.18.25m */
+
+/* V10.18.25n · Responsive: controles y paneles, sin alterar orden del hero 25j */
+@media(max-width:760px){
+  body.sub-page .cta .actions{display:flex;flex-wrap:wrap;gap:12px}
+  body.sub-page .cta .actions .btn{max-width:100%;white-space:normal;text-align:center}
+  body.motorsport-theme .shipping-details .shipping-trust{grid-template-columns:1fr!important}
+  body.motorsport-theme .shipping-details .shipping-step{min-width:0;overflow-wrap:anywhere}
+  body.home-page .real-cases-shell{min-width:0}
+}
+@media(max-width:430px){
+  body.sub-page .cta{padding:22px!important}
+  body.sub-page .cta .actions{flex-direction:column;align-items:stretch}
+  body.sub-page .cta .actions .btn{width:100%;min-height:44px}
+}
