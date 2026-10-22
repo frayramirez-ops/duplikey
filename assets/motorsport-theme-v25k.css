@@ -2948,3 +2948,88 @@ body.motorsport-theme footer .trademark-note{
   body.home-page #compatibilidad .vf-card{padding:20px!important}
   body.home-page #compatibilidad .vf-svcs{grid-template-columns:1fr!important}
 }
+
+
+/* ================================================================
+   V10.18.25l · HOTFIX EDITORIAL (rama de pruebas desde 25k)
+   Alcance: contraste shipping, aviso FAQ y CTA subpáginas.
+   No modifica hero móvil, contenidos, rutas ni JS.
+   ================================================================ */
+
+/* Desplegable de recepción: tarjetas claras + tipografía oscura. */
+body.motorsport-theme .shipping-details .shipping-details-body {
+  color:#243e4d!important;
+  background:#f8fbfc!important;
+}
+body.motorsport-theme .shipping-details .shipping-details-body p,
+body.motorsport-theme .shipping-details .shipping-details-body li,
+body.motorsport-theme .shipping-details .shipping-note {
+  color:#344d5b!important;
+  opacity:1!important;
+}
+body.motorsport-theme .shipping-details .shipping-step {
+  background:#ffffff!important;
+  border:1px solid #c0d0d9!important;
+  box-shadow:0 5px 16px rgba(20,49,66,.05)!important;
+}
+body.motorsport-theme .shipping-details .shipping-step b,
+body.motorsport-theme .shipping-details .shipping-step strong {
+  color:#142d3b!important;
+}
+body.motorsport-theme .shipping-details .shipping-step span,
+body.motorsport-theme .shipping-details .shipping-step p {
+  color:#375362!important;
+  opacity:1!important;
+}
+body.motorsport-theme .shipping-details .shipping-note strong {
+  color:#203d4e!important;
+}
+
+/* CTA de cierre: estilo editorial claro SOLO en subpáginas. */
+body.motorsport-theme.sub-page .cta {
+  background:linear-gradient(120deg,#ffffff 0%,#f0f6f9 100%)!important;
+  color:#203a49!important;
+  border:1px solid #bfd2dd!important;
+  box-shadow:0 12px 32px rgba(23,51,68,.075)!important;
+}
+body.motorsport-theme.sub-page .cta h2,
+body.motorsport-theme.sub-page .cta h3,
+body.motorsport-theme.sub-page .cta strong {
+  color:#142f40!important;
+}
+body.motorsport-theme.sub-page .cta p,
+body.motorsport-theme.sub-page .cta li,
+body.motorsport-theme.sub-page .cta .lead,
+body.motorsport-theme.sub-page .cta small {
+  color:#375362!important;
+  opacity:1!important;
+}
+body.motorsport-theme.sub-page .cta .eyebrow {
+  color:#076d9e!important;
+}
+body.motorsport-theme.sub-page .cta::before {
+  opacity:.025!important;
+}
+
+/* Aviso de preguntas frecuentes: contraste estable sobre fondo claro. */
+body.motorsport-theme.sub-page.page-faq .notice,
+body.motorsport-theme.sub-page .notice {
+  color:#294656!important;
+  background:linear-gradient(120deg,rgba(255,255,255,.98),rgba(235,244,249,.98))!important;
+  border:1px solid #b9ceda!important;
+  text-shadow:none!important;
+}
+body.motorsport-theme.sub-page .notice strong,
+body.motorsport-theme.sub-page .notice b {
+  color:#132e3e!important;
+}
+
+/* Layout defensivo; no altera el hotfix hero texto → moto → familias. */
+@media(max-width:640px) {
+  body.motorsport-theme .shipping-details .shipping-trust {
+    grid-template-columns:1fr!important;
+  }
+  body.motorsport-theme.sub-page .cta {
+    max-width:100%;
+  }
+}
