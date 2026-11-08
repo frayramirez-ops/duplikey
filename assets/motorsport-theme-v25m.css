@@ -3314,3 +3314,42 @@ body.home-page .nextgen-more{color:#123b52!important;border-color:#8fb7c9!import
   body.home-page .nextgen-launch-copy h2{font-size:clamp(2.4rem,12vw,3.6rem)!important}
 }
 /* FIN V10.18.26b */
+
+
+/* =====================================================================
+   V10.18.26e · NEXTGEN EN ACORDEÓN + FLYER COMPLETO
+   ===================================================================== */
+body.home-page .nextgen-accordion{overflow:hidden!important}
+body.home-page .nextgen-accordion-body{padding:28px 24px 26px!important}
+body.home-page .nextgen-accordion:not([open]) .home-section-body{display:none!important}
+body.home-page .nextgen-accordion[open] .home-section-body{display:block!important}
+body.home-page .nextgen-accordion .nextgen-launch-grid{
+  grid-template-columns:minmax(0,1fr) minmax(260px,360px)!important;
+  gap:32px!important;
+  align-items:start!important;
+  padding:0!important;
+  border:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+body.home-page .nextgen-accordion .nextgen-launch-copy h3{
+  font-size:clamp(1.9rem,3vw,2.65rem)!important;
+  color:#102631!important;
+}
+body.home-page .nextgen-accordion .nextgen-launch-media{
+  width:min(100%,340px)!important;
+  justify-self:center!important;
+  border-radius:10px!important;
+}
+body.home-page .nextgen-accordion .nextgen-launch-media img{
+  width:100%!important;
+  height:auto!important;
+  max-height:none!important;
+  object-fit:contain!important;
+}
+@media(max-width:820px){
+  body.home-page .nextgen-accordion-body{padding:18px 14px!important}
+  body.home-page .nextgen-accordion .nextgen-launch-grid{grid-template-columns:1fr!important;gap:22px!important}
+  body.home-page .nextgen-accordion .nextgen-launch-media{width:min(100%,300px)!important}
+}
+/* FIN V10.18.26e */
