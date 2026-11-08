@@ -6,7 +6,7 @@
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-52P1XFVECT"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)};try{var rmlConsent=localStorage.getItem('rml_consent');}catch(e){var rmlConsent=null;}gtag('consent','default',{analytics_storage:rmlConsent==='accepted'?'granted':'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',wait_for_update:500});gtag('js',new Date());gtag('config','G-52P1XFVECT',{anonymize_ip:true});</script>
 <meta charset="utf-8"/>
-<meta name="duplikey-build" content="10.18.26b"/>
+<meta name="duplikey-build" content="10.18.26c"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Llaves BMW Motorrad en México | DUPLIKEY RE:MOTO LAB</title>
 <meta content="Duplicado Keyless, All Keys Lost, llaves mecánicas y programación BMW Motorrad en Uruapan, Michoacán y por paquetería en todo México." name="description"/>
@@ -2121,20 +2121,22 @@ const caseImageModal = document.getElementById('caseImageModal');
 const caseLightboxImg = document.getElementById('caseLightboxImg');
 let caseImageTriggerActive = null;
 
-document.querySelectorAll('[data-case-image]').forEach(trigger => {
-  trigger.addEventListener('click', () => {
-    if(!caseImageModal || !caseLightboxImg) return;
+document.addEventListener('click', (event) => {
+  const trigger = event.target.closest('[data-case-image]');
+  if(!trigger || !caseImageModal || !caseLightboxImg) return;
+  event.preventDefault();
+  if(typeof trackEvent === 'function'){
     trackEvent('case_image_open', {
       case_name: (trigger.dataset.caseAlt || trigger.querySelector('img')?.alt || 'caso_exito').slice(0,100)
     });
-    caseImageTriggerActive = trigger;
-    caseLightboxImg.src = trigger.dataset.caseImage;
-    caseLightboxImg.alt = trigger.dataset.caseAlt || trigger.querySelector('img')?.alt || 'Imagen ampliada';
-    caseImageModal.classList.add('open');
-    caseImageModal.setAttribute('aria-hidden','false');
-    document.body.classList.add('modal-open');
-    caseImageModal.querySelector('[data-close]')?.focus({preventScroll:true});
-  });
+  }
+  caseImageTriggerActive = trigger;
+  caseLightboxImg.src = trigger.dataset.caseImage;
+  caseLightboxImg.alt = trigger.dataset.caseAlt || trigger.querySelector('img')?.alt || 'Imagen ampliada';
+  caseImageModal.classList.add('open');
+  caseImageModal.setAttribute('aria-hidden','false');
+  document.body.classList.add('modal-open');
+  caseImageModal.querySelector('[data-close]')?.focus({preventScroll:true});
 });
 
 /* Modals */
