@@ -3077,3 +3077,324 @@ body.home-page #casos > .container{position:relative!important;z-index:1!importa
 @media(max-width:430px){
   body.home-page .hero-inner{padding-top:22px!important}
 }
+
+
+/* =====================================================================
+   V10.18.26 · CONFIANZA EDITORIAL + TARJETA DIGITAL RE:MOTO LAB
+   ===================================================================== */
+body.home-page .trust-editorial{background:linear-gradient(180deg,#f6f9fb,#edf3f6)!important}
+body.home-page .trust-story{
+  display:grid!important;grid-template-columns:minmax(0,1.12fr) minmax(320px,.88fr)!important;
+  gap:34px!important;align-items:center!important;margin:0 0 26px!important;padding:26px!important;
+  background:#fff!important;border:1px solid #bfd0d9!important;border-radius:10px!important;
+  box-shadow:0 12px 30px rgba(24,55,72,.065)!important
+}
+body.home-page .trust-story-reverse .trust-story-copy{order:2!important}
+body.home-page .trust-story-reverse .trust-story-media{order:1!important}
+body.home-page .trust-story-copy{display:grid!important;gap:14px!important}
+body.home-page .trust-story-copy h3{font-size:clamp(1.75rem,3vw,2.45rem)!important;color:#102631!important}
+body.home-page .trust-story-copy p{color:#405966!important;max-width:720px!important}
+body.home-page .trust-story-copy blockquote{
+  margin:4px 0!important;padding:14px 18px!important;border-left:4px solid #159fe3!important;
+  background:#eef8fc!important;color:#17394c!important;font-weight:800!important
+}
+body.home-page .trust-points{display:flex!important;flex-wrap:wrap!important;gap:8px!important}
+body.home-page .trust-points span{
+  display:inline-flex!important;align-items:center!important;min-height:34px!important;padding:0 11px!important;
+  border-radius:999px!important;border:1px solid #a9cbdc!important;background:#f5fafc!important;
+  color:#23485b!important;font-size:.78rem!important;font-weight:800!important
+}
+body.home-page .trust-story-media,
+body.home-page .coverage-editorial-media{
+  border:0!important;padding:0!important;background:transparent!important;border-radius:8px!important;
+  overflow:hidden!important;box-shadow:0 10px 24px rgba(20,49,66,.12)!important
+}
+body.home-page .trust-story-media img,
+body.home-page .coverage-editorial-media img{width:100%!important;height:auto!important;display:block!important}
+body.home-page .trust-standard-line{
+  display:grid!important;grid-template-columns:repeat(4,1fr)!important;gap:1px!important;margin-top:8px!important;
+  background:#bfd0d9!important;border:1px solid #bfd0d9!important;border-radius:8px!important;overflow:hidden!important
+}
+body.home-page .trust-standard-line span{
+  display:grid!important;place-items:center!important;min-height:58px!important;padding:10px!important;background:#fff!important;
+  color:#18394b!important;font-weight:900!important;text-align:center!important;font-size:.82rem!important
+}
+body.home-page .coverage-editorial{
+  margin-top:30px!important;padding:28px!important;background:linear-gradient(115deg,#eef7fb,#fff)!important;
+  border:1px solid #b8cfdb!important;border-radius:10px!important;display:grid!important;
+  grid-template-columns:minmax(0,1.05fr) minmax(300px,.95fr)!important;gap:30px!important;align-items:center!important
+}
+body.home-page .coverage-editorial-copy{display:grid!important;gap:14px!important}
+body.home-page .coverage-editorial-copy h3{font-size:clamp(1.8rem,3vw,2.5rem)!important;color:#102631!important}
+body.home-page .coverage-editorial-copy p,
+body.home-page .coverage-editorial-copy li{color:#405966!important}
+body.home-page .coverage-editorial-copy ol{margin:0!important;padding-left:1.35rem!important;display:grid!important;gap:7px!important}
+@media(max-width:820px){
+  body.home-page .trust-story,body.home-page .coverage-editorial{grid-template-columns:1fr!important;padding:18px!important}
+  body.home-page .trust-story-reverse .trust-story-copy,
+  body.home-page .trust-story-reverse .trust-story-media{order:initial!important}
+  body.home-page .trust-standard-line{grid-template-columns:1fr 1fr!important}
+}
+@media(max-width:480px){body.home-page .trust-standard-line{grid-template-columns:1fr!important}}
+
+/* Tarjeta digital: cabecera oscura deliberada + cuerpo claro legible */
+body.digital-card{background:#e9eef1!important;color:#172934!important}
+body.digital-card .profile{background:linear-gradient(145deg,#0b1821,#071117)!important;border:1px solid #1e5069!important;color:#eef7fb!important}
+body.digital-card .profile h1{color:#fff!important;text-shadow:none!important}
+body.digital-card .profile .tagline{color:#c4dbe6!important;opacity:1!important}
+body.digital-card .profile .kicker{color:#58d3ff!important}
+body.digital-card .section-title{color:#087fc8!important}
+body.digital-card .quick a,
+body.digital-card .quick button{
+  background:#fff!important;color:#153446!important;border:1px solid #b8cbd6!important;
+  box-shadow:0 7px 18px rgba(24,51,67,.055)!important
+}
+body.digital-card .quick a svg,
+body.digital-card .quick button svg{color:#087fc8!important;stroke:#087fc8!important}
+body.digital-card .quick a:hover,
+body.digital-card .quick button:hover{background:#f0f8fc!important;border-color:#66b8dd!important}
+body.digital-card .trust{background:#fff!important;color:#203845!important;border:1px solid #d5c28e!important}
+body.digital-card .trust b,
+body.digital-card .trust strong{color:#203845!important}
+body.digital-card .trust p{color:#536a76!important;opacity:1!important}
+body.digital-card .trust a{color:#a87500!important;font-weight:800!important}
+body.digital-card .cookie-banner{background:#0e1a21!important;color:#dce8ed!important}
+body.digital-card .cookie-banner .cookie-copy{color:#bcd0da!important}
+body.digital-card .cookie-banner a{color:#62d8ff!important}
+/* FIN V10.18.26 */
+
+
+/* =====================================================================
+   V10.18.26a · AJUSTES QA: acordeón confianza, casos desktop y tarjeta QR
+   ===================================================================== */
+body.home-page .trust-accordion{overflow:hidden!important}
+body.home-page .trust-accordion-body{padding:28px 24px 26px!important}
+body.home-page .trust-accordion:not([open]) .home-section-body{display:none!important}
+body.home-page .trust-accordion[open] .home-section-body{display:block!important}
+body.home-page .trust-accordion .trust-story:first-child{margin-top:0!important}
+@media(max-width:720px){
+  body.home-page .trust-accordion-body{padding:18px 14px 18px!important}
+}
+
+/* Caso completo desktop: siempre cabe dentro del viewport del carrusel */
+@media(min-width:761px){
+  #casos-reales .real-cases-track:has(.real-case-card.is-expanded){
+    scroll-snap-type:none!important;
+  }
+  #casos-reales .real-case-card.is-expanded{
+    flex:0 0 calc(100% - 4px)!important;
+    min-width:calc(100% - 4px)!important;
+    max-width:calc(100% - 4px)!important;
+    grid-template-columns:minmax(260px,31%) minmax(0,1fr)!important;
+    min-height:560px!important;
+  }
+  #casos-reales .real-case-card.is-expanded .real-case-media{
+    min-height:560px!important;
+  }
+  #casos-reales .real-case-card.is-expanded .real-case-expanded{
+    min-width:0!important;
+    overflow:visible!important;
+    justify-content:flex-start!important;
+    padding:34px 34px 28px!important;
+  }
+  #casos-reales .real-case-expanded h3{
+    max-width:100%!important;
+    overflow-wrap:anywhere!important;
+  }
+  #casos-reales .real-case-inline-detail{
+    min-width:0!important;
+  }
+  #casos-reales .real-case-inline-detail > div{
+    min-width:0!important;
+    overflow-wrap:anywhere!important;
+  }
+  #casos-reales .real-case-expanded-actions .btn{
+    max-width:100%!important;
+    white-space:normal!important;
+    text-align:center!important;
+  }
+}
+@media(max-width:980px) and (min-width:761px){
+  #casos-reales .real-case-card.is-expanded{
+    grid-template-columns:240px minmax(0,1fr)!important;
+  }
+  #casos-reales .real-case-inline-detail{grid-template-columns:1fr!important}
+  #casos-reales .real-case-inline-detail > div:nth-child(3){grid-column:auto!important}
+  #casos-reales .real-case-card.is-expanded .real-case-expanded{padding:26px 24px!important}
+}
+
+/* Tarjeta digital QR: WhatsApp inequívoco y ACEPRO con contraste alto */
+body.digital-card .primary .whatsapp{
+  background:#25D366!important;
+  color:#fff!important;
+  text-shadow:0 1px 1px rgba(0,0,0,.16)!important;
+}
+body.digital-card .primary .whatsapp svg{
+  width:22px!important;height:22px!important;
+  color:#fff!important;stroke:#fff!important;fill:none!important;
+  flex:0 0 22px!important;
+}
+body.digital-card .acepro-digital{
+  background:linear-gradient(135deg,#fffdf7,#ffffff)!important;
+  border:1px solid #d6b45d!important;
+  box-shadow:0 8px 20px rgba(72,56,16,.08)!important;
+}
+body.digital-card .acepro-digital b{
+  color:#1d2e38!important;
+  font-size:.92rem!important;
+}
+body.digital-card .acepro-digital span{
+  color:#50636e!important;
+  opacity:1!important;
+}
+body.digital-card .acepro-digital a{
+  color:#8a6400!important;
+  font-weight:900!important;
+  text-decoration:none!important;
+}
+body.digital-card .acepro-digital a:hover,
+body.digital-card .acepro-digital a:focus-visible{
+  color:#654900!important;
+  text-decoration:underline!important;
+}
+/* FIN V10.18.26a */
+
+
+/* =====================================================================
+   V10.18.26b · KEYLESS NEXTGEN UPGRADE
+   ===================================================================== */
+body.home-page .nextgen-card{
+  border-color:#72c8ee!important;
+  background:linear-gradient(145deg,#eef9fe 0%,#fff 62%)!important;
+  box-shadow:0 10px 28px rgba(8,127,200,.09)!important;
+}
+body.home-page .nextgen-card .mono{color:#087fc8!important}
+body.home-page .nextgen-card h3{color:#102631!important}
+body.home-page .nextgen-service-link{display:inline-flex!important;align-items:center!important;gap:7px!important}
+body.home-page .nextgen-service-link svg{width:18px!important;height:18px!important;fill:none!important;stroke:currentColor!important;stroke-width:1.8!important}
+body.home-page .nextgen-launch{
+  background:
+    radial-gradient(circle at 78% 25%,rgba(0,174,239,.12),transparent 26%),
+    linear-gradient(180deg,#eef5f8,#f8fafb)!important;
+}
+body.home-page .nextgen-launch-grid{
+  display:grid!important;grid-template-columns:minmax(0,1.05fr) minmax(330px,.95fr)!important;
+  gap:42px!important;align-items:center!important;
+  padding:34px!important;border:1px solid #9fcfe5!important;border-radius:12px!important;
+  background:linear-gradient(120deg,#fff 0%,#f2f9fc 70%,#e9f6fb 100%)!important;
+  box-shadow:0 18px 44px rgba(18,57,79,.09)!important;
+}
+body.home-page .nextgen-launch-copy{display:grid!important;gap:15px!important}
+body.home-page .nextgen-launch-copy h2{font-size:clamp(2.5rem,5vw,4.2rem)!important;color:#102631!important}
+body.home-page .nextgen-launch-copy p{color:#405966!important}
+body.home-page .nextgen-launch-copy p strong{color:#18394b!important}
+body.home-page .nextgen-badge{
+  width:max-content!important;padding:7px 11px!important;border-radius:999px!important;
+  color:#fff!important;background:linear-gradient(90deg,#087fc8,#00aeee)!important;
+  font-size:.69rem!important;font-weight:900!important;letter-spacing:.12em!important;
+}
+body.home-page .nextgen-points{display:flex!important;gap:8px!important;flex-wrap:wrap!important}
+body.home-page .nextgen-points span{
+  min-height:34px!important;padding:0 11px!important;display:inline-flex!important;align-items:center!important;
+  border:1px solid #a6cbdc!important;border-radius:999px!important;background:#fff!important;
+  color:#23485b!important;font-size:.78rem!important;font-weight:800!important
+}
+body.home-page .nextgen-note{
+  padding:12px 14px!important;border-left:4px solid #159fe3!important;background:#edf8fd!important;
+  color:#244959!important;font-weight:800!important
+}
+body.home-page .nextgen-launch-media{
+  border:0!important;padding:0!important;border-radius:10px!important;overflow:hidden!important;
+  background:#fff!important;box-shadow:0 15px 32px rgba(13,55,77,.14)!important
+}
+body.home-page .nextgen-launch-media img{width:100%!important;height:auto!important;display:block!important}
+body.home-page .nextgen-more{color:#123b52!important;border-color:#8fb7c9!important;background:#fff!important}
+@media(max-width:820px){
+  body.home-page .nextgen-launch-grid{grid-template-columns:1fr!important;padding:20px!important;gap:24px!important}
+  body.home-page .nextgen-launch-copy h2{font-size:clamp(2.4rem,12vw,3.6rem)!important}
+}
+/* FIN V10.18.26b */
+
+
+/* =====================================================================
+   V10.18.26e · NEXTGEN EN ACORDEÓN + FLYER COMPLETO
+   ===================================================================== */
+body.home-page .nextgen-accordion{overflow:hidden!important}
+body.home-page .nextgen-accordion-body{padding:28px 24px 26px!important}
+body.home-page .nextgen-accordion:not([open]) .home-section-body{display:none!important}
+body.home-page .nextgen-accordion[open] .home-section-body{display:block!important}
+body.home-page .nextgen-accordion .nextgen-launch-grid{
+  grid-template-columns:minmax(0,1fr) minmax(260px,360px)!important;
+  gap:32px!important;
+  align-items:start!important;
+  padding:0!important;
+  border:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+body.home-page .nextgen-accordion .nextgen-launch-copy h3{
+  font-size:clamp(1.9rem,3vw,2.65rem)!important;
+  color:#102631!important;
+}
+body.home-page .nextgen-accordion .nextgen-launch-media{
+  width:min(100%,340px)!important;
+  justify-self:center!important;
+  border-radius:10px!important;
+}
+body.home-page .nextgen-accordion .nextgen-launch-media img{
+  width:100%!important;
+  height:auto!important;
+  max-height:none!important;
+  object-fit:contain!important;
+}
+@media(max-width:820px){
+  body.home-page .nextgen-accordion-body{padding:18px 14px!important}
+  body.home-page .nextgen-accordion .nextgen-launch-grid{grid-template-columns:1fr!important;gap:22px!important}
+  body.home-page .nextgen-accordion .nextgen-launch-media{width:min(100%,300px)!important}
+}
+/* FIN V10.18.26e */
+
+
+/* =====================================================================
+   V10.18.26f · NEXTGEN MINIATURA COMPLETA EN ACORDEÓN
+   ===================================================================== */
+body.home-page .nextgen-accordion .nextgen-launch-media{
+  width:min(100%,330px)!important;
+  max-width:330px!important;
+  justify-self:center!important;
+  align-self:start!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  padding:0!important;
+  overflow:visible!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  border-radius:10px!important;
+}
+body.home-page .nextgen-accordion .nextgen-launch-media::after{
+  right:10px!important;
+  bottom:10px!important;
+}
+body.home-page .nextgen-accordion .nextgen-launch-media img{
+  display:block!important;
+  width:100%!important;
+  height:auto!important;
+  max-width:330px!important;
+  max-height:none!important;
+  aspect-ratio:auto!important;
+  object-fit:contain!important;
+  object-position:center center!important;
+  border-radius:8px!important;
+  box-shadow:0 12px 28px rgba(13,55,77,.13)!important;
+}
+@media(max-width:820px){
+  body.home-page .nextgen-accordion .nextgen-launch-media{
+    width:min(100%,300px)!important;
+    max-width:300px!important;
+  }
+  body.home-page .nextgen-accordion .nextgen-launch-media img{
+    max-width:300px!important;
+  }
+}
+/* FIN V10.18.26f */
