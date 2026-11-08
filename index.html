@@ -6,7 +6,7 @@
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-52P1XFVECT"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)};try{var rmlConsent=localStorage.getItem('rml_consent');}catch(e){var rmlConsent=null;}gtag('consent','default',{analytics_storage:rmlConsent==='accepted'?'granted':'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',wait_for_update:500});gtag('js',new Date());gtag('config','G-52P1XFVECT',{anonymize_ip:true});</script>
 <meta charset="utf-8"/>
-<meta name="duplikey-build" content="10.18.26"/>
+<meta name="duplikey-build" content="10.18.26a"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Llaves BMW Motorrad en México | DUPLIKEY RE:MOTO LAB</title>
 <meta content="Duplicado Keyless, All Keys Lost, llaves mecánicas y programación BMW Motorrad en Uruapan, Michoacán y por paquetería en todo México." name="description"/>
@@ -1486,13 +1486,17 @@ h1,h2,h3{font-family:Montserrat,Inter,Arial,sans-serif}.mono{font-family:"Roboto
 
 <section class="section trust-editorial" id="confianza-tecnica" aria-labelledby="confianza-title">
 <div class="container">
-  <div class="section-head reveal">
+<details class="home-section-accordion trust-accordion reveal" data-auto-collapse="true">
+<summary>
+  <div class="home-section-summary">
     <div class="eyebrow">Confianza técnica</div>
     <h2 id="confianza-title">Tecnología, criterio y procedimientos que respaldan cada servicio.</h2>
-    <p class="lead">La herramienta importa, pero la diferencia está en identificar correctamente el sistema, elegir el procedimiento adecuado y comprobar el resultado.</p>
+    <p>La herramienta importa, pero la diferencia está en identificar correctamente el sistema, elegir el procedimiento adecuado y comprobar el resultado.</p>
   </div>
-
-  <article class="trust-story reveal">
+  <span class="home-section-toggle">Ver sección</span>
+</summary>
+<div class="home-section-body trust-accordion-body">
+<article class="trust-story reveal">
     <div class="trust-story-copy">
       <span class="mono">TECNOLOGÍA QUE RESPALDA NUESTRO TRABAJO</span>
       <h3>Tras bastidores en RE:MOTO LAB</h3>
@@ -1527,6 +1531,9 @@ h1,h2,h3{font-family:Montserrat,Inter,Arial,sans-serif}.mono{font-family:"Roboto
   <div class="trust-standard-line reveal" aria-label="Principios de trabajo">
     <span>Diagnóstico previo</span><span>Herramienta especializada</span><span>Procedimiento controlado</span><span>Comprobación documentada</span>
   </div>
+
+</div>
+</details>
 </div>
 </section>
 <section class="section ethics" id="seguridad">
@@ -2693,7 +2700,7 @@ document.addEventListener('click', function(e){
 
 <script id="family-selector-js">(()=>{const data={adventure:{title:'Adventure',image:'/assets/family-adventure.webp',text:'Familia orientada a viaje, aventura y uso mixto. Incluye configuraciones GS y GS Adventure en distintas generaciones y sistemas de llave.'},roadster:{title:'Roadster',image:'/assets/family-roadster.webp',text:'Motos naked enfocadas en agilidad, control y conducción directa. La compatibilidad de llave y programación se confirma según modelo y año.'},heritage:{title:'Heritage',image:'/assets/family-heritage.webp',text:'Modelos de carácter clásico y boxer con distintas arquitecturas electrónicas. Revisamos el sistema concreto antes de intervenir.'},urban:{title:'Urban',image:'/assets/family-urban.webp',text:'Scooters y soluciones de movilidad urbana BMW Motorrad. Atendemos sistemas compatibles de llave, inmovilizador y funciones electrónicas.'},sport:{title:'Sport',image:'/assets/family-sport.webp',text:'Familia de alto rendimiento con sistemas electrónicos avanzados. Verificamos llave, inmovilizador y compatibilidad específica antes de cotizar.'},touring:{title:'Touring',image:'/assets/family-touring.webp',text:'Modelos concebidos para largas distancias y confort, con distintas generaciones de llave y módulos de autorización.'}};const modal=document.getElementById('familyModal');if(!modal)return;const img=document.getElementById('familyModalImage'),title=document.getElementById('familyModalTitle'),text=document.getElementById('familyModalText'),cta=document.getElementById('familyModalCta'),close=modal.querySelector('.family-modal-close');let opener=null;function openFamily(key,el){const d=data[key];if(!d)return;opener=el||null;img.src=d.image;img.alt='Motocicleta representativa de la familia BMW Motorrad '+d.title;title.textContent=d.title;text.textContent=d.text;cta.href='https://wa.me/524521791230?text='+encodeURIComponent('Hola RE:MOTO LAB. Este es mi modelo y quiero cotizar servicio para una BMW Motorrad de la familia '+d.title+'.\n\nModelo:\nAño:\nCiudad:');modal.classList.add('is-open');modal.setAttribute('aria-hidden','false');document.body.classList.add('family-modal-open');close.focus()}function closeFamily(){modal.classList.remove('is-open');modal.setAttribute('aria-hidden','true');document.body.classList.remove('family-modal-open');if(opener)opener.focus()}document.querySelectorAll('.ms-family[data-family]').forEach(btn=>btn.addEventListener('click',()=>openFamily(btn.dataset.family,btn)));close.addEventListener('click',closeFamily);modal.addEventListener('click',e=>{if(e.target===modal)closeFamily()});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('is-open'))closeFamily()})})();</script>
 
-<script src="assets/casos-reales.js?v=10.18.26"></script>
+<script src="assets/casos-reales.js?v=10.18.26a"></script>
 <script id="real-cases-js">
 (()=>{
   const cases=Array.isArray(window.REMOTO_CASOS_REALES)?window.REMOTO_CASOS_REALES:[];
@@ -2745,7 +2752,7 @@ document.addEventListener('click', function(e){
   function expandCase(i,el){
     if(isMobile()){openModal(i,el);return;}
     if(expanded===i){collapseExpanded();return;}
-    collapseExpanded(false);expanded=i;setStatus(i);const card=cards[i];card.classList.add('is-expanded');card.setAttribute('aria-expanded','true');requestAnimationFrame(()=>setTimeout(()=>card.scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'}),40));
+    collapseExpanded(false);expanded=i;setStatus(i);const card=cards[i];card.classList.add('is-expanded');card.setAttribute('aria-expanded','true');requestAnimationFrame(()=>setTimeout(()=>track.scrollTo({left:card.offsetLeft,behavior:'smooth'}),40));
   }
   function openImageLightbox(i,el){
     const c=cases[i];
