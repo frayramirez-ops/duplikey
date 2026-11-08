@@ -3162,3 +3162,99 @@ body.digital-card .cookie-banner{background:#0e1a21!important;color:#dce8ed!impo
 body.digital-card .cookie-banner .cookie-copy{color:#bcd0da!important}
 body.digital-card .cookie-banner a{color:#62d8ff!important}
 /* FIN V10.18.26 */
+
+
+/* =====================================================================
+   V10.18.26a · AJUSTES QA: acordeón confianza, casos desktop y tarjeta QR
+   ===================================================================== */
+body.home-page .trust-accordion{overflow:hidden!important}
+body.home-page .trust-accordion-body{padding:28px 24px 26px!important}
+body.home-page .trust-accordion:not([open]) .home-section-body{display:none!important}
+body.home-page .trust-accordion[open] .home-section-body{display:block!important}
+body.home-page .trust-accordion .trust-story:first-child{margin-top:0!important}
+@media(max-width:720px){
+  body.home-page .trust-accordion-body{padding:18px 14px 18px!important}
+}
+
+/* Caso completo desktop: siempre cabe dentro del viewport del carrusel */
+@media(min-width:761px){
+  #casos-reales .real-cases-track:has(.real-case-card.is-expanded){
+    scroll-snap-type:none!important;
+  }
+  #casos-reales .real-case-card.is-expanded{
+    flex:0 0 calc(100% - 4px)!important;
+    min-width:calc(100% - 4px)!important;
+    max-width:calc(100% - 4px)!important;
+    grid-template-columns:minmax(260px,31%) minmax(0,1fr)!important;
+    min-height:560px!important;
+  }
+  #casos-reales .real-case-card.is-expanded .real-case-media{
+    min-height:560px!important;
+  }
+  #casos-reales .real-case-card.is-expanded .real-case-expanded{
+    min-width:0!important;
+    overflow:visible!important;
+    justify-content:flex-start!important;
+    padding:34px 34px 28px!important;
+  }
+  #casos-reales .real-case-expanded h3{
+    max-width:100%!important;
+    overflow-wrap:anywhere!important;
+  }
+  #casos-reales .real-case-inline-detail{
+    min-width:0!important;
+  }
+  #casos-reales .real-case-inline-detail > div{
+    min-width:0!important;
+    overflow-wrap:anywhere!important;
+  }
+  #casos-reales .real-case-expanded-actions .btn{
+    max-width:100%!important;
+    white-space:normal!important;
+    text-align:center!important;
+  }
+}
+@media(max-width:980px) and (min-width:761px){
+  #casos-reales .real-case-card.is-expanded{
+    grid-template-columns:240px minmax(0,1fr)!important;
+  }
+  #casos-reales .real-case-inline-detail{grid-template-columns:1fr!important}
+  #casos-reales .real-case-inline-detail > div:nth-child(3){grid-column:auto!important}
+  #casos-reales .real-case-card.is-expanded .real-case-expanded{padding:26px 24px!important}
+}
+
+/* Tarjeta digital QR: WhatsApp inequívoco y ACEPRO con contraste alto */
+body.digital-card .primary .whatsapp{
+  background:#25D366!important;
+  color:#fff!important;
+  text-shadow:0 1px 1px rgba(0,0,0,.16)!important;
+}
+body.digital-card .primary .whatsapp svg{
+  width:22px!important;height:22px!important;
+  color:#fff!important;stroke:#fff!important;fill:none!important;
+  flex:0 0 22px!important;
+}
+body.digital-card .acepro-digital{
+  background:linear-gradient(135deg,#fffdf7,#ffffff)!important;
+  border:1px solid #d6b45d!important;
+  box-shadow:0 8px 20px rgba(72,56,16,.08)!important;
+}
+body.digital-card .acepro-digital b{
+  color:#1d2e38!important;
+  font-size:.92rem!important;
+}
+body.digital-card .acepro-digital span{
+  color:#50636e!important;
+  opacity:1!important;
+}
+body.digital-card .acepro-digital a{
+  color:#8a6400!important;
+  font-weight:900!important;
+  text-decoration:none!important;
+}
+body.digital-card .acepro-digital a:hover,
+body.digital-card .acepro-digital a:focus-visible{
+  color:#654900!important;
+  text-decoration:underline!important;
+}
+/* FIN V10.18.26a */
