@@ -21,10 +21,22 @@ h1,h2,h3{font-family:"Barlow Condensed",Montserrat,Inter,sans-serif;margin:0}.he
 footer{padding:36px 0;background:#0b1821;color:#b9cad3;text-align:center}footer strong{color:#fff}
 .lb{position:fixed;inset:0;z-index:90;background:rgba(3,9,13,.9);display:none;align-items:center;justify-content:center;padding:18px}.lb.open{display:flex}.lb img{max-width:92vw;max-height:88vh;border-radius:12px;background:#fff}.lb button{position:fixed;right:22px;top:22px;width:44px;height:44px;border-radius:50%;border:0;background:#d71920;color:#fff;font-size:26px;cursor:pointer}
 @media(max-width:900px){.hero-grid,.svc-grid,.keys-grid,.formbox{grid-template-columns:1fr}.hero-visual{min-height:auto}.moto-card{min-height:320px}.moto-card img{height:300px}.navlinks{display:none}.keys-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.keys-grid{grid-template-columns:1fr}.brand-home span{display:none}.hero{padding-top:46px}.hero h1{font-size:clamp(2.6rem,13vw,4rem)}}
+
+.top-actions{display:flex;align-items:center;gap:9px;margin-left:auto}
+.top-social{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:#fff;border:1px solid #bdd0db;box-shadow:0 6px 16px rgba(16,38,49,.08)}
+.top-social svg{width:18px;height:18px}.top-social.facebook{color:#1877f2}.top-social.instagram{color:#e1306c}
+.top-social:hover,.top-social:focus-visible{transform:translateY(-1px);box-shadow:0 9px 20px rgba(16,38,49,.13);outline:none}
+.top-call{height:38px;display:flex;align-items:stretch;background:#0e2f46;color:#fff;border-radius:3px;overflow:hidden;font-weight:800;box-shadow:0 8px 20px rgba(16,38,49,.12)}
+.top-call span{display:flex;align-items:center;padding:0 16px}.top-call b{display:grid;place-items:center;width:38px;background:#0b93dc;font-size:1.05rem}
+@media(max-width:760px){.top-actions{gap:6px}.top-social{width:34px;height:34px}.top-call span{display:none}.top-call{width:36px;height:36px}.top-call b{width:36px}.navlinks{display:none}}
 </style>
 </head>
 <body>
-<header class="top"><div class="wrap nav"><a class="brand-home" href="/"><img src="/assets/logo-remoto-header-home.png" alt="RE:MOTO LAB"><span>DUPLIKEY MX</span></a><nav class="navlinks"><a href="/motocicletas/">Otras marcas</a><a href="/">BMW Motorrad</a></nav></div></header>
+<header class="top"><div class="wrap nav"><a class="brand-home" href="/"><img src="/assets/logo-remoto-header-home.png" alt="RE:MOTO LAB"><span>DUPLIKEY MX</span></a><nav class="navlinks"><a href="/motocicletas/">Otras marcas</a><a href="/">BMW Motorrad</a></nav><div class="top-actions" aria-label="Contacto rápido">
+<a class="top-social facebook" aria-label="Facebook de DUPLIKEY MX" href="https://www.facebook.com/DuplikeyMX" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path d="M13.5 22v-9h3l.45-3.5H13.5V7.26c0-1.01.28-1.7 1.74-1.7H17.1V2.43c-.32-.04-1.42-.14-2.7-.14-2.67 0-4.5 1.63-4.5 4.63V9.5H7v3.5h2.9v9h3.6z"/></svg></a>
+<a class="top-social instagram" aria-label="Instagram de DUPLIKEY MX" href="https://www.instagram.com/DuplikeyMX/" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24"><rect height="18" rx="5" width="18" x="3" y="3"/><circle cx="12" cy="12" r="4.25"/><circle cx="17.4" cy="6.6" fill="currentColor" r="1" stroke="none"/></svg></a>
+<a class="top-call" href="tel:+524521791230"><span>Llamar</span><b aria-hidden="true">→</b></a>
+</div></div></header>
 <main>
 <section class="hero"><div class="wrap hero-grid">
 <div>
