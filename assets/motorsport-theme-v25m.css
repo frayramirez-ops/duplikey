@@ -3398,3 +3398,70 @@ body.home-page .nextgen-accordion .nextgen-launch-media img{
   }
 }
 /* FIN V10.18.26f */
+
+
+/* =====================================================================
+   V10.19.0-dev1 · CAPA MULTIMARCA SECUNDARIA
+   ===================================================================== */
+body.home-page .multi-brand-home{
+  background:linear-gradient(180deg,#f5f8fa,#edf3f6)!important;
+}
+body.home-page .multi-brand-panel{
+  display:grid!important;
+  grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr)!important;
+  gap:34px!important;
+  padding:32px!important;
+  border:1px solid #b8cbd6!important;
+  border-radius:12px!important;
+  background:#fff!important;
+  box-shadow:0 14px 34px rgba(24,55,72,.07)!important;
+}
+body.home-page .multi-brand-copy{display:grid!important;gap:16px!important}
+body.home-page .multi-brand-copy h2{
+  color:#102631!important;
+  font-size:clamp(2.15rem,4.4vw,3.6rem)!important;
+}
+body.home-page .multi-brand-copy .lead,
+body.home-page .multi-brand-copy p{color:#405966!important}
+body.home-page .multi-brand-note{
+  padding:13px 15px!important;
+  border-left:4px solid #159fe3!important;
+  background:#eef8fc!important;
+  color:#244959!important;
+  font-weight:700!important;
+}
+body.home-page .multi-brand-slogan{
+  margin-top:4px!important;
+  padding-top:16px!important;
+  border-top:1px solid #d5e1e7!important;
+  color:#17394c!important;
+  font-size:1.05rem!important;
+}
+body.home-page .multi-brand-slogan strong{color:#087fc8!important}
+body.home-page .multi-brand-cards{display:grid!important;gap:12px!important}
+body.home-page .multi-brand-card{
+  display:grid!important;gap:7px!important;
+  padding:18px!important;border:1px solid #c4d5dd!important;
+  border-radius:10px!important;background:linear-gradient(145deg,#f8fbfc,#fff)!important;
+  color:#18394b!important;transition:.18s ease!important;
+}
+body.home-page .multi-brand-card:hover,
+body.home-page .multi-brand-card:focus-visible{
+  transform:translateY(-2px)!important;
+  border-color:#58b8e3!important;
+  box-shadow:0 10px 24px rgba(8,127,200,.08)!important;
+}
+body.home-page .multi-brand-card strong{
+  font-size:1.45rem!important;color:#102631!important
+}
+body.home-page .multi-brand-card small{color:#526b78!important;line-height:1.45!important}
+body.home-page .multi-brand-status{
+  width:max-content!important;padding:5px 8px!important;border-radius:999px!important;
+  background:#eaf7fd!important;border:1px solid #a9cfe1!important;
+  color:#087fc8!important;font-size:.68rem!important;font-weight:900!important;
+  letter-spacing:.07em!important;text-transform:uppercase!important;
+}
+@media(max-width:820px){
+  body.home-page .multi-brand-panel{grid-template-columns:1fr!important;padding:20px!important}
+}
+/* FIN V10.19.0-dev1 */
