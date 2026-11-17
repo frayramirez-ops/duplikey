@@ -3493,3 +3493,54 @@ body.home-page .multi-brand-visual-generic{
   background:linear-gradient(145deg,#f4fbfe,#fff)!important
 }
 /* FIN V10.19.0-dev2 */
+
+
+/* =====================================================================
+   V10.19.0-dev3 · MULTIMARCA PRO
+   ===================================================================== */
+body.home-page .multi-brand-cards{grid-auto-rows:1fr!important}
+body.home-page .multi-brand-card{
+  min-height:184px!important;
+  height:100%!important;
+  align-content:start!important;
+}
+body.home-page .multi-brand-card-head{
+  min-height:56px!important;
+  gap:12px!important;
+}
+body.home-page .multi-brand-status{
+  min-height:32px!important;
+  max-width:170px!important;
+  padding:0 10px!important;
+  font-size:.64rem!important;
+}
+body.home-page .multi-brand-visual{
+  width:62px!important;
+  height:50px!important;
+  flex:0 0 62px!important;
+  border:0!important;
+  background:transparent!important;
+  overflow:visible!important;
+}
+body.home-page .multi-brand-visual img{
+  width:100%!important;
+  height:100%!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  padding:2px!important;
+  filter:drop-shadow(0 5px 8px rgba(17,48,65,.12))!important;
+}
+body.home-page .multi-brand-visual-mosaic{
+  width:88px!important;
+  flex-basis:88px!important;
+}
+body.home-page .multi-brand-visual-mosaic img{
+  padding:0!important;
+  filter:none!important;
+}
+body.home-page .multi-brand-card > strong{margin-top:5px!important}
+@media(max-width:820px){
+  body.home-page .multi-brand-visual{width:58px!important;height:48px!important;flex-basis:58px!important}
+  body.home-page .multi-brand-visual-mosaic{width:84px!important;flex-basis:84px!important}
+}
+/* FIN V10.19.0-dev3 */
