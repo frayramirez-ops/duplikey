@@ -3531,16 +3531,19 @@ body.home-page .multi-brand-visual img{
   filter:drop-shadow(0 5px 8px rgba(17,48,65,.12))!important;
 }
 body.home-page .multi-brand-visual-mosaic{
-  width:104px!important;
-  height:58px!important;
-  flex-basis:104px!important;
-  padding:5px!important;
+  width:112px!important;
+  height:62px!important;
+  flex-basis:112px!important;
+  padding:3px!important;
   border-radius:10px!important;
-  background:#102631!important;
-  border:1px solid rgba(8,127,200,.28)!important;
+  background:linear-gradient(145deg,#f8fbfc,#fff)!important;
+  border:1px solid rgba(8,127,200,.18)!important;
   overflow:hidden!important;
 }
 body.home-page .multi-brand-visual-mosaic img{
+  width:100%!important;
+  height:100%!important;
+  object-fit:contain!important;
   padding:2px!important;
   filter:none!important;
 }
@@ -3549,4 +3552,4 @@ body.home-page .multi-brand-card > strong{margin-top:5px!important}
   body.home-page .multi-brand-visual{width:58px!important;height:48px!important;flex-basis:58px!important}
   body.home-page .multi-brand-visual-mosaic{width:84px!important;flex-basis:84px!important}
 }
-/* FIN V10.19.0-dev4 */
+/* FIN V10.19.0-dev5 */
