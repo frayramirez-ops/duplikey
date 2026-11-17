@@ -3553,3 +3553,20 @@ body.home-page .multi-brand-card > strong{margin-top:5px!important}
   body.home-page .multi-brand-visual-mosaic{width:84px!important;flex-basis:84px!important}
 }
 /* FIN V10.19.0-dev5 */
+
+
+/* V10.19.0-dev7 · Destacado navegación Otras marcas */
+body.motorsport-theme .navlinks a.nav-other-brands,
+body.motorsport-theme .mobile-menu a.nav-other-brands{
+  color:#d71920!important;
+  font-weight:900!important;
+}
+body.motorsport-theme .navlinks a.nav-other-brands::after{
+  background:#d71920!important;
+}
+body.motorsport-theme .navlinks a.nav-other-brands:hover,
+body.motorsport-theme .navlinks a.nav-other-brands:focus-visible,
+body.motorsport-theme .mobile-menu a.nav-other-brands:hover,
+body.motorsport-theme .mobile-menu a.nav-other-brands:focus-visible{
+  color:#b70f17!important;
+}
