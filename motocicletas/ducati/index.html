@@ -30,7 +30,20 @@ footer{padding:36px 0;background:#0b1821;color:#b9cad3;text-align:center}footer 
 .top-call span{display:flex;align-items:center;padding:0 16px}.top-call b{display:grid;place-items:center;width:38px;background:#0b93dc;font-size:1.05rem}
 @media(max-width:760px){.top-actions{gap:6px}.top-social{width:34px;height:34px}.top-call span{display:none}.top-call{width:36px;height:36px}.top-call b{width:36px}.navlinks{display:none}}
 </style>
-</head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-52P1XFVECT"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-52P1XFVECT',{anonymize_ip:true});
+document.addEventListener('click',e=>{
+  const a=e.target.closest?.('a'); if(!a)return;
+  const href=a.getAttribute('href')||'';
+  if(href.startsWith('https://wa.me/')) gtag('event','whatsapp_click',{page_path:location.pathname,contact_source:'multimarca'});
+  if(href.startsWith('tel:')) gtag('event','phone_click',{page_path:location.pathname,contact_source:'multimarca'});
+  if(href.includes('facebook.com')||href.includes('instagram.com')||href.includes('youtube.com')) gtag('event','social_click',{page_path:location.pathname,destination:href});
+});
+</script></head>
 <body>
 <header class="top"><div class="wrap nav"><a class="brand-home" href="/"><img src="/assets/logo-remoto-header-home.png" alt="RE:MOTO LAB"><span>DUPLIKEY MX</span></a><nav class="navlinks"><a href="/motocicletas/">Otras marcas</a><a href="/">BMW Motorrad</a></nav><div class="top-actions" aria-label="Contacto rápido">
 <a class="top-social facebook" aria-label="Facebook de DUPLIKEY MX" href="https://www.facebook.com/DuplikeyMX" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path d="M13.5 22v-9h3l.45-3.5H13.5V7.26c0-1.01.28-1.7 1.74-1.7H17.1V2.43c-.32-.04-1.42-.14-2.7-.14-2.67 0-4.5 1.63-4.5 4.63V9.5H7v3.5h2.9v9h3.6z"/></svg></a>
